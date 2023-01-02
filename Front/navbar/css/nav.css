@@ -1,7 +1,6 @@
 *{
 	padding: 0;
 	margin: 0;
-	box-sizing: border-box;
 	font-family: 'Poppins', sans-serif;
 	text-decoration: none;
 	list-style: none;
@@ -33,20 +32,21 @@ header{
 .logo{
 	display: flex;
 	align-items: center;
+	margin-left: 35px;
 }
 
 .logo img{
 	width: 30vh;
 }
 
-
 .navbar{
 	display: flex;
+	r
 }
 
 .navbar a{
 	color: var(--text-color);
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	font-weight: 500;
 	padding: 5px 0;
 	margin: 0px 30px;
