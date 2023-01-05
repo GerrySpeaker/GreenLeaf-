@@ -1,5 +1,4 @@
 function validation_email(){
-    var form = document.getElementById("form");
     var email = document.getElementById("email").value;
     var text_em = document.getElementById("text-email");
     var pattern =  /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;

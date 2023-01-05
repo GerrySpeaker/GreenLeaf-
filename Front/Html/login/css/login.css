@@ -236,3 +236,19 @@
     font-style: italic;
     font-size: 13px;
 }
+
+#toggle{
+    position: absolute;
+    top: 56%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background: url(show.png);
+    background-size: cover;
+}
+
+#toggle.hide{
+    background: url(hide.png);
+    background-size: cover;
+}
