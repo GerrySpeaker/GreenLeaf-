@@ -1,9 +1,8 @@
-body {
-    background: rgb(99, 39, 120);
+* {
+    margin: 0;
     padding: 0;
-	margin: 0;
-	font-family: "Montserrat";
     box-sizing: border-box;
+    font-family: "Montserrat";
 }
 
 :root{
@@ -15,44 +14,154 @@ body {
 	--popup-color: white;
 }
 
-
-.form-control:focus {
-    box-shadow: none;
-    border-color: #BA68C8
+.all-body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.profile-button {
-    background: rgb(99, 39, 120);
-    box-shadow: none;
-    border: none
+.container {
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 55px;
+    border-radius: 22% 78% 14% 86% / 77% 21% 79% 23%;
+    box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.2),
+                    25px 35px 20px rgba(0, 0, 0, 0.1),
+                    25px 30px 30px rgba(0, 0, 0, 0.1),
+                    inset -20px -20px 25px rgba(255, 255, 255, 0.5);
+        transition: 0.5s;
+    align-items: center;
+    justify-content: center;
 }
 
-.profile-button:hover {
-    background: #682773
+.container:hover{
+    border-radius: 50%;
 }
 
-.profile-button:focus {
-    background: #682773;
-    box-shadow: none
+.container::before{
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 60px;
+    right: 150px;
+    background: rgba(255, 255, 255, 0.8);
+    opacity: 0.7;
+    border-radius: 50%;
 }
 
-.profile-button:active {
-    background: #682773;
-    box-shadow: none
+.container::after{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 80px;
+    right: 130px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0.7;
+    border-radius: 50%;
 }
 
-.back:hover {
-    color: #682773;
-    cursor: pointer
+.container header {
+    font-weight: bold;
+    text-transform: cap;
+    position: relative;
+    font-size: 2.5em;
+    color: var(--text-color);
+    text-align: center;
+}
+.container .form {
+  margin-top: 30px;
 }
 
-.labels {
-    font-size: 11px
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
 }
 
-.add-experience:hover {
-    background: #BA68C8;
-    color: #fff;
+.input-box label {
+  color: var(--text-color);
+  font-size: 1.1em;
+  font-weight: 600;
+  font-style: italic;
+  margin-left: 20px;
+}
+
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: black;
+  background: transparent;
+  margin-top: 8px;
+  border: none;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
+                inset -2px -5px 10px rgba(255, 255, 255, 0.3),
+                15px 15px 10px rgba(0, 0, 0, 0.05),
+                15px 10px 15px rgba(0, 0, 0, 0.025);
+    border-radius: 25px;
+  padding: 0 15px;
+}
+
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+
+.btns{
+    position: absolute;
+    right: -120px; 
+    bottom: 0;
+    width: 130px;
+    height: 130px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    border: solid 1px #BA68C8
+    text-decoration: none;
+    color: black;
+    line-height: 1.2em;
+    letter-spacing: 0.1em;
+    font-size: 1em;
+    transition: 0.25s;
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
+                 25px 35px 20px rgba(0, 0, 0, 0.1),
+                 25px 30px 30px rgba(0, 0, 0, 0.1),
+                 inset -20px -20px 25px rgba(255, 255, 255, 0.5);
+     border-radius: 44% 56% 65% 35% / 57% 58% 42% 43%;
+     text-align: center;
+     font-weight: 900;
+     font-size: 0.9em;
+ }
+
+.btns.submit{
+    bottom: 150px;
+    right: -140px;
+    width: 95px;
+    height: 95px;
+    border-radius: 49% 51% 52% 48% / 63% 59% 41% 37%;
+}
+
+.btns.submit:hover{
+    border-radius: 50%;
+}
+
+/*Responsive*/
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
 }

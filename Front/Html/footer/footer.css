@@ -39,14 +39,16 @@ footer .container .sec.aboutus
 {
     width: 40%;
 }
-footer .container h2
+
+footer .testo
 {
     position: relative;
     color: #fff;
     font-weight: 500;
     margin-bottom: 15px;
 }
-footer .container  h2::before
+
+footer .testo::before
 {
     content: "";
     position: absolute;
@@ -56,6 +58,7 @@ footer .container  h2::before
     height: 2px;
     background: #f00;
 }
+
 footer  p
 {
     color: #999;
