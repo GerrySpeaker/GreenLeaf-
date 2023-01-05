@@ -14,10 +14,11 @@
             <div class="drop">
                 <div class="content">
                     <h2>Login</h2>
-                    <form action="">
+                    <form action="" id="form">
                         <div class="inputBox">
-                            <input type="text" placeholder="E-mail">
+                            <input id="email" type="text" placeholder="E-mail" onkeydown="validation_email()">
                         </div>
+                        <span id="text-email"></span>
 
                         <div class="inputBox">
                             <input type="password" placeholder="Password">
@@ -35,5 +36,7 @@
 
         </div>
     </div>
+
+    <script src="js/validate.js"></script>
 </body>
 </html>
