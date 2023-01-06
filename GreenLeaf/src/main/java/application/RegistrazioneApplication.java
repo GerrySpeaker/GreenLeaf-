@@ -1,11 +1,25 @@
 package application;
 
-/*
-@WebServlet("/RegistrazioneApplication")
-public class RegistrazioneApplication extends HttpServlet{
+
+import bean.UtenteBean;
+import storage.UtenteDao;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+@WebServlet("/Registrazione")
+public class RegistrazioneApplication extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-   // static UtenteDAO model=new UtenteDAO();
+    static UtenteDao dao= null;
     private UtenteBean bean= new UtenteBean();
     private UtenteBean user = new UtenteBean();
 
@@ -20,17 +34,20 @@ public class RegistrazioneApplication extends HttpServlet{
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-        bean.setEmail(request.getParameter("Email"));
-        bean.setPassword(request.getParameter("Password"));
-        bean.setNome(request.getParameter("Nome"));
-        bean.setCognome(request.getParameter("Cognome"));
-        String confpass = request.getParameter("ConfPassword");
+        System.out.println("richiamata la doPost");
 
 
 
+        bean.setEmail(request.getParameter("email"));
+        bean.setPassword(request.getParameter("password"));
+        bean.setNomeUtente(request.getParameter("nome"));
+        bean.setCognomeUtente(request.getParameter("cognome"));
+        bean.setDataNascita(new Date(2001,01,01));
+
+
+        UtenteBean utenteLogin;
         try {
-            natale = model.doRetrieveByEmail(bean.getEmail());
+            utenteLogin = dao.doRetrieveByEmail(bean.getEmail());
         } catch (SQLException e) {
 
             response.sendRedirect(request.getContextPath()+"/login.jsp");
@@ -38,18 +55,18 @@ public class RegistrazioneApplication extends HttpServlet{
             return;
         }
 
+        System.out.println(bean.toString());
 
         try {
-            if(confpass.equals(request.getParameter("Password")) && natale.getEmail() == null)
-                model.doSave(bean);
+            dao.doSave(bean);
 
         } catch (SQLException e) {
             response.sendRedirect(request.getContextPath()+"/login.jsp");
             e.printStackTrace();
             return;
         }
+
 
         response.sendRedirect(request.getContextPath()+"/login.jsp");
     }
 }
-*/

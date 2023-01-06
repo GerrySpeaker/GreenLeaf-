@@ -1,12 +1,12 @@
 package storage;
 
-import bean.UtenteBean;
+import bean.AdminBean;
 
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.Collection;
 
-public class UtenteDao implements InterfacciaDao<UtenteBean>{
+public class AdminDao implements InterfacciaDao<AdminBean>{
 
     private static DataSource ds;
 
@@ -22,11 +22,11 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
     }
 
 
-    public synchronized UtenteBean doRetrieveByEmailPass(String email, String password) throws SQLException {
+    public synchronized AdminBean doRetrieveByEmailPass(String email, String password) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        UtenteBean bean = new UtenteBean();
-        String selectSQL = "SELECT * FROM utente WHERE email=? AND Password=? ";
+        AdminBean bean = new AdminBean();
+        String selectSQL = "SELECT * FROM admin WHERE email=? AND password=? ";
 
         try {
             connection = ds.getConnection();
@@ -37,11 +37,10 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
 
 
             if (rs.next()) {
-                bean.setCognomeUtente(rs.getString("Cognome"));
-                bean.setNomeUtente(rs.getString("Nome"));
+                bean.setCognomeAdmin(rs.getString("cognome"));
+                bean.setNomeAdmin(rs.getString("nome"));
                 bean.setEmail(email);
                 bean.setPassword(password);
-                bean.setDataNascita(rs.getDate("DataDiNascita"));
             }
 
             System.out.println(bean.toString());
@@ -58,11 +57,11 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
         return bean;
     }
 
-    public synchronized UtenteBean doRetrieveByEmail(String email) throws SQLException {
+    public synchronized AdminBean doRetrieveByEmail(String email) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        UtenteBean bean = new UtenteBean();
-        String selectSQL = "SELECT * FROM utente WHERE Email=?";
+        AdminBean bean = new AdminBean();
+        String selectSQL = "SELECT * FROM admin WHERE email=?";
 
 
 
@@ -73,11 +72,10 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
             ResultSet rs = preparedStatement.executeQuery();
 
             if (rs.next()) {
-                bean.setCognomeUtente(rs.getString("Cognome"));
-                bean.setNomeUtente(rs.getString("Nome"));
+                bean.setCognomeAdmin(rs.getString("cognome"));
+                bean.setNomeAdmin(rs.getString("nome"));
                 bean.setEmail(email);
-                bean.setPassword(rs.getString("Password"));
-                bean.setDataNascita(rs.getDate("DataDiNascita"));
+                bean.setPassword(rs.getString("password"));
             }
 
 
@@ -95,20 +93,19 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
 
 
     @Override
-    public void doSave(UtenteBean bean) throws SQLException {
+    public void doSave(AdminBean bean) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        String selectSQL = "Insert INTO utente (email,Cognome, Nome, Password, DataDiNascita) values (?,?,?,?,?)";
+        String selectSQL = "Insert INTO utente (email,password,cognome,nome) values (?,?,?,?)";
 
 
         try {
             connection = ds.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, bean.getEmail());
-            preparedStatement.setString(2, bean.getCognomeUtente());
-            preparedStatement.setString(3, bean.getNomeUtente());
-            preparedStatement.setString(4, bean.getPassword());
-            preparedStatement.setDate(5, (Date) bean.getDataNascita());
+            preparedStatement.setString(2, bean.getPassword());
+            preparedStatement.setString(3, bean.getCognomeAdmin());
+            preparedStatement.setString(4, bean.getNomeAdmin());
             preparedStatement.executeUpdate();
         }
 
@@ -121,36 +118,6 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
                     connection.close();
             }
         }
-    }
-
-
-    public int doUpdatePass(UtenteBean bean) throws SQLException {
-
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        String email = bean.getEmail();
-        String selectSQL = "Update utente SET Password=? WHERE email = " + email;
-
-
-
-        try {
-            connection = ds.getConnection();
-            preparedStatement = connection.prepareStatement(selectSQL);;
-            preparedStatement.setString(1, bean.getPassword());
-            preparedStatement.executeUpdate();
-
-        }
-
-        finally {
-            try {
-                if (preparedStatement != null)
-                    preparedStatement.close();
-            } finally {
-                if (connection != null)
-                    connection.close();
-            }
-        }
-        return 1;
     }
 
 
@@ -161,7 +128,7 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
 
         int result = 0;
 
-        String deleteSQL = "DELETE FROM  utente  WHERE email = ?";
+        String deleteSQL = "DELETE FROM  admin  WHERE email = ?";
 
         try {
             connection = ds.getConnection();
@@ -182,18 +149,16 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
         return (result != 0);
     }
 
+
     @Override
-    public UtenteBean doRetrieveByKey(int code) throws SQLException {
+    public AdminBean doRetrieveByKey(int code) throws SQLException {
         return null;
     }
 
 
     @Override
-    public Collection<UtenteBean> doRetrieveAll() throws SQLException {
+    public Collection<AdminBean> doRetrieveAll() throws SQLException {
         return null;
     }
-
-
-
 
 }
