@@ -1,33 +1,40 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap);
-
-*
-{
-    margin: 0;
-    padding: 0;
+*{
+	padding: 0;
+	margin: 0;
+	font-family: "Montserrat";
     box-sizing: border-box;
-    font-family: "Pappins", sans-serif
 }
 
-body{
+:root{
+	--bg-color: whitesmoke;
+	--text-color: #282828;
+	--main-color: #007a00;
+	--second-color: #004700;
+	--notify-color: #80ff81;
+	--popup-color: white;
+    --footer-color: #1f1f1f;
+}
+
+.all-footer-body{
     display:flex;
     justify-content: flex-end;
     align-items:center;
     min-height: 100vh;
     flex-direction: column;
-    background: #ede7f6;
-
 }
-footer{
+
+.foot{
     position: relative;
     width: 100%;
     height: auto;
     padding: 50px 100px;
-    background: #111;
+    background: var(--footer-color);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
-footer .container
+
+.foot .container
 {
     display: flex;
     justify-content: space-between;
@@ -35,20 +42,20 @@ footer .container
     flex-direction: row;
 }
 
-footer .container .sec.aboutus
+.foot .container .sec.aboutus
 {
     width: 40%;
 }
 
-footer .testo
+.foot .testo
 {
     position: relative;
-    color: #fff;
+    color: var(--popup-color);
     font-weight: 500;
     margin-bottom: 15px;
 }
 
-footer .testo::before
+.foot .testo::before
 {
     content: "";
     position: absolute;
@@ -56,40 +63,12 @@ footer .testo::before
     left: 0;
     width: 50px;
     height: 2px;
-    background: #f00;
+    background: var(--main-color);
 }
 
-footer  .about
+.foot .about
 {
-    color: #999;
-}
-.sci
-{
-    margin-top: 20px;
-    display: flex;
-}
-.sci li
-{
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    background: #222;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 10px;
-    text-decoration: none;
-    border-radius: 4px;
-
-}
-.sci li a:hover
-{
-    background: #f00;
-}
-.sci li a .fa
-{
-    color: #fff;
-    font-size: 20px;
+    color: var(--bg-color);
 }
 .quickLinks
 {
@@ -102,14 +81,14 @@ footer  .about
 }
 .quickLinks ul li a
 {
-    color: #999;
+    color: rgb(175, 175, 175);
     text-decoration: none;
     margin-bottom: 10px;
     display: inline-block;
 }
 .quickLinks ul li a:hover
 {
-    color: #fff;
+    color: var(--popup-color);
 }
 
 .contact
@@ -117,39 +96,45 @@ footer  .about
     width: calc(35% - 60px);
     margin-right: 0 !important;
 }
+
 .contact .info
 {
     position: relative;
-
 }
+
 .contact .info li
 {
     display: flex;
     margin-bottom: 16px;
 }
+
 .contact .info li span:nth-child(1)
 {
-    color: #fff;
+    color: var(--popup-color);
     font-size: 20px;
     margin-right: 10px;
 }
+
 .contact .i 
 {
-    color: #999;
+    color: rgb(175, 175, 175);
     text-decoration: none;
 }
+
 .contact .info li a:hover
 {
-    color: #fff;
+    color: var(--popup-color);
 }
+
 .copyrightText
 {
     width: 100%;
     background: #181818;
     padding: 8px 100px;
     text-align: center;
-    color: #999;
+    color: rgb(175, 175, 175);
 }
+
 @media (max-width: 991px)
 {
     footer
@@ -177,6 +162,6 @@ footer  .about
         background: #181818;
         padding: 8px 40px;
         text-align: center;
-        color: #999;
+        color: rgb(175, 175, 175);
     }
 }
