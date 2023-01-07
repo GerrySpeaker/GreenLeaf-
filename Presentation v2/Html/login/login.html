@@ -14,12 +14,13 @@
             <div class="drop">
                 <div class="content">
                     <h2>Login</h2>
-                    <form action="" id="form"> <!-- form effettivo -->
+                    <form action="#" id="form" onsubmit="validate(this)"> <!-- form effettivo -->
                         <span id="txt-email"></span>
                         <div class="inputBox">
-                            <input id="email" type="text" placeholder="E-mail" onkeydown="validation_email()" required>
+                            <input id="email" type="text" placeholder="E-mail" required>
                         </div>
 
+                        <span id="txt-password"></span>
                         <div class="inputBox">
                             <input id="password" type="password" placeholder="Password" required>
                             <div id="toggle" onclick="showHide()"></div>
@@ -32,13 +33,12 @@
                 </div>
             </div>
 
-            <a href="#" class="btns">Password dimenticata?</a> <!-- script -->
-            <a href="#" class="btns signup">Registrati</a>
+            <a href="#" class="btns">Registrati</a> <!-- script -->
 
         </div>
     </div>
 
-    <script src="js/validate.js"></script>
+    <script src="js/validate_password.js"></script>
     <script src="js/password.js"></script>
 </body>
 </html>
