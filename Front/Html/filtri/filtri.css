@@ -32,22 +32,8 @@
     content: '';
     width: 8px;
     height: 8px;
-    position: absolute;
     border: 2px solid var(--text-color);
     right: 20px;
-    top: 15px;
-    z-index: 10000;
-    border: 2px solid var(--text-color);
-    border-top: 2px solid var(--popup-color);
-    border-right: 2px solid var(--popup-color);
-    transform: rotate(-45deg);
-    transition: 0.5s;
-    pointer-events: none;
-}
-
-.dropdown.active::before{
-    transform: rotate(-225deg);
-    top:20px;
 }
 
 .dropdown .filterBox{
@@ -76,11 +62,6 @@
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     font-size: 1em;
-    display: none;
-}
-
-.dropdown.active .option{
-    display: block;
 }
 
 .dropdown .option div{
