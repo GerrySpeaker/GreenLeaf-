@@ -29,9 +29,20 @@
             <div onclick="show('Toscana')">Toscana</div>
             <div onclick="show('Trentino Alto Adige')">Trentino Alto Adige</div>
             <div onclick="show('Umbria')">Umbria</div>
-            <div onclick="show('Valle dAosta')">Valle d'Aosta</div>
+            <div onclick="show('Valle d Aosta')">Valle d'Aosta</div>
             <div onclick="show('Veneto')">Veneto</div>
         </div>
     </div>
+
+    <script >
+        function show(anything) {
+            document.querySelector(".filterBox").value =anything
+        }
+
+        let dropdown = document.querySelector(".dropdown");
+        dropdown.onclick = function () {
+            dropdown.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

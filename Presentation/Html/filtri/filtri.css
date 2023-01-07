@@ -35,14 +35,19 @@
     position: absolute;
     border: 2px solid var(--text-color);
     right: 20px;
-    top: 20px;
+    top: 15px;
     z-index: 10000;
     border: 2px solid var(--text-color);
     border-top: 2px solid var(--popup-color);
     border-right: 2px solid var(--popup-color);
     transform: rotate(-45deg);
-    transform: 0.5s;
+    transition: 0.5s;
     pointer-events: none;
+}
+
+.dropdown.active::before{
+    transform: rotate(-225deg);
+    top:20px;
 }
 
 .dropdown .filterBox{
@@ -72,6 +77,10 @@
     border-radius: 10px;
     font-size: 1em;
     display: none;
+}
+
+.dropdown.active .option{
+    display: block;
 }
 
 .dropdown .option div{
