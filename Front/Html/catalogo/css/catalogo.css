@@ -14,6 +14,7 @@
     justify-content: center;
     align-items: center;
     font-family: "Montserrat";
+    z-index: -100;
 	text-decoration: none;
 	list-style: none;
     margin: 0;
@@ -71,11 +72,13 @@
 .card-body h3{
     color: var(--text-color);
     font-weight: bold;
+    margin: 10px 0;
     text-align: center;
 }
 
 .card-body p {
     font-size: 13px;
+    margin-bottom: 10px;
 }
 
 .btn_area{
