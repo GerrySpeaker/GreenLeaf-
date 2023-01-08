@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/login.css"> <!-- style -->
+    <link rel="stylesheet" href="risorse/style/login.css"> <!-- style -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
 </head>
 <body class="all-body">
@@ -14,15 +14,15 @@
             <div class="drop">
                 <div class="content">
                     <h2>Login</h2>
-                    <form action="#" id="form" onsubmit="validate(this)"> <!-- form effettivo -->
+                    <form action="AutenticazioneApplication" id="form" onsubmit="validate(this)"> <!-- form effettivo -->
                         <span id="txt-email"></span>
                         <div class="inputBox">
-                            <input id="email" type="text" placeholder="E-mail" required>
+                            <input id="email" type="text" placeholder="E-mail" required name ="email">
                         </div>
 
                         <span id="txt-password"></span>
                         <div class="inputBox">
-                            <input id="password" type="password" placeholder="Password" required>
+                            <input id="password" type="password" placeholder="Password" required name = "password">
                             <div id="toggle" onclick="showHide()"></div>
                         </div>
 
@@ -33,12 +33,12 @@
                 </div>
             </div>
 
-            <a href="#" class="btns">Registrati</a> <!-- script -->
+            <a href="registrazione.jsp" class="btns">Registrati</a> <!-- script -->
 
         </div>
     </div>
 
-    <script src="js/validate_password.js"></script>
-    <script src="js/password.js"></script>
+    <script src="risorse/js/password.js"></script>
+    <script src="risorse/js/validate_password.js"></script>
 </body>
 </html>

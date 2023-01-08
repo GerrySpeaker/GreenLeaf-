@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Nuovo Operatore</title>
-    <link rel="stylesheet" href="css/registrazione.css" />
+    <link rel="stylesheet" href="../../../Presentation/Html/registrazione/css/registrazione.css" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
 
   </head>
@@ -46,8 +46,8 @@
           </section>
     </div>
 
-    <script src="js/validate.js"></script>
-    <script src="js/password.js"></script>
+    <script src="../../../Presentation/Html/registrazione/js/validate.js"></script>
+    <script src="../../../Presentation/Html/registrazione/js/password.js"></script>
   </body>
 </html>
 

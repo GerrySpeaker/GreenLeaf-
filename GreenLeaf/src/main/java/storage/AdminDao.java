@@ -2,6 +2,9 @@ package storage;
 
 import bean.AdminBean;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.*;
 import java.util.Collection;
@@ -11,13 +14,14 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
     private static DataSource ds;
 
     static {
-
-        DriverManagerConnectionPool db;
-        Connection connection = null;
         try {
-            connection = DriverManagerConnectionPool.getConnection();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            Context initCtx = new InitialContext();
+            Context envCtx = (Context) initCtx.lookup("java:comp/env");
+
+            ds = (DataSource) envCtx.lookup("jdbc/greenleaf");
+
+        } catch (NamingException e) {
+            System.out.println("Error:" + e.getMessage());
         }
     }
 
