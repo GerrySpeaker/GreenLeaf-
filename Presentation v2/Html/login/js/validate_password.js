@@ -54,6 +54,6 @@ function validate(obj){
         valid = false;
     }
 
-    if(valid == true)
+    if(valid)
         obj.submit();
 }
