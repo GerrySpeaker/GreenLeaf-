@@ -36,7 +36,7 @@ function validation_email(input){
 
 function validation_password(input){
     
-    var pattern =  /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+    var pattern =  /^[a-zA-Z0-9]$/;
 
     if(input.match(pattern)){
         return true;
@@ -105,6 +105,10 @@ function validate(obj){
         valid = false;
     }
 
-    if(valid)
+    if(valid){
         obj.submit();
+    }
+    else{
+        alert("Alcuni campi sono errati")
+    }
 }
