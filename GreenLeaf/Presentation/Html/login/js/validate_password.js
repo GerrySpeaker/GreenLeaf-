@@ -1,27 +1,3 @@
-function validation_name(input){
-    
-    var pattern =  /^[A-Za-z]+$/;
-
-    if(input.match(pattern)){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
-function validation_surname(input){
-    
-    var pattern =  /^[a-z ,.'-]+$/i;
-
-    if(input.match(pattern)){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
 function validation_email(input){
     
     var pattern =  /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
@@ -48,36 +24,9 @@ function validation_password(input){
 
 function validate(obj){
 
-    valid = true;
+    valid = false;
 
-    var nome = document.getElementById("nome").value;
-    var txt_nome = document.getElementById("txt-nome");
     
-    if(validation_name(nome)){
-        txt_nome.innerHTML ="Nome inserito correttamente";
-        txt_nome.style.color = "#004700";
-    }
-    else{
-        txt_nome.innerHTML ="ATTENZIONE: nome non valido";
-        txt_nome.style.color = "#c80e00";
-        valid = false;
-    }
-
-
-    var cognome = document.getElementById("cognome").value;
-    var txt_cognome = document.getElementById("txt-cognome");
-
-    if(validation_surname(cognome)){
-        txt_cognome.innerHTML ="Cognome inserito correttamente";
-        txt_cognome.style.color = "#004700";
-    }
-    else{
-        txt_cognome.innerHTML ="ATTENZIONE: cognome non valido";
-        txt_cognome.style.color = "#c80e00";
-        valid = false;
-    }
-
-
     var email = document.getElementById("email").value;
     var txt_em = document.getElementById("txt-email");
 
