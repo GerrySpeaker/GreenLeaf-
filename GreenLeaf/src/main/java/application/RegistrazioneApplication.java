@@ -80,7 +80,7 @@ public class RegistrazioneApplication extends HttpServlet {
         try {
             if ( (utenteLogin = dao.doRetrieveByEmail(bean.getEmail())).equals(null) )
                 System.out.println("ciao");
-                dao.doSave(bean);
+                dao.registrazione(bean);
 
         } catch (SQLException e) {
 

@@ -26,7 +26,7 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
     }
 
 
-    public synchronized AdminBean doRetrieveByEmailPass(String email, String password) throws SQLException {
+    public synchronized AdminBean login(String email, String password) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         AdminBean bean = new AdminBean();
@@ -97,7 +97,7 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
 
 
     @Override
-    public void doSave(AdminBean bean) throws SQLException {
+    public void registrazione(AdminBean bean) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         String selectSQL = "Insert INTO utente (email,password,cognome,nome) values (?,?,?,?)";
@@ -126,7 +126,7 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
 
 
     @Override
-    public boolean doDelete(String email) throws SQLException {
+    public boolean eliminaAccount(String email) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 

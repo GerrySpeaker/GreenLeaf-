@@ -31,7 +31,7 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
     }
 
 
-    public synchronized OperatoreBean doRetrieveByEmailPass(String email, String password) throws SQLException {
+    public synchronized OperatoreBean login(String email, String password) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         OperatoreBean bean = new OperatoreBean();
@@ -107,7 +107,7 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
 
 
     @Override
-    public void doSave(OperatoreBean bean) throws SQLException {
+    public void registrazione(OperatoreBean bean) throws SQLException {
 
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -139,7 +139,7 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
     }
 
     @Override
-    public boolean doDelete(String email) throws SQLException {
+    public boolean eliminaAccount(String email) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 

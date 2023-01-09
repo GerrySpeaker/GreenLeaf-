@@ -54,13 +54,13 @@ public class AutenticazioneApplication extends HttpServlet {
 
 
         try {
-            utenteLogin = utenteDao.doRetrieveByEmailPass(email, pass);
+            utenteLogin = utenteDao.login(email, pass);
             if(utenteLogin.getNomeUtente() == null){
-                adminLogin = adminDao.doRetrieveByEmailPass(email, pass);
+                adminLogin = adminDao.login(email, pass);
 
                 if(adminLogin.getNomeAdmin() == null){
 
-                    operatoreLogin = operatoreDao.doRetrieveByEmailPass(email, pass);
+                    operatoreLogin = operatoreDao.login(email, pass);
 
                     if(operatoreLogin.getNomeOperatore() == null){
 

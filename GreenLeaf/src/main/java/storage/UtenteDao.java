@@ -28,7 +28,7 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
     }
 
 
-    public synchronized UtenteBean doRetrieveByEmailPass(String email, String password) throws SQLException {
+    public synchronized UtenteBean login(String email, String password) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         UtenteBean bean = new UtenteBean();
@@ -100,7 +100,7 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
 
 
     @Override
-    public void doSave(UtenteBean bean) throws SQLException {
+    public void registrazione(UtenteBean bean) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         String selectSQL = "Insert INTO utente (email,Cognome, Nome, Password, DataDiNascita) values (?,?,?,?,?)";
@@ -160,7 +160,7 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
 
 
     @Override
-    public boolean doDelete(String email) throws SQLException {
+    public boolean eliminaAccount(String email) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 
