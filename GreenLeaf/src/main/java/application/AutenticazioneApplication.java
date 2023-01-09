@@ -39,6 +39,7 @@ public class AutenticazioneApplication extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Boolean admin = false;
 
         System.out.println("richiamata la doPost del login");
 
@@ -55,7 +56,6 @@ public class AutenticazioneApplication extends HttpServlet {
         try {
             utenteLogin = utenteDao.doRetrieveByEmailPass(email, pass);
             if(utenteLogin.getNomeUtente() == null){
-
                 adminLogin = adminDao.doRetrieveByEmailPass(email, pass);
 
                 if(adminLogin.getNomeAdmin() == null){
@@ -67,17 +67,19 @@ public class AutenticazioneApplication extends HttpServlet {
                         response.sendRedirect(request.getContextPath() + "/login.jsp");
                     }
                     else{
-
+                        request.getSession().setAttribute("email", email);
                         response.sendRedirect(request.getContextPath() + "/homeopearatore.jsp");
                     }
                 }
                 else{
-
+                    admin = true;
+                    request.getSession().setAttribute("email", email);
+                    request.getSession().setAttribute("adminRoles", admin);
                     response.sendRedirect(request.getContextPath() + "/homeadmin.jsp");
                 }
             }
             else{
-
+                request.getSession().setAttribute("email", email);
                 response.sendRedirect(request.getContextPath() + "/homeutente.jsp");
             }
 

@@ -13,26 +13,26 @@
     <div class="all-form">
         <section class="container">
             <header>Nuovo Operatore</header>
-            <form action="#" class="form">
+            <form action="/RegistrazioneApplication" class="form">
       
               <div class="input-box">
                 <label>Nome</label> <span id="txt-nome"></span>
-                <input id="nome" type="text" placeholder="Inserisci qui il tuo nome" onkeydown="validation_name()" required />
+                <input id="nome" type="text" placeholder="Inserisci qui il tuo nome" onkeydown="validation_name()" required name ="nome"/>
               </div>
       
               <div class="input-box">
                 <label>Cognome</label> <span id="txt-cognome"></span>
-                <input id="cognome" type="text" placeholder="Inserisci qui il tuo cognome" onkeydown="validation_surname()" required />
+                <input id="cognome" type="text" placeholder="Inserisci qui il tuo cognome" onkeydown="validation_surname()" required name ="cognome" />
               </div>
       
               <div class="column">
                 <div class="input-box">
                   <label>E-mail</label> <span id="txt-email"></span>
-                  <input id="email" type="text" placeholder="Inserisci qui la tua e-mail" onkeydown="validation_email()" required />
+                  <input id="email" type="text" placeholder="Inserisci qui la tua e-mail" onkeydown="validation_email()" required name ="email" />
                 </div>
                 <div class="input-box">
                   <label style="margin-left: 15px;">Password </label><label class="pass">(min 8: lettere e numeri)</label> <span id="txt-password"></span>
-                  <input id="password" type="password" placeholder="Inserisci qui la tua password" onkeydown="validation_password()" required />
+                  <input id="password" type="password" placeholder="Inserisci qui la tua password" onkeydown="validation_password()" required name ="password"/>
                   <div id="toggle" onclick="showHide()"></div>
                 </div>
               </div>
