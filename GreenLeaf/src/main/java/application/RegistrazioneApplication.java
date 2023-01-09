@@ -1,7 +1,11 @@
 package application;
 
 
+import bean.AdminBean;
+import bean.OperatoreBean;
 import bean.UtenteBean;
+import storage.AdminDao;
+import storage.OperatoreDao;
 import storage.UtenteDao;
 
 import javax.servlet.ServletException;
@@ -20,8 +24,13 @@ public class RegistrazioneApplication extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     static UtenteDao dao= new UtenteDao();
+    static OperatoreDao operatoreDao = new OperatoreDao();
+    static AdminDao adminDao = new AdminDao();
+
     private UtenteBean bean= new UtenteBean();
     private UtenteBean user = new UtenteBean();
+    private OperatoreBean operatore = new OperatoreBean();
+    private AdminBean adminBean = new AdminBean();
 
     public RegistrazioneApplication() {
         super();
@@ -34,7 +43,19 @@ public class RegistrazioneApplication extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        System.out.println("richiamata la doPost");
+        String email = (String) request.getAttribute("email");
+        try {
+            adminBean = adminDao.doRetrieveByEmail(email);
+            if(operatore.equals(null)){
+                return;
+            }else{
+                operatore = creaOperatore(request,response,email);
+                System.out.println(operatore.toString());
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
 
         String data = request.getParameter("data");
         Date data1= null;
@@ -71,6 +92,19 @@ public class RegistrazioneApplication extends HttpServlet {
 
         response.sendRedirect(request.getContextPath()+"/login.jsp");
 
+
+    }
+
+    public OperatoreBean creaOperatore(HttpServletRequest request, HttpServletResponse response, String email){
+        OperatoreBean operatoreBean = new OperatoreBean();
+
+        operatoreBean.setNomeOperatore(request.getParameter("nome"));
+        operatoreBean.setCognomeOperatore(request.getParameter("cognome"));
+        operatoreBean.setEmail(request.getParameter("email"));
+        operatoreBean.setRegione(request.getParameter("regione"));
+        operatoreBean.setPassword(request.getParameter("password"));
+        operatoreBean.setAdminCreatore(email);
+        return operatoreBean;
 
     }
 
