@@ -111,7 +111,7 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
 
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        String selectSQL = "Insert INTO utente (email,password,cognome,nome,admin,regione) values (?,?,?,?,?,?)";
+        String selectSQL = "Insert INTO operatore (email,password,cognome,nome,admin,regione) values (?,?,?,?,?,?)";
 
 
         try {

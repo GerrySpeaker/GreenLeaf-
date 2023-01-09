@@ -5,20 +5,25 @@ import java.io.IOException;
 import bean.AdminBean;
 import bean.OperatoreBean;
 import storage.AdminDao;
+import storage.OperatoreDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.SQLException;
 
 @WebServlet("/CreaOperatoreApplication")
-public class CreaOperatoreApplication {
+public class CreaOperatoreApplication extends HttpServlet {
+
+    private static final long serialVersionUID = 1L;
 
     static OperatoreBean operatoreBean = new OperatoreBean();
     private AdminBean adminBean = new AdminBean();
     private AdminDao adminDao = new AdminDao();
 
+    private OperatoreDao operatore = new OperatoreDao();
     public CreaOperatoreApplication() {
         super();
     }
@@ -31,12 +36,12 @@ public class CreaOperatoreApplication {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         System.out.println("porcodio");
-        String email = (String) request.getAttribute("email");
+        String email = (String) request.getSession().getAttribute("email");
+        System.out.println(email);
         try {
             adminBean = adminDao.doRetrieveByEmail(email);
-            if(adminBean.equals(null)){
-                response.sendRedirect(request.getContextPath()+"/login.jsp");
-            }else{
+            if(adminBean.getEmail() != null){
+
                 operatoreBean.setNomeOperatore(request.getParameter("nome"));
                 operatoreBean.setCognomeOperatore(request.getParameter("cognome"));
                 operatoreBean.setEmail(request.getParameter("email"));
@@ -45,7 +50,14 @@ public class CreaOperatoreApplication {
                 operatoreBean.setAdminCreatore(email);
                 System.out.println("l'admin con email " + email + " vuole creare un nuovo operatore");
                 System.out.println(operatoreBean.toString());
+
+                operatore.doSave(operatoreBean);
+
                 response.sendRedirect(request.getContextPath()+"/home.jsp");
+
+            }else{
+
+                response.sendRedirect(request.getContextPath()+"/login.jsp");
 
             }
         } catch (SQLException e) {
