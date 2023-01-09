@@ -108,7 +108,5 @@ function validate(obj){
     if(valid){
         obj.submit();
     }
-    else{
-        alert("Alcuni campi sono errati")
-    }
+
 }
