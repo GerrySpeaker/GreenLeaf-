@@ -1,5 +1,5 @@
 function validation_name(input){
-
+    
     var pattern =  /^[A-Za-z]+$/;
 
     if(input.match(pattern)){
@@ -11,7 +11,7 @@ function validation_name(input){
 }
 
 function validation_surname(input){
-
+    
     var pattern =  /^[a-z ,.'-]+$/i;
 
     if(input.match(pattern)){
@@ -23,7 +23,7 @@ function validation_surname(input){
 }
 
 function validation_email(input){
-
+    
     var pattern =  /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 
     if(input.match(pattern)){
@@ -46,13 +46,26 @@ function validation_password(input){
     }
 }
 
+function validation_regione(input){
+
+    if(input.match("Abruzzo")|| input.match("Basilicata")||input.match("Calabria")||input.match("Campania")||
+        input.match("Emilia Romagna")||input.match("Lazio")||input.match("Liguria")||input.match("Lombardia")||input.match("Marche")||
+        input.match("Molise")||input.match("Piemonte")||input.match("Puglia")||input.match("Sardegna")||input.match("Sicilia")||input.match("Toscana")||input.match("Trentino Alto Adige")||
+        input.match("Umbria")||input.match("Valle d Aosta")||input.match("Veneto")){
+        return true;
+    }
+    else{
+        return false
+    }
+}
+
 function validate(obj){
 
     valid = true;
 
     var nome = document.getElementById("nome").value;
     var txt_nome = document.getElementById("txt-nome");
-
+    
     if(validation_name(nome)){
         txt_nome.innerHTML ="Nome inserito correttamente";
         txt_nome.style.color = "#004700";
@@ -105,10 +118,19 @@ function validate(obj){
         valid = false;
     }
 
-    if(valid){
-        obj.submit();
+    var regione = document.getElementById("regione").value;
+    var txt_reg = document.getElementById("txt-regione");
+
+    if(validation_regione(regione)){
+        txt_reg.innerHTML ="Regione inserita correttamente";
+        txt_reg.style.color = "#004700";
     }
     else{
-        alert("Alcuni campi sono errati")
+        txt_reg.innerHTML ="ATTENZIONE: questa non è una regione";
+        txt_reg.style.color = "#c80e00";
+        valid = false;
     }
+
+    if(valid)
+        obj.submit();
 }

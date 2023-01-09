@@ -46,9 +46,10 @@ public class RegistrazioneApplication extends HttpServlet {
         String email = (String) request.getAttribute("email");
         try {
             adminBean = adminDao.doRetrieveByEmail(email);
-            if(operatore.equals(null)){
-                return;
+            if(adminBean.equals(null)){
+                return; //non è un admin
             }else{
+                System.out.println("l'admin con email " + email + " vuole creare un nuovo operatore");
                 operatore = creaOperatore(request,response,email);
                 System.out.println(operatore.toString());
             }

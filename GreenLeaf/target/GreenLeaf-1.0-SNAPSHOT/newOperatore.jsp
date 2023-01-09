@@ -1,53 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Nuovo Operatore</title>
-    <link rel="stylesheet" href="../../../Presentation/Html/registrazione/css/registrazione.css" />
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Registrazione</title>
+  <link rel="stylesheet" href="risorse/style/registrazione.css" />
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
 
-  </head>
-  <body class="all-body">
-    <div class="all-form">
-        <section class="container">
-            <header>Nuovo Operatore</header>
-            <form action="#" class="form">
-      
-              <div class="input-box">
-                <label>Nome</label> <span id="txt-nome"></span>
-                <input id="nome" type="text" placeholder="Inserisci qui il tuo nome" onkeydown="validation_name()" required />
-              </div>
-      
-              <div class="input-box">
-                <label>Cognome</label> <span id="txt-cognome"></span>
-                <input id="cognome" type="text" placeholder="Inserisci qui il tuo cognome" onkeydown="validation_surname()" required />
-              </div>
-      
-              <div class="column">
-                <div class="input-box">
-                  <label>E-mail</label> <span id="txt-email"></span>
-                  <input id="email" type="text" placeholder="Inserisci qui la tua e-mail" onkeydown="validation_email()" required />
-                </div>
-                <div class="input-box">
-                  <label style="margin-left: 15px;">Password </label><label class="pass">(min 8: lettere e numeri)</label> <span id="txt-password"></span>
-                  <input id="password" type="password" placeholder="Inserisci qui la tua password" onkeydown="validation_password()" required />
-                  <div id="toggle" onclick="showHide()"></div>
-                </div>
-              </div>
-              
-              
-              
-              <div class="btn">
-                <button class="submit">Crea</button>
-              </div>
-            </form>
-          </section>
-    </div>
+</head>
+<body class="all-body">
+<div class="all-form">
+  <section class="container">
+    <header>Operatore</header>
+    <form action="CreaOperatoreApplication" class="form" method="post" onsubmit="validate(this)">
 
-    <script src="../../../Presentation/Html/registrazione/js/validate.js"></script>
-    <script src="../../../Presentation/Html/registrazione/js/password.js"></script>
-  </body>
+      <div class="input-box">
+        <label>Nome</label> <span id="txt-nome"></span>
+        <input id="nome" type="text" placeholder="Inserisci qui il nome"  required name="nome"/>
+      </div>
+
+      <div class="input-box">
+        <label>Cognome</label> <span id="txt-cognome"></span>
+        <input id="cognome" type="text" placeholder="Inserisci qui il cognome"  required name="cognome"/>
+      </div>
+
+      <div class="column">
+        <div class="input-box">
+          <label>E-mail</label> <span id="txt-email"></span>
+          <input id="email" type="text" placeholder="Inserisci qui la tua e-mail" required name="email"/>
+        </div>
+        <div class="input-box">
+          <label style="margin-left: 15px;">Password </label><span id="txt-password"></span>
+          <input id="password" type="password" placeholder="Inserisci qui la tua password"  required name="password"/>
+          <div id="toggle" onclick="showHide()"></div>
+        </div>
+      </div>
+
+      <div class="input-box">
+        <label>Regione</label> <span id="txt-regione"></span>
+        <input id="regione" type="text" placeholder="Inserisci la regione"  required name="regione"/>
+      </div>
+
+      <div class="btn">
+        <button class="submit">Procedi</button>
+      </div>
+    </form>
+  </section>
+</div>
+
+<script src="risorse/js/validateOp.js"></script>
+<script src="risorse/js/password.js"></script>
+</body>
 </html>
 
