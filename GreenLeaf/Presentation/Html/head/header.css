@@ -31,9 +31,7 @@ header{
     position: -webkit-sticky;
     position: sticky;
     z-index: 100000;
-    -moz-box-shadow:0 5px 5px rgba(182, 182, 182, 0.75);
-    -webkit-box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
-    box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
+    box-shadow: 0 4px 2px -2px gray;
 }
 
 header .logo{
@@ -141,9 +139,7 @@ header .nav-menu li a:hover{
         width: 100%;
         text-align: center;
         transition: 0.3s;
-        -moz-box-shadow:0 5px 5px rgba(182, 182, 182, 0.75);
-        -webkit-box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
-        box-shadow: 0 5px 5px rgba(182, 182, 182, 0.75);
+        box-shadow: 0 4px 2px -2px gray;
     }
 
     header .nav-menu li{

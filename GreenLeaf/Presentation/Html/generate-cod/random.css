@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(110deg, var(--main-color) 60%, var(--notify-color) 60%);
+    background-image: linear-gradient(to bottom right, var(--second-color),var( --notify-color));
 }
 
 .inputBox
