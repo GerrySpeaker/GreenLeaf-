@@ -54,16 +54,17 @@ public class AutenticazioneApplication extends HttpServlet {
 
 
         try {
-            utenteLogin = utenteDao.login(email, pass);
-            if(utenteLogin.getNomeUtente() == null){
+            utenteLogin = utenteDao.login(email,pass);
+
+            if(utenteLogin == null){
                 adminLogin = adminDao.login(email, pass);
 
 
-                if(adminLogin.getNomeAdmin() == null){
+                if(adminLogin == null){
 
                     operatoreLogin = operatoreDao.login(email, pass);
 
-                    if(operatoreLogin.getNomeOperatore() == null){
+                    if(operatoreLogin == null){
 
                         response.sendRedirect(request.getContextPath() + "/login.jsp");
                     }
@@ -74,26 +75,18 @@ public class AutenticazioneApplication extends HttpServlet {
                     }
                 }
                 else{
-                    String confpass = adminDao.doRetrieveByEmail(email).getPassword();
-                    System.out.println("password inserita: " + pass + " password nel database: "+ confpass);
-                    if(confpass.equals(pass)){
                         admin = true;
                         System.out.println("accesso consentito");
                         request.getSession().setAttribute("email", email);
                         request.getSession().setAttribute("adminRoles", admin);
                         response.sendRedirect(request.getContextPath() + "/homeadmin.jsp");
-                    }
 
                 }
             }
             else{
-                String confpass = utenteDao.doRetrieveByEmail(email).getPassword();
-                System.out.println("password inserita: " + pass + " password nel database: "+ confpass);
-                if(confpass.equals(pass)){
                     System.out.println("accesso consentito");
                     request.getSession().setAttribute("email", email);
                     response.sendRedirect(request.getContextPath() + "/homeutente.jsp");
-                }
 
             }
 

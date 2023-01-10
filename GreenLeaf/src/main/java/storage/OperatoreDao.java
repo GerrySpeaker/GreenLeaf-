@@ -39,37 +39,41 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
 
         String confpass = doRetrieveByEmail(email).getPassword();
 
-        if(confpass.equals(password)){
-            try {
-                connection = ds.getConnection();
-                preparedStatement = connection.prepareStatement(selectSQL);
-                preparedStatement.setString(1, email);
-                preparedStatement.setString(2, password);
-                ResultSet rs = preparedStatement.executeQuery();
-
-
-                if (rs.next()) {
-                    bean.setCognomeOperatore(rs.getString("cognome"));
-                    bean.setNomeOperatore(rs.getString("nome"));
-                    bean.setEmail(email);
-                    bean.setPassword(password);
-                    bean.setAdminCreatore(rs.getString("admin"));
-                    bean.setRegione(rs.getString("regione"));
-                }
-
-                System.out.println(bean.toString());
-
-            } finally {
+        if(confpass != null){
+            if(confpass.equals(password)){
                 try {
-                    if (preparedStatement != null)
-                        preparedStatement.close();
+                    connection = ds.getConnection();
+                    preparedStatement = connection.prepareStatement(selectSQL);
+                    preparedStatement.setString(1, email);
+                    preparedStatement.setString(2, password);
+                    ResultSet rs = preparedStatement.executeQuery();
+
+
+                    if (rs.next()) {
+                        bean.setCognomeOperatore(rs.getString("cognome"));
+                        bean.setNomeOperatore(rs.getString("nome"));
+                        bean.setEmail(email);
+                        bean.setPassword(password);
+                        bean.setAdminCreatore(rs.getString("admin"));
+                        bean.setRegione(rs.getString("regione"));
+                    }
+
+                    System.out.println(bean.toString());
+
                 } finally {
-                    if (connection != null)
-                        connection.close();
+                    try {
+                        if (preparedStatement != null)
+                            preparedStatement.close();
+                    } finally {
+                        if (connection != null)
+                            connection.close();
+                    }
                 }
+                return bean;
             }
-            return bean;
+
         }
+
         return  null;
     }
 

@@ -29,52 +29,62 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
 
 
     public synchronized UtenteBean login(String email, String password) throws SQLException {
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        UtenteBean bean = new UtenteBean();
-        String selectSQL = "SELECT * FROM utente WHERE email=? AND Password=? ";
 
-        try {
-            connection = ds.getConnection();
-            preparedStatement = connection.prepareStatement(selectSQL);
-            preparedStatement.setString(1, email);
-            preparedStatement.setString(2, password);
-            ResultSet rs = preparedStatement.executeQuery();
+        UtenteBean utente = doRetrieveByEmail(email);
+        String confpass = utente.getPassword();
+        if (confpass != null){ // se esiste l'utente con quell email
+            if(confpass.equals(password)){
+                Connection connection = null;
+                PreparedStatement preparedStatement = null;
+                UtenteBean bean = new UtenteBean();
+                String selectSQL = "SELECT * FROM utente WHERE email=? AND Password=? ";
+                try {
+                    connection = ds.getConnection();
+                    preparedStatement = connection.prepareStatement(selectSQL);
+                    preparedStatement.setString(1, email);
+                    preparedStatement.setString(2, password);
+                    ResultSet rs = preparedStatement.executeQuery();
 
 
-            if (rs.next()) {
-                bean.setCognomeUtente(rs.getString("Cognome"));
-                bean.setNomeUtente(rs.getString("Nome"));
-                bean.setEmail(email);
-                bean.setPassword(password);
-                bean.setDataNascita(rs.getDate("DataDiNascita"));
-            }
+                    if (rs.next()) {
+                        bean.setCognomeUtente(rs.getString("Cognome"));
+                        bean.setNomeUtente(rs.getString("Nome"));
+                        bean.setEmail(email);
+                        bean.setPassword(password);
+                        bean.setDataNascita(rs.getDate("DataDiNascita"));
+                    }
 
-            System.out.println(bean.toString());
 
-        } finally {
-            try {
-                if (preparedStatement != null)
-                    preparedStatement.close();
-            } finally {
-                if (connection != null)
-                    connection.close();
+                } finally {
+                    try {
+                        if (preparedStatement != null)
+                            preparedStatement.close();
+                    } finally {
+                        if (connection != null)
+                            connection.close();
+                    }
+                }
+                return bean;
+
             }
         }
-        return bean;
+
+
+        return null;
+
     }
 
     public synchronized UtenteBean doRetrieveByEmail(String email) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        UtenteBean bean = new UtenteBean();
         String selectSQL = "SELECT * FROM utente WHERE email=?";
-
+        UtenteBean bean = new UtenteBean();
 
         try {
+
             connection = ds.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
-            preparedStatement.setString(1, email);
+            preparedStatement.setString(1,email);
             ResultSet rs = preparedStatement.executeQuery();
 
             if (rs.next()) {

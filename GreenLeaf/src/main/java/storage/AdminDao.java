@@ -27,40 +27,49 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
 
 
     public synchronized AdminBean login(String email, String password) throws SQLException {
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        AdminBean bean = new AdminBean();
-        String selectSQL = "SELECT * FROM admin WHERE email=? AND password=? ";
 
-        try {
-            connection = ds.getConnection();
-            preparedStatement = connection.prepareStatement(selectSQL);
-            preparedStatement.setString(1, email);
-            preparedStatement.setString(2, password);
-            ResultSet rs = preparedStatement.executeQuery();
+        String confpass = doRetrieveByEmail(email).getPassword();
+        System.out.println(confpass);
+        if(confpass != null){
+            if(confpass.equals(password)){
+                Connection connection = null;
+                PreparedStatement preparedStatement = null;
+                AdminBean bean = new AdminBean();
+                String selectSQL = "SELECT * FROM admin WHERE email=? AND password=? ";
+                try {
+                    connection = ds.getConnection();
+                    preparedStatement = connection.prepareStatement(selectSQL);
+                    preparedStatement.setString(1, email);
+                    preparedStatement.setString(2, password);
+                    ResultSet rs = preparedStatement.executeQuery();
 
 
+                    if (rs.next()) {
+                        bean.setCognomeAdmin(rs.getString("cognome"));
+                        bean.setNomeAdmin(rs.getString("nome"));
+                        bean.setEmail(rs.getString("email"));
+                        bean.setPassword(password);
+                    }
 
+                    System.out.println(bean.toString());
 
-            if (rs.next()) {
-                bean.setCognomeAdmin(rs.getString("cognome"));
-                bean.setNomeAdmin(rs.getString("nome"));
-                bean.setEmail(rs.getString("email"));
-                bean.setPassword(password);
+                } finally {
+                    try {
+                        if (preparedStatement != null)
+                            preparedStatement.close();
+                    } finally {
+                        if (connection != null)
+                            connection.close();
+                    }
+                }
+                return bean;
+
             }
 
-            System.out.println(bean.toString());
-
-        } finally {
-            try {
-                if (preparedStatement != null)
-                    preparedStatement.close();
-            } finally {
-                if (connection != null)
-                    connection.close();
-            }
         }
-        return bean;
+
+    return null;
+
     }
 
     public synchronized AdminBean doRetrieveByEmail(String email) throws SQLException {
@@ -68,7 +77,6 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
         PreparedStatement preparedStatement = null;
         AdminBean bean = new AdminBean();
         String selectSQL = "SELECT * FROM admin WHERE email=?";
-
 
 
         try {
