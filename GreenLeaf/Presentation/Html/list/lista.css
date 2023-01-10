@@ -14,81 +14,115 @@
 	--popup-color: white;
 }
 
-.list
-{
+.all-list{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: var(--bg-color);
+    background-image: url(background.jpg);
 }
 
-.box {
-    width: 70%;
-    border-bottom: 20px solid var(--second-color);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px ;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px ;
-    box-shadow: 5px 5px 15px 5px #737373;
-}
-
-.box a{
-    text-decoration: none;
-}
-
-.box h2{
-    color: var(--popup-color);
-    background-color: var(--second-color);
-    padding: 10px 20px;
-    font-size: 20px;
-    font-weight: 700;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px ;
-    text-align: center;
-}
-
-.box ul{
+.list{
     position: relative;
+    min-height: 500px;
+    width: 700px;
     background-color: var(--popup-color);
+    box-shadow: 17px 5px 15px 5px rgba(0,0,0,0.48);
+    border-radius: 30px;
+    padding: 50px;
 }
 
-.box ul:hover li{
-    opacity: 0.2;
-}
-
-.box ul li{
-    list-style: none;
-    padding: 10px;
-    width: 100%;
-    background-color: var(--popup-color);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s;
-}
-
-.box ul li:hover{
-    transform: scale(1.1);
-    color:var(--popup-color);
-    z-index: 100;
-    opacity: 1;
-    background-color: var(--main-color);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-}
-
-.box ul li span{
-    width: 20px;
-    height: 20px;
+.list h3{
+    color: var(--text-color);
+    font-weight: bold;
+    font-size: 1.9em;
+    text-transform: uppercase;
     text-align: center;
-    line-height: 20px;
-    background-color: var(--main-color);
-    display: inline-block;
-    border-radius: 50%;
-    margin-right: 10px;
-    color: var(--popup-color);
-    font-weight: 600;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--text-color);
 }
 
-.box ul li:hover span{
+.list .row{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.list .row::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    border-radius: 22.5px;
+    background-color: var(--second-color);
+    transition: 0.5s;
+    box-shadow: 11px 14px 15px 1px rgba(0,0,0,0.59);
+}
+
+.list .row:hover:before{
+    width: 100%;
+}
+
+.list .row .rank{
+    position: relative;
+    width: 50px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: var(--popup-color);
+    margin-right: 10px;
+}
+
+.list .row .rank::before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 6px;
     background-color: var(--popup-color);
-    color: var(--main-color);
+    border-radius: 30px;
+    transform: scale(0);
+    transition: 0.5s;
+}
+
+.list .row:hover .rank::before{
+    transform: scale(1);
+}
+
+.list .row:hover .rank span{
+    color: var(--second-color);
+    font-weight: 600;
+    position: relative;
+    font-size: 1em;
+}
+
+.list .row .operatore{
+    width: 100%;
+    display: flex;
+    margin-left: 10px;
+}
+
+.list .row .operatore h4{
+    margin-right: 30px;
+}
+
+.list .row .operatore .remove{
+    color: var(--text-color);
+    margin-left: 270px;
+}
+
+.list .row:hover .operatore h4,
+.list .row:hover .operatore p,
+.list .row:hover .operatore .remove
+{
+    z-index: 10;
+    color: var(--popup-color);
 }
