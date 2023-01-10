@@ -61,24 +61,19 @@
 
 
     <div class="page">
-        <div class="page-title"><h2>Sezione operatore</h2></div>
+        <div class="page-title">
+            <h2>Sezione admin</h2>
+        </div>
 
         <div class="tasks-wrapper">
-          <p>
-              <span> Email:</span> <%= oBean.getEmail() %>
-             <br>
-             <br>
-              <span> Nome:</span> <%= oBean.getNomeOperatore() %>
-             <br>
-             <br>
-              <span> Cognome:</span> <%= oBean.getCognomeOperatore() %>
-              <br>
-              <br>
-              <span> Regione di competenza:</span> <%= oBean.getRegione() %>
-
-          </p>
+            <div class="space">
+                <p><span> Email:</span> <%= oBean.getEmail() %></p>
+                <p><span> Nome:</span> <%= oBean.getNomeOperatore() %></p>
+                <p><span>Cognome:</span> <%= oBean.getCognomeOperatore() %></p>
+                <p><span> Regione di competenza:</span> <%= oBean.getRegione() %></p>
+            </div>
         </div>
-      </div>
+    </div>
 </div>
 
     <script src="risorse/js/user.js"></script>

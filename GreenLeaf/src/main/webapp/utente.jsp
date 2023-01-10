@@ -67,27 +67,19 @@
 
 
     <div class="page">
-        <div class="page-title"><h2>Sezione utente</h2></div>
+        <div class="page-title">
+            <h2>Sezione admin</h2>
+        </div>
 
         <div class="tasks-wrapper">
-          <p>
-              <span> Email:</span> <%= uBean.getEmail() %>
-             <br>
-             <br>
-              <span> Nome:</span> <%= uBean.getNomeUtente() %>
-             <br>
-             <br>
-              <span> Cognome:</span> <%= uBean.getCognomeUtente() %>
-              <br>
-              <br>
-              <span> Nome:</span> <%= uBean.getNomeUtente() %>
-              <br>
-              <br>
-              <span> Data di nascita:</span> <%= uBean.getDataNascita() %>
-
-          </p>
+            <div class="space">
+                <p><span> Email:</span> <%= uBean.getEmail() %></p>
+                <p><span> Nome:</span> <%= uBean.getNomeUtente() %></p>
+                <p><span>Cognome:</span> <%= uBean.getCognomeUtente() %></p>
+                <p><span>Data di nascita:</span> <%= uBean.getDataNascita() %></p>
+            </div>
         </div>
-      </div>
+    </div>
 </div>
 
     <script src="risorse/js/user.js"></script>

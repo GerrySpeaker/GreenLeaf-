@@ -1,5 +1,5 @@
 function validation_name(input){
-    
+
     var pattern =  /^[A-Za-z]+$/;
 
     if(input.match(pattern)){
@@ -11,7 +11,7 @@ function validation_name(input){
 }
 
 function validation_surname(input){
-    
+
     var pattern =  /^[a-z ,.'-]+$/i;
 
     if(input.match(pattern)){
@@ -23,8 +23,8 @@ function validation_surname(input){
 }
 
 function validation_email(input){
-    
-    var pattern =  /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    var pattern =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if(input.match(pattern)){
         return true;
@@ -35,8 +35,8 @@ function validation_email(input){
 }
 
 function validation_password(input){
-    
-    var pattern =  /^[a-zA-Z0-9]$/;
+
+    var pattern = /^[A-Za-z]+$/;
 
     if(input.match(pattern)){
         return true;
@@ -52,7 +52,7 @@ function validate(obj){
 
     var nome = document.getElementById("nome").value;
     var txt_nome = document.getElementById("txt-nome");
-    
+
     if(validation_name(nome)){
         txt_nome.innerHTML ="Nome inserito correttamente";
         txt_nome.style.color = "#004700";
@@ -105,8 +105,5 @@ function validate(obj){
         valid = false;
     }
 
-    if(valid){
-        obj.submit();
-    }
-
+    return valid;
 }

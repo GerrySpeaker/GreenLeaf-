@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Registrazione</title>
-  <link rel="stylesheet" href="risorse/style/registrazione.css" />
+  <link rel="stylesheet" href="risorse/style/registrazioneOp.css" />
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
 
 </head>
@@ -37,9 +37,30 @@
         </div>
       </div>
 
-      <div class="input-box">
-        <label>Regione</label> <span id="txt-regione"></span>
-        <input id="regione" type="text" placeholder="Inserisci la regione"  required name="regione"/>
+      <div class="dropdown">
+        <input type="text" class="filterBox" placeholder="Regioni" readonly>
+        <div class="option">
+          <div onclick="show('Abruzzo')">Abruzzo</div>
+          <div onclick="show('Basilicata')">Basilicata</div>
+          <div onclick="show('Calabria')">Calabria</div>
+          <div onclick="show('Campania')">Campania</div>
+          <div onclick="show('Emilia Romagna')">Emilia Romagna</div>
+          <div onclick="show('Friuli Venezia Giulia')">Friuli Venezia Giulia</div>
+          <div onclick="show('Lazio')">Lazio</div>
+          <div onclick="show('Liguria')">Liguria</div>
+          <div onclick="show('Lombardia')">Lombardia</div>
+          <div onclick="show('Marche')">Marche</div>
+          <div onclick="show('Molise')">Molise</div>
+          <div onclick="show('Piemonte')">Piemonte</div>
+          <div onclick="show('Puglia')">Puglia</div>
+          <div onclick="show('Sardegna')">Sardegna</div>
+          <div onclick="show('Sicilia')">Sicilia</div>
+          <div onclick="show('Toscana')">Toscana</div>
+          <div onclick="show('Trentino Alto Adige')">Trentino Alto Adige</div>
+          <div onclick="show('Umbria')">Umbria</div>
+          <div onclick="show('Valle d Aosta')">Valle d'Aosta</div>
+          <div onclick="show('Veneto')">Veneto</div>
+        </div>
       </div>
 
       <div class="btn">
