@@ -22,17 +22,16 @@ public class Logout extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		
+
+		System.out.println("sono nel logout");
 		ServletContext cxt= getServletContext();
 		request.getSession().removeAttribute("adminRoles");
 		request.getSession().removeAttribute("email");
-		request.getSession().removeAttribute("count");
-		request.getSession().removeAttribute("prodottiCart");
 		request.getSession().invalidate();
-		cxt.removeAttribute("user");
-		cxt.removeAttribute("admin");
-		cxt.removeAttribute("utente");
-		response.sendRedirect(request.getContextPath()+"/menu.jsp");
+		cxt.removeAttribute("adminRoles");
+		cxt.removeAttribute("email");
+		response.sendRedirect(request.getContextPath()+"/login.jsp");
+
 	
 	}
 
