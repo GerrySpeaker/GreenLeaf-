@@ -30,6 +30,7 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
 
         String confpass = doRetrieveByEmail(email).getPassword();
         System.out.println(confpass);
+
         if(confpass != null){
             if(confpass.equals(password)){
                 Connection connection = null;
@@ -49,6 +50,7 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
                         bean.setNomeAdmin(rs.getString("nome"));
                         bean.setEmail(rs.getString("email"));
                         bean.setPassword(password);
+
                     }
 
                     System.out.println(bean.toString());

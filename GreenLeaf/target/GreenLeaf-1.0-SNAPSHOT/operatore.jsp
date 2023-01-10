@@ -19,6 +19,12 @@
 
     oBean = oDao.doRetrieveByEmail(mail);
 
+    Boolean Operatore = (Boolean) session.getAttribute("operatore");
+    if(Operatore == null || Operatore == false)
+    {
+        response.sendRedirect(request.getContextPath()+"/error.jsp");
+        return;
+    }
 
 %>
 
@@ -62,14 +68,14 @@
 
     <div class="page">
         <div class="page-title">
-            <h2>Sezione admin</h2>
+            <h2>Sezione Operatore</h2>
         </div>
 
         <div class="tasks-wrapper">
             <div class="space">
-                <p><span> Email:</span> <%= oBean.getEmail() %></p>
-                <p><span> Nome:</span> <%= oBean.getNomeOperatore() %></p>
-                <p><span>Cognome:</span> <%= oBean.getCognomeOperatore() %></p>
+                <p><span> Email:</span> <%= oBean.getEmail() %></p><br>
+                <p><span> Nome:</span> <%= oBean.getNomeOperatore() %></p><br>
+                <p><span> Cognome:</span> <%= oBean.getCognomeOperatore() %></p>
                 <p><span> Regione di competenza:</span> <%= oBean.getRegione() %></p>
             </div>
         </div>
