@@ -90,17 +90,13 @@ public class AutenticazioneApplication extends HttpServlet {
 
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
 
 
-            response.sendRedirect(request.getContextPath() + "/login2.jsp");
+            response.sendRedirect(request.getContextPath() + "/error.jsp");
 
             throw new RuntimeException(e);
         }
-
-
-
-        //response.sendRedirect(request.getContextPath()+"/login.jsp");
 
 
     }

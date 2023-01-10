@@ -67,7 +67,7 @@ public class RegistrazioneApplication extends HttpServlet {
                 System.out.println("ciao");
                 dao.registrazione(bean);
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
 
             response.sendRedirect(request.getContextPath()+"/login.jsp");
             e.printStackTrace();
