@@ -75,7 +75,7 @@
             <div class="space">
                 <p><span> Email:</span> <%= oBean.getEmail() %></p><br>
                 <p><span> Nome:</span> <%= oBean.getNomeOperatore() %></p><br>
-                <p><span> Cognome:</span> <%= oBean.getCognomeOperatore() %></p>
+                <p><span> Cognome:</span> <%= oBean.getCognomeOperatore() %></p><br>
                 <p><span> Regione di competenza:</span> <%= oBean.getRegione() %></p>
             </div>
         </div>

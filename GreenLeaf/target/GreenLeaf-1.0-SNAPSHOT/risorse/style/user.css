@@ -172,7 +172,7 @@
 	border-bottom: 1px solid #282828;
 	justify-content: center;
 	justify-items: center;
-	width: 100%;
+	width: 750px;
 	border-top-right-radius: 35px;
 	height: 80px;
 	background-color: var(--second-color);
@@ -180,7 +180,7 @@
 
 .page .space{
 	display: grid;
-	grid-template-columns: repeat(1, 20rem);
+	grid-template-columns: repeat(1);
 	margin-top: 50px;
 	margin-left: 25px;
 }
