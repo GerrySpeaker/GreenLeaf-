@@ -40,10 +40,12 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
             ResultSet rs = preparedStatement.executeQuery();
 
 
+
+
             if (rs.next()) {
                 bean.setCognomeAdmin(rs.getString("cognome"));
                 bean.setNomeAdmin(rs.getString("nome"));
-                bean.setEmail(email);
+                bean.setEmail(rs.getString("email"));
                 bean.setPassword(password);
             }
 

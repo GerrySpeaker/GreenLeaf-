@@ -31,19 +31,24 @@ function validate(obj){
     var txt_em = document.getElementById("txt-email");
 
     if(validation_email(email)){
+        console.log("entra1");
         txt_em.innerHTML ="Email valida";
         txt_em.style.color = "#004700";
+        return true;
     }
     else{
+        console.log("entra2");
         txt_em.innerHTML ="Email non valida";
         txt_em.style.color = "#c80e00";
-        valid = false;
+        alert("Alcuni campi sono errati")
+        return false;
     }
 
-    if(valid){
+    /*if(valid){
         obj.submit();
     }
     else{
+
         alert("Alcuni campi sono errati")
-    }
+    }*/
 }

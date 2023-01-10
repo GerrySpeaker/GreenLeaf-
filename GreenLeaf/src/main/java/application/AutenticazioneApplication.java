@@ -58,6 +58,7 @@ public class AutenticazioneApplication extends HttpServlet {
             if(utenteLogin.getNomeUtente() == null){
                 adminLogin = adminDao.login(email, pass);
 
+
                 if(adminLogin.getNomeAdmin() == null){
 
                     operatoreLogin = operatoreDao.login(email, pass);

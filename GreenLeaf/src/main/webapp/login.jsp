@@ -14,7 +14,7 @@
             <div class="drop">
                 <div class="content">
                     <h2>Login</h2>
-                    <form action="AutenticazioneApplication" id="form" onsubmit="validate(this)"> <!-- form effettivo -->
+                    <form action="AutenticazioneApplication" id="form" onsubmit="return validate(this)"> <!-- form effettivo -->
                         <span id="txt-email"></span>
                         <div class="inputBox">
                             <input id="email" type="text" placeholder="E-mail" required name ="email">
