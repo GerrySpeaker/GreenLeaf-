@@ -153,12 +153,11 @@
 }
 
 .page{
-	width: 750px;
+	width: 700px;
 	height: 400px;
 	background-color: rgb(233, 233, 233);
 	border-top-right-radius: 35px;
 	border-bottom-right-radius: 35px;
-	padding: 0 20px;
 	box-shadow: -1px 10px 15px 4px rgba(0,0,0,0.72);
 }
 
@@ -172,7 +171,7 @@
 	border-bottom: 1px solid #282828;
 	justify-content: center;
 	justify-items: center;
-	width: 750px;
+	width: 100%;
 	border-top-right-radius: 35px;
 	height: 80px;
 	background-color: var(--second-color);
@@ -183,15 +182,13 @@
 	grid-template-columns: repeat(1);
 	margin-top: 50px;
 	margin-left: 25px;
+	font-size: 18px;
 }
 
 .page .space p{
 	margin-top: 20px;
-	font-size: 15px;
 }
 
 .page p span{
 	font-weight: bold;
-	text-transform: uppercase;
-	font-size: 15px;
-}
++}

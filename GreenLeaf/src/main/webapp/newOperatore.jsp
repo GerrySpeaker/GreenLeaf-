@@ -56,7 +56,7 @@
       </div>
 
       <div class="dropdown">
-        <input type="text" class="filterBox" placeholder="Regioni" readonly>
+        <input type="text" class="filterBox" placeholder="Regioni" readonly name="regione">
         <div class="option">
           <div onclick="show('Abruzzo')">Abruzzo</div>
           <div onclick="show('Basilicata')">Basilicata</div>
@@ -90,6 +90,17 @@
 
 <script src="risorse/js/validateOp.js"></script>
 <script src="risorse/js/password.js"></script>
+<script >
+  function show(anything) {
+    var input =document.querySelector(".filterBox");
+    input.value =anything;
+  }
+
+  let dropdown = document.querySelector(".dropdown");
+  dropdown.onclick = function () {
+    dropdown.classList.toggle('active');
+  }
+</script>
 </body>
 </html>
 
