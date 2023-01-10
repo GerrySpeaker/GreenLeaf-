@@ -68,20 +68,33 @@ public class AutenticazioneApplication extends HttpServlet {
                         response.sendRedirect(request.getContextPath() + "/login.jsp");
                     }
                     else{
-                        request.getSession().setAttribute("email", email);
-                        response.sendRedirect(request.getContextPath() + "/homeopearatore.jsp");
+                            System.out.println("accesso consentito");
+                            request.getSession().setAttribute("email", email);
+                            response.sendRedirect(request.getContextPath() + "/homeopearatore.jsp");
                     }
                 }
                 else{
-                    admin = true;
-                    request.getSession().setAttribute("email", email);
-                    request.getSession().setAttribute("adminRoles", admin);
-                    response.sendRedirect(request.getContextPath() + "/homeadmin.jsp");
+                    String confpass = adminDao.doRetrieveByEmail(email).getPassword();
+                    System.out.println("password inserita: " + pass + " password nel database: "+ confpass);
+                    if(confpass.equals(pass)){
+                        admin = true;
+                        System.out.println("accesso consentito");
+                        request.getSession().setAttribute("email", email);
+                        request.getSession().setAttribute("adminRoles", admin);
+                        response.sendRedirect(request.getContextPath() + "/homeadmin.jsp");
+                    }
+
                 }
             }
             else{
-                request.getSession().setAttribute("email", email);
-                response.sendRedirect(request.getContextPath() + "/homeutente.jsp");
+                String confpass = utenteDao.doRetrieveByEmail(email).getPassword();
+                System.out.println("password inserita: " + pass + " password nel database: "+ confpass);
+                if(confpass.equals(pass)){
+                    System.out.println("accesso consentito");
+                    request.getSession().setAttribute("email", email);
+                    response.sendRedirect(request.getContextPath() + "/homeutente.jsp");
+                }
+
             }
 
         } catch (SQLException e) {
