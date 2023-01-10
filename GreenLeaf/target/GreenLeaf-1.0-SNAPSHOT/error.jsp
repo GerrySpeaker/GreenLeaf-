@@ -8,9 +8,9 @@
         <div id="container">
             <div class="content">
                 <h2>404</h2>
-                <h4>Page not found</h4>
+                <h4>Pagina non trovata!</h4>
                 <p>La pagina che stai cercando non esiste.</p>
-                <a href="#">Back To Home</a>
+                <a href="#">Torna alla Home</a>
             </div>
         </div>
         <script type="text/javascript">

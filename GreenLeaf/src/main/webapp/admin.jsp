@@ -4,7 +4,7 @@
     <title>Sezione Admin</title>
     <link rel="stylesheet" href="risorse/style/user.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -22,49 +22,61 @@
 
 %>
 
-<body class="mannaggia">
-<div class="task-manager">
-  <div class="left-bar">
-    <div class="upper-part">
+<div class="all-userpage">
+    <div class="navigation">
+        <ul>
+            <li class="list active">
+                <a href="">
+                    <span class="icon"><i class="fa-solid fa-house"></i></span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="">
+                    <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+                    <span class="title">Logout</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="">
+                    <span class="icon"><i class="fa-solid fa-users"></i></span>
+                    <span class="title">Lista operatori</span>
+                </a>
+            </li>
+
+            <li class="list">
+                <a href="">
+                    <span class="icon"><i class="fa-solid fa-user-plus"></i></span>
+                    <span class="title">Crea operatore</span>
+                </a>
+            </li>
+
+
+
+            <div class="indicator"></div>
+        </ul>
     </div>
-    <div class="left-content">
-      <ul class="action-list">
-        <li class="item">
-          <a href=""><span>Torna all'Homepage</span></a>
-        </li>
-        <br>
-        <li class="item">
-            <a href=""><span>Effettua il Login</span></a>
-        </li>
-        <br>
-        <li class="item">
-          <a href="Logout"><span>Effettua il Logout</span></a>
-        </li>
-        <br>
-        <li class="item">
-            <a href=""><span>Visualizza operatori</span></a>
-        </li>
-        <br>
-       
-      </ul>
-    </div>
-  </div>
-  <div class="page-content">
-    <h2 class="big-text">Area personale Admin</h2>
-    <hr class="line">
-    <ul class="tasks-wrapper">
-        
-        <li>
-            <span> Email:</span> <%= aBean.getEmail() %>
-        </li>
-        <li>
-            <span> Nome:</span> <%= aBean.getNomeAdmin() %>
-        </li>
-        <li>
-            <span> Cognome:</span> <%= aBean.getCognomeAdmin() %>
-        </li>
-    </ul>
-  </div>
+
+
+    <div class="page">
+        <div class="page-title"><h2>Sezione utente</h2></div>
+
+        <div class="tasks-wrapper">
+          <p>
+              <span> Email:</span> <%= aBean.getEmail() %>
+             <br>
+             <br>
+              <span> Nome:</span> <%= aBean.getNomeAdmin() %>
+             <br>
+             <br>
+              <span> Cognome:</span> <%= aBean.getCognomeAdmin() %>
+          </p>
+        </div>
+      </div>
 </div>
-</body>
+
+    <script src="risorse/js/user.js"></script>
+
 </html>

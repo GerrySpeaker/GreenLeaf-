@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sezione Admin</title>
-    <link rel="stylesheet" href="user.css">
+    <title>Sezione operatore</title>
+    <link rel="stylesheet" href="risorse/style/user.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="storage.UtenteDao" %>
+<%@ page import="bean.UtenteBean" %>
+<%@ page import="application.Logout" %>
+
+<%
+
+    String mail = (String) session.getAttribute("email");
+    UtenteDao uDao = new UtenteDao();
+    UtenteBean uBean = new UtenteBean();
+
+    uBean = uDao.doRetrieveByEmail(mail);
+
+
+%>
 
 <div class="all-userpage">
     <div class="navigation">
@@ -55,18 +71,23 @@
 
         <div class="tasks-wrapper">
           <p>
-             <span>Username:</span> Mikela
+              <span> Email:</span> <%= uBean.getEmail() %>
              <br>
              <br>
-             Nome: Michela
+              <span> Nome:</span> <%= uBean.getNomeUtente() %>
              <br>
              <br>
-             Cognome: Faella
+              <span> Cognome:</span> <%= uBean.getCognomeUtente() %>
+              <span> Nome:</span> <%= uBean.getNomeUtente() %>
+              <br>
+              <br>
+              <span> Data di nascita:</span> <%= uBean.getDataNascita() %>
+
           </p>
         </div>
       </div>
 </div>
 
-    <script src="user.js"></script>
+    <script src="risorse/js/user.js"></script>
 
 </html>
