@@ -24,7 +24,7 @@ function validation_surname(input){
 
 function validation_email(input){
 
-    var pattern =  /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    var pattern =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if(input.match(pattern)){
         return true;
@@ -36,7 +36,7 @@ function validation_email(input){
 
 function validation_password(input){
 
-    var pattern =  /^[a-zA-Z0-9]$/;
+    var pattern = /^[A-Za-z]+$/;
 
     if(input.match(pattern)){
         return true;
@@ -105,10 +105,5 @@ function validate(obj){
         valid = false;
     }
 
-    if(valid){
-        obj.submit();
-    }
-    else{
-        alert("Alcuni campi sono errati")
-    }
+    return valid;
 }

@@ -36,7 +36,7 @@ function validation_email(input){
 
 function validation_password(input){
 
-    var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,20}$/;
+    var pattern = /^[A-Za-z]+$/;
 
     if(input.match(pattern)){
         return true;

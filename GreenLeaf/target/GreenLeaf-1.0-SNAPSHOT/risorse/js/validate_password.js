@@ -10,18 +10,6 @@ function validation_email(input){
     }
 }
 
-function validation_password(input){
-
-    var pattern =  /^[a-zA-Z0-9]$/;
-
-    if(input.match(pattern)){
-        return true;
-    }
-    else{
-        return false
-    }
-}
-
 function validate(obj){
 
     valid = true;
@@ -40,15 +28,6 @@ function validate(obj){
         console.log("entra2");
         txt_em.innerHTML ="Email non valida";
         txt_em.style.color = "#c80e00";
-        alert("Alcuni campi sono errati")
         return false;
     }
-
-    /*if(valid){
-        obj.submit();
-    }
-    else{
-
-        alert("Alcuni campi sono errati")
-    }*/
 }

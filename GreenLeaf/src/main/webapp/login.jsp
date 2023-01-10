@@ -39,6 +39,6 @@
     </div>
 
     <script src="risorse/js/password.js"></script>
-    <script src="risorse/js/validate_password.js"></script>
+    <script src="risorse/js/validate_login.js"></script>
 </body>
 </html>
