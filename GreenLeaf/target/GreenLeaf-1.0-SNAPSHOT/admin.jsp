@@ -31,34 +31,29 @@
                     <span class="title">Home</span>
                 </a>
             </li>
-    
+
             <li class="list">
-                <a href="">
+                <a href="Logout">
                     <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
                     <span class="title">Logout</span>
                 </a>
             </li>
-    
+
             <li class="list">
                 <a href="">
-                    <span class="icon"><i class="fa-solid fa-trash-can"></i></span>
-                    <span class="title">Elimina account</span>
+                    <span class="icon"><i class="fa-solid fa-users"></i></span>
+                    <span class="title">Lista operatori</span>
                 </a>
             </li>
-    
+
             <li class="list">
                 <a href="">
-                    <span class="icon"><i class="fa-solid fa-tree"></i></span>
-                    <span class="title">Alberi adottati</span>
+                    <span class="icon"><i class="fa-solid fa-user-plus"></i></span>
+                    <span class="title">Crea operatore</span>
                 </a>
             </li>
-    
-            <li class="list">
-                <a href="">
-                    <span class="icon"><i class="fa-solid fa-car"></i></span>
-                    <span class="title">Calcolo CO2</span>
-                </a>
-            </li>
+
+
 
             <div class="indicator"></div>
         </ul>
