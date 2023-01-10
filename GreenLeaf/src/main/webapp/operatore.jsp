@@ -2,10 +2,26 @@
 <html>
 <head>
     <title>Sezione Operatore</title>
-    <link rel="stylesheet" href="../../../Presentation/Html/user%20page/css/user.css">
+    <link rel="stylesheet" href="risorse/style/user.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
 
 </head>
+
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="storage.OperatoreDao" %>
+<%@ page import="bean.OperatoreBean" %>
+
+<%
+
+    String mail = (String) session.getAttribute("email");
+    OperatoreDao oDao = new OperatoreDao();
+    OperatoreBean oBean = new OperatoreBean();
+
+    oBean = oDao.doRetrieveByEmail(mail);
+
+
+%>
+
 <body class="mannaggia">
 <div class="task-manager">
   <div class="left-bar">
@@ -22,7 +38,7 @@
         </li>
         <br>
         <li class="item">
-          <a href=""><span>Effettua il Logout</span></a>
+          <a href="Logout"><span>Effettua il Logout</span></a>
         </li>
         <br>
         <li class="item">
@@ -39,16 +55,16 @@
     <ul class="tasks-wrapper">
         
         <li>
-            <span> Email:</span> fa.mikela@gmail.com
+            <span> Email:</span> <%= oBean.getEmail() %>
         </li>
         <li>
-            <span> Nome:</span> Michela
+            <span> Nome:</span> <%= oBean.getNomeOperatore() %>
         </li>
         <li>
-            <span> Cognome:</span> Faella
+            <span> Cognome:</span> <%= oBean.getCognomeOperatore() %>
         </li>
         <li>
-            <span> Regione di competenza:</span> Campania
+            <span> Regione di competenza:</span> <%= oBean.getRegione() %>
         </li>
 
     </ul>
