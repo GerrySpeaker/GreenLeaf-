@@ -13,7 +13,7 @@
 <div class="all-form">
   <section class="container">
     <header>Operatore</header>
-    <form action="CreaOperatoreApplication" class="form" method="post" onsubmit="validate(this)">
+    <form action="CreaOperatoreApplication" class="form" method="post" onsubmit="return validate(this)">
 
       <div class="input-box">
         <label>Nome</label> <span id="txt-nome"></span>
