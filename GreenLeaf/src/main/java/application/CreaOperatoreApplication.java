@@ -35,7 +35,7 @@ public class CreaOperatoreApplication extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        System.out.println("porcodio");
+
         String email = (String) request.getSession().getAttribute("email");
         System.out.println(email);
         try {

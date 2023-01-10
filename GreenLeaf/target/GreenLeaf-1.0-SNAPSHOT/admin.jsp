@@ -19,6 +19,13 @@
 
     aBean = aDao.doRetrieveByEmail(mail);
 
+    Boolean Admin = (Boolean) session.getAttribute("adminRoles");
+    if(Admin == null || Admin == false)
+    {
+        response.sendRedirect(request.getContextPath()+"/error.jsp");
+        return;
+    }
+
 
 %>
 
@@ -47,7 +54,7 @@
             </li>
 
             <li class="list">
-                <a href="">
+                <a href="newOperatore.jsp">
                     <span class="icon"><i class="fa-solid fa-user-plus"></i></span>
                     <span class="title">Crea operatore</span>
                 </a>
