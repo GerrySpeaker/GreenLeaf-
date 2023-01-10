@@ -1,0 +1,8 @@
+Eliminare 'regione' da classe albero
+Utente: aggiungere funzione 'eliminaAccount'
+Utente - Operatore: aggiungere 'recuperaPassword'
+Utente: aggiungere 'visualizzaAlberi'
+Utente: aggiungere 'checkout'
+(Aggiungere beanCarrello) : chiedere con urgenza al prossimo meeting
+
+Inserire calcolo CO2

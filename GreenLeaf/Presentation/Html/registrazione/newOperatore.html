@@ -4,8 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Registrazione</title>
-    <link rel="stylesheet" href="../../../src/main/webapp/risorse/style/registrazione.css" />
+    <link rel="stylesheet" href="css/registrazioneOp.css" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
 
   </head>
@@ -13,34 +12,55 @@
     <div class="all-form">
         <section class="container">
             <header>Operatore</header>
-            <form action="#" class="form" onsubmit="validate(this)">
+            <form action="#" class="form" onsubmit="event.preventDefault(); validate(this)">
       
               <div class="input-box">
                 <label>Nome</label> <span id="txt-nome"></span>
-                <input id="nome" type="text" placeholder="Inserisci qui il nome"  required />
+                <input id="nome" type="text" placeholder="Inserisci qui il tuo nome" name ="nome" required />
               </div>
       
               <div class="input-box">
                 <label>Cognome</label> <span id="txt-cognome"></span>
-                <input id="cognome" type="text" placeholder="Inserisci qui il cognome"  required />
+                <input id="cognome" type="text" placeholder="Inserisci qui il tuo cognome" name ="cognome" required />
               </div>
       
               <div class="column">
                 <div class="input-box">
                   <label>E-mail</label> <span id="txt-email"></span>
-                  <input id="email" type="text" placeholder="Inserisci qui la tua e-mail" required />
+                  <input id="email" type="text" placeholder="Inserisci qui la tua e-mail" name ="email" required />
                 </div>
                 <div class="input-box">
                   <label style="margin-left: 15px;">Password </label><span id="txt-password"></span>
-                  <input id="password" type="password" placeholder="Inserisci qui la tua password"  required />
+                  <input id="password" type="password" placeholder="Inserisci qui la tua password" name ="password" required />
                   <div id="toggle" onclick="showHide()"></div>
                 </div>
               </div>
-
-              <div class="input-box">
-                <label>Regione</label> <span id="txt-regione"></span>
-                <input id="regione" type="text" placeholder="Inserisci la regione"  required />
-              </div>
+              
+              <div class="dropdown">
+                <input type="text" class="filterBox" placeholder="Regioni" readonly>
+                <div class="option">
+                    <div onclick="show('Abruzzo')">Abruzzo</div>
+                    <div onclick="show('Basilicata')">Basilicata</div>
+                    <div onclick="show('Calabria')">Calabria</div>
+                    <div onclick="show('Campania')">Campania</div>
+                    <div onclick="show('Emilia Romagna')">Emilia Romagna</div>
+                    <div onclick="show('Friuli Venezia Giulia')">Friuli Venezia Giulia</div>
+                    <div onclick="show('Lazio')">Lazio</div>
+                    <div onclick="show('Liguria')">Liguria</div>
+                    <div onclick="show('Lombardia')">Lombardia</div>
+                    <div onclick="show('Marche')">Marche</div>
+                    <div onclick="show('Molise')">Molise</div>
+                    <div onclick="show('Piemonte')">Piemonte</div>
+                    <div onclick="show('Puglia')">Puglia</div>
+                    <div onclick="show('Sardegna')">Sardegna</div>
+                    <div onclick="show('Sicilia')">Sicilia</div>
+                    <div onclick="show('Toscana')">Toscana</div>
+                    <div onclick="show('Trentino Alto Adige')">Trentino Alto Adige</div>
+                    <div onclick="show('Umbria')">Umbria</div>
+                    <div onclick="show('Valle d Aosta')">Valle d'Aosta</div>
+                    <div onclick="show('Veneto')">Veneto</div>
+                </div>
+            </div>
               
               <div class="btn">
                 <button class="submit">Procedi</button>
@@ -49,8 +69,18 @@
           </section>
     </div>
 
-    <script src="js/validateOP.js"></script>
+    <script src="js/validate.js"></script>
     <script src="js/password.js"></script>
+    <script >
+      function show(anything) {
+          document.querySelector(".filterBox").value =anything
+      }
+
+      let dropdown = document.querySelector(".dropdown");
+      dropdown.onclick = function () {
+          dropdown.classList.toggle('active');
+      }
+  </script>
   </body>
 </html>
 
