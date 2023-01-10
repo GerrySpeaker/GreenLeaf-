@@ -43,21 +43,6 @@ public class RegistrazioneApplication extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        String email = (String) request.getAttribute("email");
-        try {
-            adminBean = adminDao.doRetrieveByEmail(email);
-            if(adminBean.equals(null)){
-                return; //non è un admin
-            }else{
-                System.out.println("l'admin con email " + email + " vuole creare un nuovo operatore");
-                operatore = creaOperatore(request,response,email);
-                System.out.println(operatore.toString());
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-
         String data = request.getParameter("data");
         Date data1= null;
         data1 = Date.valueOf(data);
@@ -93,19 +78,6 @@ public class RegistrazioneApplication extends HttpServlet {
 
         response.sendRedirect(request.getContextPath()+"/login.jsp");
 
-
-    }
-
-    public OperatoreBean creaOperatore(HttpServletRequest request, HttpServletResponse response, String email){
-        OperatoreBean operatoreBean = new OperatoreBean();
-
-        operatoreBean.setNomeOperatore(request.getParameter("nome"));
-        operatoreBean.setCognomeOperatore(request.getParameter("cognome"));
-        operatoreBean.setEmail(request.getParameter("email"));
-        operatoreBean.setRegione(request.getParameter("regione"));
-        operatoreBean.setPassword(request.getParameter("password"));
-        operatoreBean.setAdminCreatore(email);
-        return operatoreBean;
 
     }
 
