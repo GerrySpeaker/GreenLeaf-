@@ -33,7 +33,7 @@
             </li>
 
             <li class="list">
-                <a href="">
+                <a href="Logout">
                     <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
                     <span class="title">Logout</span>
                 </a>

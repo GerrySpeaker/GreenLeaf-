@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Sezione operatore</title>
+    <title>Sezione utente</title>
     <link rel="stylesheet" href="risorse/style/user.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -34,7 +34,7 @@
             </li>
     
             <li class="list">
-                <a href="">
+                <a href="Logout">
                     <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
                     <span class="title">Logout</span>
                 </a>
@@ -78,6 +78,8 @@
              <br>
              <br>
               <span> Cognome:</span> <%= uBean.getCognomeUtente() %>
+              <br>
+              <br>
               <span> Nome:</span> <%= uBean.getNomeUtente() %>
               <br>
               <br>
