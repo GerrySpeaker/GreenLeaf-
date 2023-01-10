@@ -153,11 +153,12 @@
 }
 
 .page{
-	width: 700px;
+	width: 750px;
 	height: 400px;
 	background-color: rgb(233, 233, 233);
 	border-top-right-radius: 35px;
 	border-bottom-right-radius: 35px;
+	padding: 0 20px;
 	box-shadow: -1px 10px 15px 4px rgba(0,0,0,0.72);
 }
 
@@ -179,17 +180,18 @@
 
 .page .space{
 	display: grid;
-	grid-template-columns: repeat(2, 25rem);
+	grid-template-columns: repeat(1, 20rem);
 	margin-top: 50px;
 	margin-left: 25px;
-	font-size: 20px;
 }
 
 .page .space p{
 	margin-top: 20px;
+	font-size: 15px;
 }
 
 .page p span{
 	font-weight: bold;
 	text-transform: uppercase;
+	font-size: 15px;
 }

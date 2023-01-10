@@ -36,7 +36,7 @@ function validation_email(input){
 
 function validation_password(input){
 
-    var pattern = /^[A-Za-z]+$/;
+    var pattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
 
     if(input.match(pattern)){
         return true;
@@ -92,7 +92,7 @@ function validate(obj){
     }
 
 
-    var password = document.getElementById("password").value;
+    var password = document.getElementById("password");
     var txt_p = document.getElementById("txt-password");
 
     if(validation_password(password)){

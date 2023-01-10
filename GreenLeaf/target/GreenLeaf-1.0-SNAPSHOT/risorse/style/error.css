@@ -18,11 +18,11 @@ body
     left: 10%;
     right: 10%;
     bottom: 10%;
-    border-radius: 10px;
+    border-radius: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #151729;
+    background-color: #282828;
     box-shadow: 0 15px 30px rgba(0,0,0,.5);
 }
 #container .content
@@ -43,6 +43,7 @@ body
     margin-bottom: 20px;
     color: #111;
     background: #fff;
+    border-radius: 20px;
     font-weight: 300;
     padding: 10px 20px;
     display: inline-block;
@@ -57,10 +58,15 @@ body
     position: relative;
     display: inline-block;
     padding: 10px 25px;
-    background: #ff0562;
+    background: #01500c;
     color: #fff;
     text-decoration: none;
     margin-top: 25px;
     border-radius: 25px;
-    border-bottom: 4px solid #d00d56;
+    border-bottom: 4px solid #02ff41;
 }
+
+#container .content a:hover{
+    background-color: #02ff41;
+}
+
