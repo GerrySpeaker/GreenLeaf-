@@ -9,20 +9,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
     </head>
 
-    <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-
-    <%
-
-        Boolean Utente = (Boolean) session.getAttribute("utente");
-        if(Utente == null || Utente == false)
-        {
-            response.sendRedirect(request.getContextPath()+"/error.jsp");
-            return;
-        }
-
-    %>
-
-
+    <%@ include file="header.jsp" %>
     <div class="all-list">
         <div class="list">
             <h3>Alberi Adottati</h3>
@@ -92,5 +79,5 @@
             
         </div>
     </div>
-        
+    <%@ include file="footer.jsp" %>
 </html>

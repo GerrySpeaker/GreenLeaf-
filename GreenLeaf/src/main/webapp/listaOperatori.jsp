@@ -8,6 +8,8 @@
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
     </head>
+
+    <%@ include file="header.jsp" %>
     <div class="all-list">
         <div class="list">
             <h3>Operatori da te creati</h3>
@@ -60,5 +62,5 @@
             
         </div>
     </div>
-        
+    <%@ include file="footer.jsp" %>
 </html>

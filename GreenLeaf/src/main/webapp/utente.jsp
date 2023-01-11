@@ -28,7 +28,7 @@
     }
 
 %>
-
+<%@ include file="header.jsp" %>
 <div class="all-userpage">
     <div class="navigation">
         <ul>
@@ -89,5 +89,6 @@
 </div>
 
     <script src="risorse/js/user.js"></script>
+<%@ include file="footer.jsp" %>
 
 </html>
