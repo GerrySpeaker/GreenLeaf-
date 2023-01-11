@@ -9,19 +9,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
+
+<%@ include file="header.jsp" %>
 <div class = "card-wrapper">
     <div class = "card">
       <!-- card left -->
       <div class = "product-imgs">
         <div class = "img-display">
           <div class = "img-showcase">
-            <img src = "risorse/style/melo.jpg"><!-- inserire url albero -->
+            <img src = "risorse/style/melo.jpg"><!-- inserire url categoria albero -->
           </div>
         </div>
       </div>
       <!-- card right -->
       <div class = "product-content">
-        <h2 class = "product-title">Melo</h2><!-- nome albero -->
+        <h2 class = "product-title">#</h2><!-- id albero -->
         <hr>
   
         <div class = "product-price">
@@ -30,7 +32,8 @@
 
           <div class = "product-detail">
               <h2>Descrizione: </h2>
-              <p> descrizione dal db</p>
+              <p> <span>Co2</span>   descrizione dal db</p>
+              <p><span>Categoria</span>: inserire</p>
               <p><span>Co2</span>: inserire</p>
               <p><span>Stato</span>: inserire</p>
           </div>
@@ -41,4 +44,5 @@
   </div>
 
   <script src="prodotto.js"></script>
+<%@ include file="footer.jsp" %>
 </html>

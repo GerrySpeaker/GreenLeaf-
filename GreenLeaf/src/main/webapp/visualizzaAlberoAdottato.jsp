@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
+
+<%@ include file="header.jsp" %>
 <div class = "card-wrapper">
     <div class = "card">
       <!-- card left -->
@@ -42,4 +44,5 @@
   </div>
 
   <script src="prodotto.js"></script>
+<%@ include file="footer.jsp" %>
 </html>

@@ -8,6 +8,8 @@
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
     </head>
+
+    <%@ include file="header.jsp" %>
     <div class="all-list">
         <div class="list">
             <h3>Alberi Adottati</h3>
@@ -17,7 +19,7 @@
                 <div class="operatore">
                     <h4>12345</h4>
                     <p>Melo</p>
-                    <a href="AlberoAdottato.jsp" class="remove"><i class="fa-solid fa-circle-info"></i></a>
+                    <a href="visualizzaAlberoAdottato.jsp" class="remove"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
             </div><!-- a qui -->
 
@@ -77,5 +79,5 @@
             
         </div>
     </div>
-        
+    <%@ include file="footer.jsp" %>
 </html>
