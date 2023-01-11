@@ -41,6 +41,7 @@ public class AutenticazioneApplication extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Boolean admin = false;
         Boolean operatore = false;
+        Boolean utente = false;
 
         System.out.println("richiamata la doPost del login");
 
@@ -87,8 +88,10 @@ public class AutenticazioneApplication extends HttpServlet {
                 }
             }
             else{
+                    utente = true;
                     System.out.println("accesso consentito");
                     request.getSession().setAttribute("email", email);
+                    request.getSession().setAttribute("utente", utente);
                     response.sendRedirect(request.getContextPath() + "/homeutente.jsp");
 
             }

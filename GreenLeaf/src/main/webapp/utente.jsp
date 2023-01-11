@@ -20,6 +20,12 @@
 
     uBean = uDao.doRetrieveByEmail(mail);
 
+    Boolean Utente = (Boolean) session.getAttribute("utente");
+    if(Utente == null || Utente == false)
+    {
+        response.sendRedirect(request.getContextPath()+"/error.jsp");
+        return;
+    }
 
 %>
 
