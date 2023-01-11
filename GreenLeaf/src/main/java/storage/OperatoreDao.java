@@ -1,6 +1,7 @@
 package storage;
 
 
+import bean.AdminBean;
 import bean.OperatoreBean;
 
 import javax.naming.Context;
@@ -11,6 +12,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
@@ -183,5 +186,46 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
     @Override
     public Collection<OperatoreBean> doRetrieveAll() throws SQLException {
         return null;
+    }
+    public ArrayList<OperatoreBean> allOperatori(String email) throws SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        OperatoreBean bean = new OperatoreBean();
+        String selectSQL = "SELECT * FROM operatore where admin=?";
+        ArrayList<OperatoreBean> lista = new ArrayList<>();
+
+
+
+
+        try {
+            connection = ds.getConnection();
+            preparedStatement = connection.prepareStatement(selectSQL);
+            preparedStatement.setString(1, email);
+            ResultSet rs = preparedStatement.executeQuery();
+
+           while(rs.next()) {
+               OperatoreBean operatore = new OperatoreBean();
+                operatore.setNomeOperatore(rs.getString("nome"));
+                operatore.setCognomeOperatore(rs.getString("cognome"));
+                operatore.setEmail(rs.getString("email"));
+                operatore.setRegione(rs.getString("regione"));
+                operatore.setAdminCreatore(rs.getString("email"));
+                operatore.setPassword(rs.getString("password"));
+                lista.add(operatore);
+            }
+
+
+        } finally {
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+        System.out.println(lista.toString());
+        return lista;
+
     }
 }

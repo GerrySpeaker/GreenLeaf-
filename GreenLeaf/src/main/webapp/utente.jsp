@@ -10,10 +10,14 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="storage.UtenteDao" %>
 <%@ page import="bean.UtenteBean" %>
-<%@ page import="application.Logout" %>
 
 <%
-
+    String utente = session.getAttribute("email").toString();
+    if(utente == null)
+    {
+        response.sendRedirect(request.getContextPath()+"/error.jsp");
+        return;
+    }
     String mail = (String) session.getAttribute("email");
     UtenteDao uDao = new UtenteDao();
     UtenteBean uBean = new UtenteBean();
@@ -47,7 +51,7 @@
             </li>
     
             <li class="list">
-                <a href="">
+                <a onclick="">
                     <span class="icon"><i class="fa-solid fa-trash-can"></i></span>
                     <span class="title">Elimina account</span>
                 </a>
