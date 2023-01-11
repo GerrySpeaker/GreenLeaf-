@@ -1,12 +1,14 @@
 package storage;
 
 import bean.AdminBean;
+import bean.OperatoreBean;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class AdminDao implements InterfacciaDao<AdminBean>{
@@ -176,5 +178,7 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
     public Collection<AdminBean> doRetrieveAll() throws SQLException {
         return null;
     }
+
+
 
 }

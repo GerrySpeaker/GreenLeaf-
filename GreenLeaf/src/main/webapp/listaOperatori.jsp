@@ -1,3 +1,8 @@
+<%@ page import="storage.OperatoreDao" %>
+<%@ page import="bean.OperatoreBean" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="java.util.Arrays" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,57 +13,45 @@
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
     </head>
+
+    <%
+        Boolean admin = (Boolean) session.getAttribute("adminRoles");
+        if(admin == null || admin == false)
+        {
+            response.sendRedirect(request.getContextPath()+"/error.jsp");
+            return;
+        }
+        String mail = (String) session.getAttribute("email");
+        OperatoreDao oDao = new OperatoreDao();
+        OperatoreBean oBean = new OperatoreBean();
+
+        ArrayList<OperatoreBean> listOperatori = new ArrayList<>();
+        listOperatori = oDao.allOperatori(mail);
+
+    %>
     <div class="all-list">
         <div class="list">
             <h3>Operatori da te creati</h3>
 
+            <% Iterator<OperatoreBean> operatore = listOperatori.iterator();
+            int i = 0;
+                while(operatore.hasNext()){
+                    OperatoreBean op = operatore.next();
+                    i++;
+
+            %>
             <div class="row"><!-- ripetere questo con un for da qui -->
-                <div class="rank"><span>1</span></div>
+                <div class="rank"><span><%=i%></span></div>
                 <div class="operatore">
-                    <h4>Massimo Faella</h4>
-                    <p>Campania</p>
-                    <a href="" class="remove"><i class="fa-solid fa-user-minus"></i></a>
+                    <h4><%=op.getNomeOperatore() + " " + op.getCognomeOperatore()%></h4>
+                    <p><%=op.getRegione()%></p>
+                    <a onclick="eliminaAccount(<%= op.getEmail()%>)" class="remove"><i class="fa-solid fa-user-minus"></i></a>
                 </div>
             </div><!-- a qui -->
-
-            <div class="row">
-                <div class="rank"><span>2</span></div>
-                <div class="operatore">
-                    <h4>Massimo Faella</h4>
-                    <p>Campania</p>
-                    <a href="" class="remove"><i class="fa-solid fa-user-minus"></i></a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="rank"><span>2</span></div>
-                <div class="operatore">
-                    <h4>Massimo Faella</h4>
-                    <p>Campania</p>
-                    <a href="" class="remove"><i class="fa-solid fa-user-minus"></i></a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="rank"><span>2</span></div>
-                <div class="operatore">
-                    <h4>Massimo Faella</h4>
-                    <p>Campania</p>
-                    <a href="" class="remove"><i class="fa-solid fa-user-minus"></i></a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="rank"><span>3</span></div>
-                <div class="operatore">
-                    <h4>Massimo Faella</h4>
-                    <p>Campania</p>
-                    <a href="" class="remove"><i class="fa-solid fa-user-minus"></i></a>
-                </div>
-            </div>
+            <% } %>
 
             
         </div>
     </div>
-        
+        <script src ="risorse/js/elimina.js"></script>
 </html>
