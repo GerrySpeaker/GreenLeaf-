@@ -24,9 +24,16 @@ public class Logout extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
 		System.out.println("sono nel logout");
+		ServletContext cxt= getServletContext();
 		request.getSession().removeAttribute("adminRoles");
 		request.getSession().removeAttribute("email");
+		request.getSession().removeAttribute("utente");
+		request.getSession().removeAttribute("operatore");
 		request.getSession().invalidate();
+		cxt.removeAttribute("adminRoles");
+		cxt.removeAttribute("utente");
+		cxt.removeAttribute("operatore");
+		cxt.removeAttribute("email");
 		response.sendRedirect(request.getContextPath()+"/login.jsp");
 
 	
