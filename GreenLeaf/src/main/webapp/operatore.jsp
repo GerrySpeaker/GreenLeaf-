@@ -46,7 +46,7 @@
             </li>
     
             <li class="list">
-                <a href="">
+                <a href="alberiPiantumati.jsp">
                     <span class="icon"><i class="fa-solid fa-seedling"></i></span>
                     <span class="title">Visualizza piantumazioni</span>
                 </a>

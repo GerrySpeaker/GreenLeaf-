@@ -47,7 +47,7 @@
             </li>
 
             <li class="list">
-                <a href="">
+                <a href="listaOperatori.jsp">
                     <span class="icon"><i class="fa-solid fa-users"></i></span>
                     <span class="title">Lista operatori</span>
                 </a>

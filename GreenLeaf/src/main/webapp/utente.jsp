@@ -48,7 +48,7 @@
             </li>
     
             <li class="list">
-                <a href="">
+                <a href="alberiAdottati.jsp">
                     <span class="icon"><i class="fa-solid fa-tree"></i></span>
                     <span class="title">Alberi adottati</span>
                 </a>
@@ -68,7 +68,7 @@
 
     <div class="page">
         <div class="page-title">
-            <h2>Sezione admin</h2>
+            <h2>Sezione utente</h2>
         </div>
 
         <div class="tasks-wrapper">
