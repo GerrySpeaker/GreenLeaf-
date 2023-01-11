@@ -5,20 +5,19 @@ import java.util.Date;
 public class AlberoBean {
 
     public Integer idAlbero, ordine;
-    public String  co2, categoria, stato, utenteAlbero, utente;
+    public String  co2, categoria, stato, utenteAlbero;
     public Date dataPiantumazione;
 
     public AlberoBean() {
     }
 
-    public AlberoBean(Integer idAlbero, Integer ordine, String co2, String categoria, String stato, String utenteAlbero, String utente, Date dataPiantumazione) {
+    public AlberoBean(Integer idAlbero, Integer ordine, String co2, String categoria, String stato, String utenteAlbero, Date dataPiantumazione) {
         this.idAlbero = idAlbero;
         this.ordine = ordine;
         this.co2 = co2;
         this.categoria = categoria;
         this.stato = stato;
         this.utenteAlbero = utenteAlbero;
-        this.utente = utente;
         this.dataPiantumazione = dataPiantumazione;
     }
 
@@ -71,14 +70,6 @@ public class AlberoBean {
         this.utenteAlbero = utenteAlbero;
     }
 
-    public String getUtente() {
-        return utente;
-    }
-
-    public void setUtente(String utente) {
-        this.utente = utente;
-    }
-
     public Date getDataPiantumazione() {
         return dataPiantumazione;
     }
@@ -97,7 +88,6 @@ public class AlberoBean {
                 ", categoria='" + categoria + '\'' +
                 ", stato='" + stato + '\'' +
                 ", utenteAlbero='" + utenteAlbero + '\'' +
-                ", utente='" + utente + '\'' +
                 ", dataPiantumazione=" + dataPiantumazione +
                 '}';
     }

@@ -1,13 +1,6 @@
 <%@ page language="java" import="java.util.*" import="javax.servlet.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>
 <%
-    ServletContext cxt = request.getServletContext();
-    ArrayList<AlberoBean> article =(ArrayList<AlberoBean>) cxt.getAttribute("alberi");
-    if(article==null)
-    {
-        response.sendRedirect("AlberiAdottati");
-        return;
-    }
 
     Boolean Utente = (Boolean) session.getAttribute("utente");
     if(Utente == null || Utente == false)
@@ -15,6 +8,16 @@
         response.sendRedirect(request.getContextPath()+"/login.jsp");
         return;
     }
+
+    ServletContext cxt = request.getServletContext();
+    ArrayList<AlberoBean> article =(ArrayList<AlberoBean>) cxt.getAttribute("alberi");
+    if(article==null)
+    {
+        response.sendRedirect(request.getContextPath() + "/AlberiAdottati");
+        return;
+    }
+
+
 
 %>
 

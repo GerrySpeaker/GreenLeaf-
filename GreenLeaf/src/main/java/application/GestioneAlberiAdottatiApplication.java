@@ -24,11 +24,16 @@ public class GestioneAlberiAdottatiApplication extends HttpServlet{
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
+        System.out.println("Sono nella do get del albero adottato");
         AlberoDao dao=new AlberoDao();
         try{
             ServletContext cxt= getServletContext();
-            ArrayList<AlberoBean> alberi=(ArrayList<AlberoBean>) dao.doRetrieveAll();
+            String email = (String) request.getSession().getAttribute("email");
+            System.out.println(email);
+            ArrayList<AlberoBean> alberi=(ArrayList<AlberoBean>) dao.doRetrieveBymail(email);
             cxt.setAttribute("alberi", alberi);
+
+            System.out.println(alberi.toString());
 
             response.sendRedirect(request.getContextPath()+"/alberiAdottati.jsp");
         } catch (SQLException e) {

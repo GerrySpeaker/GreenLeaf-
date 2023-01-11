@@ -27,16 +27,17 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
         }
     }
 
-    @Override
-    public Collection<AlberoBean> doRetrieveAll() throws SQLException  {
+
+    public Collection<AlberoBean> doRetrieveBymail(String email) throws SQLException  {
         Connection connection = null;
         ArrayList<AlberoBean> prodotto = new ArrayList<>();
         PreparedStatement preparedStatement = null;
-        String selectSQL = "SELECT * FROM albero where utente=?";
+        String selectSQL = "SELECT * FROM albero WHERE utenteAlbero = ?";
 
         try {
             connection = ds.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
+            preparedStatement.setString(1, email);
             ResultSet rs = preparedStatement.executeQuery();
 
 
@@ -48,9 +49,9 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
                 bean.setDataPiantumazione(rs.getDate("datapiantumazione"));
                 bean.setStato(rs.getString("stato"));
                 bean.setUtenteAlbero(rs.getString("utenteAlbero"));
-                bean.setUtente(rs.getString("utente"));
                 bean.setOrdine(rs.getInt("ordine"));
                 prodotto.add(bean);
+
             }
 
 
@@ -79,6 +80,11 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
 
     @Override
     public AlberoBean doRetrieveByKey(int code) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public Collection<AlberoBean> doRetrieveAll() throws SQLException {
         return null;
     }
 
