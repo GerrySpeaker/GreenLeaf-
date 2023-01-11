@@ -23,7 +23,7 @@
     Boolean Utente = (Boolean) session.getAttribute("utente");
     if(Utente == null || Utente == false)
     {
-        response.sendRedirect(request.getContextPath()+"/error.jsp");
+        response.sendRedirect(request.getContextPath()+"/login.jsp");
         return;
     }
 

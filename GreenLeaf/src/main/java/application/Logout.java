@@ -27,8 +27,12 @@ public class Logout extends HttpServlet {
 		ServletContext cxt= getServletContext();
 		request.getSession().removeAttribute("adminRoles");
 		request.getSession().removeAttribute("email");
+		request.getSession().removeAttribute("utente");
+		request.getSession().removeAttribute("operatore");
 		request.getSession().invalidate();
 		cxt.removeAttribute("adminRoles");
+		cxt.removeAttribute("utente");
+		cxt.removeAttribute("operatore");
 		cxt.removeAttribute("email");
 		response.sendRedirect(request.getContextPath()+"/login.jsp");
 
