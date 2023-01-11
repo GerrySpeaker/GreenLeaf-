@@ -17,7 +17,7 @@
                 <div class="operatore">
                     <h4>12345</h4>
                     <p>Melo</p>
-                    <a href="" class="remove"><i class="fa-solid fa-circle-info"></i></a>
+                    <a href="visualizzaAlberoAdottato.jsp" class="remove"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
             </div><!-- a qui -->
 
