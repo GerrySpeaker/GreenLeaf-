@@ -24,15 +24,9 @@
 
     uBean = uDao.doRetrieveByEmail(mail);
 
-    Boolean Utente = (Boolean) session.getAttribute("utente");
-    if(Utente == null || Utente == false)
-    {
-        response.sendRedirect(request.getContextPath()+"/login.jsp");
-        return;
-    }
 
 %>
-<%@ include file="header.jsp" %>
+
 <div class="all-userpage">
     <div class="navigation">
         <ul>
@@ -51,7 +45,7 @@
             </li>
     
             <li class="list">
-                <a onclick="">
+                <a href="Delete">
                     <span class="icon"><i class="fa-solid fa-trash-can"></i></span>
                     <span class="title">Elimina account</span>
                 </a>
@@ -93,6 +87,5 @@
 </div>
 
     <script src="risorse/js/user.js"></script>
-<%@ include file="footer.jsp" %>
 
 </html>

@@ -51,7 +51,7 @@
             </li>
     
             <li class="list">
-                <a onclick="">
+                <a href="Delete">
                     <span class="icon"><i class="fa-solid fa-trash-can"></i></span>
                     <span class="title">Elimina account</span>
                 </a>

@@ -174,7 +174,7 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
         Connection connection = null;
         PreparedStatement preparedStatement = null;
 
-        System.out.println("Chiamata la funzione per eliminare l'account");
+        System.out.println("Chiamata la funzione per eliminare l'account utente");
         int result = 0;
 
         String deleteSQL = "DELETE FROM  utente  WHERE email = ?";
@@ -183,7 +183,6 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
             connection = ds.getConnection();
             preparedStatement = connection.prepareStatement(deleteSQL);
             preparedStatement.setString(1,email);
-
             result = preparedStatement.executeUpdate();
 
         } finally {
