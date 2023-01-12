@@ -209,7 +209,7 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
                 operatore.setCognomeOperatore(rs.getString("cognome"));
                 operatore.setEmail(rs.getString("email"));
                 operatore.setRegione(rs.getString("regione"));
-                operatore.setAdminCreatore(rs.getString("email"));
+                operatore.setAdminCreatore(rs.getString("admin"));
                 operatore.setPassword(rs.getString("password"));
                 lista.add(operatore);
             }

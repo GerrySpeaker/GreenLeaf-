@@ -10,7 +10,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="storage.UtenteDao" %>
 <%@ page import="bean.UtenteBean" %>
-<%@ page import="application.Logout" %>
 
 <%
     String utente = session.getAttribute("email").toString();
@@ -46,7 +45,7 @@
             </li>
     
             <li class="list">
-                <a onclick="<%=eliminaAccount(mail)%>">
+                <a href="Delete">
                     <span class="icon"><i class="fa-solid fa-trash-can"></i></span>
                     <span class="title">Elimina account</span>
                 </a>
