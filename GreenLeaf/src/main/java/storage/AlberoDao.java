@@ -81,8 +81,41 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
 
     @Override
     public AlberoBean doRetrieveByKey(int code) throws SQLException {
-        return null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        AlberoBean bean = new AlberoBean();
+        String selectSQL = "SELECT * FROM albero WHERE idalbero=?";
+
+        try {
+            connection = ds.getConnection();
+            preparedStatement = connection.prepareStatement(selectSQL);
+            preparedStatement.setInt(1, code);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            if(rs.next()) {
+                bean.setIdAlbero(rs.getInt("idalbero"));
+                bean.setCo2(rs.getString("CO2"));
+                bean.setCategoria(rs.getString("categoria"));
+                bean.setDataPiantumazione(rs.getDate("datapiantumazione"));
+                bean.setStato(rs.getString("stato"));
+                bean.setUtenteAlbero(rs.getString("utenteAlbero"));
+                bean.setOrdine(rs.getInt("ordine"));
+                bean.setRegione(rs.getString("regione"));
+            }
+
+        } finally {
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+        return bean;
     }
+
+
 
     @Override
     public Collection<AlberoBean> doRetrieveAll() throws SQLException {

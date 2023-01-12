@@ -26,19 +26,21 @@ public class GestioneAlberiAdottatiApplication extends HttpServlet{
 
         System.out.println("Sono nella do get del albero adottato");
         AlberoDao dao=new AlberoDao();
-        try{
-            ServletContext cxt= getServletContext();
-            String email = (String) request.getSession().getAttribute("email");
-            System.out.println(email);
-            ArrayList<AlberoBean> alberi=(ArrayList<AlberoBean>) dao.doRetrieveBymail(email);
-            cxt.setAttribute("alberi", alberi);
 
-            System.out.println(alberi.toString());
+        Integer id = Integer.parseInt(request.getParameter("idAlbero"));
 
-            response.sendRedirect(request.getContextPath()+"/alberiAdottati.jsp");
-        } catch (SQLException e) {
-            e.printStackTrace();
+        try {
+
+                AlberoBean albero = dao.doRetrieveByKey(id);
+                ServletContext cxt= getServletContext();
+                cxt.setAttribute("albero", albero);
+
+                response.sendRedirect(request.getContextPath()+"/visualizzaAlberoAdottato.jsp");
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
         }
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
