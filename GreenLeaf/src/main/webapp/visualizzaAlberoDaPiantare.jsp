@@ -42,7 +42,7 @@
         </div>
 
         <div class="form-piantato">
-          <p>L'albero è stato piantato?</p>
+          <p>L'albero e' stato piantato?</p>
           <form action="">
             <input type="checkbox" id="piantato" name="piantato" value="piantato" onclick="conferma()">
             <label for="piantato">Si</label>
@@ -54,7 +54,7 @@
   </div>
 </div>
 
-<script src="flush-submit.js"></script>
+<script src="risorse/js/flush-submit.js"></script>
 
 <%@ include file="footer.jsp" %>
 </html>
