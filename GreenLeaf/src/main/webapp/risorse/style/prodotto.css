@@ -24,6 +24,8 @@
 .card-wrapper{
     max-width: 1100px;
     margin: 0 auto;
+    background-color: var(--bg-color);
+
 }
 
 .card-wrapper img{
