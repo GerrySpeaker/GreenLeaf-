@@ -1,3 +1,7 @@
+<%@ page import="bean.AlberoBean" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="storage.OperatoreDao" %>
+<%@ page import="java.util.Iterator" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +16,14 @@
 </head>
 
 <%@ include file="header.jsp" %>
-
+<%
+  String operatore = session.getAttribute("operatore").toString();
+  if(operatore == null)
+  {
+    response.sendRedirect(request.getContextPath()+"/error.jsp");
+    return;
+  }
+%>
 <div class="all-datail">
   <div class = "card-wrapper">
     <div class = "card">
