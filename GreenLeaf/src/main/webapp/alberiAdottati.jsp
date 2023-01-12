@@ -48,7 +48,7 @@
             <div class="row"><!-- ripetere questo con un for da qui -->
                 <div class="rank"><span><%= i %></span></div>
                 <div class="operatore">
-                    <h4><%= prod.getIdAlbero() %>></h4>
+                    <h4><%= prod.getIdAlbero() %></h4>
                     <p><%= prod.getCategoria() %></p>
                     <a href="visualizzaAlberoAdottato.jsp" class="remove"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
