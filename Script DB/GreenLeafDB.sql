@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `greenleaf` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `greenleaf`;
--- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: greenleaf
 -- ------------------------------------------------------
--- Server version	8.0.19
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -58,12 +58,12 @@ CREATE TABLE `albero` (
   `datapiantumazione` date DEFAULT NULL,
   `stato` varchar(30) NOT NULL,
   `utenteAlbero` varchar(30) NOT NULL,
-  `utente` varchar(30) NOT NULL,
+  `regione` varchar(30) NOT NULL,
   `ordine` int NOT NULL,
   PRIMARY KEY (`idalbero`),
   UNIQUE KEY `idalbero_UNIQUE` (`idalbero`),
   KEY `categoria_idx` (`categoria`),
-  KEY `utente_idx` (`utente`),
+  KEY `utente_idx` (`regione`),
   KEY `utenteAlbero_idx` (`utenteAlbero`),
   KEY `ordine_idx` (`ordine`),
   CONSTRAINT `categoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`nome`),
@@ -279,7 +279,7 @@ CREATE TABLE `regione` (
 
 LOCK TABLES `regione` WRITE;
 /*!40000 ALTER TABLE `regione` DISABLE KEYS */;
-INSERT INTO `regione` VALUES ('Abruzzo',NULL),('Basilicata',NULL),('Calabria',NULL),('Campania',NULL),('Emilia Romagna',NULL),('Friuli Venezia Giulia',NULL),('Lazio',NULL),('Liguria',NULL),('Lombardia',NULL),('Marche',NULL),('Molise',NULL),('Piemonte',NULL),('Puglia',NULL),('Sardegna',NULL),('Sicilia',NULL),('Toscana',NULL),('Trentino Alto Adige',NULL),('Umbria',NULL),('Val d\'Aosta',NULL),('Veneto',NULL);
+INSERT INTO `regione` VALUES ('Abruzzo','GreenLeaf\\Presentation\\regioni\\abruzzo.png'),('Basilicata','GreenLeaf\\Presentation\\regioni\\basilicata.png'),('Calabria','GreenLeaf\\Presentation\\regioni\\calabria.png'),('Campania','GreenLeaf\\Presentation\\regioni\\campania.png'),('Emilia Romagna','GreenLeaf\\Presentation\\regioni\\emilia.png'),('Friuli Venezia Giulia','GreenLeaf\\Presentation\\regioni\\fruli.png'),('Lazio','GreenLeaf\\Presentation\\regioni\\lazio.png'),('Liguria','GreenLeaf\\Presentation\\regioni\\liguria.png'),('Lombardia','GreenLeaf\\Presentation\\regioni\\lombardia.png'),('Marche','GreenLeaf\\Presentation\\regioni\\marche.png'),('Molise','GreenLeaf\\Presentation\\regioni\\molise.png'),('Piemonte','GreenLeaf\\Presentation\\regioni\\piemonte.png'),('Puglia','GreenLeaf\\Presentation\\regioni\\puglia.png'),('Sardegna','GreenLeaf\\Presentation\\regioni\\sardegna.png'),('Sicilia','GreenLeaf\\Presentation\\regioni\\sicilia.png'),('Toscana','GreenLeaf\\Presentation\\regioni\\tocana.png'),('Trentino Alto Adige','GreenLeaf\\Presentation\\regioni\\trentino.png'),('Umbria','GreenLeaf\\Presentation\\regioni\\umbria.png'),('Val d\'Aosta','GreenLeaf\\Presentation\\regioni\\valle.png'),('Veneto','GreenLeaf\\Presentation\\regioni\\veneto.png');
 /*!40000 ALTER TABLE `regione` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -333,7 +333,7 @@ CREATE TABLE `utente` (
 
 LOCK TABLES `utente` WRITE;
 /*!40000 ALTER TABLE `utente` DISABLE KEYS */;
-INSERT INTO `utente` VALUES ('gigiodonnarumma@gmail.com','donnarumma','gigio','bestportiereeu','1999-10-02'),('mariorossi@gmail.com','rossi','mario','mariothegamer','2000-12-31'),('mirkovitale@gmail.com','vitale','mirko','1234','1998-02-25'),('pepperomano@gmail.com','romano','peppe','123','2002-01-01');
+INSERT INTO `utente` VALUES ('gigiodonnarumma@gmail.com','donnarumma','gigio','bestportiereeu','1999-10-02'),('LessDoro@gamil.com','Gold','Less','bancodeipugni22#','2021-06-16'),('mariorossi@gmail.com','rossi','mario','mariothegamer','2000-12-31'),('mirkovitale@gmail.com','vitale','mirko','1234','1998-02-25'),('pepperomano@gmail.com','romano','peppe','123','2002-01-01'),('Petro.grande@gmail.com','Petrosino','Salvatore','petrogrande01!','2022-02-17');
 /*!40000 ALTER TABLE `utente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -346,4 +346,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-04 15:11:15
+-- Dump completed on 2023-01-12 15:27:41
