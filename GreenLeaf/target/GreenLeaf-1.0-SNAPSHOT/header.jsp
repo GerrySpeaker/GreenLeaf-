@@ -25,7 +25,7 @@
             </div>
 
             <div class="user">
-                <a  href="utente.jsp"><img src="risorse/style/user.png" alt=""></a> <!-- se non è utente va al login -->
+                <a  href="login.jsp"><img src="risorse/style/user.png" alt=""></a> <!-- se non è utente va al login -->
                 <a  href=""><img src="risorse/style/shopping-cart.png" alt=""></a>
             </div>
     </header>

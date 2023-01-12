@@ -41,9 +41,9 @@
                 <div class="rank"><span>1</span></div>
                 <div class="operatore">
                     <h4><%= prod.getIdAlbero()%></h4>
-                    <p><%=prod.getCategoria()%>></p>
-                    <p><%=prod.getStato()%>/p>
-                    <a href="" class="remove"><i class="fa-solid fa-pen"></i></a>
+                    <p><%=prod.getCategoria()%></p>
+                    <p><%=prod.getStato()%></p>
+                    <a href="visualizzaAlberoDaPiantare.jsp" class="remove"><i class="fa-solid fa-pen"></i></a>
                 </div><!-- a qui -->
             </div>
             <% }%>

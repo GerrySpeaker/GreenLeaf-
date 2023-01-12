@@ -61,7 +61,7 @@
     height: 8px;
     position: absolute;
     border: 2px solid var(--text-color);
-    right: 20px;
+    right: 60px;
     top: 15px;
     z-index: 10000;
     border: 2px solid var(--text-color);
@@ -134,7 +134,7 @@
     height: 8px;
     position: absolute;
     border: 2px solid var(--text-color);
-    right: 20px;
+    right: 60px;
     top: 15px;
     z-index: 10000;
     border: 2px solid var(--text-color);

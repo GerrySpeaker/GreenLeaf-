@@ -7,7 +7,7 @@
 }
 
 :root{
-    --bg-color: #e0e0e0;
+    --bg-color: whitesmoke;
 	--text-color: #282828;
 	--main-color: #007a00;
 	--second-color: #004700;
@@ -21,6 +21,7 @@
     justify-content: flex-end;
     align-items:center;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .foot{
@@ -34,7 +35,7 @@
     flex-wrap: wrap;
 }
 
-.foot .container
+.foot .cont
 {
     display: flex;
     justify-content: space-between;
@@ -42,7 +43,7 @@
     flex-direction: row;
 }
 
-.foot .container .sec.aboutus
+.foot .cont .sec.aboutus
 {
     width: 40%;
 }
@@ -144,16 +145,16 @@
     {
         padding: 40px;
     }
-    footer .container
+    footer .cont
     {
         flex-direction: column;
     }
-    footer .container .sec
+    footer .cont .sec
     {
         margin-right: 0;
         margin-bottom: 40px;
     }
-    footer .container .sec.aboutus
+    footer .cont .sec.aboutus
     .quickLinks
     .contact
     {
