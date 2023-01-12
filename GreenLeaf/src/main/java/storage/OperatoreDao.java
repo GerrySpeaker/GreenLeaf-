@@ -2,6 +2,7 @@ package storage;
 
 
 import bean.AdminBean;
+import bean.AlberoBean;
 import bean.OperatoreBean;
 
 import javax.naming.Context;
@@ -195,8 +196,6 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
         ArrayList<OperatoreBean> lista = new ArrayList<>();
 
 
-
-
         try {
             connection = ds.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
@@ -227,5 +226,51 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
         System.out.println(lista.toString());
         return lista;
 
+    }
+
+    public ArrayList<AlberoBean> AlberiDaPiantumare(String email) throws SQLException {
+        OperatoreDao operatoreDao = new OperatoreDao();
+        OperatoreBean operatoreBean = operatoreDao.doRetrieveByEmail(email);
+        ArrayList<AlberoBean> lista = new ArrayList<>();
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        String selectSQL = "SELECT * FROM albero WHERE stato = 'Da Piantare' AND regione = ?";
+
+
+        try {
+            connection = ds.getConnection();
+            preparedStatement = connection.prepareStatement(selectSQL);
+            preparedStatement.setString(1, operatoreBean.getRegione());
+            ResultSet rs = preparedStatement.executeQuery();
+
+
+            while (rs.next()) {
+                AlberoBean bean = new AlberoBean();
+                bean.setIdAlbero(rs.getInt("idalbero"));
+                bean.setCo2(rs.getString("CO2"));
+                bean.setCategoria(rs.getString("categoria"));
+                bean.setDataPiantumazione(rs.getDate("datapiantumazione"));
+                bean.setStato(rs.getString("stato"));
+                bean.setUtenteAlbero(rs.getString("utenteAlbero"));
+                bean.setOrdine(rs.getInt("ordine"));
+                bean.setRegione(rs.getString("regione"));
+                lista.add(bean);
+
+            }
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+        System.out.println(lista.toString());
+        return  lista;
     }
 }
