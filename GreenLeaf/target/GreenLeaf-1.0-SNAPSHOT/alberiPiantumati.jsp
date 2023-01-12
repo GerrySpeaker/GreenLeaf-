@@ -1,3 +1,7 @@
+<%@ page import="bean.AlberoBean" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="storage.OperatoreDao" %>
+<%@ page import="java.util.Iterator" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,74 +14,41 @@
     </head>
 
     <%@ include file="header.jsp" %>
+    <%
+        String operatore = session.getAttribute("operatore").toString();
+        if(operatore == null)
+        {
+            response.sendRedirect(request.getContextPath()+"/error.jsp");
+            return;
+        }
+        String mail = (String) session.getAttribute("email");
+        OperatoreDao operatoreDao = new OperatoreDao();
+        ArrayList<AlberoBean> alberiDaPiantare = operatoreDao.AlberiDaPiantumare(mail);
+
+
+    %>
     <div class="all-list">
         <div class="list">
             <h3>Alberi da piantumare</h3>
 
+            <% Iterator<AlberoBean> albero = alberiDaPiantare.iterator();
+
+                while(albero.hasNext()){
+                    AlberoBean prod = albero.next();
+
+            %>
             <div class="row"><!-- ripetere questo con un for da qui -->
                 <div class="rank"><span>1</span></div>
                 <div class="operatore">
-                    <h4>12345</h4>
-                    <p>Melo</p>
+                    <h4><%= prod.getIdAlbero()%></h4>
+                    <p><%=prod.getCategoria()%>></p>
+                    <p><%=prod.getStato()%>/p>
                     <a href="" class="remove"><i class="fa-solid fa-pen"></i></a>
                 </div><!-- a qui -->
             </div>
-
-            <div class="row">
-                <div class="rank"><span>2</span></div>
-                <div class="operatore">
-                    <h4>1254</h4>
-                    <p>Pero</p>
-                    <a href="" class="remove"><i class="fa-solid fa-pen"></i></a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="rank"><span>2</span></div>
-                <div class="operatore">
-                    <h4>7541</h4>
-                    <p>Mango</p>
-                    <a href="" class="remove"><i class="fa-solid fa-pen"></i></a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="rank"><span>2</span></div>
-                <div class="operatore">
-                    <h4>6214</h4>
-                    <p>Pino</p>
-                    <a href="" class="remove"><i class="fa-solid fa-pen"></i></i></a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="rank"><span>2</span></div>
-                <div class="operatore">
-                    <h4>6214</h4>
-                    <p>Pino</p>
-                    <a href="" class="remove"><i class="fa-solid fa-pen"></i></a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="rank"><span>2</span></div>
-                <div class="operatore">
-                    <h4>6214</h4>
-                    <p>Pino</p>
-                    <a href="" class="remove"><i class="fa-solid fa-pen"></i></a>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="rank"><span>2</span></div>
-                <div class="operatore">
-                    <h4>6214</h4>
-                    <p>Pino</p>
-                    <a href="" class="remove"><i class="fa-solid fa-pen"></i></a>
-                </div>
-            </div>
-            
+            <% }%>
         </div>
+
     </div>
     <%@ include file="footer.jsp" %>
 </html>

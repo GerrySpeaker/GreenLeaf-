@@ -50,6 +50,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
                 bean.setStato(rs.getString("stato"));
                 bean.setUtenteAlbero(rs.getString("utenteAlbero"));
                 bean.setOrdine(rs.getInt("ordine"));
+                bean.setRegione(rs.getString("regione"));
                 prodotto.add(bean);
 
             }
@@ -87,6 +88,8 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
     public Collection<AlberoBean> doRetrieveAll() throws SQLException {
         return null;
     }
+
+
 
 
 }
