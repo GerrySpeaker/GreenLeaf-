@@ -48,7 +48,7 @@
             <label for="piantato">Si</label>
           </form>
         </div>
-        <input type="submit" id="forzare" class="submit">Conferma</input>
+        <button id="forzare" class="submit">Conferma</button>
       </div>
     </div>
   </div>
