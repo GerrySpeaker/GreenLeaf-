@@ -39,12 +39,14 @@ public class Delete extends HttpServlet {
 
         try {
             String mailUtente = (String) request.getSession().getAttribute("email"); //l'email dell'utente che si prende dalla sessione
+            System.out.println(mailUtente);
             String mailOperatore = request.getParameter("email"); //l'email che prendiamo da ajax quando l'admin vuole eliminare un account operatore
+            System.out.println(mailOperatore);
             UtenteBean utente = utenteDao.doRetrieveByEmail(mailUtente);
             System.out.println("Utente letto: " + utente.toString());
-            if(utente != null){
+            if(utente.getNomeUtente() != null){
                 utenteDao.eliminaAccount(mailUtente);
-                response.sendRedirect(request.getContextPath() + "/homeUtente.jsp");
+                response.sendRedirect(request.getContextPath() + "/login.jsp");
 
             }else{
                 OperatoreBean operatore = operatoreDao.doRetrieveByEmail(mailOperatore);
