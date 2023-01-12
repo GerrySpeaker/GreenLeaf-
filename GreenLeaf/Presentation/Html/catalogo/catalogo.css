@@ -1,4 +1,3 @@
-
 :root{
 	--bg-color: whitesmoke;
 	--text-color: #282828;
@@ -20,6 +19,57 @@
     margin: 0;
     background-color: var(--bg-color);
 }
+
+.btn-select{
+    align-items: center;
+    justify-content: center;
+}
+
+.close{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    transition: 0.5s;
+    transform: rotate(45deg);
+}
+
+.close i{
+    font-size: 30px;
+    color: var(--popup-color);
+}
+
+.close:hover{
+    transform: rotate(-90deg);
+}
+
+.btn-regione{
+    position: absolute;
+    bottom: 20px;
+    width: 250px;
+    background-color: var(--second-color);
+      transition: 0.5s;
+      color: var(--popup-color);
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      margin-left: 50px;
+      font-size: 1em;
+      font-weight: 500;
+      padding: 15px;
+      border-radius: 40px;
+      box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
+                  15px 15px 10px rgba(0, 0, 0, 0.05),
+                  15px 10px 15px rgba(0, 0, 0, 0.025);
+  }
+  
+  .btn-regione:hover{
+    opacity: 0.8;
+  }
+
 
 .container {
     display: grid;
