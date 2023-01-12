@@ -32,7 +32,7 @@
 
           <div class = "product-detail">
               <h2>Descrizione: </h2>
-              <p> <span>Co2</span>   descrizione dal db</p>
+              <p> descrizione dal db</p>
               <p><span>Categoria</span>: inserire</p>
               <p><span>Co2</span>: inserire</p>
               <p><span>Stato</span>: inserire</p>
