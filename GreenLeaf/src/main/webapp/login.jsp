@@ -8,6 +8,40 @@
     <link rel="stylesheet" href="risorse/style/login.css"> <!-- style -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
 </head>
+<%@ page language="java" import="java.util.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="storage.UtenteDao" %>
+<%@ page import="storage.OperatoreDao" %>
+<%@ page import="storage.AdminDao" %>
+<%
+    String email = (String) request.getSession().getAttribute("email");
+    UtenteDao utenteDao = new UtenteDao();
+    OperatoreDao operatoreDao = new OperatoreDao();
+    AdminDao adminDao = new AdminDao();
+
+    if(email != null)
+    {
+        UtenteBean utente = utenteDao.doRetrieveByEmail(email);
+        if(utente.getNomeUtente() == null){
+            OperatoreBean operatoreBean = operatoreDao.doRetrieveByEmail(email);
+            if(operatoreBean.getNomeOperatore() == null){
+                AdminBean adminBean = adminDao.doRetrieveByEmail(email);
+                if(adminBean.getCognomeAdmin() == null){
+                    response.sendRedirect(request.getContextPath()+"/login.jsp");
+                }
+                else {
+                    response.sendRedirect(request.getContextPath()+"/admin.jsp");
+                }
+            }
+            else{
+                response.sendRedirect(request.getContextPath()+"/operatore.jsp");
+            }
+        }else {
+            response.sendRedirect(request.getContextPath()+"/utente.jsp");
+        }
+    }
+
+%>
+
 
 <body class="all-body">
 

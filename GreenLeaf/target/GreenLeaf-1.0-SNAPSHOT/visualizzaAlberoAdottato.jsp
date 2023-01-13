@@ -1,31 +1,3 @@
-<%@ page language="java" import="java.util.*" import="javax.servlet.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="storage.CategoriaDao" %>
-<%
-
-    Boolean Utente = (Boolean) session.getAttribute("utente");
-    if(Utente == null || Utente == false)
-    {
-        response.sendRedirect(request.getContextPath()+"/login.jsp");
-        return;
-    }
-
-    ServletContext cxt = request.getServletContext();
-    AlberoBean article =(AlberoBean) cxt.getAttribute("albero");
-    if(article==null)
-    {
-        response.sendRedirect(request.getContextPath() + "/visualizzaAlberoAdottato");
-        return;
-    }
-
-    CategoriaDao cdao = new CategoriaDao();
-
-    CategoriaBean cbean = cdao.doRetrieveByKeyAlbero(article.getCategoria());
-
-
-
-%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +9,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
+<%@ page import="javax.servlet.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="storage.CategoriaDao" %>
+<%
+    System.out.println("sono in visualizza albero adottato");
+    ServletContext cxt = request.getServletContext();
+    AlberoBean article =(AlberoBean) cxt.getAttribute("albero");
+    if(article == null){
+        response.sendRedirect(request.getContextPath()+"/home.jsp");
+    }
+
+    System.out.println(article.toString());
+    CategoriaDao cdao = new CategoriaDao();
+
+    CategoriaBean cbean = cdao.doRetrieveByKeyAlbero(article.getCategoria());
+
+    System.out.println(cbean.toString());
+
+    System.out.println("sono nelle jsp");
+
+
+%>
 
 <%@ include file="header.jsp" %>
 
@@ -74,6 +67,5 @@
     </div>
 </div>
 
-  <script src="prodotto.js"></script>
 <%@ include file="footer.jsp" %>
 </html>

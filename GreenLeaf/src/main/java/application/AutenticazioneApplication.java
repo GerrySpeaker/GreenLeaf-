@@ -98,7 +98,6 @@ public class AutenticazioneApplication extends HttpServlet {
 
         } catch (Exception e) {
 
-
             response.sendRedirect(request.getContextPath() + "/error.jsp");
 
             throw new RuntimeException(e);
