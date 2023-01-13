@@ -47,7 +47,7 @@
             <div class = "product-imgs">
                 <div class = "img-display">
                     <div class = "img-showcase">
-                        <img src = "risorse/style/melo.jpg"><!-- inserire url categoria albero -->
+                        <img src = "<%= cbean.getUrl()%>"><!-- inserire url categoria albero -->
                     </div>
                 </div>
             </div>

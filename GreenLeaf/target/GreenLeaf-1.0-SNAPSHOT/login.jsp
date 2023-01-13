@@ -8,13 +8,20 @@
     <link rel="stylesheet" href="risorse/style/login.css"> <!-- style -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
 </head>
+
 <body class="all-body">
+
     <div class="all-form">
         <div class="form-container">
             <div class="drop">
                 <div class="content">
                     <h2>Login</h2>
-                    <form action="AutenticazioneApplication" id="form" onsubmit="return validate(this)"> <!-- form effettivo -->
+                     <%if(Boolean.parseBoolean(request.getParameter("errore"))==true){%>
+                    <p id="errore" class="error">Credenziali Errate</p>
+                    <%}else{ %>
+                    <p id="errore" class="error"></p>
+                    <%} %>
+                     <form action="AutenticazioneApplication" id="form" onsubmit="return validate(this)"> <!-- form effettivo -->
                         <span id="txt-email"></span>
                         <div class="inputBox">
                             <input id="email" type="text" placeholder="E-mail" required name ="email">

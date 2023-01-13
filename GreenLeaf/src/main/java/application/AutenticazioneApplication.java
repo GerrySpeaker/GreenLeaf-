@@ -68,7 +68,7 @@ public class AutenticazioneApplication extends HttpServlet {
 
                     if(operatoreLogin == null){
 
-                        response.sendRedirect(request.getContextPath() + "/login.jsp");
+                        response.sendRedirect(request.getContextPath() + "/login.jsp?errore=true");
                     }
                     else{
                             operatore = true;

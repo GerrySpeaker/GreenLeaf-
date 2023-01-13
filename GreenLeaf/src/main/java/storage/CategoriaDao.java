@@ -80,6 +80,7 @@ public class CategoriaDao implements InterfacciaDao<CategoriaBean>{
                     connection.close();
             }
         }
+        System.out.println(bean.getUrl());
         return bean;
     }
 
