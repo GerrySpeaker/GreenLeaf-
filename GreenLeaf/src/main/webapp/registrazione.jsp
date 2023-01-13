@@ -35,12 +35,18 @@
                 <label>Cognome</label> <span id="txt-cognome"></span>
                 <input id="cognome" type="text" placeholder="Inserisci qui il tuo cognome"  required name ="cognome"/>
               </div>
-      
+
               <div class="column">
                 <div class="input-box">
                   <label>E-mail</label> <span id="txt-email"></span>
+                  <%if(Boolean.parseBoolean(request.getParameter("error"))==true){%>
+                  <p id="error" class="error">Email errata,riprova</p>
+                  <%}else{ %>
+                  <p id="error" class="error"></p>
+                  <%} %>
                   <input id="email" type="text" placeholder="Inserisci qui la tua e-mail" required name = "email"/>
                 </div>
+
                 <div class="input-box">
                   <label style="margin-left: 15px;">Password </label><span id="txt-password"></span>
                   <input id="password" type="password" placeholder="Inserisci qui la tua password"  required name = "password"/>

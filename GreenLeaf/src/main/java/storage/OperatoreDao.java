@@ -1,7 +1,6 @@
 package storage;
 
 
-import bean.AdminBean;
 import bean.AlberoBean;
 import bean.OperatoreBean;
 
@@ -14,7 +13,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 
 public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
@@ -228,7 +226,7 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
 
     }
 
-    public ArrayList<AlberoBean> AlberiDaPiantumare(String email) throws SQLException {
+    public ArrayList<AlberoBean> visualizzaPiantumazioni(String email) throws SQLException {
         OperatoreDao operatoreDao = new OperatoreDao();
         OperatoreBean operatoreBean = operatoreDao.doRetrieveByEmail(email);
         ArrayList<AlberoBean> lista = new ArrayList<>();

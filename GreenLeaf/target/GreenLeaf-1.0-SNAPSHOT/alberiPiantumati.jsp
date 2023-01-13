@@ -23,7 +23,7 @@
         }
         String mail = (String) session.getAttribute("email");
         OperatoreDao operatoreDao = new OperatoreDao();
-        ArrayList<AlberoBean> alberiDaPiantare = operatoreDao.AlberiDaPiantumare(mail);
+        ArrayList<AlberoBean> alberiDaPiantare = operatoreDao.visualizzaPiantumazioni(mail);
 
 
     %>
@@ -43,7 +43,7 @@
                     <h4><%= prod.getIdAlbero()%></h4>
                     <p><%=prod.getCategoria()%></p>
                     <p><%=prod.getStato()%></p>
-                    <a href="visualizzaAlberoDaPiantare.jsp" class="remove"><i class="fa-solid fa-pen"></i></a>
+                    <a href="visualizzaAlberoDaPiantare.jsp?idAlberoDaPiantare=<%= prod.getIdAlbero()%>" class="remove"><i class="fa-solid fa-pen"></i></a>
                 </div><!-- a qui -->
             </div>
             <% }%>

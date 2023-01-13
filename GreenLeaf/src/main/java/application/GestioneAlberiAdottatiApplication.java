@@ -28,7 +28,7 @@ public class GestioneAlberiAdottatiApplication extends HttpServlet{
 
         Integer id = Integer.parseInt(request.getParameter("idAlbero"));
         System.out.println(id);
-     AlberoDao dao=new AlberoDao();
+        AlberoDao dao=new AlberoDao();
         try {
 
                 AlberoBean albero = dao.doRetrieveByKey(id);
