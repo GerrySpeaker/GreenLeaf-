@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
 *{
-    box-sizing: border-box;
     padding: 0;
     margin: 0;
     font-family: "Montserrat";
@@ -19,6 +18,7 @@
 .all-datail{
     width: 100%;
     background-color: var(--bg-color);
+    box-sizing: border-box;
 }
 
 .card-wrapper{
