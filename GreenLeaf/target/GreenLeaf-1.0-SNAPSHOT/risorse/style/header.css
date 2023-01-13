@@ -2,11 +2,10 @@
     margin: 0;
     padding: 0;
     font-family: "Montserrat";
-    box-sizing: border-box;
 }
 
 :root{
-    --bg-color: #e0e0e0;
+    --bg-color: whitesmoke;
 	--text-color: #282828;
 	--main-color: #007a00;
 	--second-color: #004700;
@@ -14,8 +13,8 @@
 	--popup-color: white;
 }
 
-body{
-    min-height: 150vh;
+.all-headerbody{
+    box-sizing: border-box;
 }
 
 header{

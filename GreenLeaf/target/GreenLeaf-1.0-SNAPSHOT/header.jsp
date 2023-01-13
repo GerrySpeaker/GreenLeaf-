@@ -10,11 +10,11 @@
 
 </head>
 <body class>
-    <header>
+    <header class="all-headerbody">
         <a href=""><img src="risorse/style/logo2.png" alt="" class="logo"></a>   <!-- riscaricati il logo che è diverso -->
             <ul class="nav-menu">
                 <li><a  href="">Home</a></li>
-                <li><a href="">Adotta</a></li>
+                <li><a href="catalogo.jsp">Adotta</a></li>
                 <li><a href="">Monitoraggio</a></li>
                 <li><a href="">About us</a></li>
             </ul>
