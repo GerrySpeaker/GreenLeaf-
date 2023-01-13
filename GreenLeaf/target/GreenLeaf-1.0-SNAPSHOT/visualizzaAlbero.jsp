@@ -54,7 +54,7 @@
   </div>
 </div>
 
-<div class="nontavere" id="popup">
+<div class="nontavere" id="popup"><!-- come nel catalogo :) -->
   <div class="scelta">
       <div class="all-regione">
           <form action="">

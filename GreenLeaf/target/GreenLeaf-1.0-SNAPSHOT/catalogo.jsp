@@ -19,16 +19,16 @@
 
     <div class="border" id="filtro">
         <form action="#" class="all-filter">
-            <div class="dropdown">
-                <input type="text" class="filterBox" placeholder="Ordina" readonly>
+            <div class="dropdown"><!-- non toccare -->
+                <input type="text" class="filterBox" placeholder="Ordina" readonly neme="ordine">
                 <div class="option">
                     <div onclick="show('Crescente')">A-Z</div>
                     <div onclick="show('Decrescente')">Z-A</div>
                 </div>
             </div>
 
-            <div class="dropdown-reg">
-                <input type="text" class="filterBox-reg" placeholder="Regioni" readonly>
+            <div class="dropdown-reg"><!-- non toccare -->
+                <input type="text" class="filterBox-reg" placeholder="Regioni" readonly name="regione">
                 <div class="option">
                     <div onclick="showReg('Abruzzo')">Abruzzo</div>
                     <div onclick="showReg('Basilicata')">Basilicata</div>
@@ -61,17 +61,20 @@
         <div class="scelta">
             <div class="all-regione">
                 <form action="">
+                    <!-- ripetere le regioni da qui -->
                     <div class="regione">
                         <div class="reg-card">
                             <div class="radio-group">
-                                <img id="abruzzo" src="emilia.png">
+                                <img src=""><!-- inserire  la regione -->
                                 <label class="radio">
-                                    <input type="radio" value ="basilicata" name="abruzzo">
+                                    <input type="radio" value ="" name=""><!-- inserire al name e a value la regione -->
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
                         </div>
                     </div>
+
+                    <!-- a qui-->
                     <div class="btn-select">
                         <button class="close"><i class="fa-solid fa-xmark" onclick="tornaCatalogo()"></i></button>
                         <button class="btn-regione">Aggiungi al carrello</button>
@@ -84,9 +87,9 @@
 
     <div class="container-card" id="catalogo">
 
-        <div class="card">
+        <div class="card">      <!-- ripetere da -->
             <div class="card-header">
-                <img src="risorse/style/melo.jpg" alt="melo" />
+                <img src="risorse/img/melo.jpg" alt="melo" />
             </div>
             <div class="card-body">
                 <h3>Melo</h3>
@@ -96,34 +99,17 @@
                     <p class="imp">Prezzo: <span>Inserire</span></p>
                 </div>
                 <div class="btn_area">
-                    <a href="http://" class="btn_primary">Visualizza prodotto</a><br><br>
+                    <a href="visualizzaAlbero.jsp" class="btn_primary">Visualizza prodotto</a><br><br>
                     <a  class="btn_secondary" onclick="showRegioniToSelect()">Adotta un albero</a>
                 </div>
             </div>
-        </div>
+        </div>      <!-- a qui -->
+
 
 
         <div class="card">
             <div class="card-header">
-                <img src="risorse/style/melo.jpg" alt="melo" />
-            </div>
-            <div class="card-body">
-                <h3>Melo</h3>
-                <p> Tra gli alberi da frutto coltivati è uno dei più diffusi.</p>
-                <div class="card-status">
-                    <p class="imp">CO2 causata: <span>Inserire</span></p>
-                    <p class="imp">Prezzo: <span>Inserire</span></p>
-                </div>
-                <div class="btn_area">
-                    <a href="http://" class="btn_primary">Visualizza prodotto</a><br><br>
-                    <a  class="btn_secondary" onclick="showRegioniToSelect()">Adotta un albero</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <img src="risorse/style/melo.jpg" alt="melo" />
+                <img src="risorse/img/melo.jpg" alt="melo" />
             </div>
             <div class="card-body">
                 <h3>Melo</h3>
@@ -141,7 +127,7 @@
 
         <div class="card">
             <div class="card-header">
-                <img src="risorse/style/melo.jpg" alt="melo" />
+                <img src="risorse/img/melo.jpg" alt="melo" />
             </div>
             <div class="card-body">
                 <h3>Melo</h3>
@@ -159,7 +145,25 @@
 
         <div class="card">
             <div class="card-header">
-                <img src="risorse/style/melo.jpg" alt="melo" />
+                <img src="risorse/img/melo.jpg" alt="melo" />
+            </div>
+            <div class="card-body">
+                <h3>Melo</h3>
+                <p> Tra gli alberi da frutto coltivati è uno dei più diffusi.</p>
+                <div class="card-status">
+                    <p class="imp">CO2 causata: <span>Inserire</span></p>
+                    <p class="imp">Prezzo: <span>Inserire</span></p>
+                </div>
+                <div class="btn_area">
+                    <a href="http://" class="btn_primary">Visualizza prodotto</a><br><br>
+                    <a  class="btn_secondary" onclick="showRegioniToSelect()">Adotta un albero</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <img src="risorse/img/melo.jpg" alt="melo" />
             </div>
             <div class="card-body">
                 <h3>Melo</h3>

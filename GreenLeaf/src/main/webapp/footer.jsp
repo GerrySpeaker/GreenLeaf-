@@ -9,20 +9,13 @@
             <div class="container">
                 <div class="sec aboutus">
                     <h2 class="testo">Chi siamo?</h2>
-                    <p class="about">Siamo un gruppo di studenti, tra ragazzi della magistrale e tiennale,
+                    <p class="about">Siamo un gruppo di studenti, tra ragazzi della magistrale e tiennale,<br>
                         della facoltà di Informatica dell'Univerisità degli studi di Salerno.
                     </p>
 
                 </div>
             </div>
-            <div class="sec quickLinks">
-                <h2 class="testo">Quick Links</h2>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms & Consitions</a></li>
-                </ul>
-            </div>
+
             <div class="sec contact">
                 <h2 class="testo">Info</h2>
                 <ul class="info">

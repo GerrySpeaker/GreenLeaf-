@@ -65,9 +65,9 @@
                     <div class="regione">
                         <div class="reg-card">
                             <div class="radio-group">
-                                <img id="abruzzo" src="emilia.png">
+                                <img src=""><!-- inserire  la regione -->
                                 <label class="radio">
-                                    <input type="radio" value ="basilicata" name="abruzzo">
+                                    <input type="radio" value ="" name=""><!-- inserire al name e a value la regione -->
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
@@ -89,7 +89,7 @@
 
         <div class="card">      <!-- ripetere da -->
             <div class="card-header">
-                <img src="risorse/style/melo.jpg" alt="melo" />
+                <img src="risorse/img/melo.jpg" alt="melo" />
             </div>
             <div class="card-body">
                 <h3>Melo</h3>
@@ -109,7 +109,7 @@
 
         <div class="card">
             <div class="card-header">
-                <img src="risorse/style/melo.jpg" alt="melo" />
+                <img src="risorse/img/melo.jpg" alt="melo" />
             </div>
             <div class="card-body">
                 <h3>Melo</h3>
@@ -127,7 +127,7 @@
 
         <div class="card">
             <div class="card-header">
-                <img src="risorse/style/melo.jpg" alt="melo" />
+                <img src="risorse/img/melo.jpg" alt="melo" />
             </div>
             <div class="card-body">
                 <h3>Melo</h3>
@@ -145,7 +145,7 @@
 
         <div class="card">
             <div class="card-header">
-                <img src="risorse/style/melo.jpg" alt="melo" />
+                <img src="risorse/img/melo.jpg" alt="melo" />
             </div>
             <div class="card-body">
                 <h3>Melo</h3>
@@ -163,7 +163,7 @@
 
         <div class="card">
             <div class="card-header">
-                <img src="risorse/style/melo.jpg" alt="melo" />
+                <img src="risorse/img/melo.jpg" alt="melo" />
             </div>
             <div class="card-body">
                 <h3>Melo</h3>

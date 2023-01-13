@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat";
+    overflow-x: hidden;
+}
+
+:root{
+	--bg-color: whitesmoke;
+	--text-color: #282828;
+	--main-color: #007a00;
+	--second-color: #004700;
+	--notify-color: #80ff81;
+	--popup-color: white;
+}
+
+.parallax{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.parallax img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+}
+
+.parallax #text-home{
+    position: absolute;
+    top: 
+    30%;
+    transform: translateY(-50%);
+    font-size: 4.5em;
+    color: var(--text-color);
+    font-weight: bold;
+    text-align: center;
+}
+
+.home-text1{
+    position: relative;
+    padding: 100px;
+    background-color: var(--second-color);
+    color: var(--popup-color);
+}
+
+.home-text1 .h2{
+    margin: 20px 0;
+    font-weight: 700;
+}

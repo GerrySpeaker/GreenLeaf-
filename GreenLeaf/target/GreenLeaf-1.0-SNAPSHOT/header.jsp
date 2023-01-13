@@ -11,9 +11,9 @@
 </head>
 <body class>
     <header class="all-headerbody">
-        <a href=""><img src="risorse/style/logo2.png" alt="" class="logo"></a>   <!-- riscaricati il logo che è diverso -->
+        <a href="homepage.jsp"><img src="risorse/img/logo2.png" alt="" class="logo"></a>   <!-- riscaricati il logo che è diverso -->
             <ul class="nav-menu">
-                <li><a  href="">Home</a></li>
+                <li><a  href="homepage.jsp">Home</a></li>
                 <li><a href="catalogo.jsp">Adotta</a></li>
                 <li><a href="">Monitoraggio</a></li>
                 <li><a href="">About us</a></li>
@@ -25,8 +25,8 @@
             </div>
 
             <div class="user">
-                <a  href="login.jsp"><img src="risorse/style/user.png" alt=""></a> <!-- se non è utente va al login -->
-                <a  href=""><img src="risorse/style/shopping-cart.png" alt=""></a>
+                <a  href="login.jsp"><img src="risorse/img/user.png" alt=""></a> <!-- se non è loggato va al login -->
+                <a  href=""><img src="risorse/img/shopping-cart.png" alt=""></a>
             </div>
     </header>
     <script src="risorse/js/header.js"></script>

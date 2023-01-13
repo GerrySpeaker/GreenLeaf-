@@ -16,7 +16,7 @@
     ServletContext cxt = request.getServletContext();
     AlberoBean article =(AlberoBean) cxt.getAttribute("albero");
     if(article == null){
-        response.sendRedirect(request.getContextPath()+"/home.jsp");
+        response.sendRedirect(request.getContextPath()+"/alberiAdottati.jsp");
     }
 
     System.out.println(article.toString());
