@@ -9,16 +9,12 @@
         response.sendRedirect(request.getContextPath()+"/login.jsp");
         return;
     }
-
+    String path = request.getContextPath();
     AlberoDao dao = new AlberoDao();
     String mail = (String) request.getSession().getAttribute("email");
     ArrayList<AlberoBean> article =(ArrayList<AlberoBean>) dao.doRetrieveBymail(mail);
-    if(article==null)
-    {
-        response.sendRedirect(request.getContextPath() + "/AlberiAdottati");
-        return;
-    }
 
+    System.out.println("sono in alberi adottati");
 
 
 %>
@@ -54,12 +50,11 @@
                 <div class="operatore">
                     <h4><%= prod.getIdAlbero() %></h4>
                     <p><%= prod.getCategoria() %></p>
-                    <a onclick="visualizzaAlbero(<%=prod.getIdAlbero()%>)" class="remove"><i class="fa-solid fa-circle-info"></i></a>
+                    <a href="AlberiAdottati?idAlbero=<%= prod.getIdAlbero()%>" class="remove"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
             </div><!-- a qui -->
             <% } %>
 
-            
         </div>
     </div>
     <%@ include file="footer.jsp" %>

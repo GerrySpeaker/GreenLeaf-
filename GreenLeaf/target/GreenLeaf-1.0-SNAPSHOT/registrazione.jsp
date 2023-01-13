@@ -9,6 +9,17 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
 
   </head>
+
+  <%@ page language="java" import="java.util.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+  <%
+    String email = (String) request.getSession().getAttribute("email");
+
+    if(email != null)
+    {
+        response.sendRedirect(request.getContextPath()+"/home.jsp");
+    }
+
+  %>
   <body class="all-body">
     <div class="all-form">
         <section class="container">
