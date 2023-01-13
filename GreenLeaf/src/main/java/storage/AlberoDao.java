@@ -122,7 +122,31 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
         return null;
     }
 
+    public Boolean inserisciPiantumazione(int id) throws SQLException  {
+        Connection connection = null;
+        ArrayList<AlberoBean> prodotto = new ArrayList<>();
+        PreparedStatement preparedStatement = null;
+        String selectSQL = "UPDATE albero SET stato=? WHERE idalbero = ?";
 
+        try {
+            connection = ds.getConnection();
+            preparedStatement = connection.prepareStatement(selectSQL);
+            preparedStatement.setString(1, "Piantato" );
+            preparedStatement.setInt(2, id );
+            preparedStatement.executeUpdate();
+
+
+        } finally {
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+        return false;
+    }
 
 
 }

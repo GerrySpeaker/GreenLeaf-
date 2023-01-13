@@ -55,28 +55,26 @@ public class RegistrazioneApplication extends HttpServlet {
 
 
         UtenteBean utenteLogin;
-
-        try {
-            utenteLogin = dao.doRetrieveByEmail(bean.getEmail());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+        if(!bean.getEmail().contains("@")) {
+            response.sendRedirect(request.getContextPath() + "/registrazione.jsp?error=true");
         }
+        else {
+            try {
 
-        try {
-            if ( (utenteLogin = dao.doRetrieveByEmail(bean.getEmail())).equals(null) )
-                System.out.println("ciao");
-                dao.registrazione(bean);
+                utenteLogin = dao.doRetrieveByEmail(bean.getEmail());
+                if (utenteLogin.getNomeUtente() == null) {
 
-        } catch (Exception e) {
+                    dao.registrazione(bean);
+                    response.sendRedirect(request.getContextPath() + "/login.jsp");
+                }
+            } catch (Exception e) {
 
-            response.sendRedirect(request.getContextPath()+"/login.jsp");
-            e.printStackTrace();
-            return;
+
+                e.printStackTrace();
+                response.sendRedirect(request.getContextPath() + "/error.jsp");
+                return;
+            }
         }
-
-        System.out.println(bean.toString());
-
-        response.sendRedirect(request.getContextPath()+"/login.jsp");
 
 
     }

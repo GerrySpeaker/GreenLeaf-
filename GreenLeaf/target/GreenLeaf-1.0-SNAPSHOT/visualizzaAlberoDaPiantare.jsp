@@ -2,6 +2,9 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="storage.OperatoreDao" %>
 <%@ page import="java.util.Iterator" %>
+<%@ page import="storage.CategoriaDao" %>
+<%@ page import="bean.CategoriaBean" %>
+<%@ page import="storage.AlberoDao" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +26,27 @@
     response.sendRedirect(request.getContextPath()+"/error.jsp");
     return;
   }
+
+  AlberoDao dao=new AlberoDao();
+
+
+
+  Integer id = Integer.parseInt(request.getParameter("idAlberoDaPiantare"));
+  System.out.println(id);
+  AlberoBean albero = dao.doRetrieveByKey(id);
+
+  if(albero == null){
+    response.sendRedirect(request.getContextPath()+"/alberiPiantumati.jsp");
+  }
+
+  CategoriaDao cdao = new CategoriaDao();
+
+  CategoriaBean cbean = cdao.doRetrieveByKeyAlbero(albero.getCategoria());
+
+  System.out.println(cbean.toString());
+
+  System.out.println("sono nelle jsp");
+
 %>
 <div class="all-datail">
   <div class = "card-wrapper">
@@ -31,35 +55,34 @@
       <div class = "product-imgs">
         <div class = "img-display">
           <div class = "img-showcase">
-            <img src = "risorse/style/melo.jpg"><!-- inserire url categoria albero -->
+            <img src = "<%= cbean.getUrl()%>"><!-- inserire url categoria albero -->
           </div>
         </div>
       </div>
       <!-- card right -->
       <div class = "product-content">
-        <h2 class = "product-title">#</h2><!-- id albero -->
+        <h2 class = "product-title"><%= albero.getIdAlbero()%></h2><!-- id albero -->
         <hr>
 
-        <div class = "product-price">
-          <p class = "last-price">Prezzo: <span>$257.00</span></p><!-- Prezzo -->
-        </div>
-
         <div class = "product-detail">
-          <h2>Descrizione: </h2>
-          <p> descrizione dal db</p>
-          <p><span>Categoria</span>: inserire</p>
-          <p><span>Co2</span>: inserire</p>
-          <p><span>Stato</span>: inserire</p>
+          <p><span>Categoria</span>: <%= albero.getCategoria()%></p>
+          <p><span>Co2</span>: <%= albero.getCo2()%></p>
+          <p><span>Stato</span>: <%= albero.getStato()%></p>
         </div>
 
         <div class="form-piantato">
           <p>L'albero e' stato piantato?</p>
-          <form action="">
-            <input type="checkbox" id="piantato" name="piantato" value="piantato" onclick="conferma()">
-            <label for="piantato">Si</label>
-          </form>
+
         </div>
-        <button id="forzare" class="submit">Conferma</button>
+        <%if(Boolean.parseBoolean(request.getParameter("piantato"))==true){%>
+        <p id="pianta" class="error">Albero Piantato</p>
+        <%}else{ %>
+        <form action="">
+          <input type="checkbox" id="piantato" name="piantato" value="piantato" onclick="conferma()">
+          <label for="piantato">Si</label>
+        </form>
+        <a href="AlberiPiantumati?idAlberoDaPiantare=<%= albero.getIdAlbero()%>" id="forzare" class="submit">Conferma</a>
+        <%} %>
       </div>
     </div>
   </div>

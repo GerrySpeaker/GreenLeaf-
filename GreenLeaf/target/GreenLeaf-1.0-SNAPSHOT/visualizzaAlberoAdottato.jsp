@@ -57,7 +57,7 @@
                     <h2>Descrizione: </h2>
                     <p> <%= cbean.getDescrizione()%></p>
                     <p><span>Categoria</span>: <%= cbean.getNomeCategoria()%></p>
-                    <p><span>Co2</span>: <%= cbean.getCo2Max()%></p>
+                    <p><span>Co2</span>: <%= article.getCo2()%></p>
                     <p><span>Stato</span>: <%= article.getStato()%></p>
                 </div>
 
