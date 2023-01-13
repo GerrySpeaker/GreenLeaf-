@@ -12,54 +12,55 @@
 
     <title>Catalogo</title>
 </head>
+
 <%@ include file="header.jsp" %>
+
 <div class="all">
 
-    <div class="border">
-        <form action="#" class="all-filter"><!-- form -->
-                <div class="dropdown"><!-- filtro1 NON TOCCARE -->
-                    <input type="text" class="filterBox" placeholder="Ordina" readonly name="ordine">
-                    <div class="option">
-                        <div onclick="show('Crescente')">A-Z</div>
-                        <div onclick="show('Decrescente')">Z-A</div>
-                    </div>
+    <div class="border" id="filtro">
+        <form action="#" class="all-filter">
+            <div class="dropdown">
+                <input type="text" class="filterBox" placeholder="Ordina" readonly>
+                <div class="option">
+                    <div onclick="show('Crescente')">A-Z</div>
+                    <div onclick="show('Decrescente')">Z-A</div>
                 </div>
+            </div>
 
-                <div class="dropdown-reg"><!-- filtro2 NON TOCCARE -->
-                    <input type="text" class="filterBox-reg" placeholder="Regioni" readonly name="regione">
-                    <div class="option">
-                        <div onclick="showReg('Abruzzo')">Abruzzo</div>
-                        <div onclick="showReg('Basilicata')">Basilicata</div>
-                        <div onclick="showReg('Calabria')">Calabria</div>
-                        <div onclick="showReg('Campania')">Campania</div>
-                        <div onclick="showReg('Emilia Romagna')">Emilia Romagna</div>
-                        <div onclick="showReg('Friuli Venezia Giulia')">Friuli Venezia Giulia</div>
-                        <div onclick="showReg('Lazio')">Lazio</div>
-                        <div onclick="showReg('Liguria')">Liguria</div>
-                        <div onclick="showReg('Lombardia')">Lombardia</div>
-                        <div onclick="showReg('Marche')">Marche</div>
-                        <div onclick="showReg('Molise')">Molise</div>
-                        <div onclick="showReg('Piemonte')">Piemonte</div>
-                        <div onclick="showReg('Puglia')">Puglia</div>
-                        <div onclick="showReg('Sardegna')">Sardegna</div>
-                        <div onclick="showReg('Sicilia')">Sicilia</div>
-                        <div onclick="showReg('Toscana')">Toscana</div>
-                        <div onclick="showReg('Trentino Alto Adige')">Trentino Alto Adige</div>
-                        <div onclick="showReg('Umbria')">Umbria</div>
-                        <div onclick="showReg('Valle d Aosta')">Valle d'Aosta</div>
-                        <div onclick="showReg('Veneto')">Veneto</div>
-                    </div>
+            <div class="dropdown-reg">
+                <input type="text" class="filterBox-reg" placeholder="Regioni" readonly>
+                <div class="option">
+                    <div onclick="showReg('Abruzzo')">Abruzzo</div>
+                    <div onclick="showReg('Basilicata')">Basilicata</div>
+                    <div onclick="showReg('Calabria')">Calabria</div>
+                    <div onclick="showReg('Campania')">Campania</div>
+                    <div onclick="showReg('Emilia Romagna')">Emilia Romagna</div>
+                    <div onclick="showReg('Friuli Venezia Giulia')">Friuli Venezia Giulia</div>
+                    <div onclick="showReg('Lazio')">Lazio</div>
+                    <div onclick="showReg('Liguria')">Liguria</div>
+                    <div onclick="showReg('Lombardia')">Lombardia</div>
+                    <div onclick="showReg('Marche')">Marche</div>
+                    <div onclick="showReg('Molise')">Molise</div>
+                    <div onclick="showReg('Piemonte')">Piemonte</div>
+                    <div onclick="showReg('Puglia')">Puglia</div>
+                    <div onclick="showReg('Sardegna')">Sardegna</div>
+                    <div onclick="showReg('Sicilia')">Sicilia</div>
+                    <div onclick="showReg('Toscana')">Toscana</div>
+                    <div onclick="showReg('Trentino Alto Adige')">Trentino Alto Adige</div>
+                    <div onclick="showReg('Umbria')">Umbria</div>
+                    <div onclick="showReg('Valle d Aosta')">Valle d'Aosta</div>
+                    <div onclick="showReg('Veneto')">Veneto</div>
                 </div>
+            </div>
 
-                <button class="submit">Cerca</button>
-            </form>
-        </div>
+            <button class="submit">Cerca</button>
+        </form>
     </div>
 
     <div class="nontavere" id="popup">
         <div class="scelta">
             <div class="all-regione">
-                <form action=""><!-- form della scelta regione -->
+                <form action="">
                     <div class="regione">
                         <div class="reg-card">
                             <div class="radio-group">
@@ -83,9 +84,9 @@
 
     <div class="container-card" id="catalogo">
 
-        <div class="card"><!-- ripetere da qua -->
+        <div class="card">
             <div class="card-header">
-                <img src="alberi/melo.jpg" alt="melo" />
+                <img src="risorse/style/melo.jpg" alt="melo" />
             </div>
             <div class="card-body">
                 <h3>Melo</h3>
@@ -99,12 +100,12 @@
                     <a  class="btn_secondary" onclick="showRegioniToSelect()">Adotta un albero</a>
                 </div>
             </div>
-        </div><!-- a qua per ogni categoria -->
+        </div>
 
 
         <div class="card">
             <div class="card-header">
-                <img src="alberi/melo.jpg" alt="melo" />
+                <img src="risorse/style/melo.jpg" alt="melo" />
             </div>
             <div class="card-body">
                 <h3>Melo</h3>
@@ -122,7 +123,7 @@
 
         <div class="card">
             <div class="card-header">
-                <img src="alberi/melo.jpg" alt="melo" />
+                <img src="risorse/style/melo.jpg" alt="melo" />
             </div>
             <div class="card-body">
                 <h3>Melo</h3>
@@ -140,7 +141,7 @@
 
         <div class="card">
             <div class="card-header">
-                <img src="alberi/melo.jpg" alt="melo" />
+                <img src="risorse/style/melo.jpg" alt="melo" />
             </div>
             <div class="card-body">
                 <h3>Melo</h3>
@@ -158,7 +159,7 @@
 
         <div class="card">
             <div class="card-header">
-                <img src="alberi/melo.jpg" alt="melo" />
+                <img src="risorse/style/melo.jpg" alt="melo" />
             </div>
             <div class="card-body">
                 <h3>Melo</h3>
@@ -176,14 +177,32 @@
 
     </div>
 
-    
+
 </div>
 
 
 
 <script src="risorse/js/filtri.js"></script>
-<script src="risorse/js/catalogo.js"></script>
+<script>
+    function showRegioniToSelect() {
+        var mostra = document.getElementById("popup");
+        mostra.style.display ="block";
+        var filtro = document.getElementById("filtro");
+        filtro.style.display ="none";
+        var cat = document.getElementById("catalogo");
+        cat.style.display="none"
+    }
 
-</html>
+    function tornaCatalogo() {
+        var cat = document.getElementById("catalogo");
+        cat.style.display="grid";
+        var filtro = document.getElementById("filtro");
+        filtro.style.display ="grid";
+        var mostra = document.getElementById("popup");
+        mostra.style.display ="none";
+    }
+</script>
 
 <%@ include file="footer.jsp" %>
+
+</html>

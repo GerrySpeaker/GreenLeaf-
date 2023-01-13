@@ -10,7 +10,7 @@
 
 </head>
 <body class>
-    <header>
+    <header class="all-headerbody">
         <a href=""><img src="risorse/style/logo2.png" alt="" class="logo"></a>   <!-- riscaricati il logo che è diverso -->
             <ul class="nav-menu">
                 <li><a  href="">Home</a></li>
