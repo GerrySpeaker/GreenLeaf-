@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-    @WebServlet("/FiltriCatalogo")
+@WebServlet("/FiltriCatalogo")
 public class FiltriCatalogo extends HttpServlet{
     private static final long serialVersionUID = 1L;
 
@@ -33,6 +33,7 @@ public class FiltriCatalogo extends HttpServlet{
         try {
              ArrayList<CategoriaBean> CatalogoFiltro = new ArrayList<CategoriaBean>();
              CatalogoFiltro = dao.doRetrieveAll();
+
              List<CategoriaBean> sortedList = CatalogoFiltro.stream().sorted(Comparator.comparing(CategoriaBean::getNomeCategoria).reversed()).collect(Collectors.toList());
 
              sortedList.forEach(System.out::println);

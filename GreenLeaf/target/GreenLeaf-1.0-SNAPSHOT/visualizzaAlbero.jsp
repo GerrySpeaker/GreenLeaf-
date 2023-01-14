@@ -20,7 +20,7 @@
       <div class = "product-imgs">
         <div class = "img-display">
           <div class = "img-showcase">
-            <img src = "risorse/style/melo.jpg">
+            <img src = "risorse/img/melo.jpg">
           </div>
         </div>
       </div>

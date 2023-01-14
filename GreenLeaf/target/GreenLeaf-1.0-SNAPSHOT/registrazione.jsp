@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Registrazione</title>
     <link rel="stylesheet" href="risorse/style/registrazione.css" />
+    <link rel="stylesheet" href="risorse/style/confermaIscrizione.css"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
 
   </head>
@@ -20,9 +21,9 @@
     }
 
   %>
-  <body class="all-body">
+  <div class="all-body" id="reg">
     <div class="all-form">
-        <section class="container">
+        <section class="container ">
             <header>Registrazione</header>
             <form action="RegistrazioneApplication" class="form" method="post" onsubmit="return validate(this)">
       
@@ -66,8 +67,36 @@
           </section>
     </div>
 
-    <script src="risorse/js/validate.js"></script>
-    <script src="risorse/js/password.js"></script>
-  </body>
+
+
+  </div>
+
+
+  <div class="all-conf" id="privacy">
+    <div class="conferma">
+      <p>Acconsenti l'accesso a queste informazioni sensibili
+        nel rispetto delle leggi sulla privacy, specificate dal d.l. 196/2003
+        in materia di protezione dei dati personali.
+      </p>
+
+      <div class="btn-conf">
+        <a onclick="hideConferma()" class="approva" onclick="">SI</a>
+        <a href="homepage.jsp" class="approva">NO</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var form = document.getElementById("reg");
+    var conf = document.getElementById("privacy");
+
+    function hideConferma(){
+      form.style.display="flex";
+      conf.style.display="none";
+    }
+
+  </script>
+  <script src="risorse/js/validate.js"></script>
+  <script src="risorse/js/password.js"></script>
 </html>
 

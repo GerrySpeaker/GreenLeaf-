@@ -17,7 +17,6 @@
 	text-decoration: none;
 	list-style: none;
     background-color: var(--bg-color);
-    overflow-x: hidden;
 }
 
 .btn-select{
