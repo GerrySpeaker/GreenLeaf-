@@ -12,13 +12,26 @@
 
     <title>Catalogo</title>
 </head>
+<%@ page import="javax.servlet.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="storage.CategoriaDao" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Iterator" %>
+<%
+    System.out.println("Sono qui");
+    CategoriaDao dao = new CategoriaDao();
+    ArrayList <CategoriaBean> article = (ArrayList<CategoriaBean>) dao.doRetrieveAll();
+    if(article == null){
+        response.sendRedirect(request.getContextPath()+"/home.jsp");
+    }
 
+    System.out.println(article.toString());
+%>
 <%@ include file="header.jsp" %>
 
 <div class="all">
 
     <div class="border" id="filtro">
-        <form action="#" class="all-filter">
+        <form action="FiltriCatalogo" class="all-filter">
             <div class="dropdown"><!-- non toccare -->
                 <input type="text" class="filterBox" placeholder="Ordina" readonly name="ordine">
                 <div class="option">
@@ -95,17 +108,22 @@
 
 
     <div class="container-card" id="catalogo">
-
+        <% Iterator<CategoriaBean> prodotto = article.iterator();
+            int i = 0;
+            while(prodotto.hasNext()){
+                CategoriaBean prod = prodotto.next();
+                i++;
+        %>
         <div class="card">      <!-- ripetere da -->
             <div class="card-header">
-                <img src="risorse/img/melo.jpg" alt="melo" />
+                <img src="<%= prod.getUrl()%>" alt="melo" />
             </div>
             <div class="card-body">
-                <h3>Melo</h3>
-                <p> Tra gli alberi da frutto coltivati è uno dei più diffusi.</p>
+                <h3><%= prod.getNomeCategoria()%></h3>
+                <p> <%= prod.getDescrizione()%></p>
                 <div class="card-status">
-                    <p class="imp">CO2 causata: <span>Inserire</span></p>
-                    <p class="imp">Prezzo: <span>Inserire</span></p>
+                    <p class="imp">CO2 Massima catturabile: <span><%= prod.getCo2Max()%></span></p>
+                    <p class="imp">Prezzo: <span><%= prod.getPrezzo()%></span></p>
                 </div>
                 <div class="btn_area">
                     <a href="visualizzaAlbero.jsp" class="btn_primary">Visualizza prodotto</a><br><br>
@@ -113,82 +131,11 @@
                 </div>
             </div>
         </div>      <!-- a qui -->
+        <% } %>
 
-
-
-        <div class="card">
-            <div class="card-header">
-                <img src="risorse/img/melo.jpg" alt="melo" />
-            </div>
-            <div class="card-body">
-                <h3>Melo</h3>
-                <p> Tra gli alberi da frutto coltivati è uno dei più diffusi.</p>
-                <div class="card-status">
-                    <p class="imp">CO2 causata: <span>Inserire</span></p>
-                    <p class="imp">Prezzo: <span>Inserire</span></p>
-                </div>
-                <div class="btn_area">
-                    <a href="http://" class="btn_primary">Visualizza prodotto</a><br><br>
-                    <a  class="btn_secondary" onclick="showRegioniToSelect()">Adotta un albero</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <img src="risorse/img/melo.jpg" alt="melo" />
-            </div>
-            <div class="card-body">
-                <h3>Melo</h3>
-                <p> Tra gli alberi da frutto coltivati è uno dei più diffusi.</p>
-                <div class="card-status">
-                    <p class="imp">CO2 causata: <span>Inserire</span></p>
-                    <p class="imp">Prezzo: <span>Inserire</span></p>
-                </div>
-                <div class="btn_area">
-                    <a href="http://" class="btn_primary">Visualizza prodotto</a><br><br>
-                    <a  class="btn_secondary" onclick="showRegioniToSelect()">Adotta un albero</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <img src="risorse/img/melo.jpg" alt="melo" />
-            </div>
-            <div class="card-body">
-                <h3>Melo</h3>
-                <p> Tra gli alberi da frutto coltivati è uno dei più diffusi.</p>
-                <div class="card-status">
-                    <p class="imp">CO2 causata: <span>Inserire</span></p>
-                    <p class="imp">Prezzo: <span>Inserire</span></p>
-                </div>
-                <div class="btn_area">
-                    <a href="http://" class="btn_primary">Visualizza prodotto</a><br><br>
-                    <a  class="btn_secondary" onclick="showRegioniToSelect()">Adotta un albero</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-                <img src="risorse/img/melo.jpg" alt="melo" />
-            </div>
-            <div class="card-body">
-                <h3>Melo</h3>
-                <p> Tra gli alberi da frutto coltivati è uno dei più diffusi.</p>
-                <div class="card-status">
-                    <p class="imp">CO2 causata: <span>Inserire</span></p>
-                    <p class="imp">Prezzo: <span>Inserire</span></p>
-                </div>
-                <div class="btn_area">
-                    <a href="http://" class="btn_primary">Visualizza prodotto</a><br><br>
-                    <a  class="btn_secondary" onclick="showRegioniToSelect()">Adotta un albero</a>
-                </div>
-            </div>
-        </div>
 
     </div>
+
 
 
 </div>

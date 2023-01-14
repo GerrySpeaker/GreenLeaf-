@@ -1,5 +1,7 @@
 package bean;
 
+import java.util.Comparator;
+
 public class CategoriaBean {
 
     public String nomeCategoria, co2Max, descrizione, url;
@@ -66,4 +68,5 @@ public class CategoriaBean {
                 ", prezzo=" + prezzo +
                 '}';
     }
+
 }

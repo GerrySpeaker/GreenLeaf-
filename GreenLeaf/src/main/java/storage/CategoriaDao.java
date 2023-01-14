@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class CategoriaDao implements InterfacciaDao<CategoriaBean>{
@@ -46,9 +47,39 @@ public class CategoriaDao implements InterfacciaDao<CategoriaBean>{
     }
 
     @Override
-    public Collection<CategoriaBean> doRetrieveAll() throws SQLException {
-        return null;
+    public ArrayList<CategoriaBean> doRetrieveAll() throws SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ArrayList<CategoriaBean> prodotto = new ArrayList<>();
+        String selectSQL = "SELECT * FROM categoria";
+
+        try {
+            connection = ds.getConnection();
+            preparedStatement = connection.prepareStatement(selectSQL);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while(rs.next()) {
+                CategoriaBean bean = new CategoriaBean();
+                bean.setNomeCategoria(rs.getString("nome"));
+                bean.setCo2Max(rs.getString("CO2max"));
+                bean.setDescrizione(rs.getString("descrizione"));
+                bean.setPrezzo(rs.getDouble("prezzo"));
+                bean.setUrl(rs.getString("url"));
+                prodotto.add(bean);
+            }
+
+        } finally {
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+        return prodotto;
     }
+
 
 
     public CategoriaBean doRetrieveByKeyAlbero(String categoria) throws SQLException {
