@@ -50,6 +50,7 @@
                 <div class="operatore">
                     <h4><%= prod.getIdAlbero() %></h4>
                     <p><%= prod.getCategoria() %></p>
+                    <p><%= prod.getRegione() %></p>
                     <a href="AlberiAdottati?idAlbero=<%= prod.getIdAlbero()%>" class="remove"><i class="fa-solid fa-circle-info"></i></a>
                 </div>
             </div><!-- a qui -->

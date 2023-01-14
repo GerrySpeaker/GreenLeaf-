@@ -79,12 +79,14 @@
 
 .submit{
     background-color: var(--second-color);
-    width: 120px;
+    width: 130px;
     transition: 0.5s;
     color: var(--popup-color);
     text-transform: uppercase;
     display: none;
     border: none;
+    text-decoration: none;
+    text-align: center;
     cursor: pointer;
     margin-top: 20px;
     margin-left: 50px;

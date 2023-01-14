@@ -75,8 +75,8 @@
         <div class="tasks-wrapper">
             <div class="space">
                 <p><span> Email:</span> <%= aBean.getEmail() %></p>
-                <p><span> Nome:</span> <%= aBean.getNomeAdmin() %></p>
-                <p><span>Cognome:</span> <%= aBean.getCognomeAdmin() %></p>
+                <p class="cap"><span> Nome:</span> <%= aBean.getNomeAdmin() %></p>
+                <p class="cap"><span>Cognome:</span> <%= aBean.getCognomeAdmin() %></p>
             </div>
         </div>
     </div>

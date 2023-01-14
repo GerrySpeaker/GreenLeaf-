@@ -74,9 +74,9 @@
         <div class="tasks-wrapper">
             <div class="space">
                 <p><span> Email:</span> <%= oBean.getEmail() %></p><br>
-                <p><span> Nome:</span> <%= oBean.getNomeOperatore() %></p><br>
-                <p><span> Cognome:</span> <%= oBean.getCognomeOperatore() %></p><br>
-                <p><span> Regione di competenza:</span> <%= oBean.getRegione() %></p>
+                <p class="cap"><span> Nome:</span> <%= oBean.getNomeOperatore() %></p><br>
+                <p class="cap"><span> Cognome:</span> <%= oBean.getCognomeOperatore() %></p><br>
+                <p class="cap"><span> Regione di competenza:</span> <%= oBean.getRegione() %></p>
             </div>
         </div>
     </div>

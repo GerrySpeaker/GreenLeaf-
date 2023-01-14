@@ -17,6 +17,7 @@
         <title>Lista</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link rel="stylesheet" href="risorse/style/lista.css">
+        <link rel="stylesheet" href="risorse/style/cancella.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
@@ -25,30 +26,59 @@
     </head>
 
     <%@ include file="header.jsp" %>
-    <div class="all-list">
+    <div class="all-list" id="list">
         <div class="list">
             <h3>Operatori da te creati</h3>
             <% Iterator<OperatoreBean> prodotto = article.iterator();
                 int i = 0;
+                String em = null;
                 while(prodotto.hasNext()){
                     OperatoreBean prod = prodotto.next();
                     i++;
+                    em = prod.getEmail();
 
             %>
             <div class="row"><!-- ripetere questo con un for da qui -->
                 <div class="rank"><span><%= i %></span></div>
                 <div class="operatore">
                     <h4><%= prod.getNomeOperatore()%></h4>
+                    <p><%= prod.getCognomeOperatore()%></p>
                     <p><%= prod.getRegione()%></p>
-                    <a onclick="eliminaAccount('<%= prod.getEmail()%>')" class="remove"><i class="fa-solid fa-user-minus"></i></a>
+                    <a onclick="showConferma()" class="remove"><i class="fa-solid fa-user-minus"></i></a>
                 </div>
 
             </div><!-- a qui -->
+
             <% } %>
 
-            
+
         </div>
     </div>
+
+    <div id="conf" class="all-canc">
+        <div class="cancella">
+            <p>Sicuro di voler eliminare questo account?</p>
+            <div class="btn-canc">
+                <a class="elimina" onclick="eliminaAccount('<%= em%>')">SI</a>
+                <a class="elimina" onclick="hideConferma()">NO</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var lista = document.getElementById("list");
+        var conf = document.getElementById("conf");
+
+        function showConferma(){
+            lista.style.display="none";
+            conf.style.display="block";
+        }
+
+        function hideConferma(){
+            lista.style.display="flex";
+            conf.style.display="none";
+        }
+    </script>
 
     <%@ include file="footer.jsp" %>
 </html>

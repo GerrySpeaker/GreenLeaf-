@@ -52,6 +52,7 @@ public class Delete extends HttpServlet {
                 OperatoreBean operatore = operatoreDao.doRetrieveByEmail(mailOperatore);
                 if(operatore != null){
                     operatoreDao.eliminaAccount(mailOperatore);
+                    response.sendRedirect(request.getContextPath() + "/homepage.jsp");
                 }
             }
 

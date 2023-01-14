@@ -25,6 +25,12 @@
   background-size: cover;
 }
 
+.error{
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #c80e00;
+}
+
 .container {
     position: relative;
     max-width: 700px;

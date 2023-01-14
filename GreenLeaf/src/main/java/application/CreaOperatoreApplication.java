@@ -53,7 +53,7 @@ public class CreaOperatoreApplication extends HttpServlet {
 
                 operatore.registrazione(operatoreBean);
 
-                response.sendRedirect(request.getContextPath()+"/home.jsp");
+                response.sendRedirect(request.getContextPath()+"/admin.jsp");
 
             }else{
 

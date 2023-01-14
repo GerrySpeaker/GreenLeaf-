@@ -20,32 +20,32 @@
 
 <%@ include file="header.jsp" %>
 <%
-  String operatore = session.getAttribute("operatore").toString();
-  if(operatore == null)
-  {
-    response.sendRedirect(request.getContextPath()+"/error.jsp");
-    return;
-  }
+    String operatore = session.getAttribute("operatore").toString();
+    if(operatore == null)
+    {
+      response.sendRedirect(request.getContextPath()+"/error.jsp");
+      return;
+    }
 
-  AlberoDao dao=new AlberoDao();
+    AlberoDao dao=new AlberoDao();
 
 
 
-  Integer id = Integer.parseInt(request.getParameter("idAlberoDaPiantare"));
-  System.out.println(id);
-  AlberoBean albero = dao.doRetrieveByKey(id);
+    Integer id = Integer.parseInt(request.getParameter("idAlberoDaPiantare"));
+    System.out.println(id);
+    AlberoBean albero = dao.doRetrieveByKey(id);
 
-  if(albero == null){
-    response.sendRedirect(request.getContextPath()+"/alberiPiantumati.jsp");
-  }
+    if(albero == null){
+      response.sendRedirect(request.getContextPath()+"/alberiPiantumati.jsp");
+    }
 
-  CategoriaDao cdao = new CategoriaDao();
+    CategoriaDao cdao = new CategoriaDao();
 
-  CategoriaBean cbean = cdao.doRetrieveByKeyAlbero(albero.getCategoria());
+    CategoriaBean cbean = cdao.doRetrieveByKeyAlbero(albero.getCategoria());
 
-  System.out.println(cbean.toString());
+    System.out.println(cbean.toString());
 
-  System.out.println("sono nelle jsp");
+    System.out.println("sono nelle jsp");
 
 %>
 <div class="all-datail">
@@ -75,13 +75,11 @@
 
         </div>
         <%if(Boolean.parseBoolean(request.getParameter("piantato"))==true){%>
-        <p id="pianta" class="error">Albero Piantato</p>
+            <p id="piantato" class="error">Albero Piantato</p>
         <%}else{ %>
-        <form action="">
-          <input type="checkbox" id="piantato" name="piantato" value="piantato" onclick="conferma()">
-          <label for="piantato">Si</label>
-        </form>
-        <a href="AlberiPiantumati?idAlberoDaPiantare=<%= albero.getIdAlbero()%>" id="forzare" class="submit">Conferma</a>
+            <input id="conferma" class="confermato" type="checkbox" value="piantato" onclick="conferma()">
+            <label for="conferma">Si</label>
+            <a href="AlberiPiantumati?idAlberoDaPiantare=<%= albero.getIdAlbero()%>" id="forzare" class="submit">Conferma</a>
         <%} %>
       </div>
     </div>

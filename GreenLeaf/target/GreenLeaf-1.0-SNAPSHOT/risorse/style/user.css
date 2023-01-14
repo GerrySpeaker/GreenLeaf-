@@ -14,6 +14,10 @@
 	--popup-color: white;
 }
 
+.cap{
+	text-transform: capitalize;
+}
+
 .all-userpage{
 	display: flex;
 	justify-content: center;
@@ -180,7 +184,7 @@
 .page .space{
 	display: grid;
 	grid-template-columns: repeat(1);
-	margin-top: 50px;
+	margin-top: 30px;
 	margin-left: 25px;
 	font-size: 18px;
 }

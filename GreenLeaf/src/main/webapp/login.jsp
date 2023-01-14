@@ -25,7 +25,7 @@
             OperatoreBean operatoreBean = operatoreDao.doRetrieveByEmail(email);
             if(operatoreBean.getNomeOperatore() == null){
                 AdminBean adminBean = adminDao.doRetrieveByEmail(email);
-                if(adminBean.getCognomeAdmin() == null){
+                if(adminBean.getNomeAdmin() == null){
                     response.sendRedirect(request.getContextPath()+"/login.jsp");
                 }
                 else {
@@ -51,7 +51,7 @@
                 <div class="content">
                     <h2>Login</h2>
                      <%if(Boolean.parseBoolean(request.getParameter("errore"))==true){%>
-                            <p id="errore" class="error">Credenziali errate,riprova</p>
+                            <p id="errore" class="error">Credenziali errate, riprova</p>
                             <%}else{ %>
                             <p id="errore" class="error"></p>
                             <%} %>

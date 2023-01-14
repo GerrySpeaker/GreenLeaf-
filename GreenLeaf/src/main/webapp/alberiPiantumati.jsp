@@ -32,13 +32,13 @@
             <h3>Alberi da piantumare</h3>
 
             <% Iterator<AlberoBean> albero = alberiDaPiantare.iterator();
-
+                int i = 0;
                 while(albero.hasNext()){
                     AlberoBean prod = albero.next();
-
+                    i++;
             %>
             <div class="row"><!-- ripetere questo con un for da qui -->
-                <div class="rank"><span>1</span></div>
+                <div class="rank"><span><%= i %></span></div>
                 <div class="operatore">
                     <h4><%= prod.getIdAlbero()%></h4>
                     <p><%=prod.getCategoria()%></p>

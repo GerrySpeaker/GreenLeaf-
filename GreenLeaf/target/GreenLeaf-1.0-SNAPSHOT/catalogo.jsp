@@ -20,10 +20,19 @@
     <div class="border" id="filtro">
         <form action="#" class="all-filter">
             <div class="dropdown"><!-- non toccare -->
-                <input type="text" class="filterBox" placeholder="Ordina" readonly neme="ordine">
+                <input type="text" class="filterBox" placeholder="Ordina" readonly name="ordine">
                 <div class="option">
                     <div onclick="show('Crescente')">A-Z</div>
                     <div onclick="show('Decrescente')">Z-A</div>
+                </div>
+            </div>
+
+            <div class="dropdown-art"><!-- non toccare -->
+                <input type="text" class="filterBox-art" placeholder="Articoli" readonly name="articoli">
+                <div class="option">
+                    <div onclick="showArt('Alberi')">Alberi</div>
+                    <div onclick="showArt('Buoni')">Buoni</div>
+                    <div onclick="showArt('Tutti')">Tutti</div>
                 </div>
             </div>
 
