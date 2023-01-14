@@ -50,11 +50,20 @@ header .user{
     margin-bottom: 10px;
 }
 
- .user img{
-    width: 25px;
-    margin-top: 10px;
-    margin-left: 5px;
+.user a{
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+ .user a i{
+    font-size: 24px;
+     color: var(--text-color);
     cursor: pointer;
+     margin: 10px 10px 0 5px;
+}
+
+.user a i:hover{
+    color: var(--main-color);
 }
 
 header .nav-menu{

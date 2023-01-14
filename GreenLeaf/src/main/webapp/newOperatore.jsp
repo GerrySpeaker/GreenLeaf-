@@ -76,7 +76,7 @@
           <div onclick="show('Toscana')">Toscana</div>
           <div onclick="show('Trentino Alto Adige')">Trentino Alto Adige</div>
           <div onclick="show('Umbria')">Umbria</div>
-          <div onclick="show('Valle d Aosta')">Valle d'Aosta</div>
+          <div onclick="show('Valle d&#8216 Aosta')">Valle d'Aosta</div>
           <div onclick="show('Veneto')">Veneto</div>
         </div>
       </div>

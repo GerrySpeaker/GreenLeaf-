@@ -7,7 +7,7 @@
     <title>Homepage</title>
     <link rel="stylesheet" href="risorse/style/header.css"> <!-- style -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
 </head>
 <body class>
     <header class="all-headerbody">
@@ -25,8 +25,8 @@
             </div>
 
             <div class="user">
-                <a  href="login.jsp"><img src="risorse/img/user.png" alt=""></a> <!-- se non è loggato va al login -->
-                <a  href=""><img src="risorse/img/shopping-cart.png" alt=""></a>
+                <a  href="login.jsp"><i class="fa-solid fa-user"></i></a> <!-- se non è loggato va al login -->
+                <a  href=""><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
     </header>
     <script src="risorse/js/header.js"></script>

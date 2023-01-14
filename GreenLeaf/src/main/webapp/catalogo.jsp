@@ -57,7 +57,7 @@
                     <div onclick="showReg('Toscana')">Toscana</div>
                     <div onclick="showReg('Trentino Alto Adige')">Trentino Alto Adige</div>
                     <div onclick="showReg('Umbria')">Umbria</div>
-                    <div onclick="showReg('Valle d Aosta')">Valle d'Aosta</div>
+                    <div onclick="showReg('Valle d&#8216; Aosta')">Valle d'Aosta</div>
                     <div onclick="showReg('Veneto')">Veneto</div>
                 </div>
             </div>
