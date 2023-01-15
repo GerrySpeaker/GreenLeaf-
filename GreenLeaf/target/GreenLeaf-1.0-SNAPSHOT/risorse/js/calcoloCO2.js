@@ -10,7 +10,7 @@ function attiva(mezzo){
         mezzo.classList.add("active");
         page.style.display = "none";
         km.style.display = "flex";
-        document.getElementById("add").src = "png/" + mezzo.id +".png";
+        document.getElementById("add").src =  mezzo.id ;
     }
 }
 

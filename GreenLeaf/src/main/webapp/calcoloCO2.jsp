@@ -9,7 +9,20 @@
     <link rel="stylesheet" href="risorse/style/range.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+<%@ page import="javax.servlet.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="storage.TrasportiDao" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Iterator" %>
+<%
+    System.out.println("Sono qui");
+    TrasportiDao dao = new TrasportiDao();
+    ArrayList <TrasportiBean> article = (ArrayList<TrasportiBean>) dao.doRetrieveAll();
+    if(article == null){
+        response.sendRedirect(request.getContextPath()+"/calcoloCO2.jsp");
+    }
 
+    System.out.println(article.toString());
+%>
 <%@ include file="header.jsp" %>
 
 
@@ -26,50 +39,17 @@
             <button>Mare</button>
             
             <div class="mezzi"> <!-- 5 mezzi max -->
-    
-                <div class="mezzo" id="plane" onclick="attiva(this)"> <!--qui inserire il nome del mezzo-->
-                    <img src="png/plane.png" alt="">
+                <% Iterator<TrasportiBean> prodotto = article.iterator();
+                    int i = 0;
+                    while(prodotto.hasNext()){
+                        TrasportiBean prod = prodotto.next();
+                        i++;
+                %>
+
+                <div class="mezzo" id="<%=prod.getUrl()%>" onclick="attiva(this)"> <!--qui inserire il nome del mezzo-->
+                    <img src="<%= prod.getUrl() %>" alt="">
                 </div>
-    
-                <div class="mezzo" id="ship" onclick="attiva(this)"> <!--qui inserire il nome del mezzo-->
-                    <img src="png/ship.png" alt="">
-                </div>
-    
-                <div class="mezzo" id="" onclick="attiva(this)"> <!--qui inserire il nome del mezzo-->
-                    <img src="png/plane.png" alt="">
-                </div>
-    
-                <div class="mezzo" id="" onclick="attiva(this)"> <!--qui inserire il nome del mezzo-->
-                    <img src="png/plane.png" alt="">
-                </div>
-    
-                <div class="mezzo" id="" onclick="attiva(this)"> <!--qui inserire il nome del mezzo-->
-                    <img src="png/plane.png" alt="">
-                </div>
-    
-            </div>
-    
-            <div class="mezzi"> <!-- 5 mezzi max -->
-    
-                <div class="mezzo" id="" onclick="attiva(this)"> <!--qui inserire il nome del mezzo-->
-                    <img src="png/plane.png" alt="" onclick="showKm(this)">
-                </div>
-    
-                <div class="mezzo" id="" onclick="attiva(this)"> <!--qui inserire il nome del mezzo-->
-                    <img src="png/plane.png" alt="">
-                </div>
-    
-                <div class="mezzo" id="" onclick="attiva(this)"> <!--qui inserire il nome del mezzo-->
-                    <img src="png/plane.png" alt="">
-                </div>
-    
-                <div class="mezzo" id="" onclick="attiva(this)"> <!--qui inserire il nome del mezzo-->
-                    <img src="png/plane.png" alt="">
-                </div>
-    
-                <div class="mezzo" id="" onclick="attiva(this)"> <!--qui inserire il nome del mezzo-->
-                    <img src="png/plane.png" alt="">
-                </div>
+                <% } %>
     
             </div>
     
