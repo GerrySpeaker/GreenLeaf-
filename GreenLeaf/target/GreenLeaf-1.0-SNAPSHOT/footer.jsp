@@ -10,7 +10,7 @@
                 <div class="sec aboutus">
                     <h2 class="testo">Chi siamo?</h2>
                     <p class="about">Siamo un gruppo di studenti, tra ragazzi della magistrale e tiennale,<br>
-                        della facoltà di Informatica dell'Univerisità degli studi di Salerno.
+                        della facolt&agrave; di Informatica dell'Univerisit&agrave; degli studi di Salerno.
                     </p>
 
                 </div>

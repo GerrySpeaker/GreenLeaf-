@@ -5,12 +5,12 @@
 }
 
 :root{
-	--bg-color: whitesmoke;
-	--text-color: #282828;
-	--main-color: #007a00;
-	--second-color: #004700;
-	--notify-color: #80ff81;
-	--popup-color: white;
+    --bg-color: whitesmoke;
+    --text-color: #282828;
+    --main-color: #007a00;
+    --second-color: #004700;
+    --notify-color: #80ff81;
+    --popup-color: white;
 }
 
 .all-conf{
@@ -55,15 +55,15 @@
 }
 
 .box-calc button{
-   box-shadow:0px 7px 15px 3px rgba(0,0,0,0.39);
-   background-color: var(--popup-color);
-   padding: 10px;
-   border-radius: 30px;
-   margin:  0 20px;
-   border: none;
-   width: 90px;
-   font-size: 15px;
-   font-weight: 700;
+    box-shadow:0px 7px 15px 3px rgba(0,0,0,0.39);
+    background-color: var(--popup-color);
+    padding: 10px;
+    border-radius: 30px;
+    margin:  0 20px;
+    border: none;
+    width: 90px;
+    font-size: 15px;
+    font-weight: 700;
 }
 
 .box-calc button:hover{
@@ -72,12 +72,10 @@
 }
 
 .box-calc .mezzi{
-    margin-top: 50px;
-    display: flex;
-    gap: 10rem;
-    align-items: center;
-    justify-content: center;
-    margin-top: 70px;
+    margin: 70px 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 16rem);
+
 }
 
 .box-calc .mezzi .mezzo{
@@ -86,6 +84,7 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    margin-bottom: 50px;
 }
 
 .box-calc .mezzi .mezzo img{
@@ -172,26 +171,26 @@
 }
 
 @media screen and (max-width: 1240px){
-	.box-calc .mezzi{
-	    display: flex;
-	    gap: 5rem;
-	}
+    .box-calc .mezzi{
+        display: flex;
+        gap: 5rem;
+    }
 }
 
 @media screen and (max-width: 920px){
-	.box-calc .mezzi{
-	    display: flex;
-	    gap: 3rem;
-	    
-	}
+    .box-calc .mezzi{
+        display: flex;
+        gap: 3rem;
 
-	.calcolo{
-	    width: 80%;
-	    height: 60px;
-	}
+    }
 
-	.calcolo .avvia h2{
-	    margin-top: 40px;
-	    font-size: 20px;
-	}
+    .calcolo{
+        width: 80%;
+        height: 60px;
+    }
+
+    .calcolo .avvia h2{
+        margin-top: 40px;
+        font-size: 20px;
+    }
 }

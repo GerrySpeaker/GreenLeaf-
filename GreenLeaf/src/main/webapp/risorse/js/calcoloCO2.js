@@ -25,3 +25,24 @@ function rangeSlider(value){
     document.getElementById('rangeValue').innerHTML = value
 }
 
+function filtro(obj){
+    if (obj.value.match("Tutti"))
+        window.location.reload();
+    else if(obj.value.match("Terra")){
+        window.location.reload();
+        document.getElementById("Aereo").style.display = "none";
+        document.getElementById("Nave").style.display = "none";
+        document.getElementById("Nave da crocera").style.display = "none";
+    }
+    else if(obj.value.match("Aria")){
+        window.location.reload();
+        document.getElementById("Aereo").style.display = "none";
+        document.getElementById("Nave").style.display = "none";
+        document.getElementById("Nave da crocera").style.display = "none";
+        document.getElementById("Aereo").style.display = "none";
+        document.getElementById("Nave").style.display = "none";
+        document.getElementById("Nave da crocera").style.display = "none";
+    }
+
+}
+

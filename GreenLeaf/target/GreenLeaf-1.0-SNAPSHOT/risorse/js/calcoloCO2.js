@@ -25,3 +25,12 @@ function rangeSlider(value){
     document.getElementById('rangeValue').innerHTML = value
 }
 
+function filtro(obj){
+    if (obj.value.match("Tutti"))
+        document.querySelectorAll("mezzo").display = "block";
+    else if(obj.value.match("Terra")){
+        document.getElementById("Aereo")
+    }
+
+}
+
