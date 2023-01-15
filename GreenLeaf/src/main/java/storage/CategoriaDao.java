@@ -114,5 +114,47 @@ public class CategoriaDao implements InterfacciaDao<CategoriaBean>{
         return bean;
     }
 
+    public ArrayList<String> doRetriveByAssociato(String regione) throws SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ArrayList<String> lista = new ArrayList<>();
+        String selectSQL = "SELECT nome,CO2max,descrizione,prezzo,url,regioneAssociato FROM categoria,associato where nome=categoriaAssociato AND regioneAssociato=?";
+
+        try {
+            connection = ds.getConnection();
+            preparedStatement = connection.prepareStatement(selectSQL);
+            preparedStatement.setString(1, regione);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            while(rs.next()) {
+                String nome,co2,desc,url,regioneAssociato;
+                Double prezzo;
+                nome = rs.getString("nome");
+                co2 = rs.getString("CO2max");
+                desc = rs.getString("descrizione");
+                prezzo = rs.getDouble("prezzo");
+                url = rs.getString("url");
+                regioneAssociato = rs.getString("regioneAssociato");
+                lista.add(nome);
+                lista.add(co2);
+                lista.add(desc);
+                lista.add(prezzo.toString());
+                lista.add(url);
+                lista.add(regioneAssociato);
+            }
+
+        } finally {
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+        return lista;
+
+    }
+
 
 }

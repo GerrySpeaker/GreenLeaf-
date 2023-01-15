@@ -1,7 +1,9 @@
 package application;
 
+import bean.AssociatoBean;
 import bean.CategoriaBean;
 import storage.AlberoDao;
+import storage.AssociatoDao;
 import storage.CategoriaDao;
 
 import java.io.IOException;
@@ -29,14 +31,30 @@ public class FiltriCatalogo extends HttpServlet{
         String articoli = request.getParameter("articoli");
         String regione = request.getParameter("regione");
 
+       CategoriaDao categoriaDao = new CategoriaDao();
+
+
         CategoriaDao dao = new CategoriaDao();
         try {
              ArrayList<CategoriaBean> CatalogoFiltro = new ArrayList<CategoriaBean>();
              CatalogoFiltro = dao.doRetrieveAll();
 
-             List<CategoriaBean> sortedList = CatalogoFiltro.stream().sorted(Comparator.comparing(CategoriaBean::getNomeCategoria).reversed()).collect(Collectors.toList());
+             //Ordine decrescente
+       //      List<CategoriaBean> sortedList = CatalogoFiltro.stream().sorted(Comparator.comparing(CategoriaBean::getNomeCategoria).reversed()).collect(Collectors.toList());
+       //      sortedList.forEach(System.out::println);
 
-             sortedList.forEach(System.out::println);
+             //Ordina in base alla regione
+            ArrayList<String> regioneFiltro = categoriaDao.doRetriveByAssociato(regione);
+            System.out.println("stampa in ordine di regione");
+            regioneFiltro.forEach(System.out::println);
+
+            //Visualizza solo alberi
+
+
+            //Visualizza solo buoni
+
+
+
         } catch (SQLException e) {
             response.sendRedirect(request.getContextPath() + "/error.jsp");
             throw new RuntimeException(e);

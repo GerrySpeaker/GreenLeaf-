@@ -24,7 +24,6 @@
         response.sendRedirect(request.getContextPath()+"/home.jsp");
     }
 
-    System.out.println(article.toString());
 %>
 <%@ include file="header.jsp" %>
 
