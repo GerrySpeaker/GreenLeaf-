@@ -135,12 +135,11 @@ public class CategoriaDao implements InterfacciaDao<CategoriaBean>{
                 prezzo = rs.getDouble("prezzo");
                 url = rs.getString("url");
                 regioneAssociato = rs.getString("regioneAssociato");
-                lista.add(nome);
-                lista.add(co2);
-                lista.add(desc);
-                lista.add(prezzo.toString());
                 lista.add(url);
-                lista.add(regioneAssociato);
+                lista.add(nome);
+                lista.add(desc);
+                lista.add(co2);
+                lista.add(prezzo.toString());
             }
 
         } finally {

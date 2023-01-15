@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,27 +32,35 @@ public class FiltriCatalogo extends HttpServlet{
         String articoli = request.getParameter("articoli");
         String regione = request.getParameter("regione");
 
-       CategoriaDao categoriaDao = new CategoriaDao();
-
-
-        CategoriaDao dao = new CategoriaDao();
+       CategoriaDao dao = new CategoriaDao();
         try {
-             ArrayList<CategoriaBean> CatalogoFiltro = new ArrayList<CategoriaBean>();
-             CatalogoFiltro = dao.doRetrieveAll();
-
-             //Ordine decrescente
-       //      List<CategoriaBean> sortedList = CatalogoFiltro.stream().sorted(Comparator.comparing(CategoriaBean::getNomeCategoria).reversed()).collect(Collectors.toList());
-       //      sortedList.forEach(System.out::println);
-
-             //Ordina in base alla regione
-            ArrayList<String> regioneFiltro = categoriaDao.doRetriveByAssociato(regione);
-            System.out.println("stampa in ordine di regione");
-            regioneFiltro.forEach(System.out::println);
-
-            //Visualizza solo alberi
+             ArrayList<CategoriaBean> CatalogoFiltro = new ArrayList<>();
+             CatalogoFiltro = dao.doRetrieveAll(); //tutti gli alberi disponibili da comperare
 
 
-            //Visualizza solo buoni
+             if(ordine != null && regione == null){
+                 //Ordine decrescente
+                 List<CategoriaBean> sortedList = CatalogoFiltro.stream().sorted(Comparator.comparing(CategoriaBean::getNomeCategoria).reversed()).collect(Collectors.toList());
+                 sortedList.forEach(System.out::println);
+                 ServletContext cxt= getServletContext();
+                 cxt.setAttribute("descrescente", sortedList);
+             }
+             if(ordine == null && regione != null){
+                 //Ordina in base alla regione
+                 ArrayList<String> regioneFiltro = dao.doRetriveByAssociato(regione);
+                 System.out.println("stampa per regione");
+                 regioneFiltro.forEach(System.out::println);
+                 ServletContext cxt= getServletContext();
+                 cxt.setAttribute("ordRegione", regioneFiltro);
+             }
+             if(ordine != null && regione != null){
+                 ArrayList<String> regioneFiltro = dao.doRetriveByAssociato(regione);
+                 Collections.reverse(regioneFiltro);
+                 ServletContext cxt= getServletContext();
+                 cxt.setAttribute("regioneDecrescente", regioneFiltro);
+             }
+
+
 
 
 

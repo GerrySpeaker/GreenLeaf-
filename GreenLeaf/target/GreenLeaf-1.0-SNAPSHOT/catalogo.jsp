@@ -16,15 +16,27 @@
 <%@ page import="storage.CategoriaDao" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Iterator" %>
+<%@ page import="java.util.List" %>
 <%
-    System.out.println("Sono qui");
     CategoriaDao dao = new CategoriaDao();
-    ArrayList <CategoriaBean> article = (ArrayList<CategoriaBean>) dao.doRetrieveAll();
-    if(article == null){
-        response.sendRedirect(request.getContextPath()+"/home.jsp");
+
+    ArrayList<CategoriaBean> article = (ArrayList<CategoriaBean>) dao.doRetrieveAll();
+
+    ServletContext cxt = request.getServletContext();
+    article = (ArrayList<CategoriaBean>) cxt.getAttribute("decrescente");
+    ArrayList<String> ordRegione = (ArrayList<String>) cxt.getAttribute("ordRegione");
+    if(article == null && ordRegione == null){
+        article = (ArrayList<CategoriaBean>) dao.doRetrieveAll();
+    }
+    if(article != null && ordRegione == null){
+        article = (ArrayList<CategoriaBean>) cxt.getAttribute("decrescente");
     }
 
-    System.out.println(article.toString());
+    if(ordRegione != null && article == null){
+        ordRegione = (ArrayList<String>) cxt.getAttribute("ordRegione");
+    }
+
+
 %>
 <%@ include file="header.jsp" %>
 
@@ -106,9 +118,13 @@
         </div>
     </div>
 
+    <%
+        if(article != null){
 
+    %>
     <div class="container-card" id="catalogo">
-        <% Iterator<CategoriaBean> prodotto = article.iterator();
+        <%
+            Iterator<CategoriaBean> prodotto = article.iterator();
             int i = 0;
             while(prodotto.hasNext()){
                 CategoriaBean prod = prodotto.next();
@@ -131,12 +147,38 @@
                 </div>
             </div>
         </div>      <!-- a qui -->
-        <% } %>
+        <% } //chiudo il wile%>
+        <% }
+            else{ //allora stampo in base alla regione
+
+        %>
+        <div class="container-card" id="catalogo">
+            <%
+                int i = 0;
+                while(i < ordRegione.size()){
+            %>
+            <div class="card">      <!-- ripetere da -->
+                <div class="card-header">
+                    <img src="<%= ordRegione.get(i)%>" alt="melo" />
+                </div>
+                <div class="card-body">
+                    <h3><%= ordRegione.get(i+1)%></h3>
+                    <p> <%= ordRegione.get(i+1)%></p>
+                    <div class="card-status">
+                        <p class="imp">CO2 Massima catturabile: <span><%= ordRegione.get(i+1)%></span></p>
+                        <p class="imp">Prezzo: <span><%= ordRegione.get(i+1)%></span></p>
+                    </div>
+                    <div class="btn_area">
+                        <a href="visualizzaAlbero.jsp" class="btn_primary">Visualizza prodotto</a><br><br>
+                        <a  class="btn_secondary" onclick="showRegioniToSelect()">Adotta un albero</a>
+                    </div>
+                </div>
+            </div>      <!-- a qui -->
+            <% } //chiudo il wile%>
+            <% } //chiudo l'if%>
 
 
     </div>
-
-
 
 </div>
 
