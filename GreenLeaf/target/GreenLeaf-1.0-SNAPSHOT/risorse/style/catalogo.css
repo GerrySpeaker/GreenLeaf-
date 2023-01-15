@@ -17,6 +17,7 @@
 	text-decoration: none;
 	list-style: none;
     background-color: var(--bg-color);
+    min-height: 100vh;
 }
 
 .btn-select{
@@ -138,16 +139,17 @@
     font-weight: 300;
 }
 
-@media screen and (max-width:1054px){
 
-    .container {
-    grid-template-columns: repeat(2, 20rem);
+@media screen and (max-width:1220px){
+
+    .container-card {
+        grid-template-columns: repeat(2, 20rem);
     }
 }
 
 @media screen and (max-width:700px){
 
-    .container {
-    grid-template-columns: repeat(1, 20rem);
+    .container-card {
+        grid-template-columns: repeat(1, 20rem);
     }
 }

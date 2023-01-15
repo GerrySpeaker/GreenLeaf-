@@ -18,20 +18,20 @@
     min-height: 100vh;
     align-items: center;
     justify-content: center;
+    background: url(background.jpg);
 }
 
 .conferma{
-    position: absolute;
+    position: relative;
     width: 500px;
     height: 350px;
-    bottom: 30%;
-    left: 30%;
     background-color: var(--bg-color);
     border-radius: 30px;
     text-align: center;
     padding: 70px;
     justify-content: center;
     align-items: center;
+    display: flex;
 }
 
 .conferma p{

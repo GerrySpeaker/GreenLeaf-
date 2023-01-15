@@ -34,7 +34,7 @@ public class Logout extends HttpServlet {
 		cxt.removeAttribute("utente");
 		cxt.removeAttribute("operatore");
 		cxt.removeAttribute("email");
-		response.sendRedirect(request.getContextPath()+"/login.jsp");
+		response.sendRedirect(request.getContextPath()+"/homepage.jsp");
 
 	
 	}

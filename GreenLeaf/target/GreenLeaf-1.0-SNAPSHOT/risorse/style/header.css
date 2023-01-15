@@ -58,8 +58,8 @@ header .user{
  .user a i{
     font-size: 24px;
      color: var(--text-color);
-    cursor: pointer;
-     margin: 10px 10px 0 5px;
+     cursor: pointer;
+     margin: 10px 0 0 5px;
 }
 
 .user a i:hover{

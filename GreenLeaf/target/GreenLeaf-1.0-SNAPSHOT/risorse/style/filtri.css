@@ -288,10 +288,16 @@
     }
 
     .dropdown{
-       width: 200px;
+        width: 200px;
     }
 
     .dropdown-reg{
+
+        width: 200px;
+        margin-top: 20px;
+    }
+
+    .dropdown-art{
         width: 200px;
     }
 }

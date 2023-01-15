@@ -16,7 +16,7 @@
                 <li><a  href="homepage.jsp">Home</a></li>
                 <li><a href="catalogo.jsp">Adotta</a></li>
                 <li><a href="">Monitoraggio</a></li>
-                <li><a href="">Calcolo CO2</a></li>
+                <li><a href="calcoloCO2.jsp">Calcolo CO2</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>

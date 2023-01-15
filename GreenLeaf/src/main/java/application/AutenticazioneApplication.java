@@ -75,7 +75,7 @@ public class AutenticazioneApplication extends HttpServlet {
                             System.out.println("accesso consentito");
                             request.getSession().setAttribute("email", email);
                             request.getSession().setAttribute("operatore", operatore);
-                            response.sendRedirect(request.getContextPath() + "/homeopearatore.jsp");
+                            response.sendRedirect(request.getContextPath() + "/operatore.jsp");
                     }
                 }
                 else{
@@ -83,7 +83,7 @@ public class AutenticazioneApplication extends HttpServlet {
                         System.out.println("accesso consentito");
                         request.getSession().setAttribute("email", email);
                         request.getSession().setAttribute("adminRoles", admin);
-                        response.sendRedirect(request.getContextPath() + "/homeadmin.jsp");
+                        response.sendRedirect(request.getContextPath() + "/admin.jsp");
 
                 }
             }
@@ -92,7 +92,7 @@ public class AutenticazioneApplication extends HttpServlet {
                     System.out.println("accesso consentito");
                     request.getSession().setAttribute("email", email);
                     request.getSession().setAttribute("utente", utente);
-                    response.sendRedirect(request.getContextPath() + "/homeutente.jsp");
+                    response.sendRedirect(request.getContextPath() + "/utente.jsp");
 
             }
 
