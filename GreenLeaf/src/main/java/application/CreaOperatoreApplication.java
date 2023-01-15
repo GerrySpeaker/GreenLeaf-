@@ -51,9 +51,15 @@ public class CreaOperatoreApplication extends HttpServlet {
                 System.out.println("l'admin con email " + email + " vuole creare un nuovo operatore");
                 System.out.println(operatoreBean.toString());
 
-                operatore.registrazione(operatoreBean);
+                if(!operatoreBean.getEmail().contains("@")) {
+                    response.sendRedirect(request.getContextPath() + "/newOperatore.jsp?error=true");
+                }
+                else{
+                    operatore.registrazione(operatoreBean);
 
-                response.sendRedirect(request.getContextPath()+"/admin.jsp");
+                    response.sendRedirect(request.getContextPath()+"/admin.jsp");
+                }
+
 
             }else{
 
