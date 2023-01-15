@@ -36,12 +36,28 @@ function filtro(obj){
     }
     else if(obj.value.match("Aria")){
         window.location.reload();
-        document.getElementById("Aereo").style.display = "none";
+        document.getElementById("Autobus").style.display = "none";
+        document.getElementById("Macchina").style.display = "none";
+        document.getElementById("Metropolitana").style.display = "none";
+        document.getElementById("Scooter").style.display = "none";
         document.getElementById("Nave").style.display = "none";
         document.getElementById("Nave da crocera").style.display = "none";
+        document.getElementById("Taxi").style.display = "none";
+        document.getElementById("Tram").style.display = "none";
+        document.getElementById("Treno").style.display = "none";
+    }
+
+    else if(obj.value.match("Mare"))
+    {
+        window.location.reload();
+        document.getElementById("Autobus").style.display = "none";
+        document.getElementById("Macchina").style.display = "none";
+        document.getElementById("Metropolitana").style.display = "none";
+        document.getElementById("Scooter").style.display = "none";
         document.getElementById("Aereo").style.display = "none";
-        document.getElementById("Nave").style.display = "none";
-        document.getElementById("Nave da crocera").style.display = "none";
+        document.getElementById("Taxi").style.display = "none";
+        document.getElementById("Tram").style.display = "none";
+        document.getElementById("Treno").style.display = "none";
     }
 
 }

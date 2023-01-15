@@ -34,10 +34,10 @@
                 <h2>Scopri quanta CO2 hai emesso</h2>
             </div>
             
-            <button>Tutti</button>
-            <button>Terra</button>
-            <button>Aria</button>
-            <button>Mare</button>
+            <button onclick="filtro('Tutti')">Tutti</button>
+            <button onclick="filtro('Terra')">Terra</button>
+            <button onclick="filtro('Aria')">Aria</button>
+            <button onclick="filtro('Mare')">Mare</button>
             
             <div class="mezzi"> <!-- 5 mezzi max -->
                 <% Iterator<TrasportiBean> prodotto = article.iterator();
