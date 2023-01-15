@@ -26,39 +26,58 @@ function rangeSlider(value){
 }
 
 function filtro(obj){
-    if (obj.value.match("Tutti"))
+    console.log(obj)
+    if (obj.match("Tutti"))
         window.location.reload();
-    else if(obj.value.match("Terra")){
-        window.location.reload();
-        document.getElementById("Aereo").style.display = "none";
-        document.getElementById("Nave").style.display = "none";
-        document.getElementById("Nave da crocera").style.display = "none";
+    else if(obj.match("Terra")){
+        document.getElementById("risorse\\img\\plane.png").style.display = "none";
+        document.getElementById("risorse\\img\\bus.png").style.display = "block";
+        document.getElementById("risorse\\img\\sports-car.png").style.display = "block";
+        document.getElementById("risorse\\img\\underground.png").style.display = "block";
+        document.getElementById("risorse\\img\\ship.png").style.display = "none";
+        document.getElementById("risorse\\img\\cruise.png").style.display = "none";
+        document.getElementById("risorse\\img\\scooter.png").style.display = "block";
+        document.getElementById("risorse\\img\\taxi.png").style.display = "block";
+        document.getElementById("risorse\\img\\tram.png").style.display = "block";
+        document.getElementById("risorse\\img\\train.png").style.display = "block";
     }
-    else if(obj.value.match("Aria")){
-        window.location.reload();
-        document.getElementById("Autobus").style.display = "none";
-        document.getElementById("Macchina").style.display = "none";
-        document.getElementById("Metropolitana").style.display = "none";
-        document.getElementById("Scooter").style.display = "none";
-        document.getElementById("Nave").style.display = "none";
-        document.getElementById("Nave da crocera").style.display = "none";
-        document.getElementById("Taxi").style.display = "none";
-        document.getElementById("Tram").style.display = "none";
-        document.getElementById("Treno").style.display = "none";
+    else if(obj.match("Aria")){
+        document.getElementById("risorse\\img\\plane.png").style.display = "block";
+        document.getElementById("risorse\\img\\bus.png").style.display = "none";
+        document.getElementById("risorse\\img\\sports-car.png").style.display = "none";
+        document.getElementById("risorse\\img\\underground.png").style.display = "none";
+        document.getElementById("risorse\\img\\ship.png").style.display = "none";
+        document.getElementById("risorse\\img\\cruise.png").style.display = "none";
+        document.getElementById("risorse\\img\\scooter.png").style.display = "none";
+        document.getElementById("risorse\\img\\taxi.png").style.display = "none";
+        document.getElementById("risorse\\img\\tram.png").style.display = "none";
+        document.getElementById("risorse\\img\\train.png").style.display = "none";
     }
 
-    else if(obj.value.match("Mare"))
+    else if(obj.match("Mare"))
     {
-        window.location.reload();
-        document.getElementById("Autobus").style.display = "none";
-        document.getElementById("Macchina").style.display = "none";
-        document.getElementById("Metropolitana").style.display = "none";
-        document.getElementById("Scooter").style.display = "none";
-        document.getElementById("Aereo").style.display = "none";
-        document.getElementById("Taxi").style.display = "none";
-        document.getElementById("Tram").style.display = "none";
-        document.getElementById("Treno").style.display = "none";
+        document.getElementById("risorse\\img\\plane.png").style.display = "none";
+        document.getElementById("risorse\\img\\bus.png").style.display = "none";
+        document.getElementById("risorse\\img\\sports-car.png").style.display = "none";
+        document.getElementById("risorse\\img\\underground.png").style.display = "none";
+        document.getElementById("risorse\\img\\ship.png").style.display = "block";
+        document.getElementById("risorse\\img\\cruise.png").style.display = "block";
+        document.getElementById("risorse\\img\\scooter.png").style.display = "none";
+        document.getElementById("risorse\\img\\taxi.png").style.display = "none";
+        document.getElementById("risorse\\img\\tram.png").style.display = "none";
+        document.getElementById("risorse\\img\\train.png").style.display = "none";
     }
 
+
+}
+
+function calcola(lista, co2){ 
+    alert(lista)
+    for (var i=0; i<lista.length; i++)
+        if (lista[i].match(document.getElementById("add").src)){
+            document.getElementById("qui").innerHTML =document.getElementById("qui")+ co2[i] * document.getElementById("inputRange").value;
+            document.getElementById('rangeValue').innerHTML = 0;
+            document.getElementById("inputRange").value = 0;
+        }
 }
 
