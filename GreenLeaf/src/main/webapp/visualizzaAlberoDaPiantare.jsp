@@ -14,6 +14,7 @@
   <title>Dettaglio al prodotto</title>
   <link rel="stylesheet" href="risorse/style/prodotto.css">
   <link rel="stylesheet" href="risorse/style/checkbox.css">
+    <link rel="stylesheet" href="risorse/style/iot.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
@@ -48,7 +49,7 @@
     System.out.println("sono nelle jsp");
 
 %>
-<div class="all-datail">
+<div class="all-datail" id="page">
   <div class = "card-wrapper">
     <div class = "card">
       <!-- card left -->
@@ -79,14 +80,35 @@
         <%}else{ %>
             <input id="conferma" class="confermato" type="checkbox" value="piantato" onclick="conferma()">
             <label for="conferma">Si</label>
-            <a href="AlberiPiantumati?idAlberoDaPiantare=<%= albero.getIdAlbero()%>" id="forzare" class="submit">Conferma</a>
+            <a href="AlberiPiantumati?idAlberoDaPiantare=<%= albero.getIdAlbero()%>"  onclick="showiot()" id="forzare" class="submit">Conferma</a>
         <%} %>
       </div>
     </div>
   </div>
 </div>
 
+<div class="all-iot" id="iot">
+    <div class="box-iot">
+        <h2>Inserire l'IOT</h2>
+
+        <form action="">
+            <div class="inf1">
+                <input type="text" id="id" placeholder="Inserire l'ID" name="id">
+                <input type="text" id="ipv4" placeholder="ipv4" name="ipv4">
+            </div>
+            <div class="inf2">
+                <input type="text" id="longitudine" placeholder="inserire la longitudine" name="longitudine">
+                <input type="text" id="altitudine" placeholder="inserire l'altitudine" name="altitudine">
+                <input type="text" id="latitudine" placeholder="inserire la latitudine" name="latitudine">
+            </div>
+
+            <a href="" class="go" onclick="hideiot()">Procedi</a>
+        </form>
+    </div>
+</div>
+
 <script src="risorse/js/flush-submit.js"></script>
+
 
 <%@ include file="footer.jsp" %>
 </html>

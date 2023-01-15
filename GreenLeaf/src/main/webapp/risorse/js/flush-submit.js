@@ -1,4 +1,6 @@
 var i = 1;
+var page = document.getElementById("page");
+var iot = document.getElementById("iot");
 
 function conferma(){
     var btn = document.getElementById("forzare");
@@ -11,4 +13,14 @@ function conferma(){
         btn.style.display = "block";
         i++;
     }
+}
+
+function showiot(){
+    page.style.display ="none";
+    iot.style.display ="flex";
+}
+
+function hideiot(){
+    page.style.display ="block";
+    iot.style.display ="none";
 }
