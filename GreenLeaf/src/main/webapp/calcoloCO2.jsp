@@ -67,6 +67,7 @@
           <div class="calcolo">
             <div class="somma">
                 <input style="display: none" type="number" id="qui" value="0" readonly>
+                <p> kg</p>
             </div>
             <div class="avvia" onclick="mostraCalcolo()">
                 <h2>procedi al calcolo</h2>

@@ -187,6 +187,8 @@ function calcola(){
 }
 
 function mostraCalcolo(){
+
     document.getElementById("qui").style.display="block";
+    document.getElementById("qui").innerHTML =document.getElementById("qui").value + " km";
 }
 

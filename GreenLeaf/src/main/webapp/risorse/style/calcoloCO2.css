@@ -129,6 +129,7 @@
     margin: 20px 50px;
     text-align: left;
     font-size: 20px;
+    display:flex;
 }
 
 .calcolo .avvia{
@@ -146,9 +147,17 @@
 }
 
 .calcolo .somma input{
-    font-size: 30px;
+    font-size: 25px;
     border: none;
     text-align: left;
+    width:80px;
+}
+
+.calcolo .somma p{
+    font-size: 25px;
+    border: none;
+    text-align: left;
+    width:80px;
 }
 
 input#qui {}
