@@ -42,12 +42,9 @@
             <div class="mezzi"> <!--  -->
                 <% Iterator<TrasportiBean> prodotto = article.iterator();
                     int i = 0;
-                   ArrayList<String> ids = new ArrayList<>();
-                    ArrayList<Integer> co2 = new ArrayList<>();
+
                     while(prodotto.hasNext()){
                         TrasportiBean prod = prodotto.next();
-                        ids.add(prod.getUrl());
-                        co2.add(prod.getCo2Media());
                         i++;
                 %>
 
@@ -69,9 +66,9 @@
     <div class="all-calc">
           <div class="calcolo">
             <div class="somma">
-                <p style="display: none" id="qui"></p>
+                <input style="display: none" type="number" id="qui" value="0" readonly>
             </div>
-            <div class="avvia">
+            <div class="avvia" onclick="mostraCalcolo()">
                 <h2>procedi al calcolo</h2>
             </div>
           </div>  
@@ -87,7 +84,8 @@
             onmousemove="rangeSlider(this.value)">
             <span id="rangeValue">0</span>
         </div>
-        <a class="go" onclick="calcola(<%= ids %>, <%=co2%>)">Vai al risultato</a> <!-- non vede calcola -->
+
+        <a class="go" onclick="calcola()">Vai al risultato</a> <!-- non vede calcola -->
         <div class="verde">
             <div class="scelto"> 
                 <img id="add">
