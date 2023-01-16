@@ -63,12 +63,8 @@
     <button class="btn-regione">Aggiungi al carrello</button>
 </div>
 
-<div class="all">
-
-
-
-
-    <div class="container-card" id="cat">
+<div class="all" id="cat">
+    <div class="container-card">
         <% Iterator<CategoriaBean> prodotto = article.iterator();
             int i = 0;
             while(prodotto.hasNext()){

@@ -14,19 +14,57 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="bean.CategoriaBean" %>
+<%@ page import="storage.RegioneDao" %>
+<%@ page import="bean.RegioneBean" %>
+
 <%
     System.out.println("Sono in visualizza albero");
     CategoriaDao dao = new CategoriaDao();
-    String id =request.getParameter("nome");
+    String id =request.getParameter("nomeCategoria");
     CategoriaBean article = dao.doRetrieveByKeyAlbero(id);
     if(article == null){
         response.sendRedirect(request.getContextPath()+"/home.jsp");
     }
 
+    RegioneDao daoreg = new RegioneDao();
+    ArrayList<RegioneBean> regione = (ArrayList<RegioneBean>) daoreg.doRetrieveAll();
+
+    System.out.println(id);
+    System.out.println(article.toString());
 %>
 
 
 <%@ include file="header.jsp" %>
+
+<div class="nontavere" id="popup">
+    <div class="scelta">
+        <div class="all-regione">
+            <!-- ripetere le regioni da qui -->
+
+            <% Iterator<RegioneBean> reg = regione.iterator();
+                while(reg.hasNext()){
+                    RegioneBean prod = reg.next();
+
+            %>
+            <div class="regione" id="<%=prod.getNomeRegione()%>">
+                <div class="reg-card">
+                    <div class="radio-group">
+                        <img src="<%= prod.getUrl() %>"><!-- inserire  la regione -->
+                        <label class="radio">
+                            <input type="radio" value ="<%= prod.getNomeRegione() %>" name="<%= prod.getNomeRegione() %>"><!-- inserire al name e a value la regione -->
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+            <!-- a qui-->
+        </div>
+
+    </div>
+    <button class="close"><i class="fa-solid fa-xmark" onclick="tornaDettaglio()"></i></button>
+    <button class="btn-regione">Aggiungi al carrello</button>
+</div>
 
 <div class="all-datail" id="all">
   <div class = "card-wrapper">
@@ -57,7 +95,7 @@
   
         <div class = "purchase-info">
           <input type = "number" min = "0" value = "1">
-          <a class = "btn" onclick="showRegioniToSelect()">
+          <a class = "btn" onclick="showRegioniToSelectDettaglio(<%= article.getNomeCategoria()%>)">
             Aggiungi al carrello <i class = "fas fa-shopping-cart"></i>
           </a>
         </div>
@@ -68,32 +106,10 @@
   </div>
 </div>
 
-<div class="nontavere" id="popup"><!-- come nel catalogo :) -->
-  <div class="scelta">
-      <div class="all-regione">
-          <form action="">
-              <div class="regione">
-                  <div class="reg-card">
-                      <div class="radio-group">
-                          <img id="abruzzo" src="emilia.png">
-                          <label class="radio">
-                              <input type="radio" value ="basilicata" name="abruzzo">
-                              <span class="checkmark"></span>
-                          </label>
-                      </div>
-                  </div>
-              </div>
-              <div class="btn-select">
-                  <a href="visualizzaAlbero.jsp?nome=<%=article.getNomeCategoria()%>" class="close"><i class="fa-solid fa-xmark" ></i></a>
-                  <button class="btn-regione">Aggiungi al carrello</button>
-              </div>
-          </form>
-      </div>
-  </div>
-</div>
 
 
-<script src = "risorse/js/sceltaDettaglio.js"></script>
+
+<script src = "risorse/js/sceltaCatalogo.js"></script>
 <script src="risorse/js/prodotto.js"></script>
 
 
