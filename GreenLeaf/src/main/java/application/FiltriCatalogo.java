@@ -2,6 +2,8 @@ package application;
 
 import bean.AssociatoBean;
 import bean.CategoriaBean;
+import org.json.JSONException;
+import org.json.JSONObject;
 import storage.AlberoDao;
 import storage.AssociatoDao;
 import storage.CategoriaDao;
@@ -36,41 +38,47 @@ public class FiltriCatalogo extends HttpServlet{
         try {
              ArrayList<CategoriaBean> CatalogoFiltro = new ArrayList<>();
              CatalogoFiltro = dao.doRetrieveAll(); //tutti gli alberi disponibili da comperare
-
+                System.out.println("mirko ciao");
 
              if(ordine != null && regione == null){
                  //Ordine decrescente
-                 List<CategoriaBean> sortedList = CatalogoFiltro.stream().sorted(Comparator.comparing(CategoriaBean::getNomeCategoria).reversed()).collect(Collectors.toList());
-                 sortedList.forEach(System.out::println);
-                 ServletContext cxt= getServletContext();
-                 cxt.setAttribute("descrescente", sortedList);
+                 CatalogoFiltro = (ArrayList<CategoriaBean>) CatalogoFiltro.stream().sorted(Comparator.comparing(CategoriaBean::getNomeCategoria).reversed()).collect(Collectors.toList());
+                 System.out.println(CatalogoFiltro.toString());
              }
              if(ordine == null && regione != null){
                  //Ordina in base alla regione
-                 ArrayList<String> regioneFiltro = dao.doRetriveByAssociato(regione);
+                 ArrayList<CategoriaBean> regioneFiltro = dao.doRetriveByAssociato(regione);
                  System.out.println("stampa per regione");
                  regioneFiltro.forEach(System.out::println);
                  ServletContext cxt= getServletContext();
                  cxt.setAttribute("ordRegione", regioneFiltro);
              }
              if(ordine != null && regione != null){
-                 ArrayList<String> regioneFiltro = dao.doRetriveByAssociato(regione);
+                 ArrayList<CategoriaBean> regioneFiltro = dao.doRetriveByAssociato(regione);
                  Collections.reverse(regioneFiltro);
                  ServletContext cxt= getServletContext();
                  cxt.setAttribute("regioneDecrescente", regioneFiltro);
              }
 
-
-
+             if(CatalogoFiltro != null){
+                 JSONObject json= new JSONObject();
+                 json.append("newBook", CatalogoFiltro);
+                 response.getWriter().write(json.toString());
+             }
+             else{
+                 response.getWriter().write("empty");
+             }
 
 
         } catch (SQLException e) {
             response.sendRedirect(request.getContextPath() + "/error.jsp");
             throw new RuntimeException(e);
 
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
         }
 
-        response.sendRedirect(request.getContextPath()+"/catalogo.jsp");
+        //response.sendRedirect(request.getContextPath()+"/catalogo.jsp");
 
     }
 

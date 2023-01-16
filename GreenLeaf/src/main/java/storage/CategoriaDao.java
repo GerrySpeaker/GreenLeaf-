@@ -114,11 +114,11 @@ public class CategoriaDao implements InterfacciaDao<CategoriaBean>{
         return bean;
     }
 
-    public ArrayList<String> doRetriveByAssociato(String regione) throws SQLException {
+    public ArrayList<CategoriaBean> doRetriveByAssociato(String regione) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        ArrayList<String> lista = new ArrayList<>();
-        String selectSQL = "SELECT nome,CO2max,descrizione,prezzo,url,regioneAssociato FROM categoria,associato where nome=categoriaAssociato AND regioneAssociato=?";
+        ArrayList<CategoriaBean> lista = new ArrayList<>();
+        String selectSQL = "SELECT nome,CO2max,descrizione,prezzo,url FROM categoria,associato where nome=categoriaAssociato AND regioneAssociato=?";
 
         try {
             connection = ds.getConnection();
@@ -127,19 +127,13 @@ public class CategoriaDao implements InterfacciaDao<CategoriaBean>{
             ResultSet rs = preparedStatement.executeQuery();
 
             while(rs.next()) {
-                String nome,co2,desc,url,regioneAssociato;
-                Double prezzo;
-                nome = rs.getString("nome");
-                co2 = rs.getString("CO2max");
-                desc = rs.getString("descrizione");
-                prezzo = rs.getDouble("prezzo");
-                url = rs.getString("url");
-                regioneAssociato = rs.getString("regioneAssociato");
-                lista.add(url);
-                lista.add(nome);
-                lista.add(desc);
-                lista.add(co2);
-                lista.add(prezzo.toString());
+                CategoriaBean bean = new CategoriaBean();
+                bean.setNomeCategoria(rs.getString("nome"));
+                bean.setCo2Max(rs.getString("CO2max"));
+                bean.setDescrizione(rs.getString("descrizione"));
+                bean.setPrezzo(rs.getDouble("prezzo"));
+                bean.setUrl(rs.getString("url"));
+                lista.add(bean);
             }
 
         } finally {

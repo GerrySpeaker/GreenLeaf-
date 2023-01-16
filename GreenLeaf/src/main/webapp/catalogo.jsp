@@ -9,43 +9,27 @@
     <link rel="stylesheet" href="risorse/style/filtri.css">
     <link rel="stylesheet" href="risorse/style/regione.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <script src="risorse/js/ajaxCatalogo.js"></script>
     <title>Catalogo</title>
 </head>
 <%@ page import="javax.servlet.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="storage.CategoriaDao" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Iterator" %>
-<%@ page import="java.util.List" %>
+
 <%
     CategoriaDao dao = new CategoriaDao();
-    ServletContext cxt = request.getServletContext();
     ArrayList<CategoriaBean> article = (ArrayList<CategoriaBean>) dao.doRetrieveAll();
-
-
-    article = (ArrayList<CategoriaBean>) cxt.getAttribute("decrescente");
-    ArrayList<String> ordRegione = (ArrayList<String>) cxt.getAttribute("ordRegione");
-    if(article == null && ordRegione == null){
-        article = (ArrayList<CategoriaBean>) dao.doRetrieveAll();
-    }
-    if(article != null && ordRegione == null){
-        article = (ArrayList<CategoriaBean>) cxt.getAttribute("decrescente");
-    }
-
-    if(ordRegione != null && article == null){
-        ordRegione = (ArrayList<String>) cxt.getAttribute("ordRegione");
-    }
-
 
 %>
 <%@ include file="header.jsp" %>
-
+<body onload="getCatalogo('','','')">
 <div class="all">
 
     <div class="border" id="filtro">
-        <form action="FiltriCatalogo" class="all-filter">
+        <form class="all-filter" action="javascript:void(0);">
             <div class="dropdown"><!-- non toccare -->
-                <input type="text" class="filterBox" placeholder="Ordina" readonly name="ordine">
+                <input type="text" class="filterBox" placeholder="Ordina" readonly name="ordine" id="ordine">
                 <div class="option">
                     <div onclick="show('Crescente')">A-Z</div>
                     <div onclick="show('Decrescente')">Z-A</div>
@@ -53,7 +37,7 @@
             </div>
 
             <div class="dropdown-art"><!-- non toccare -->
-                <input type="text" class="filterBox-art" placeholder="Articoli" readonly name="articoli">
+                <input type="text" class="filterBox-art" placeholder="Articoli" readonly name="articoli" id="articoli">
                 <div class="option">
                     <div onclick="showArt('Alberi')">Alberi</div>
                     <div onclick="showArt('Buoni')">Buoni</div>
@@ -62,7 +46,7 @@
             </div>
 
             <div class="dropdown-reg"><!-- non toccare -->
-                <input type="text" class="filterBox-reg" placeholder="Regioni" readonly name="regione">
+                <input type="text" class="filterBox-reg" placeholder="Regioni" readonly name="regione" id="regione">
                 <div class="option">
                     <div onclick="showReg('Abruzzo')">Abruzzo</div>
                     <div onclick="showReg('Basilicata')">Basilicata</div>
@@ -87,7 +71,7 @@
                 </div>
             </div>
 
-            <button class="submit">Cerca</button>
+            <button class="submit" onclick="getCatalogo(document.getElementById('ordine').value,document.getElementById('articoli').value,document.getElementById('regione').value)" >Cerca</button>
         </form>
     </div>
 
@@ -118,28 +102,17 @@
         </div>
     </div>
 
-    <%
-        if(article != null){
-
-    %>
     <div class="container-card" id="catalogo">
-        <%
-            Iterator<CategoriaBean> prodotto = article.iterator();
-            int i = 0;
-            while(prodotto.hasNext()){
-                CategoriaBean prod = prodotto.next();
-                i++;
-        %>
         <div class="card">      <!-- ripetere da -->
             <div class="card-header">
-                <img src="<%= prod.getUrl()%>" alt="melo" />
+                <img src="" alt="melo" />
             </div>
             <div class="card-body">
-                <h3><%= prod.getNomeCategoria()%></h3>
-                <p> <%= prod.getDescrizione()%></p>
+                <h3></h3>
+                <p></p>
                 <div class="card-status">
-                    <p class="imp">CO2 Massima catturabile: <span><%= prod.getCo2Max()%></span></p>
-                    <p class="imp">Prezzo: <span><%= prod.getPrezzo()%></span></p>
+                    <p class="imp">CO2 Massima catturabile: <span></span></p>
+                    <p class="imp">Prezzo: <span></span></p>
                 </div>
                 <div class="btn_area">
                     <a href="visualizzaAlbero.jsp" class="btn_primary">Visualizza prodotto</a><br><br>
@@ -147,41 +120,12 @@
                 </div>
             </div>
         </div>      <!-- a qui -->
-        <% } //chiudo il wile%>
-        <% }
-            else{ //allora stampo in base alla regione
-
-        %>
-        <div class="container-card" id="catalogo">
-            <%
-                int i = 0;
-                while(i < ordRegione.size()){
-            %>
-            <div class="card">      <!-- ripetere da -->
-                <div class="card-header">
-                    <img src="<%= ordRegione.get(i)%>" alt="melo" />
-                </div>
-                <div class="card-body">
-                    <h3><%= ordRegione.get(i+1)%></h3>
-                    <p> <%= ordRegione.get(i+1)%></p>
-                    <div class="card-status">
-                        <p class="imp">CO2 Massima catturabile: <span><%= ordRegione.get(i+1)%></span></p>
-                        <p class="imp">Prezzo: <span><%= ordRegione.get(i+1)%></span></p>
-                    </div>
-                    <div class="btn_area">
-                        <a href="visualizzaAlbero.jsp" class="btn_primary">Visualizza prodotto</a><br><br>
-                        <a  class="btn_secondary" onclick="showRegioniToSelect()">Adotta un albero</a>
-                    </div>
-                </div>
-            </div>      <!-- a qui -->
-            <% } //chiudo il wile%>
-            <% } //chiudo l'if%>
 
 
     </div>
 
 </div>
-
+</body>
 
 
 <script src="risorse/js/filtri.js"></script>
