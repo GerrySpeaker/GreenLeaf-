@@ -5,12 +5,12 @@
 }
 
 :root{
-	--bg-color: whitesmoke;
-	--text-color: #282828;
-	--main-color: #007a00;
-	--second-color: #004700;
-	--notify-color: #80ff81;
-	--popup-color: white;
+    --bg-color: whitesmoke;
+    --text-color: #282828;
+    --main-color: #007a00;
+    --second-color: #004700;
+    --notify-color: #80ff81;
+    --popup-color: white;
 }
 
 .nontavere{
@@ -18,16 +18,14 @@
     background: var(--bg-color);
     width: 100%;
     height: 100vh;
-    top: 0;
-    left: 0;
     transition: 0.5s;
 
 }
 
 .close{
     position: absolute;
-    top: 5px;
-    right: 5px;
+    bottom: -90px;
+    left: 38%;
     width: 30px;
     height: 30px;
     background: transparent;
@@ -38,7 +36,6 @@
 
 .close i{
     font-size: 30px;
-    color: var(--popup-color);
 }
 
 .close:hover{
@@ -47,8 +44,8 @@
 
 .btn-regione{
     position: absolute;
-    bottom: 20px;
-    left: 35%;
+    bottom: -100px;
+    left: 38%;
     width: 250px;
     background-color: var(--second-color);
     transition: 0.5s;
@@ -71,21 +68,19 @@
 }
 
 .all-regione{
-    display: grid;
+    display: flex;
     width: 1000px;
     padding: 70px;
-    gap: 2rem;
-    justify-content: center;
+    height: 400px;
     align-items: center;
     border-radius: 20px;
     background: linear-gradient(to bottom right,
     var(--popup-color) 0%, var(--popup-color)30%,
     var(--main-color) 30%, var(--main-color)70%,
-    var(--popup-color) 70%,  var(--popup-color) 100%);    
-    grid-template-columns: repeat(3, 20rem);
-    max-height: calc(100vh - 9rem);
-    overflow-y: auto;
-    overflow-x: hidden;
+    var(--popup-color) 70%,  var(--popup-color) 100%);
+    /* max-height: calc(100vh - 9rem); */
+    overflow-y: hidden;
+    overflow-x: auto;
     position: absolute;
 }
 
@@ -94,10 +89,12 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    /* grid-template-columns: repeat(3, 20rem); */
 }
 
 .regione{
     position: relative;
+    margin: 20px;
 }
 
 .regione .reg-card{
@@ -158,13 +155,13 @@
 
 .regione .reg-card .radio-group .radio input[type="radio"]:checked~ .checkmark {
     background-color: var(--notify-color);
-  }
+}
 
-  .checkmark:after {
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
+}
 
 .checkmark {
     position: absolute;
@@ -174,19 +171,19 @@
     width: 25px;
     background-color: #4a4a4a6f;
     border-radius: 50%;
-  }
+}
 
 
 @media screen and (max-width:1054px){
 
     .all-regione {
-    grid-template-columns: repeat(2, 20rem);
+        grid-template-columns: repeat(2, 20rem);
     }
 }
 
 @media screen and (max-width:700px){
 
     .all-regione {
-    grid-template-columns: repeat(1, 20rem);
+        grid-template-columns: repeat(1, 20rem);
     }
 }

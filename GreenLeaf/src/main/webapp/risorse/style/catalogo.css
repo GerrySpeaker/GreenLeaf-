@@ -80,6 +80,7 @@
     font-weight: bold;
     margin: 10px 0;
     text-align: center;
+    text-transform: capitalize;
 }
 
 .card-body p {

@@ -33,43 +33,42 @@
 %>
 <%@ include file="header.jsp" %>
 
+<div class="nontavere" id="popup">
+    <div class="scelta">
+        <div class="all-regione">
+            <!-- ripetere le regioni da qui -->
+
+            <% Iterator<RegioneBean> reg = regione.iterator();
+                while(reg.hasNext()){
+                    RegioneBean prod = reg.next();
+
+            %>
+            <div class="regione" id="<%=prod.getNomeRegione()%>">
+                <div class="reg-card">
+                    <div class="radio-group">
+                        <img src="<%= prod.getUrl() %>"><!-- inserire  la regione -->
+                        <label class="radio">
+                            <input type="radio" value ="<%= prod.getNomeRegione() %>" name="<%= prod.getNomeRegione() %>"><!-- inserire al name e a value la regione -->
+                            <span class="checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+            <!-- a qui-->
+        </div>
+
+    </div>
+    <button class="close"><i class="fa-solid fa-xmark" onclick="tornaCatalogo()"></i></button>
+    <button class="btn-regione">Aggiungi al carrello</button>
+</div>
+
 <div class="all">
 
-    <div class="nontavere" id="popup">
-        <div class="scelta">
-            <div class="all-regione">
-                <form action="">
-                    <!-- ripetere le regioni da qui -->
-
-                    <% Iterator<RegioneBean> reg = regione.iterator();
-                        while(reg.hasNext()){
-                            RegioneBean prod = reg.next();
-
-                    %>
-                    <div class="regione">
-                        <div class="reg-card">
-                            <div class="radio-group">
-                                <img src="<%= prod.getUrl() %>"><!-- inserire  la regione -->
-                                <label class="radio">
-                                    <input type="radio" value ="<%= prod.getNomeRegione() %>" name="<%= prod.getNomeRegione() %>"><!-- inserire al name e a value la regione -->
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <% } %>
-                    <!-- a qui-->
-                    <div class="btn-select">
-                        <button class="close"><i class="fa-solid fa-xmark" onclick="tornaCatalogo()"></i></button>
-                        <button class="btn-regione">Aggiungi al carrello</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
 
-    <div class="container-card" id="catalogo">
+
+    <div class="container-card" id="cat">
         <% Iterator<CategoriaBean> prodotto = article.iterator();
             int i = 0;
             while(prodotto.hasNext()){
