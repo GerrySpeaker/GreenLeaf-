@@ -30,60 +30,18 @@
 
 <div class="all">
 
-    <div class="border" id="filtro">
-        <form action="FiltriCatalogo" class="all-filter">
-            <div class="dropdown"><!-- non toccare -->
-                <input type="text" class="filterBox" placeholder="Ordina" readonly name="ordine">
-                <div class="option">
-                    <div onclick="show('Crescente')">A-Z</div>
-                    <div onclick="show('Decrescente')">Z-A</div>
-                </div>
-            </div>
-
-            <div class="dropdown-art"><!-- non toccare -->
-                <input type="text" class="filterBox-art" placeholder="Articoli" readonly name="articoli">
-                <div class="option">
-                    <div onclick="showArt('Alberi')">Alberi</div>
-                    <div onclick="showArt('Buoni')">Buoni</div>
-                    <div onclick="showArt('Tutti')">Tutti</div>
-                </div>
-            </div>
-
-            <div class="dropdown-reg"><!-- non toccare -->
-                <input type="text" class="filterBox-reg" placeholder="Regioni" readonly name="regione">
-                <div class="option">
-                    <div onclick="showReg('Abruzzo')">Abruzzo</div>
-                    <div onclick="showReg('Basilicata')">Basilicata</div>
-                    <div onclick="showReg('Calabria')">Calabria</div>
-                    <div onclick="showReg('Campania')">Campania</div>
-                    <div onclick="showReg('Emilia Romagna')">Emilia Romagna</div>
-                    <div onclick="showReg('Friuli Venezia Giulia')">Friuli Venezia Giulia</div>
-                    <div onclick="showReg('Lazio')">Lazio</div>
-                    <div onclick="showReg('Liguria')">Liguria</div>
-                    <div onclick="showReg('Lombardia')">Lombardia</div>
-                    <div onclick="showReg('Marche')">Marche</div>
-                    <div onclick="showReg('Molise')">Molise</div>
-                    <div onclick="showReg('Piemonte')">Piemonte</div>
-                    <div onclick="showReg('Puglia')">Puglia</div>
-                    <div onclick="showReg('Sardegna')">Sardegna</div>
-                    <div onclick="showReg('Sicilia')">Sicilia</div>
-                    <div onclick="showReg('Toscana')">Toscana</div>
-                    <div onclick="showReg('Trentino Alto Adige')">Trentino Alto Adige</div>
-                    <div onclick="showReg('Umbria')">Umbria</div>
-                    <div onclick="showReg('Valle d&#8216; Aosta')">Valle d'Aosta</div>
-                    <div onclick="showReg('Veneto')">Veneto</div>
-                </div>
-            </div>
-
-            <button class="submit">Cerca</button>
-        </form>
-    </div>
-
     <div class="nontavere" id="popup">
         <div class="scelta">
             <div class="all-regione">
                 <form action="">
                     <!-- ripetere le regioni da qui -->
+
+                    <% Iterator<CategoriaBean> prodotto = article.iterator();
+                        int i = 0;
+                        while(prodotto.hasNext()){
+                            CategoriaBean prod = prodotto.next();
+                            i++;
+                    %>
                     <div class="regione">
                         <div class="reg-card">
                             <div class="radio-group">
@@ -95,7 +53,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <% } %>
                     <!-- a qui-->
                     <div class="btn-select">
                         <button class="close"><i class="fa-solid fa-xmark" onclick="tornaCatalogo()"></i></button>
@@ -127,7 +85,7 @@
                 </div>
                 <div class="btn_area">
                     <a href="visualizzaAlbero.jsp" class="btn_primary">Visualizza prodotto</a><br><br>
-                    <a  class="btn_secondary" onclick="showRegioniToSelect()">Adotta un albero</a>
+                    <a id="<%= prod.getNomeCategoria()%>" class="btn_secondary" onclick="showRegioniToSelect(this)">Adotta un albero</a>
                 </div>
             </div>
         </div>      <!-- a qui -->
