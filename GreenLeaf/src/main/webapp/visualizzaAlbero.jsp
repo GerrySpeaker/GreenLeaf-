@@ -10,6 +10,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
+<%@ page import="storage.CategoriaDao" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="bean.CategoriaBean" %>
+<%
+    System.out.println("Sono in visualizza albero");
+    CategoriaDao dao = new CategoriaDao();
+    String id =request.getParameter("nome");
+    CategoriaBean article = dao.doRetrieveByKeyAlbero(id);
+    if(article == null){
+        response.sendRedirect(request.getContextPath()+"/home.jsp");
+    }
+
+%>
+
 
 <%@ include file="header.jsp" %>
 
@@ -26,19 +41,18 @@
       </div>
       <!-- card right -->
       <div class = "product-content">
-        <h2 class = "product-title"># Codice</h2>
+        <h2 class = "product-title"><%= article.getNomeCategoria()%></h2>
         <hr>
   
         <div class = "product-price">
-          <p class = "last-price">Prezzo: <span>$257.00</span></p>
+          <p class = "last-price">Prezzo: <span><%= article.getPrezzo()%></span></p>
         </div>
   
         <div class = "product-detail">
           <h2>Descrizione: </h2>
-          <p> <span>Co2</span>   descrizione dal db</p>
-          <p><span>Categoria</span>: inserire</p>
-          <p><span>Co2</span>: inserire</p>
-          <p><span>Stato</span>: inserire</p>
+            <p><%=article.getDescrizione()%></p>
+          <p><span>Categoria</span>: <%= article.getNomeCategoria()%></p>
+          <p><span>Co2</span>: <%= article.getCo2Max()%></p>
         </div>
   
         <div class = "purchase-info">
@@ -47,8 +61,8 @@
             Aggiungi al carrello <i class = "fas fa-shopping-cart"></i>
           </a>
         </div>
-  
-        
+
+
       </div>
     </div>
   </div>
@@ -70,7 +84,7 @@
                   </div>
               </div>
               <div class="btn-select">
-                  <button class="close"><i class="fa-solid fa-xmark" onclick="tornaCatalogo()"></i></button>
+                  <a href="visualizzaAlbero.jsp?nome=<%=article.getNomeCategoria()%>" class="close"><i class="fa-solid fa-xmark" ></i></a>
                   <button class="btn-regione">Aggiungi al carrello</button>
               </div>
           </form>

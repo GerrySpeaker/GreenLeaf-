@@ -36,12 +36,6 @@
                 <form action="">
                     <!-- ripetere le regioni da qui -->
 
-                    <% Iterator<CategoriaBean> prodotto = article.iterator();
-                        int i = 0;
-                        while(prodotto.hasNext()){
-                            CategoriaBean prod = prodotto.next();
-                            i++;
-                    %>
                     <div class="regione">
                         <div class="reg-card">
                             <div class="radio-group">
@@ -53,7 +47,6 @@
                             </div>
                         </div>
                     </div>
-                    <% } %>
                     <!-- a qui-->
                     <div class="btn-select">
                         <button class="close"><i class="fa-solid fa-xmark" onclick="tornaCatalogo()"></i></button>
@@ -84,15 +77,12 @@
                     <p class="imp">Prezzo: <span><%= prod.getPrezzo()%></span></p>
                 </div>
                 <div class="btn_area">
-                    <a href="visualizzaAlbero.jsp" class="btn_primary">Visualizza prodotto</a><br><br>
+                    <a href="visualizzaAlbero.jsp?nome=<%=prod.getNomeCategoria()%>"  class="btn_primary">Visualizza prodotto</a><br><br>
                     <a id="<%= prod.getNomeCategoria()%>" class="btn_secondary" onclick="showRegioniToSelect(this)">Adotta un albero</a>
                 </div>
             </div>
         </div>      <!-- a qui -->
         <% } %>
-
-
-
     </div>
 
     <br>
