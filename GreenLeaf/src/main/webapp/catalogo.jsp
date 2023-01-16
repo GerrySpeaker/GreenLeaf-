@@ -16,6 +16,7 @@
 <%@ page import="storage.CategoriaDao" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Iterator" %>
+<%@ page import="storage.RegioneDao" %>
 <%
     System.out.println("Sono qui");
     CategoriaDao dao = new CategoriaDao();
@@ -23,6 +24,10 @@
     if(article == null){
         response.sendRedirect(request.getContextPath()+"/home.jsp");
     }
+
+    RegioneDao daoreg = new RegioneDao();
+    ArrayList<RegioneBean> regione = (ArrayList<RegioneBean>) daoreg.doRetrieveAll();
+
 
     System.out.println(article.toString());
 %>
@@ -36,18 +41,17 @@
                 <form action="">
                     <!-- ripetere le regioni da qui -->
 
-                    <% Iterator<CategoriaBean> prodotto = article.iterator();
-                        int i = 0;
-                        while(prodotto.hasNext()){
-                            CategoriaBean prod = prodotto.next();
-                            i++;
+                    <% Iterator<RegioneBean> reg = regione.iterator();
+                        while(reg.hasNext()){
+                            RegioneBean prod = reg.next();
+
                     %>
                     <div class="regione">
                         <div class="reg-card">
                             <div class="radio-group">
-                                <img src=""><!-- inserire  la regione -->
+                                <img src="<%= prod.getUrl() %>"><!-- inserire  la regione -->
                                 <label class="radio">
-                                    <input type="radio" value ="" name=""><!-- inserire al name e a value la regione -->
+                                    <input type="radio" value ="<%= prod.getNomeRegione() %>" name="<%= prod.getNomeRegione() %>"><!-- inserire al name e a value la regione -->
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
