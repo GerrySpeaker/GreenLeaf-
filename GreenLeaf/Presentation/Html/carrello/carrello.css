@@ -1,405 +1,142 @@
-
-:root
+*
 {
-    --onyx: hsl(0, 0%, 25%);
-    --azure:hsl(219, 77%, 60%);
-    --white: hsl(0, 0%, 100%);
-    --platinum: hsl(0, 0%, 91%);
-    --gainsboro: hsl(0, 0%, 90%);
-    --red-salsa: hsl(0, 77%, 60%);
-    --gray: hsl(0, 0%, 39%);
-
-
-    --fs-28: 28px;
-    --fs-24: 24px;
-    --fs-18: 18px;
-    --fs-15: 15px;
-    --fs-14: 14px;
-
-    --fw-5: 500;
-    --fw-6: 600;
-    --fw-7: 700;
-
-    --px: 60px;
-    --radius: 5px;
+    overflow-x: auto;
 }
-
-*, *::before, *::after
+table
 {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html { font-family: 'Source Sans 3', sans-serif ;}
-
-a
-{
-    color: inherit;
-    text-decoration: none;
-
-}
-
-button
-{
-    border: none;
-    background: none;
-    font: inherit;
-    cursor: pointer;
-
-}
-
-ion-icon, span { display: inline-block; }
-
-label, img { display: block;}
-
-input
-{
-    font: inherit;
     width: 100%;
-    border: none;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
 }
 
-input:focus { outline: 2px solid var(--azure);}
-
-input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button 
+table img 
 {
-    appearance: none;
-    -webkit-appearance: none;
-    margin: 0;
-
+    width: 70px;
 }
 
-::-webkit-scrollbar{ width: 8px; }
-
-::-webkit-scrollbar-track { background: transparent; }
-
-::-webkit-scrollbar-thumb 
+table td:nth-child(1)
 {
-    background: hsl(0, 0%, 80%);
-    border-radius: 10px;
+    width: 100px;
+    text-align: center;
 }
-
-::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%);}
-
-
-.cont
+table td:nth-child(2)
 {
-   max-width: 1440px;
-   min-height: 100vh;
-   margin: auto;
-   display: flex;
-   flex-direction: column;
-
+    width: 150px;
+    text-align: center;
 }
-
-.heading 
+table td:nth-child(3)
 {
-    font-size: var(--fs-28);
-    font-weight: var(--fw-5);
-    color: var(--onyx);
-    border-bottom: 1px solid var(--gainsboro);
-    padding: 20px var(--px);
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    width: 200px;
+    text-align: center;
 }
-
-.heading ion-icon { font-size: 40px;}
-
-.item-flex 
+table td:nth-child(4),
+table td:nth-child(5),
+table td:nth-child(6)
 {
-    display: flex;
-    flex-grow: 1;
+    width: 150px;
+    text-align: center;
 }
-
-.checkout
+table td:nth-child(5) input
 {
-    width: 70%;
-    padding: 40px var(--px);
-    background: var(--white);
-    border-right: 1px solid var(--gainsboro);
+    width: 70px;
+    padding: 10px 5px 10px 15px;
 }
 
-.section-heading 
+table thead
 {
-    color: var(--onyx);
-    margin-bottom: 30px;
-    font-size: var(--fs-24);
-    font-weight: var(--fw-5);
+    border: 1px solid #e2e9e1;
+    border-left: none;
+    border-right: none;
+}
+table thead td
+{
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 18px 0;
+}
+table tbody tr td
+{
+    padding-top: 15px;
 }
 
-.payment-form { margin-bottom: 40px;}
+table tbody td
+{
+    font-size: 13px;
+}
 
-.payment-method
+#cart-add
 {
     display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.payment-method .method 
-{
-    border: 1px solid var(--gray);
-    border-radius: var(--radius);
-    width: 50%;
-    display: flex;
-    align-items: center;
-    padding: 15px 30px;
-    gap: 20px;
-    cursor: pointer;
-}
-.payment-method .selected{ border-color: var(--azure);}
-
-.payment-method .method ion-icon { font-size: 20px;}
-
-.payment-method .method  .checkmark 
-{
-    margin-left: auto;
-    color: var(--gray);
-}
-
-.payment-method .method  .fill {color: var(--azure);}
-
-.label-default 
-{
-    padding-left: 10px;
-    margin-bottom: 5px;
-    font-size: var(--fs-14);
-    color: var(--gray);
-}
-
-.input-default 
-{
-    background: var(--platinum);
-    border-radius: var(--radius);
-    color: var(--gray);
-}
-
-.payment-form input
-{
-    padding: 10px 15px;
-    font-size: var(--fs-18);
-    font-weight: var(--fw-5);
-}
-
-
-.cardholder-name,
-.card-number { margin-bottom: 20px; }
-
-.card-number input,
-.cvv input {  letter-spacing: 3px;}
-
-.input-flex 
-{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.input-flex .expire-date
-.input-flex .cvv { width: 50%; }
-
-.expire-date .input-flex
-{
-    color: var(--gray);
-    gap: 13px;
-}
-
-.expire-date .input-flex input { text-align: center; }
-
-.btn { border-radius: var(--radius); }
-.btn:active { transform: scale(0.99); }
-
-.btn:focus 
-{
-    color: var(--white);
-    background: var(--azure);
-    outline: 2px solid var(--azure);
-    outline-offset: 2px;
-
-}
-
-.btn-primary 
-{
-    background: var(--azure);
-    font-weight: var(--fw-5);
-    color: var(--white);
-    padding: 13px 45px;
-}
-
-.btn-primary b { margin-right: 10px; }
-
-.cart 
-{
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.cart-item-box
-{
-    padding: 40px var(--px);
-    margin-bottom: auto;
-}
-
-.product-card:not(:last-child) { margin-bottom: 20px; }
-
-.product-card .card 
-{
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.card .product-img { border-radius: var(--radius); }
-
-.card .detail .product-name
-{
-    font-weight: var(--fw-6);
-    font-size: var(--fs-15);
-    color: var(--gray);
-    margin-bottom: 10px;
-}
-
-.card .detail .wrapper 
-{
-    display: flex;
-    gap: 20px;
-}
-.product-qty button 
-{
-    background: var(--platinum);
-    width: 20px;
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.product-qty button:active,
-.product-close-btn:active ion-icon { transform: scale(0.95); }
-
-.product-qty button ion-icon 
-{
-    --ionicon-stroke-width: 60px;
-    font-size: 10px;
-}
-
-.product-close-btn 
-{
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.product-close-btn:hover ion-icon { color: var(--red-salsa); }
-
-.discount-token 
-{
-    padding: 40px var(--px);
-    border-top: 1px solid var(--gainsboro);
-    border-bottom: 1px solid var(--gainsboro);
-
-}
-
-.wrapper-flex input
-{
-    padding: 12px 15px;
-    font-weight: var(--fw-6);
-    letter-spacing: 2px;
-}
-
-.btn-outline 
-{
-    padding: 10px 25px;
-    border: 1px solid var(--azure);
-    color: var(--azure);
-}
-
-.btn-outline:hover
-{
-    background: var(--azure);
-    color: var(--white);
-}
-
-.amount { padding: 40px var(--px); }
-
-.amount > div 
-{
-    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.amount > div:not(:last-child) { margin-bottom: 10px;}
-
-.amount .total 
+#buono 
 {
-    font-size: var(--fs-18);
-    font-weight: var(--fw-7);
-    color: var(--onyx);
+    width: 50%;
+    margin-bottom: 30px;
 }
 
-
-
-@media (max-width: 1200px) 
+#buono h1,
+#total h1
 {
-     .item-flex { flex-direction: column-reverse; }
-
-     .checkout
-     {
-        width: 100%;
-        border-width: none;
-     }
-
-     .btn-primary { width: 100%;}
-
-     .cart 
-     {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        width: 100%;
-        border-bottom: 1px solid var(--gainsboro);
-     }
-     .cart .wrapper { margin-top: auto; }
-
-     .cart .cart-item-box 
-     {
-        border-right: 1px solid var(--gainsboro);
-        margin-bottom: 0;
-     }
-
-     .discount-token { border-top: none; }
+    padding-bottom: 15px;
+}
+#buono input
+{
+    padding: 10px 20px;
+    outline: none;
+    width: 60%;
+    margin-right: 10px;
+    border: 1px solid #e2e9e1;
 }
 
-
-
-@media (max-width: 768px) 
+#buono button,
+#total button
 {
-    :root {--px: 40px;}
-    .cart { grid-template-columns: 1fr; }
-    .discount-token { border-top: 1px solid var(--gainsboro);}
-    .wrapper-flex { gap: 20px;}
+    background-color: #1ffc02;
+    color: #fff;
+    padding: 12px 20px;
 }
 
-@media (max-width: 567px) 
+#total
 {
-    :root { --px: 20px; }
-    .payment-method,
-    .input-flex 
+    width: 50%;
+    margin-bottom: 30px;
+    border: 1px solid #e2e9e1;
+    padding: 30px;
+}
+
+#total table
+{
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#total table td 
+{
+    width: 50%;
+    border: 1px solid #e2e9e1;
+    padding: 10px;
+    font-size: 13px;
+}
+
+@media (max-width: 477px)
+{
+    #cart-add
     {
         flex-direction: column;
-        gap: 20px;
     }
-
-    .payment-method .method { width: 100%; }
-
-    .input-flex .expire-date,
-    .input-flex .cvv { width: 100%; }
-
-    .expire-date .input-flex { flex-direction: row;}
+    #buono
+    {
+        width: 100%;
+    }
+    #total
+    {
+        width: 100%;
+        padding: 20px;
+    }
 }
