@@ -46,7 +46,7 @@
                     RegioneBean prod = reg.next();
 
             %>
-            <div class="regione" id="<%=prod.getUrl()%>">
+            <div class="regione" id="<%=prod.getNomeRegione()%>">
                 <div class="reg-card">
                     <div class="radio-group">
                         <img src="<%= prod.getUrl() %>"><!-- inserire  la regione -->
