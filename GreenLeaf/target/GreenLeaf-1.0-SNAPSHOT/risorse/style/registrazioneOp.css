@@ -166,39 +166,51 @@ column-gap: 15px;
 }
 
 #txt-nome{
-font-weight: bold;
-margin-left: 10px;
-font-size: 15px;
-font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c80e00;
+
 }
 
 #txt-cognome{
-font-weight: bold;
-margin-left: 10px;
-font-size: 15px;
-font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c80e00;
+
 }
 
 #txt-email{
-font-weight: bold;
-margin-left: 10px;
-font-size: 15px;
-font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c80e00;
+
 }
 
 #txt-password{
-font-weight: bold;
-margin-left: 10px;
-font-size: 15px;
-font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c80e00;
+
 }
 
 #txt-regione{
-font-weight: bold;
-margin-left: 10px;
-font-size: 15px;
-font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c80e00;
+
 }
+
+
 
 #toggle{
 position: absolute;

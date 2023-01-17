@@ -55,11 +55,6 @@
                             <%}else{ %>
                             <p id="errore" class="error"></p>
                             <%} %>
-                    <%if(Boolean.parseBoolean(request.getParameter("check"))==true){%>
-                    <p id="errore" class="error">Utente già registrato, loggati</p>
-                    <%}else{ %>
-                    <p id="errore" class="error"></p>
-                    <%} %>
                      <form action="AutenticazioneApplication" id="form" onsubmit="return validate(this)"> <!-- form effettivo -->
                         <span id="txt-email"></span>
                         <div class="inputBox">

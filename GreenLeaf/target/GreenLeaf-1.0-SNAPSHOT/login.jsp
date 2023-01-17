@@ -55,11 +55,6 @@
                             <%}else{ %>
                             <p id="errore" class="error"></p>
                             <%} %>
-                    <%if(Boolean.parseBoolean(request.getParameter("check"))==true){%>
-                    <p id="errore" class="error">Utente già registrato, loggati</p>
-                    <%}else{ %>
-                    <p id="errore" class="error"></p>
-                    <%} %>
                      <form action="AutenticazioneApplication" id="form" onsubmit="return validate(this)"> <!-- form effettivo -->
                         <span id="txt-email"></span>
                         <div class="inputBox">
@@ -83,6 +78,12 @@
 
         </div>
     </div>
+
+    <%if(Boolean.parseBoolean(request.getParameter("check"))==true){%>
+        <p id="errore" class="error">Utente già registrato, loggati</p>
+    <%}else{ %>
+        <p id="errore" class="error"></p>
+    <%} %>
 
     <script src="risorse/js/password.js"></script>
     <script src="risorse/js/validate_login.js"></script>

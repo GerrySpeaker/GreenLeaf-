@@ -31,6 +31,11 @@
 <div class="all-form">
   <section class="container">
     <header>Operatore</header>
+    <%if(Boolean.parseBoolean(request.getParameter("errore"))==true){%>
+        <p id="error" class="error">Email già registrata nel database</p>
+    <%}else{ %>
+       <p id="error" class="error"></p>
+    <%} %>
     <form action="CreaOperatoreApplication" class="form" method="post" onsubmit="return validate(this)">
 
       <div class="input-box">
@@ -46,16 +51,6 @@
       <div class="column">
         <div class="input-box">
           <label>E-mail</label> <span id="txt-email"></span>
-          <%if(Boolean.parseBoolean(request.getParameter("error"))==true){%>
-          <p id="error" class="error">Email errata,riprova</p>
-          <%}else{ %>
-          <p id="error" class="error"></p>
-          <%} %>
-          <%if(Boolean.parseBoolean(request.getParameter("errore"))==true){%>
-          <p id="error" class="error">Email già registrata nel database</p>
-          <%}else{ %>
-          <p id="error" class="error"></p>
-          <%} %>
           <input id="email" type="text" placeholder="Inserisci qui la tua e-mail" required name="email"/>
         </div>
         <div class="input-box">
@@ -65,13 +60,9 @@
         </div>
       </div>
 
+      <p id="txt-regione"></p>
       <div class="dropdown">
-        <%if(Boolean.parseBoolean(request.getParameter("errorereg"))==true){%>
-        <p id="error" class="error">Inserisci la regione prima di procedere</p>
-        <%}else{ %>
-        <p id="error" class="error"></p>
-        <%} %>
-        <input type="text" class="filterBox" placeholder="Regioni" readonly name="regione" value="Regioni">
+        <input type="text" class="filterBox" placeholder="Regioni" readonly name="regione" value="Regione" id="reg">
         <div class="option">
           <div onclick="show('Abruzzo')">Abruzzo</div>
           <div onclick="show('Basilicata')">Basilicata</div>

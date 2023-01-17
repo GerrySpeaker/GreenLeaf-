@@ -3,9 +3,11 @@ function validation_name(input){
     var pattern =  /^[A-Za-z]+$/;
 
     if(input.match(pattern)){
+        document.getElementById("txt-nome").innerHTML="";
         return true;
     }
     else{
+        document.getElementById("txt-nome").innerHTML="Nome errato";
         return false;
     }
 }
@@ -15,9 +17,11 @@ function validation_surname(input){
     var pattern =  /^[a-z ,.'-]+$/i;
 
     if(input.match(pattern)){
+        document.getElementById("txt-cognome").innerHTML="";
         return true;
     }
     else{
+        document.getElementById("txt-cognome").innerHTML="Cognome errato";
         return false;
     }
 }
@@ -27,83 +31,59 @@ function validation_email(input){
     var pattern =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if(input.match(pattern)){
+        document.getElementById("txt-email").innerHTML="";
         return true;
     }
     else{
+        document.getElementById("txt-email").innerHTML="Email errata";
         return false;
     }
 }
 
 function validation_password(input){
 
-    var pattern = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$";
+    var pattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
     if(input.match(pattern)){
+        document.getElementById("txt-password").innerHTML="";
         return true;
     }
     else{
+        document.getElementById("txt-password").innerHTML="Password errata";
         return false
     }
 }
 
+function validation_regione(input){
+
+    console.log(input.value);
+    reg=input.value;
+
+    if(reg.match("Regione")){
+        document.getElementById("txt-regione").innerHTML="ATTENZIONE: inserire la regione";
+        return false;
+    }
+    else{
+        document.getElementById("txt-password").innerHTML="";
+        return true;
+    }
+}
+
+
 function validate(obj){
 
-    valid = true;
-
     var nome = document.getElementById("nome").value;
-    var txt_nome = document.getElementById("txt-nome");
-
-    if(validation_name(nome)){
-        txt_nome.innerHTML ="Nome inserito correttamente";
-        txt_nome.style.color = "#004700";
-    }
-    else{
-        txt_nome.innerHTML ="ATTENZIONE: nome non valido";
-        txt_nome.style.color = "#c80e00";
-        valid = false;
-    }
-
-
     var cognome = document.getElementById("cognome").value;
-    var txt_cognome = document.getElementById("txt-cognome");
-
-    if(validation_surname(cognome)){
-        txt_cognome.innerHTML ="Cognome inserito correttamente";
-        txt_cognome.style.color = "#004700";
-    }
-    else{
-        txt_cognome.innerHTML ="ATTENZIONE: cognome non valido";
-        txt_cognome.style.color = "#c80e00";
-        valid = false;
-    }
-
-
     var email = document.getElementById("email").value;
-    var txt_em = document.getElementById("txt-email");
+    var password = document.getElementById("password").value;
+    var regione = document.getElementById("reg")
 
-    if(validation_email(email)){
-        txt_em.innerHTML ="Email valida";
-        txt_em.style.color = "#004700";
+    console.log(nome +" "+cognome+" "+email+" "+password);
+
+    if(validation_name(nome) && validation_surname(cognome) && validation_email(email) && validation_password(password) && validation_regione(regione)){
+        return true;
     }
-    else{
-        txt_em.innerHTML ="Email non valida";
-        txt_em.style.color = "#c80e00";
-        valid = false;
+    else {
+        return false;
     }
-
-
-    var password = document.getElementById("password");
-    var txt_p = document.getElementById("txt-password");
-
-    if(validation_password(password)){
-        txt_p.innerHTML ="Password corretta";
-        txt_p.style.color = "#004700";
-    }
-    else{
-        txt_p.innerHTML ="Password errata";
-        txt_p.style.color = "#c80e00";
-        valid = false;
-    }
-
-    return valid;
 }
