@@ -73,7 +73,7 @@
         %>
         <div class="card">      <!-- ripetere da -->
             <div class="card-header">
-                <img src="<%= prod.getUrl()%>" alt="melo" />
+                <img src="<%= prod.getUrl()%>" alt="<%= prod.getNomeCategoria()%>" />
             </div>
             <div class="card-body">
                 <h3><%= prod.getNomeCategoria()%></h3>
@@ -90,7 +90,21 @@
         </div>      <!-- a qui -->
         <% } %>
 
-
+        <div class="card">
+            <div class="card-header">
+                <img src="risorse/img/buono.png" alt="buono" />
+            </div>
+            <div class="card-body">
+                <h3>Buono regalo</h3>
+                <p> Perche' non acquistare un buono regalo? Rendi il mondo piu' verde con un click e sorprendi una persona a te cara!</p>
+                <div class="card-status">
+                    <p class="imp">Prezzo: <span>50</span></p>
+                </div>
+                <div class="btn_area">
+                    <a  class="btn_secondary" >Aggiungi al carrello</a>
+                </div>
+            </div>
+        </div>
 
     </div>
 

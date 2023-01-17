@@ -94,6 +94,7 @@
 }
 
 .regione{
+    display: none;
     position: relative;
     margin: 20px;
 }

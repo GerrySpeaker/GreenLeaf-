@@ -14,7 +14,7 @@ function showRegioniToSelect(obj) {
         ciliegio()
     }
     else if (obj.id.match("pino")){
-        pero();
+        pino();
     }
 }
 
@@ -37,7 +37,7 @@ function ciliegio(){
     document.getElementById("Toscana").style.display="none";
     document.getElementById("Trentino Alto Adige").style.display="none";
     document.getElementById("Umbria").style.display="none";
-    document.getElementById("Valle d'Aosta").style.display="none";
+    document.getElementById("Valle dAosta").style.display="none";
     document.getElementById("Veneto").style.display="block";
 }
 
@@ -54,7 +54,13 @@ function melo(){
     document.getElementById("Marche").style.display="none";
     document.getElementById("Molise").style.display="none";
     document.getElementById("Piemonte").style.display="block";
+    document.getElementById("Puglia").style.display="none";
+    document.getElementById("Sardegna").style.display="none";
+    document.getElementById("Sicilia").style.display="none";
+    document.getElementById("Toscana").style.display="none";
     document.getElementById("Trentino Alto Adige").style.display="block";
+    document.getElementById("Umbria").style.display="none";
+    document.getElementById("Valle dAosta").style.display="none";
     document.getElementById("Veneto").style.display="block";
 }
 
@@ -78,7 +84,7 @@ function pero(){
     document.getElementById("Toscana").style.display="block";
     document.getElementById("Trentino Alto Adige").style.display="none";
     document.getElementById("Umbria").style.display="none";
-    document.getElementById("Valle d'Aosta").style.display="none";
+    document.getElementById("Valle dAosta").style.display="none";
     document.getElementById("Veneto").style.display="block";
 }
 
@@ -88,7 +94,7 @@ function pino(){
     document.getElementById("Calabria").style.display="none";
     document.getElementById("Campania").style.display="block";
     document.getElementById("Emilia Romagna").style.display="none";
-    document.getElementById("Fruli Venezia Giulia").style.display="none";
+    document.getElementById("Friuli Venezia Giulia").style.display="none";
     document.getElementById("Lazio").style.display="block";
     document.getElementById("Liguria").style.display="none";
     document.getElementById("Lombardia").style.display="none";
@@ -101,7 +107,7 @@ function pino(){
     document.getElementById("Toscana").style.display="none";
     document.getElementById("Trentino Alto Adige").style.display="block";
     document.getElementById("Umbria").style.display="none";
-    document.getElementById("Valle d'Aosta").style.display="none";
+    document.getElementById("Valle dAosta").style.display="none";
     document.getElementById("Veneto").style.display="none";
 }
 

@@ -11,7 +11,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dettaglio al prodotto</title>
+  <title>Dettaglio al prodotto OPERATORE</title>
   <link rel="stylesheet" href="risorse/style/prodotto.css">
   <link rel="stylesheet" href="risorse/style/checkbox.css">
     <link rel="stylesheet" href="risorse/style/iot.css">

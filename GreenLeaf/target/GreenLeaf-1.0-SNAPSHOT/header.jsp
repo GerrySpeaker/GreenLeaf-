@@ -26,7 +26,7 @@
 
             <div class="user">
                 <a  href="login.jsp"><i class="fa-solid fa-user"></i></a> <!-- se non è loggato va al login -->
-                <a  href=""><i class="fa-solid fa-cart-shopping"></i></a>
+                <a  href="carrello.jsp"><i class="fa-solid fa-cart-shopping"></i></a>
             </div>
     </header>
     <script src="risorse/js/header.js"></script>

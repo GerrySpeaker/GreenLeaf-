@@ -46,12 +46,12 @@
                     RegioneBean prod = reg.next();
 
             %>
-            <div class="regione" id="<%=prod.getNomeRegione()%>">
+            <div class="regione" id="<%=prod.getUrl()%>">
                 <div class="reg-card">
                     <div class="radio-group">
                         <img src="<%= prod.getUrl() %>"><!-- inserire  la regione -->
                         <label class="radio">
-                            <input type="radio" value ="<%= prod.getNomeRegione() %>" name="<%= prod.getNomeRegione() %>"><!-- inserire al name e a value la regione -->
+                            <input type="radio" value ="<%= prod.getNomeRegione() %>">
                             <span class="checkmark"></span>
                         </label>
                     </div>
