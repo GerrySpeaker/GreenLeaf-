@@ -20,7 +20,7 @@
 <%
     System.out.println("Sono in visualizza albero");
     CategoriaDao dao = new CategoriaDao();
-    String id =request.getParameter("nomeCategoria");
+    String id =request.getParameter("nome");
     CategoriaBean article = dao.doRetrieveByKeyAlbero(id);
     if(article == null){
         response.sendRedirect(request.getContextPath()+"/home.jsp");
