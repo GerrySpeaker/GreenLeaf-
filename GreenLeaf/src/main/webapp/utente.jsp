@@ -66,7 +66,7 @@
             </li>
     
             <li class="list">
-                <a href="">
+                <a href="calcoloCO2.jsp">
                     <span class="icon"><i class="fa-solid fa-car"></i></span>
                     <span class="title">Calcolo CO2</span>
                 </a>

@@ -13,7 +13,7 @@
 	--main-color: #007a00;
 	--second-color: #004700;
 	--notify-color: #80ff81;
-	--popup-color: white;
+	--popup-color: rgba(255, 255, 255, 0.66);
 }
 
 .all-datail{

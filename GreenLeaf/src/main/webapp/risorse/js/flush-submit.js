@@ -1,6 +1,4 @@
 var i = 1;
-var page = document.getElementById("page");
-var iot = document.getElementById("iot");
 
 function conferma(){
     var btn = document.getElementById("forzare");
@@ -16,11 +14,11 @@ function conferma(){
 }
 
 function showiot(){
-    page.style.display ="none";
-    iot.style.display ="flex";
+    document.getElementById("albero").style.display ="none";
+    document.getElementById("form").style.display="flex";
 }
 
 function hideiot(){
-    page.style.display ="block";
-    iot.style.display ="none";
+    document.getElementById("albero").style.display ="block";
+    document.getElementById("form").style.display ="none";
 }

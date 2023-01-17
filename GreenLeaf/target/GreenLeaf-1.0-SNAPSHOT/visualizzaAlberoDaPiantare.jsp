@@ -49,7 +49,7 @@
     System.out.println("sono nelle jsp");
 
 %>
-<div class="all-datail" id="page">
+<div class="all-datail" id="albero">
   <div class = "card-wrapper">
     <div class = "card">
       <!-- card left -->
@@ -80,14 +80,14 @@
         <%}else{ %>
             <input id="conferma" class="confermato" type="checkbox" value="piantato" onclick="conferma()">
             <label for="conferma">Si</label>
-            <a href="AlberiPiantumati?idAlberoDaPiantare=<%= albero.getIdAlbero()%>"  onclick="showiot()" id="forzare" class="submit">Conferma</a>
+            <a  onclick="showiot()" id="forzare" class="submit">Conferma</a>
         <%} %>
       </div>
     </div>
   </div>
 </div>
 
-<div class="all-iot" id="iot">
+<div class="all-iot" id="form">
     <div class="box-iot">
         <h2>Inserire l'IOT</h2>
 
@@ -102,7 +102,7 @@
                 <input type="text" id="latitudine" placeholder="inserire la latitudine" name="latitudine">
             </div>
 
-            <a href="" class="go" onclick="hideiot()">Procedi</a>
+            <a class="go" href="AlberiPiantumati?idAlberoDaPiantare=<%= albero.getIdAlbero()%>" onclick="hideiot()">Procedi</a>
         </form>
     </div>
 </div>

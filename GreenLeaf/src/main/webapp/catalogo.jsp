@@ -83,7 +83,7 @@
                     <p class="imp">Prezzo: <span><%= prod.getPrezzo()%></span></p>
                 </div>
                 <div class="btn_area">
-                    <a href="visualizzaAlbero.jsp" class="btn_primary">Visualizza prodotto</a><br><br>
+                    <a href="visualizzaAlbero.jsp?nome=<%= prod.getNomeCategoria()%>" class="btn_primary">Visualizza prodotto</a><br><br>
                     <a id="<%= prod.getNomeCategoria()%>" class="btn_secondary" onclick="showRegioniToSelect(this)">Adotta un albero</a>
                 </div>
             </div>

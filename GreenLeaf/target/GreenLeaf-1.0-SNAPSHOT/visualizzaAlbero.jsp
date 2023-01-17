@@ -20,7 +20,7 @@
 <%
     System.out.println("Sono in visualizza albero");
     CategoriaDao dao = new CategoriaDao();
-    String id =request.getParameter("nomeCategoria");
+    String id =request.getParameter("nome");
     CategoriaBean article = dao.doRetrieveByKeyAlbero(id);
     if(article == null){
         response.sendRedirect(request.getContextPath()+"/home.jsp");
@@ -95,7 +95,7 @@
   
         <div class = "purchase-info">
           <input type = "number" min = "0" value = "1">
-          <a class = "btn" onclick="showRegioniToSelectDettaglio(<%= article.getNomeCategoria()%>)">
+          <a id ="<%= article.getNomeCategoria()%>" class = "btn" onclick="showRegioniToSelectDettaglio(this)">
             Aggiungi al carrello <i class = "fas fa-shopping-cart"></i>
           </a>
         </div>

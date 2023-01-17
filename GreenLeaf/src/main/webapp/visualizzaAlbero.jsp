@@ -95,7 +95,7 @@
   
         <div class = "purchase-info">
           <input type = "number" min = "0" value = "1">
-          <a class = "btn" onclick="showRegioniToSelectDettaglio(<%= article.getNomeCategoria()%>)">
+          <a id ="<%= article.getNomeCategoria()%>" class = "btn" onclick="showRegioniToSelectDettaglio(this)">
             Aggiungi al carrello <i class = "fas fa-shopping-cart"></i>
           </a>
         </div>
