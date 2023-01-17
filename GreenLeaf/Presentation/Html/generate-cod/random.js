@@ -1,10 +1,9 @@
 
-function getCode(){
+window.onload = function getCode(){
 
     var chars ="0123456789abcdefghijklmnopqrstuvwxtzABCDEFGHIJKLMNOPQRSTUVWTZ";
     var codeLenght = 8;
     var code = "";
-    var btn = document.getElementById("btn");
     var btncopy = document.getElementById("btn-copy");
 
     for (var i=0;i<codeLenght; i++){
@@ -12,7 +11,7 @@ function getCode(){
         code += chars.substring(randomNumber,randomNumber+1);
     }
     document.getElementById("code").value = code
-    btn.style.display = "none";
+    
     btncopy.style.display = "block";
 }
 
