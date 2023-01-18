@@ -95,6 +95,7 @@
     border-radius: 20px;
     width: 180px;
     margin: 0 20px;
+    background-color: rgba(255, 255, 255, 0.56);
     border: none;
     box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
     inset -2px -5px 10px rgba(255, 255, 255, 0.3),
