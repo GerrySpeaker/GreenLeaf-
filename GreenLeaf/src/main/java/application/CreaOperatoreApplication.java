@@ -72,7 +72,7 @@ public class CreaOperatoreApplication extends HttpServlet {
                     }
 
                 } else {
-                    response.sendRedirect(request.getContextPath() + "/homepage.jsp");
+                    response.sendRedirect(request.getContextPath() + "/login.jsp");
 
                 }
             } catch (Exception e) {

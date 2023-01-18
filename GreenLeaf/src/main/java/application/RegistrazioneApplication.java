@@ -63,7 +63,7 @@ public class RegistrazioneApplication extends HttpServlet {
                 utenteLogin = dao.doRetrieveByEmail(bean.getEmail());
                 if (utenteLogin.getNomeUtente() == null) {
                     dao.registrazione(bean);
-                    response.sendRedirect(request.getContextPath() + "/homepage.jsp");
+                    response.sendRedirect(request.getContextPath() + "/login.jsp");
                 }
                 else{
                     response.sendRedirect(request.getContextPath() + "/login.jsp?check=true");

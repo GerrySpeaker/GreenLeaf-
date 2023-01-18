@@ -93,7 +93,6 @@
 
         <form action="">
             <div class="inf1">
-                <input type="text" id="id" placeholder="Inserire l'ID" name="id">
                 <input type="text" id="ipv4" placeholder="ipv4" name="ipv4">
             </div>
             <div class="inf2">

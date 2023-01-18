@@ -38,7 +38,7 @@
     <div class="navigation">
         <ul>
             <li class="list active">
-                <a href="">
+                <a href="homepage.jsp">
                     <span class="icon"><i class="fa-solid fa-house"></i></span>
                     <span class="title">Home</span>
                 </a>
