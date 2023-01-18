@@ -25,6 +25,13 @@
     <div class="all-form">
         <section class="container ">
             <header>Registrazione</header>
+              <%if(Boolean.parseBoolean(request.getParameter("errore"))==true){%> <!-- l'ho copiato dalla registrazione operatore,
+                                                                                                non so se ho fatto bene -->
+                  <p id="error" class="error">Email già registrata nel database</p>
+              <%}else{ %>
+                  <p id="error" class="error"></p>
+              <%} %>
+
             <form action="RegistrazioneApplication" class="form" method="post" onsubmit="return validate(this)">
       
               <div class="input-box">

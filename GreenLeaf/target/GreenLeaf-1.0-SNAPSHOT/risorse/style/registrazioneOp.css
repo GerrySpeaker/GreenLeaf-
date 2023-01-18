@@ -29,6 +29,7 @@ background-size: cover;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   color: #c80e00;
+  text-align: center;
 }
 
 .container {
@@ -209,8 +210,6 @@ column-gap: 15px;
   color: #c80e00;
 
 }
-
-
 
 #toggle{
 position: absolute;

@@ -32,8 +32,50 @@
         </p>
     </section>
 </div>
+<div class="all-text2">
+    <div class="cont">
+        <div class="card">
+            <div class="icon">
+                <ion-icon name="cloud-outline"></ion-icon>
+            </div>
+            <div class="content">
+                <h1>CO2</h1>
+                <p>Scopri quanta CO2 causano i tuoi spostamenti!</p>
+                <a href="calcoloCO2.jsp"> Calcola</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="icon">
+                <ion-icon name="leaf-outline"></ion-icon>
+            </div>
+            <div class="content">
+                <h1>Adotta</h1>
+                <p>Albero dopo albero, rendi il mondo pi&ugrave verde con un click!</p>
+                <a href="catalogo.jsp"> Inizia ora</a>
+            </div>
+        </div>
+        <div class="card">
+            <div class="icon">
+                <ion-icon name="stats-chart-outline"></ion-icon>
+            </div>
+            <div class="content">
+                <h1>Monitorraggio</h1>
+                <p>Vuoi sapere quanto &egrave; inquinata la tua regione? Si? Sei nel posto giusto! </p>
+                <a href="">Monitora</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 
+
+
+
+
+
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
 <script>
@@ -80,6 +122,7 @@
         x: 400,
     })
 </script>
+
 </html>
 
 <%@ include file="footer.jsp" %>

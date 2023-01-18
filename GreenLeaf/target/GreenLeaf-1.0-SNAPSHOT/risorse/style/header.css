@@ -50,6 +50,10 @@ header .user{
     margin-bottom: 10px;
 }
 
+.back{
+    position: absolute;
+}
+
 .user a{
     margin-left: 10px;
     text-decoration: none;
