@@ -8,6 +8,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -123,16 +124,20 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
     }
 
     public Boolean inserisciPiantumazione(int id) throws SQLException  {
+
         Connection connection = null;
         ArrayList<AlberoBean> prodotto = new ArrayList<>();
         PreparedStatement preparedStatement = null;
-        String selectSQL = "UPDATE albero SET stato=? WHERE idalbero = ?";
+        String selectSQL = "UPDATE albero SET stato=?, datapiantumazione=? WHERE idalbero = ?";
 
+        LocalDate oggi = LocalDate.now();
+        Date data = Date.valueOf(oggi);
         try {
             connection = ds.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, "Piantato" );
-            preparedStatement.setInt(2, id );
+            preparedStatement.setDate(2, data);
+            preparedStatement.setInt(3, id );
             preparedStatement.executeUpdate();
 
 
