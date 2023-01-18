@@ -16,6 +16,9 @@ function showRegioniToSelect(obj) {
     else if (obj.id.match("pino")){
         pino();
     }
+
+    document.getElementById("categoria").value = obj.id;
+    console.log( document.getElementById("categoria").value);
 }
 
 function ciliegio(){
@@ -116,6 +119,7 @@ function tornaCatalogo() {
     cat.style.display="grid";
     var mostra = document.getElementById("popup");
     mostra.style.display ="none";
+
 }
 
 function showRegioniToSelectDettaglio(obj) {
