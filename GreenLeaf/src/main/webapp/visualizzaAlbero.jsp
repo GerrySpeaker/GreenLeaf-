@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="risorse/style/regione.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="risorse/js/AggiungiCatalogo.js"></script>
 </head>
 <%@ page import="storage.CategoriaDao" %>
 <%@ page import="java.util.ArrayList" %>
@@ -62,10 +63,9 @@
             <% } %>
             <!-- a qui-->
         </div>
-
     </div>
     <button class="close" type="reset"><i class="fa-solid fa-xmark" onclick="tornaDettaglio()"></i></button>
-    <button class="btn-regione" type="submit">Aggiungi al carrello</button>
+    <button class="btn-regione" type="submit" >Aggiungi al carrello</button>
     </form>
 </div>
 
@@ -97,8 +97,7 @@
         </div>
   
         <div class = "purchase-info">
-          <a id ="<%= article.getNomeCategoria()%>" class = "btn" onclick="showRegioniToSelectDettaglio(this)">
-            Aggiungi al carrello <i class = "fas fa-shopping-cart"></i>
+          <a id ="<%= article.getNomeCategoria()%>" class = "btn" onclick="showRegioniToSelectDettaglio(this)">Aggiungi al carrello <i class = "fas fa-shopping-cart"></i>
           </a>
         </div>
 

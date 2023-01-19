@@ -11,7 +11,7 @@
   ArrayList<String> regioni = new ArrayList<>();
   regioni = (ArrayList<String>) session.getAttribute("regione");
 
-
+  int totale = 0;
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,7 +83,8 @@
                       <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
 
                       </tr>
-                      <% i++; }
+                      <% i++;
+                        totale += 50;}
                      } if (categoria != null){
                         Iterator<CategoriaBean> prodotto = categoria.iterator();
                         Iterator<String> regione = regioni.iterator();
@@ -107,7 +108,7 @@
 
 
                   </tr>
-                    <% } }%>
+                    <% totale +=50;} }%>
                   <!-- a qui -->
 
                 </tbody>
@@ -136,7 +137,7 @@
               <p class="font-italic mb-4"></p>
               <ul class="list-unstyled mb-4">
                 <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Totale</strong>
-                  <h5 class="font-weight-bold">$400.00</h5>
+                  <h5 class="font-weight-bold"><%=totale%>€</h5>
                 </li>
               </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Paypal</a> <br>
               </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procedi al checkout</a>
