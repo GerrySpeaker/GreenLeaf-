@@ -66,9 +66,9 @@
             </li>
     
             <li class="list">
-                <a href="calcoloCO2.jsp">
-                    <span class="icon"><i class="fa-solid fa-car"></i></span>
-                    <span class="title">Calcolo CO2</span>
+                <a href="">
+                    <span class="icon"><i class="fa-solid fa-gift"></i></span>
+                    <span class="title">Buoni regalo</span>
                 </a>
             </li>
 

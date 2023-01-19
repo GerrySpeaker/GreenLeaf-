@@ -96,6 +96,7 @@
 
 <script src="risorse/js/validateOp.js"></script>
 <script src="risorse/js/password.js"></script>
+<script src="risorse/js/notifiche.js"></script>
 <script >
   function show(anything) {
     var input =document.querySelector(".filterBox");

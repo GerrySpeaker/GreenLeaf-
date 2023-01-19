@@ -42,11 +42,11 @@
 .all-filter{
     display: grid;
     background:transparent;
-    grid-template-columns: repeat(4, 20rem);
+    grid-template-columns: repeat(3, 20rem);
     width: 100%;
     padding-top: 20px;
     padding-bottom: 50px;
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
 .dropdown{
@@ -177,7 +177,6 @@
     border-radius: 10px;
     font-size: 1em;
     display: none;
-    z-index: 100;
 }
 
 .dropdown-reg.active .option{
@@ -196,84 +195,10 @@
     color: var(--popup-color);
 }
 
-.dropdown-art{
-    position: relative;
-    width: 300px;
-    height: 50px;
-}
-
-.dropdown-art::before{
-    content: '';
-    width: 8px;
-    height: 8px;
-    position: absolute;
-    border: 2px solid var(--text-color);
-    right: 20px;
-    top: 15px;
-    z-index: 10000;
-    border: 2px solid var(--text-color);
-    border-top: 2px solid var(--popup-color);
-    border-right: 2px solid var(--popup-color);
-    transform: rotate(-45deg);
-    transition: 0.5s;
-    pointer-events: none;
-}
-
-.dropdown-art.active::before{
-    transform: rotate(-225deg);
-    top:20px;
-}
-
-.dropdown-art .filterBox-art{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 85%;
-    cursor: pointer;
-    background-color: var(--popup-color);
-    border: none;
-    outline: none;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-size: 1.2em;
-    font-weight: 500;
-}
-
-.dropdown-art .option{
-    position: absolute;
-    top: 60px;
-    width: 100%;
-    background-color: var(--popup-color);
-    max-height: calc(40vh - 9rem);
-    overflow-y: auto;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    font-size: 1em;
-    display: none;
-    z-index: 100;
-}
-
-.dropdown-art.active .option{
-    display: block;
-}
-
-.dropdown-art .option div{
-    padding: 12px 20px;
-    cursor: pointer;
-    text-align: center;
-    box-shadow: 1px 11px 15px -8px rgba(0,0,0,0.1);
-}
-
-.dropdown-art .option div:hover{
-    background-color: var(--main-color);
-    color: var(--popup-color);
-}
-
 @media screen and (max-width:1054px){
 
     .all-filter{
-        grid-template-columns: repeat(3, 20rem);
+        grid-template-columns: repeat(2, 20rem);
     }
 
     .submit{
@@ -288,16 +213,10 @@
     }
 
     .dropdown{
-        width: 200px;
+       width: 200px;
     }
 
     .dropdown-reg{
-
-        width: 200px;
-        margin-top: 20px;
-    }
-
-    .dropdown-art{
         width: 200px;
     }
 }

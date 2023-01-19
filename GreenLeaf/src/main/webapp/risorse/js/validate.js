@@ -65,9 +65,28 @@ function validate(obj){
     console.log(nome +" "+cognome+" "+email+" "+password);
 
     if(validation_name(nome) && validation_surname(cognome) && validation_email(email) && validation_password(password)){
+        notifica();
         return true;
     }
     else {
         return false;
     }
+}
+
+var i =1;
+
+function pronto(){
+    if(i%2==0){
+        document.getElementById("submit").style.display="none";
+        i++;
+    }
+    else{
+        alert("File di policy: https://www.privacypolicygenerator.info/live.php?token=qxKfYWrJeJkHOk72QjOCNdoGICfn3ggr");
+        document.getElementById("submit").style.display="block";
+        i++;
+    }
+}
+
+function notifica(){
+    document.getElementById("attivare").addEventListener("attivata");
 }
