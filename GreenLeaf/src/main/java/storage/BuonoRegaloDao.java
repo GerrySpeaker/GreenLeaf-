@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class BuonoRealoDao implements InterfacciaDao<BuonoregaloBean> {
+public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
     private static DataSource ds;
 
     static {
@@ -64,7 +64,6 @@ public class BuonoRealoDao implements InterfacciaDao<BuonoregaloBean> {
             while (rs.next()) {
                 BuonoregaloBean bean = new BuonoregaloBean();
                 bean.setPrezzo(rs.getDouble("prezzo"));
-                bean.setUrl(rs.getString("url"));
                 bean.setUtenteRegalo(rs.getString("utenteRegalo"));
                 bean.setIdBuonoregalo(rs.getString("key"));
                 bean.setStato(rs.getString("stato"));

@@ -2,17 +2,16 @@ package bean;
 
 public class BuonoregaloBean {
 
-    public String idBuonoregalo, stato, url, utenteRegalo;
+    public String idBuonoregalo, stato, utenteRegalo;
     public Double prezzo;
     public Integer ordineRegalo;
 
     public BuonoregaloBean() {
     }
 
-    public BuonoregaloBean(String idBuonoregalo, String stato, String url, String utenteRegalo, Double prezzo, Integer ordineRegalo) {
+    public BuonoregaloBean(String idBuonoregalo, String stato,  String utenteRegalo, Double prezzo, Integer ordineRegalo) {
         this.idBuonoregalo = idBuonoregalo;
         this.stato = stato;
-        this.url = url;
         this.utenteRegalo = utenteRegalo;
         this.prezzo = prezzo;
         this.ordineRegalo = ordineRegalo;
@@ -32,14 +31,6 @@ public class BuonoregaloBean {
 
     public void setStato(String stato) {
         this.stato = stato;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
     }
 
     public String getUtenteRegalo() {
@@ -71,7 +62,6 @@ public class BuonoregaloBean {
         return "BuonoregaloBean{" +
                 "idBuonoregalo='" + idBuonoregalo + '\'' +
                 ", stato='" + stato + '\'' +
-                ", url='" + url + '\'' +
                 ", utenteRegalo='" + utenteRegalo + '\'' +
                 ", prezzo=" + prezzo +
                 ", ordineRegalo=" + ordineRegalo +

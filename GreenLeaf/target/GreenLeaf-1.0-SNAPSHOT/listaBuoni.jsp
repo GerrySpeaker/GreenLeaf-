@@ -1,10 +1,12 @@
 <%@ page language="java" import="java.util.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="storage.BuonoRealoDao" %>
+<%@ page import="storage.BuonoRegaloDao" %>
 <%
 
-    BuonoRealoDao dao=new BuonoRealoDao();
+    BuonoRegaloDao dao=new BuonoRegaloDao();
+    System.out.println("mirko gay");
     String email = (String) request.getSession().getAttribute("email");
     ArrayList<BuonoregaloBean> article =dao.doRetriveByUtente(email);
+    System.out.println(article.toString());
 
 %>
 
@@ -37,9 +39,9 @@
             <div class="row"><!-- ripetere questo con un for da qui -->
                 <div class="rank"><span><%= i %></span></div>
                 <div class="operatore">
-                    <h4><%= prod.getIdBuonoregalo()%>></h4>
-                    <p><%=prod.getStato()%>></p>
-                    <p><%=prod.getOrdineRegalo()%>></p>
+                    <h4><%= prod.getIdBuonoregalo()%></h4>
+                    <p><%=prod.getStato()%></p>
+                    <p><%=prod.getOrdineRegalo()%></p>
                 </div>
 
             </div><!-- a qui -->
