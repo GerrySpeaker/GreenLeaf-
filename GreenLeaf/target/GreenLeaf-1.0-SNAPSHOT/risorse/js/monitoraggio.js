@@ -367,6 +367,8 @@ function seleziona() {
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML="Italia";
         document.getElementById("percentuale").innerHTML="60%";
+        document.getElementById("co2").innerHTML="437kg/anno";
+        document.getElementById("polvere").innerHTML="470kg/anno";
 
 
     }

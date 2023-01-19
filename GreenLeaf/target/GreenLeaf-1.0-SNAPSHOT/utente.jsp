@@ -66,7 +66,7 @@
             </li>
     
             <li class="list">
-                <a href="">
+                <a href="listaBuoni.jsp">
                     <span class="icon"><i class="fa-solid fa-gift"></i></span>
                     <span class="title">Buoni regalo</span>
                 </a>

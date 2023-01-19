@@ -11,6 +11,10 @@
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"></script>
     
 </head>
+
+<%@ include file="header.jsp" %>
+
+
 <div class="all-mon">
     <div class="border">
         <form action="#" class="all-filter">
@@ -67,5 +71,6 @@
     
     <script src="risorse/js/monitoraggio.js"></script>
     <script src="risorse/js/filtri.js"></script>
-    
+</div>
 </html>
+<%@ include file="footer.jsp" %>
