@@ -1,17 +1,15 @@
 <%@ page language="java" import="java.util.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
+  ArrayList<String> buoni = new ArrayList<>();
+  buoni = (ArrayList<String>) session.getAttribute("buonoregalo");
 
-  ArrayList<CategoriaBean> categoria = (ArrayList<CategoriaBean>) session.getAttribute("prodottiCart");
-  if(categoria == null){
-    response.sendRedirect(request.getContextPath()+"/catalogo.jsp");
-    return;
-  }
+  ArrayList<CategoriaBean> categoria = new ArrayList<>();
 
-  ArrayList<String> regioni = (ArrayList<String>) session.getAttribute("regione");
+  categoria = (ArrayList<CategoriaBean>) session.getAttribute("prodottiCart");
 
-  ServletContext cxt = session.getServletContext();
-  ArrayList<String> buoni = (ArrayList<String>) cxt.getAttribute("buonoregalo");
 
+  ArrayList<String> regioni = new ArrayList<>();
+  regioni = (ArrayList<String>) session.getAttribute("regione");
 
 
 %>
@@ -65,35 +63,36 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <% Iterator<CategoriaBean> prodotto = categoria.iterator();
-                      Iterator<String> regione = regioni.iterator();
-
+                  <%
                     if(buoni != null){
-                    int i=0;
-                    while(i<buoni.size()){ %>
+                        int i=0;
+                        System.out.println("1");
+                        while(i<buoni.size()){
+                          System.out.println("2");%>
+                      <tr>
+                      <th scope="row" class="border-0">
+                        <div class="p-1">
+                          <img src="" alt="" width="100" class="img-fluid rounded shadow-sm">
+                          <div class="ml-3 d-inline-block align-middle">
+                            <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Buono regalo</a></h5><span class="text-muted font-weight-normal font-italic d-block"></span>
+                          </div>
+                        </div>
+                      </th>
+                      <td class="border-0 align-middle"><strong>50.0</strong></td>
+                      <td class="border-0 align-middle"><strong></strong></td>
+                      <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
 
-                  <th scope="row" class="border-0">
-                    <div class="p-1">
-                      <img src="" alt="" width="100" class="img-fluid rounded shadow-sm">
-                      <div class="ml-3 d-inline-block align-middle">
-                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Buono regalo</a></h5><span class="text-muted font-weight-normal font-italic d-block"></span>
-                      </div>
-                    </div>
-                  </th>
-                  <td class="border-0 align-middle"><strong>50.0</strong></td>
-                  <td class="border-0 align-middle"><strong></strong></td>
-                  <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
-                </tr>
-                <tr>
-                  <% i++; }
-                  }
-
+                      </tr>
+                      <% i++; }
+                  } else if (categoria != null){
+                    Iterator<CategoriaBean> prodotto = categoria.iterator();
+                    Iterator<String> regione = regioni.iterator();
                     while(prodotto.hasNext()){
                       CategoriaBean prod = prodotto.next();
                       String reg = regione.next(); %>
 
                   <!-- ripetere da qui-->
+                  <tr>
                   <th scope="row" class="border-0">
                     <div class="p-1">
                       <img src="" alt="" width="100" class="img-fluid rounded shadow-sm">
@@ -105,10 +104,10 @@
                   <td class="border-0 align-middle"><strong><%= prod.getPrezzo()%></strong></td>
                   <td class="border-0 align-middle"><strong><%= reg %></strong></td>
                   <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
-                </tr>
-                <tr>
 
-                    <% } %>
+
+                  </tr>
+                    <% } }%>
                   <!-- a qui -->
 
                 </tbody>

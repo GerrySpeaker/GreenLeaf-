@@ -78,7 +78,6 @@ public class RegioneDao implements InterfacciaDao<RegioneBean>{
                     connection.close();
             }
         }
-        System.out.println(lista.toString());
         return lista;
 
     }

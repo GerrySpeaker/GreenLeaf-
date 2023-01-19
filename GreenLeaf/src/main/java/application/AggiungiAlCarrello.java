@@ -40,6 +40,7 @@ public class AggiungiAlCarrello extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
         String categoria =  request.getParameter("categoria");
         String regione = request.getParameter("scelta");
 
@@ -47,8 +48,6 @@ public class AggiungiAlCarrello extends HttpServlet {
             try {
                 CategoriaBean product = model.doRetrieveByKeyAlbero(categoria);
 
-              /*count++;
-              request.getSession().setAttribute("count", count);*/
                 articoli.add(product);
                 regioni.add(regione);
                 request.getSession().setAttribute("prodottiCart", articoli);
@@ -60,19 +59,13 @@ public class AggiungiAlCarrello extends HttpServlet {
             }
         }
 
-        else{
-                ServletContext cxt= getServletContext();
+        else if(regione==null) {
+
                 buono.add("Buono");
-                cxt.setAttribute("buonoregalo",buono);
+                request.getSession().setAttribute("buonoregalo", buono);
                 response.sendRedirect(request.getContextPath() + "/carrello.jsp");
 
         }
-
-
-
-
-        System.out.println(categoria + regione);
-
 
 
 

@@ -17,7 +17,6 @@
 <%@ page import="java.util.Iterator" %>
 <%@ page import="storage.RegioneDao" %>
 <%
-    System.out.println("Sono qui");
     CategoriaDao dao = new CategoriaDao();
     ArrayList <CategoriaBean> article = (ArrayList<CategoriaBean>) dao.doRetrieveAll();
     if(article == null){
@@ -27,8 +26,6 @@
     RegioneDao daoreg = new RegioneDao();
     ArrayList<RegioneBean> regione = (ArrayList<RegioneBean>) daoreg.doRetrieveAll();
 
-
-    System.out.println(article.toString());
 %>
 <%@ include file="header.jsp" %>
 

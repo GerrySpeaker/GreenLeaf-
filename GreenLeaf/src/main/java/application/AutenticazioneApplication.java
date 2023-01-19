@@ -43,8 +43,6 @@ public class AutenticazioneApplication extends HttpServlet {
         Boolean operatore = false;
         Boolean utente = false;
 
-        System.out.println("richiamata la doPost del login");
-
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
 

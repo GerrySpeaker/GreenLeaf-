@@ -29,6 +29,9 @@ public class Logout extends HttpServlet {
 		request.getSession().removeAttribute("email");
 		request.getSession().removeAttribute("utente");
 		request.getSession().removeAttribute("operatore");
+		request.getSession().removeAttribute("prodottiCart");
+		request.getSession().removeAttribute("regione");
+		request.getSession().removeAttribute("buonoregalo");
 		request.getSession().invalidate();
 		cxt.removeAttribute("adminRoles");
 		cxt.removeAttribute("utente");

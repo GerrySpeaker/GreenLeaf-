@@ -5,8 +5,6 @@
     BuonoRegaloDao dao=new BuonoRegaloDao();
     String email = (String) request.getSession().getAttribute("email");
     ArrayList<BuonoregaloBean> article =dao.doRetriveByUtente(email);
-    System.out.println(article.toString());
-
 %>
 
 <!DOCTYPE html>
