@@ -8,7 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="risorse/style/regione.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Catalogo</title>
 </head>
 <%@ page import="javax.servlet.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
@@ -33,6 +33,8 @@
 <%@ include file="header.jsp" %>
 
 <div class="nontavere" id="popup">
+    <form action="AggiungiCarrello" method="post">
+    <input id="categoria" name="categoria" style="display:none">
     <div class="scelta">
         <div class="all-regione">
             <!-- ripetere le regioni da qui -->
@@ -47,7 +49,7 @@
                     <div class="radio-group">
                         <img src="<%= prod.getUrl() %>"><!-- inserire  la regione -->
                         <label class="radio">
-                            <input type="radio" value ="<%= prod.getNomeRegione() %>" name="<%= prod.getNomeRegione() %>"><!-- inserire al name e a value la regione -->
+                            <input type="radio" id="regione" value ="<%= prod.getNomeRegione() %>" name="scelta">
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -59,7 +61,8 @@
 
     </div>
     <button class="close"><i class="fa-solid fa-xmark" onclick="tornaCatalogo()"></i></button>
-    <button class="btn-regione">Aggiungi al carrello</button>
+    <button class="btn-regione" type="submit" >Aggiungi al carrello</button>
+    </form>
 </div>
 
 <div class="all" id="cat">
@@ -83,7 +86,7 @@
                 </div>
                 <div class="btn_area">
                     <a href="visualizzaAlbero.jsp?nome=<%= prod.getNomeCategoria()%>" class="btn_primary">Visualizza prodotto</a><br><br>
-                    <a id="<%= prod.getNomeCategoria()%>" class="btn_secondary" onclick="showRegioniToSelect(this)">Adotta un albero</a>
+                    <a id="<%= prod.getNomeCategoria()%>" class="btn_secondary" onclick="showRegioniToSelect(this)" >Adotta un albero</a>
                 </div>
             </div>
         </div>      <!-- a qui -->
@@ -100,7 +103,7 @@
                     <p class="imp">Prezzo: <span>50</span></p>
                 </div>
                 <div class="btn_area">
-                    <a  class="btn_secondary" >Aggiungi al carrello</a>
+                    <a class="btn_secondary" href="AggiungiCarrello" >Aggiungi al carrello</a>
                 </div>
             </div>
         </div>
@@ -115,6 +118,7 @@
 
 
 <script src = "risorse/js/sceltaCatalogo.js"></script>
+<script src="risorse/js/AggiungiCatalogo.js"></script>
 
 <%@ include file="footer.jsp" %>
 

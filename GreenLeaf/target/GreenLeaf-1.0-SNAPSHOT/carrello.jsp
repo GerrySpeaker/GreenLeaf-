@@ -1,15 +1,16 @@
 <%@ page language="java" import="java.util.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
 
-  ArrayList<AlberoBean> Alberi = (ArrayList<AlberoBean>) session.getAttribute("prodottiCart");
-  if(Alberi == null){
+  ArrayList<CategoriaBean> categoria = (ArrayList<CategoriaBean>) session.getAttribute("prodottiCart");
+  if(categoria == null){
     response.sendRedirect(request.getContextPath()+"/catalogo.jsp");
     return;
   }
-  else if(Alberi.size() == 0){
-    response.sendRedirect("AggiungiCarrello");
-    return;
-  }
+
+  ArrayList<String> regioni = (ArrayList<String>) session.getAttribute("regione");
+
+  ServletContext cxt = session.getServletContext();
+  ArrayList<String> buoni = (ArrayList<String>) cxt.getAttribute("buonoregalo");
 
 
 
@@ -56,7 +57,7 @@
                     <div class="py-2 text-uppercase">Prezzo</div>
                   </th>
                   <th scope="col" class="border-0 bg-light">
-                    <div class="py-2 text-uppercase">Quantit&agrave;</div>
+                    <div class="py-2 text-uppercase">Regione</div>
                   </th>
                   <th scope="col" class="border-0 bg-light">
                     <div class="py-2 text-uppercase">Rimuovi</div>
@@ -65,24 +66,44 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <% Iterator<AlberoBean> prodotto = Alberi.iterator();
+                  <% Iterator<CategoriaBean> prodotto = categoria.iterator();
+                      Iterator<String> regione = regioni.iterator();
+
+                    if(buoni != null){
+                    int i=0;
+                    while(i<buoni.size()){ %>
+
+                  <th scope="row" class="border-0">
+                    <div class="p-1">
+                      <img src="" alt="" width="100" class="img-fluid rounded shadow-sm">
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Buono regalo</a></h5><span class="text-muted font-weight-normal font-italic d-block"></span>
+                      </div>
+                    </div>
+                  </th>
+                  <td class="border-0 align-middle"><strong>50.0</strong></td>
+                  <td class="border-0 align-middle"><strong></strong></td>
+                  <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                </tr>
+                <tr>
+                  <% i++; }
+                  }
 
                     while(prodotto.hasNext()){
-                      AlberoBean prod = prodotto.next();
+                      CategoriaBean prod = prodotto.next();
+                      String reg = regione.next(); %>
 
-
-                  %>
                   <!-- ripetere da qui-->
                   <th scope="row" class="border-0">
                     <div class="p-1">
                       <img src="" alt="" width="100" class="img-fluid rounded shadow-sm">
                       <div class="ml-3 d-inline-block align-middle">
-                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle">Nome</a></h5><span class="text-muted font-weight-normal font-italic d-block"></span>
+                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle"><%= prod.getNomeCategoria()%></a></h5><span class="text-muted font-weight-normal font-italic d-block"></span>
                       </div>
                     </div>
                   </th>
-                  <td class="border-0 align-middle"><strong>Prezzo</strong></td>
-                  <td class="border-0 align-middle"><input  type="number" value="1" min="1"></td>
+                  <td class="border-0 align-middle"><strong><%= prod.getPrezzo()%></strong></td>
+                  <td class="border-0 align-middle"><strong><%= reg %></strong></td>
                   <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
                 </tr>
                 <tr>
@@ -115,7 +136,7 @@
             <div class="p-4">
               <p class="font-italic mb-4"></p>
               <ul class="list-unstyled mb-4">
-                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
+                <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Totale</strong>
                   <h5 class="font-weight-bold">$400.00</h5>
                 </li>
               </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Paypal</a> <br>
