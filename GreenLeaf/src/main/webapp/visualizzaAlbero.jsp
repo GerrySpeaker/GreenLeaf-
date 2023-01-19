@@ -37,6 +37,8 @@
 <%@ include file="header.jsp" %>
 
 <div class="nontavere" id="popup">
+    <form action="AggiungiCarrello" method="post">
+    <input id="categoria" name="categoria" style="display:none">
     <div class="scelta">
         <div class="all-regione">
             <!-- ripetere le regioni da qui -->
@@ -51,7 +53,7 @@
                     <div class="radio-group">
                         <img src="<%= prod.getUrl() %>"><!-- inserire  la regione -->
                         <label class="radio">
-                            <input type="radio" value ="<%= prod.getNomeRegione() %>">
+                            <input type="radio" id="regione" value ="<%= prod.getNomeRegione() %>" name="scelta">
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -62,8 +64,9 @@
         </div>
 
     </div>
-    <button class="close"><i class="fa-solid fa-xmark" onclick="tornaDettaglio()"></i></button>
-    <button class="btn-regione">Aggiungi al carrello</button>
+    <button class="close" type="reset"><i class="fa-solid fa-xmark" onclick="tornaDettaglio()"></i></button>
+    <button class="btn-regione" type="submit">Aggiungi al carrello</button>
+    </form>
 </div>
 
 <div class="all-datail" id="all">
@@ -73,7 +76,7 @@
       <div class = "product-imgs">
         <div class = "img-display">
           <div class = "img-showcase">
-            <img src = "risorse/img/melo.jpg">
+            <img src = "<%= article.getUrl()%>">
           </div>
         </div>
       </div>
@@ -94,7 +97,6 @@
         </div>
   
         <div class = "purchase-info">
-          <input type = "number" min = "0" value = "1">
           <a id ="<%= article.getNomeCategoria()%>" class = "btn" onclick="showRegioniToSelectDettaglio(this)">
             Aggiungi al carrello <i class = "fas fa-shopping-cart"></i>
           </a>

@@ -52,7 +52,7 @@ public class AggiungiAlCarrello extends HttpServlet {
                 regioni.add(regione);
                 request.getSession().setAttribute("prodottiCart", articoli);
                 request.getSession().setAttribute("regione", regioni);
-                response.sendRedirect(request.getContextPath() + "/carrello.jsp");
+                response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
 
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -63,7 +63,7 @@ public class AggiungiAlCarrello extends HttpServlet {
 
                 buono.add("Buono");
                 request.getSession().setAttribute("buonoregalo", buono);
-                response.sendRedirect(request.getContextPath() + "/carrello.jsp");
+                response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
 
         }
 

@@ -140,6 +140,7 @@ CREATE TABLE `buonoregalo` (
 
 LOCK TABLES `buonoregalo` WRITE;
 /*!40000 ALTER TABLE `buonoregalo` DISABLE KEYS */;
+INSERT INTO `buonoregalo` VALUES ('1','Da riscattare',50,'laSabatino@gmail.com',3);
 /*!40000 ALTER TABLE `buonoregalo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -335,7 +336,7 @@ CREATE TABLE `utente` (
 
 LOCK TABLES `utente` WRITE;
 /*!40000 ALTER TABLE `utente` DISABLE KEYS */;
-INSERT INTO `utente` VALUES ('hsjka@gmail.com','klfas','klsamf','jskdfsk02','2023-01-05'),('k@gmail.com','kilo','andrea','kbcd12d4','2022-12-29'),('laSabatino@gmail.com','Sabatino','Michelina','abcd1aa2','2023-01-05'),('pepe@gmail.com','Adreucci','Peppe','vessicchio1','2022-12-15'),('peppe@gmail.com','Vessicchio','Peppe','peppevess1','2023-01-04');
+INSERT INTO `utente` VALUES ('hsjka@gmail.com','klfas','klsamf','jskdfsk02','2023-01-05'),('k@gmail.com','kilo','andrea','kbcd12d4','2022-12-29'),('laSabatino@gmail.com','Sabatino','Michelina','1','2023-01-05'),('pepe@gmail.com','Adreucci','Peppe','vessicchio1','2022-12-15'),('peppe@gmail.com','Vessicchio','Peppe','peppevess1','2023-01-04');
 /*!40000 ALTER TABLE `utente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -348,4 +349,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-19 16:29:25
+-- Dump completed on 2023-01-19 19:47:01

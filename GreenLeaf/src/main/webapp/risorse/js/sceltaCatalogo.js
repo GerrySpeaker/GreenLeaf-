@@ -142,6 +142,8 @@ function showRegioniToSelectDettaglio(obj) {
     else if (obj.id.match("pino")){
         pero();
     }
+    document.getElementById("categoria").value = obj.id;
+    console.log( document.getElementById("categoria").value);
 }
 
 

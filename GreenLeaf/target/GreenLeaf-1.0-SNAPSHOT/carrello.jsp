@@ -84,12 +84,12 @@
 
                       </tr>
                       <% i++; }
-                  } else if (categoria != null){
-                    Iterator<CategoriaBean> prodotto = categoria.iterator();
-                    Iterator<String> regione = regioni.iterator();
-                    while(prodotto.hasNext()){
-                      CategoriaBean prod = prodotto.next();
-                      String reg = regione.next(); %>
+                     } if (categoria != null){
+                        Iterator<CategoriaBean> prodotto = categoria.iterator();
+                        Iterator<String> regione = regioni.iterator();
+                        while(prodotto.hasNext()){
+                          CategoriaBean prod = prodotto.next();
+                          String reg = regione.next(); %>
 
                   <!-- ripetere da qui-->
                   <tr>

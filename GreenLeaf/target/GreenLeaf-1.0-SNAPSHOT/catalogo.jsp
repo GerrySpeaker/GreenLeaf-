@@ -57,7 +57,7 @@
         </div>
 
     </div>
-    <button class="close"><i class="fa-solid fa-xmark" onclick="tornaCatalogo()"></i></button>
+    <button class="close" type="reset"><i class="fa-solid fa-xmark" onclick="tornaCatalogo()"></i></button>
     <button class="btn-regione" type="submit" >Aggiungi al carrello</button>
     </form>
 </div>
