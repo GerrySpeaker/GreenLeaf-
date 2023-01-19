@@ -3,7 +3,6 @@
 <%
 
     BuonoRegaloDao dao=new BuonoRegaloDao();
-    System.out.println("mirko gay");
     String email = (String) request.getSession().getAttribute("email");
     ArrayList<BuonoregaloBean> article =dao.doRetriveByUtente(email);
     System.out.println(article.toString());
