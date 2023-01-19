@@ -66,10 +66,10 @@ CREATE TABLE `albero` (
   KEY `utente_idx` (`regione`),
   KEY `utenteAlbero_idx` (`utenteAlbero`),
   KEY `ordine_idx` (`ordine`),
-  CONSTRAINT `categoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`nome`),
-  CONSTRAINT `ordine` FOREIGN KEY (`ordine`) REFERENCES `ordine` (`idordine`),
-  CONSTRAINT `utenteAlbero` FOREIGN KEY (`utenteAlbero`) REFERENCES `utente` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `categoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `ordine` FOREIGN KEY (`ordine`) REFERENCES `ordine` (`idordine`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `utenteAlbero` FOREIGN KEY (`utenteAlbero`) REFERENCES `utente` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,6 +78,7 @@ CREATE TABLE `albero` (
 
 LOCK TABLES `albero` WRITE;
 /*!40000 ALTER TABLE `albero` DISABLE KEYS */;
+INSERT INTO `albero` VALUES (3,'-500','melo',NULL,'Da Piantare','laSabatino@gmail.com','Basilicata',3);
 /*!40000 ALTER TABLE `albero` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -96,8 +97,8 @@ CREATE TABLE `associato` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `categoriaAssociato_idx` (`categoriaAssociato`),
   KEY `regioneAssociato_idx` (`regioneAssociato`),
-  CONSTRAINT `categoriaAssociato` FOREIGN KEY (`categoriaAssociato`) REFERENCES `categoria` (`nome`),
-  CONSTRAINT `regioneAssociato` FOREIGN KEY (`regioneAssociato`) REFERENCES `regione` (`nome`)
+  CONSTRAINT `categoriaAssociato` FOREIGN KEY (`categoriaAssociato`) REFERENCES `categoria` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `regioneAssociato` FOREIGN KEY (`regioneAssociato`) REFERENCES `regione` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -129,8 +130,8 @@ CREATE TABLE `buonoregalo` (
   UNIQUE KEY `key_UNIQUE` (`key`),
   KEY `utenteRegalo_idx` (`utenteRegalo`),
   KEY `ordineRegalo_idx` (`ordineRegalo`),
-  CONSTRAINT `ordineRegalo` FOREIGN KEY (`ordineRegalo`) REFERENCES `ordine` (`idordine`),
-  CONSTRAINT `utenteRegalo` FOREIGN KEY (`utenteRegalo`) REFERENCES `utente` (`email`)
+  CONSTRAINT `ordineRegalo` FOREIGN KEY (`ordineRegalo`) REFERENCES `ordine` (`idordine`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `utenteRegalo` FOREIGN KEY (`utenteRegalo`) REFERENCES `utente` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -167,7 +168,7 @@ CREATE TABLE `categoria` (
 
 LOCK TABLES `categoria` WRITE;
 /*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
-INSERT INTO `categoria` VALUES ('ciliegio','-150 kg','Il ciliegio è una pianta a foglia caduca, semplice, ovato-oblunga, con apice pronunciato, appuntito e margine seghettato.',50,'C:\\Users\\vince\\Documents\\GitHub\\GreenLeaf-\\Front\\catalogo\\alberi\\ciliegio.jpg'),('melo','-800 kg','Il melo domestico  è una pianta da frutto appartenente alla famiglia delle Rosacee. È una delle più diffuse piante da frutto coltivate.',50,'C:\\Users\\vince\\Documents\\GitHub\\GreenLeaf-\\Front\\catalogo\\alberi\\melo.jpg'),('pero','-55 kg','Il pero è uno di quegli alberi da frutto che si sviluppano alla perfezione in tutte quelle zone caratterizzate da un clima temperato. In particolar modo, all’interno della penisola italiana, si caratterizza per crescere ottimamente in ogni regione.',50,'C:\\Users\\vince\\Documents\\GitHub\\GreenLeaf-\\Front\\catalogo\\alberi\\pero.jpg'),('pino','-1200 kg','La sua chioma è piramidale o ovale, il tronco è dritto ed i rami tesi verso l\'esterno.',50,'C:\\Users\\vince\\Documents\\GitHub\\GreenLeaf-\\Front\\catalogo\\alberi\\pino.jpg');
+INSERT INTO `categoria` VALUES ('ciliegio','-150 kg','Il ciliegio è una pianta a foglia caduca, semplice, ovato-oblunga, con apice pronunciato, appuntito e margine seghettato.',50,'risorse\\img\\ciliegio.jpg'),('melo','-800 kg','Il melo domestico  è una pianta da frutto appartenente alla famiglia delle Rosacee. È una delle più diffuse piante da frutto coltivate.',50,'risorse\\img\\melo.jpg'),('pero','-55 kg','Il pero è uno di quegli alberi da frutto che si sviluppano alla perfezione in tutte quelle zone caratterizzate da un clima temperato. In particolar modo, all’interno della penisola italiana, si caratterizza per crescere ottimamente in ogni regione.',50,'risorse\\img\\pero.jpg'),('pino','-1200 kg','La sua chioma è piramidale o ovale, il tronco è dritto ed i rami tesi verso l\'esterno.',50,'risorse\\img\\pino.jpg');
 /*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -216,8 +217,8 @@ CREATE TABLE `operatore` (
   UNIQUE KEY `email_UNIQUE` (`email`),
   KEY `admin_idx` (`admin`),
   KEY `regione_idx` (`regione`),
-  CONSTRAINT `admin` FOREIGN KEY (`admin`) REFERENCES `admin` (`email`),
-  CONSTRAINT `regione` FOREIGN KEY (`regione`) REFERENCES `regione` (`nome`)
+  CONSTRAINT `admin` FOREIGN KEY (`admin`) REFERENCES `admin` (`email`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `regione` FOREIGN KEY (`regione`) REFERENCES `regione` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -227,6 +228,7 @@ CREATE TABLE `operatore` (
 
 LOCK TABLES `operatore` WRITE;
 /*!40000 ALTER TABLE `operatore` DISABLE KEYS */;
+INSERT INTO `operatore` VALUES ('anna@gmail.com','annarella03','Saccardo','Anna','fa.mikela@gmail.com','Calabria'),('fa.mikela@gmail.com','1234','vitale','mirko','fa.mikela@gmail.com','Basilicata'),('gerarda@gmail.com','gerra25a4','Desiderato','Gerarda','fa.mikela@gmail.com','Basilicata'),('hsjka@gmail.com','jakshdf02','klfas','klsamf','fa.mikela@gmail.com','Veneto'),('mitico@gmail.com','mitico085','Faella','Orazio','fa.mikela@gmail.com','Piemonte'),('napolitano@gmail.com','gerardo2','Napolitano','Gerardo','fa.mikela@gmail.com','Umbria');
 /*!40000 ALTER TABLE `operatore` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,8 +247,8 @@ CREATE TABLE `ordine` (
   PRIMARY KEY (`idordine`),
   UNIQUE KEY `idordine_UNIQUE` (`idordine`),
   KEY `Utente_idx` (`Utente`),
-  CONSTRAINT `Utente` FOREIGN KEY (`Utente`) REFERENCES `utente` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  CONSTRAINT `Utente` FOREIGN KEY (`Utente`) REFERENCES `utente` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -255,6 +257,7 @@ CREATE TABLE `ordine` (
 
 LOCK TABLES `ordine` WRITE;
 /*!40000 ALTER TABLE `ordine` DISABLE KEYS */;
+INSERT INTO `ordine` VALUES (3,'2022-12-12',50,'laSabatino@gmail.com');
 /*!40000 ALTER TABLE `ordine` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -279,7 +282,7 @@ CREATE TABLE `regione` (
 
 LOCK TABLES `regione` WRITE;
 /*!40000 ALTER TABLE `regione` DISABLE KEYS */;
-INSERT INTO `regione` VALUES ('Abruzzo','GreenLeaf\\Presentation\\regioni\\abruzzo.png'),('Basilicata','GreenLeaf\\Presentation\\regioni\\basilicata.png'),('Calabria','GreenLeaf\\Presentation\\regioni\\calabria.png'),('Campania','GreenLeaf\\Presentation\\regioni\\campania.png'),('Emilia Romagna','GreenLeaf\\Presentation\\regioni\\emilia.png'),('Friuli Venezia Giulia','GreenLeaf\\Presentation\\regioni\\fruli.png'),('Lazio','GreenLeaf\\Presentation\\regioni\\lazio.png'),('Liguria','GreenLeaf\\Presentation\\regioni\\liguria.png'),('Lombardia','GreenLeaf\\Presentation\\regioni\\lombardia.png'),('Marche','GreenLeaf\\Presentation\\regioni\\marche.png'),('Molise','GreenLeaf\\Presentation\\regioni\\molise.png'),('Piemonte','GreenLeaf\\Presentation\\regioni\\piemonte.png'),('Puglia','GreenLeaf\\Presentation\\regioni\\puglia.png'),('Sardegna','GreenLeaf\\Presentation\\regioni\\sardegna.png'),('Sicilia','GreenLeaf\\Presentation\\regioni\\sicilia.png'),('Toscana','GreenLeaf\\Presentation\\regioni\\tocana.png'),('Trentino Alto Adige','GreenLeaf\\Presentation\\regioni\\trentino.png'),('Umbria','GreenLeaf\\Presentation\\regioni\\umbria.png'),('Val d\'Aosta','GreenLeaf\\Presentation\\regioni\\valle.png'),('Veneto','GreenLeaf\\Presentation\\regioni\\veneto.png');
+INSERT INTO `regione` VALUES ('Abruzzo','risorse\\img\\abruzzo.png'),('Basilicata','risorse\\img\\basilicata.png'),('Calabria','risorse\\img\\calabria.png'),('Campania','risorse\\img\\campania.png'),('Emilia Romagna','risorse\\img\\emilia.png'),('Friuli Venezia Giulia','risorse\\img\\fruli.png'),('Lazio','risorse\\img\\lazio.png'),('Liguria','risorse\\img\\liguria.png'),('Lombardia','risorse\\img\\lombardia.png'),('Marche','risorse\\img\\marche.png'),('Molise','risorse\\img\\molise.png'),('Piemonte','risorse\\img\\piemonte.png'),('Puglia','risorse\\img\\puglia.png'),('Sardegna','risorse\\img\\sardegna.png'),('Sicilia','risorse\\img\\sicilia.png'),('Toscana','risorse\\img\\toscana.png'),('Trentino Alto Adige','risorse\\img\\trentino.png'),('Umbria','risorse\\img\\umbria.png'),('Valle dAosta','risorse\\img\\valle.png'),('Veneto','risorse\\img\\veneto.png');
 /*!40000 ALTER TABLE `regione` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -305,7 +308,7 @@ CREATE TABLE `trasporti` (
 
 LOCK TABLES `trasporti` WRITE;
 /*!40000 ALTER TABLE `trasporti` DISABLE KEYS */;
-INSERT INTO `trasporti` VALUES ('Aereo',26,'C:\\Users\\vince\\Documents\\GitHub\\GreenLeaf-\\Front\\png\\plane.png'),('Autobus',5200,'C:\\Users\\vince\\Documents\\GitHub\\GreenLeaf-\\Front\\png\\bus.png'),('Macchina',2300,'C:\\Users\\vince\\Documents\\GitHub\\GreenLeaf-\\Front\\png\\sports-car.png'),('Metropolitana',2,'C:\\Users\\vince\\Documents\\GitHub\\GreenLeaf-\\Front\\png\\underground.png'),('Nave',1000,'C:\\Users\\vince\\Documents\\GitHub\\GreenLeaf-\\Front\\png\\ship.png'),('Nave da crociera',100000000,'C:\\Users\\vince\\Documents\\GitHub\\GreenLeaf-\\Front\\png\\cruise.png'),('Scooter',72,'C:\\Users\\vince\\Documents\\GitHub\\GreenLeaf-\\Front\\png\\scooter.png'),('Taxi',2200,'C:\\Users\\vince\\Documents\\GitHub\\GreenLeaf-\\Front\\png\\taxi.png'),('Tram',1,'C:\\Users\\vince\\Documents\\GitHub\\GreenLeaf-\\Front\\png\\tram.png'),('Treno',1,'C:\\Users\\vince\\Documents\\GitHub\\GreenLeaf-\\Front\\png\\train.png');
+INSERT INTO `trasporti` VALUES ('Aereo',26,'risorse\\img\\plane.png'),('Autobus',5200,'risorse\\img\\bus.png'),('Macchina',2300,'risorse\\img\\sports-car.png'),('Metropolitana',2,'risorse\\img\\underground.png'),('Nave',1000,'risorse\\img\\ship.png'),('Nave da crociera',100000000,'risorse\\img\\cruise.png'),('Scooter',72,'risorse\\img\\scooter.png'),('Taxi',2200,'risorse\\img\\taxi.png'),('Tram',1,'risorse\\img\\tram.png'),('Treno',1,'risorse\\img\\train.png');
 /*!40000 ALTER TABLE `trasporti` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -333,7 +336,7 @@ CREATE TABLE `utente` (
 
 LOCK TABLES `utente` WRITE;
 /*!40000 ALTER TABLE `utente` DISABLE KEYS */;
-INSERT INTO `utente` VALUES ('gigiodonnarumma@gmail.com','donnarumma','gigio','bestportiereeu','1999-10-02'),('LessDoro@gamil.com','Gold','Less','bancodeipugni22#','2021-06-16'),('mariorossi@gmail.com','rossi','mario','mariothegamer','2000-12-31'),('mirkovitale@gmail.com','vitale','mirko','1234','1998-02-25'),('pepperomano@gmail.com','romano','peppe','123','2002-01-01'),('Petro.grande@gmail.com','Petrosino','Salvatore','petrogrande01!','2022-02-17');
+INSERT INTO `utente` VALUES ('hsjka@gmail.com','klfas','klsamf','jskdfsk02','2023-01-05'),('k@gmail.com','kilo','andrea','kbcd12d4','2022-12-29'),('laSabatino@gmail.com','Sabatino','Michelina','abcd1aa2','2023-01-05'),('pepe@gmail.com','Adreucci','Peppe','vessicchio1','2022-12-15'),('peppe@gmail.com','Vessicchio','Peppe','peppevess1','2023-01-04');
 /*!40000 ALTER TABLE `utente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -346,4 +349,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-12 15:27:41
+-- Dump completed on 2023-01-19 16:24:18
