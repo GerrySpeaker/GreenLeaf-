@@ -1,11 +1,10 @@
 <%@ page language="java" import="java.util.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="storage.BuonoRealoDao" %>
+<%@ page import="storage.BuonoRegaloDao" %>
 <%
 
-    BuonoRealoDao dao=new BuonoRealoDao();
+    BuonoRegaloDao dao=new BuonoRegaloDao();
     String email = (String) request.getSession().getAttribute("email");
     ArrayList<BuonoregaloBean> article =dao.doRetriveByUtente(email);
-
 %>
 
 <!DOCTYPE html>
