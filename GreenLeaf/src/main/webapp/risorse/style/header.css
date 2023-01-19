@@ -92,6 +92,7 @@ header .nav-menu li a{
     transition: 0.5s;
 }
 
+
 header .nav-menu li a:hover{
     color: var(--main-color);
     font-size: 1.3em;
@@ -155,4 +156,5 @@ header .nav-menu li a:hover{
         font-size: 1em;
 
     }
+
 }

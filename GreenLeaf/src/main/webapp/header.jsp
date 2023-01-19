@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="risorse/style/header.css"> <!-- style -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body class>
     <header class="all-headerbody">
@@ -15,7 +16,7 @@
             <ul class="nav-menu">
                 <li><a  href="homepage.jsp">Home</a></li>
                 <li><a href="catalogo.jsp">Adotta</a></li>
-                <li><a href="">Monitoraggio</a></li>
+                <li><a href="monitoraggio.jsp">Monitoraggio</a></li>
                 <li><a href="calcoloCO2.jsp">Calcolo CO2</a></li>
             </ul>
             <div class="hamburger">
@@ -31,8 +32,4 @@
     </header>
     <script src="risorse/js/header.js"></script>
 </body>
-
-
-
-
 </html>

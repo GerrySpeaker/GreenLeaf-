@@ -64,12 +64,12 @@
 
               <div style="margin-left: 50px; margin-top: 20px">
                 <p>Accetti di condividere i tuoi dati personali?</p><!-- controlla che accetti e metti pdf -->
-                <input id="conferma" class="confermato" type="checkbox" value="piantato" >
+                <input id="conferma" class="confermato" type="checkbox" value="piantato" onclick="pronto()">
                 <label for="conferma">Si</label>
               </div>
 
-              <div class="btn">
-                <button class="submit">Procedi</button>
+              <div class="btn"  id="submit" style="display: none">
+                <button class="submit" onclick="notifica()">Procedi</button>
               </div>
             </form>
           </section>

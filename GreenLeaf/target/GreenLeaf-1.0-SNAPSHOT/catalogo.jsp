@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="risorse/style/catalogo.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link rel="stylesheet" href="risorse/style/filtri.css">
     <link rel="stylesheet" href="risorse/style/regione.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -114,7 +113,7 @@
 
 
 
-<script src="risorse/js/filtri.js"></script>
+
 <script src = "risorse/js/sceltaCatalogo.js"></script>
 
 <%@ include file="footer.jsp" %>
