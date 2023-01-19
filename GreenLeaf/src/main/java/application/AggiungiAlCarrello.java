@@ -1,14 +1,15 @@
 package application;
 
-import bean.AlberoBean;
+import bean.BuonoregaloBean;
 import bean.CategoriaBean;
-import storage.AlberoDao;
+import com.example.greenleaf.Servlet;
 import storage.CategoriaDao;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 
@@ -24,6 +25,10 @@ public class AggiungiAlCarrello extends HttpServlet {
     static CategoriaDao model=new CategoriaDao();
     static ArrayList<CategoriaBean> articoli = new ArrayList<CategoriaBean>();
 
+    static ArrayList<String> regioni = new ArrayList<String>();
+
+    static ArrayList<String> buono = new ArrayList<>();
+
 
     public AggiungiAlCarrello() {
         super();
@@ -35,28 +40,39 @@ public class AggiungiAlCarrello extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-        /*Integer count = (Integer) request.getSession().getAttribute("count"); da vedere se mettere
-        if(count == null)
-        {
-            count = 0;
-        }*/
-        System.out.println("Sono nell'aggiunta al carrello");
         String categoria =  request.getParameter("categoria");
         String regione = request.getParameter("scelta");
 
-        System.out.println(categoria + regione);
-        try {
-              CategoriaBean product = model.doRetrieveByKeyAlbero(categoria);
+        if(regione!=null){
+            try {
+                CategoriaBean product = model.doRetrieveByKeyAlbero(categoria);
 
               /*count++;
               request.getSession().setAttribute("count", count);*/
-              articoli.add(product);
-              request.getSession().setAttribute("prodottiCart", articoli);
+                articoli.add(product);
+                regioni.add(regione);
+                request.getSession().setAttribute("prodottiCart", articoli);
+                request.getSession().setAttribute("regione", regioni);
+                response.sendRedirect(request.getContextPath() + "/carrello.jsp");
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
+
+        else{
+                ServletContext cxt= getServletContext();
+                buono.add("Buono");
+                cxt.setAttribute("buonoregalo",buono);
+                response.sendRedirect(request.getContextPath() + "/carrello.jsp");
+
+        }
+
+
+
+
+        System.out.println(categoria + regione);
+
 
 
 
