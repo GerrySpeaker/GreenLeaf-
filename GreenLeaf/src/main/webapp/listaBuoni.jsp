@@ -1,12 +1,10 @@
 <%@ page language="java" import="java.util.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="storage.AlberoDao" %>
-<%@ page import="storage.OperatoreDao" %>
+<%@ page import="storage.BuonoRealoDao" %>
 <%
 
-    OperatoreDao dao=new OperatoreDao();
+    BuonoRealoDao dao=new BuonoRealoDao();
     String email = (String) request.getSession().getAttribute("email");
-
-    ArrayList<OperatoreBean> article =(ArrayList<OperatoreBean>) dao.allOperatori(email);
+    ArrayList<BuonoregaloBean> article =dao.doRetriveByUtente(email);
 
 %>
 
@@ -29,21 +27,19 @@
     <div class="all-list" id="list">
         <div class="list">
             <h3>Buoni da te creati</h3>
-            <% Iterator<OperatoreBean> prodotto = article.iterator();
+            <% Iterator<BuonoregaloBean> prodotto = article.iterator();
                 int i = 0;
-                String em = null;
                 while(prodotto.hasNext()){
-                    OperatoreBean prod = prodotto.next();
+                    BuonoregaloBean prod = prodotto.next();
                     i++;
-                    em = prod.getEmail();
 
             %>
             <div class="row"><!-- ripetere questo con un for da qui -->
                 <div class="rank"><span><%= i %></span></div>
                 <div class="operatore">
-                    <h4>Codice buono</h4>
-                    <p>stato</p>
-                    <p>ordine</p>
+                    <h4><%= prod.getIdBuonoregalo()%></h4>
+                    <p><%=prod.getStato()%></p>
+                    <p><%=prod.getOrdineRegalo()%></p>
                 </div>
 
             </div><!-- a qui -->
