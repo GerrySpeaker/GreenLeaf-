@@ -43,9 +43,9 @@ public class RegistrazioneApplication extends HttpServlet {
 
 
         Boolean mail = Pattern.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$", request.getParameter("email"));
-        Boolean pass = Pattern.matches("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$}", request.getParameter("password"));
+        Boolean pass = Pattern.matches("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$", request.getParameter("password"));
         Boolean nome = Pattern.matches("^[A-Za-z]+$", request.getParameter("nome"));
-        Boolean cognome = Pattern.matches("^[a-z ,.'-]+$", request.getParameter("cognome"));
+        Boolean cognome = Pattern.matches("^[A-Za-z]+$", request.getParameter("cognome"));
 
 
         String data = request.getParameter("data");
@@ -57,12 +57,23 @@ public class RegistrazioneApplication extends HttpServlet {
         bean.setPassword(request.getParameter("password"));
         bean.setNomeUtente(request.getParameter("nome"));
         bean.setCognomeUtente(request.getParameter("cognome"));
-        UtenteBean utenteLogin;
-        if(mail == false || pass == false || nome == false || cognome == false){
-            response.sendRedirect(request.getContextPath() + "/registrazione.jsp?error=true");
+
+        if(mail == false){
+            response.sendRedirect(request.getContextPath() + "/registrazione.jsp?email=true");
+        }
+        if(pass == false){
+            response.sendRedirect(request.getContextPath() + "/registrazione.jsp?pass=true");
+        }
+        if(nome == false){
+            response.sendRedirect(request.getContextPath() + "/registrazione.jsp?nome=true");
+        }
+        if(cognome == false){
+            response.sendRedirect(request.getContextPath() + "/registrazione.jsp?cognome=true");
         }
 
-        else {
+
+        UtenteBean utenteLogin;
+
             try {
                 utenteLogin = dao.doRetrieveByEmail(bean.getEmail());
                 adminBean = adminDao.doRetrieveByEmail(bean.getEmail());
@@ -79,7 +90,7 @@ public class RegistrazioneApplication extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + "/error.jsp");
             }
         }
-    }
+
 
 
 }

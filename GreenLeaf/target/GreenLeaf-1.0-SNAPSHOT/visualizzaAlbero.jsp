@@ -113,7 +113,7 @@
           <a id ="<%= article.getNomeCategoria()%>" class = "btn" onclick="showRegioniToSelectDettaglio(this)">Aggiungi al carrello <i class = "fas fa-shopping-cart"></i></a>
             <%}%>
         </div>
-          
+
       </div>
     </div>
   </div>

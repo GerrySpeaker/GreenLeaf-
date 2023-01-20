@@ -25,12 +25,31 @@
     <div class="all-form">
         <section class="container ">
             <header>Registrazione</header>
-              <%if(Boolean.parseBoolean(request.getParameter("error"))==true){%> <!-- l'ho copiato dalla registrazione operatore,
-                                                                                               non so se ho fatto bene -->
-                  <p id="error" class="error" style="text-align: center" >Credenziali errate</p>
-              <%}else{ %>
-                  <p id="error" class="error"></p>
-              <%} %>
+            <%if(Boolean.parseBoolean(request.getParameter("pass"))==true){%>
+
+            <p id="error" class="error" style="text-align: center" >La password non rispetta i parametri per la registrazione(minimo 8 caratteri alfa-numerici ed un carattere speciale alla fine)</p>
+            <%}else{ %>
+            <p id="error" class="error"></p>
+            <%} %>
+            <%if(Boolean.parseBoolean(request.getParameter("email"))==true){%>
+
+            <p id="error" class="error" style="text-align: center" >L'email non rispetta i parametri per la registrazione</p>
+            <%}else{ %>
+            <p id="error" class="error"></p>
+            <%} %>
+          <%if(Boolean.parseBoolean(request.getParameter("nome"))==true){%>
+
+          <p id="error" class="error" style="text-align: center" >Il nome non rispetta i parametri per la registrazione(non deve contere numeri)</p>
+          <%}else{ %>
+          <p id="error" class="error"></p>
+          <%} %>
+          <%if(Boolean.parseBoolean(request.getParameter("cognome"))==true){%>
+
+          <p id="error" class="error" style="text-align: center" >Il cognome non rispetta i parametri per la registrazione(non deve contere numeri)</p>
+          <%}else{ %>
+          <p id="error" class="error"></p>
+          <%} %>
+
 
             <form action="RegistrazioneApplication" class="form" method="post" onsubmit="return validate(this)">
       
