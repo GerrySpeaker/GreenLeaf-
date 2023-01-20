@@ -29,62 +29,38 @@ public class IotDao {
         }
     }
 
-    public Boolean inserisciIot(Integer id, String ip, String x, String y, String z) throws SQLException {
+    public IotBean doRetriveByKey(Integer id) throws SQLException {
 
         Connection connection = null;
-        IotBean iotBean = new IotBean();
+        IotBean bean = new IotBean();
         PreparedStatement preparedStatement = null;
-        String selectSQL = "Insert into iot SET idiot=?, IPV4=?, latitudine=?, longitudine=?, altitudine=?";
-        String getId = "SELECT MAX(IPV4) as id FROM iot";
+        String selectSQL = "SELECT * FROM iot WHERE idiot=?";
 
         try {
             connection = ds.getConnection();
-            preparedStatement = connection.prepareStatement(getId);
-            ResultSet rs = preparedStatement.executeQuery();
-            if(rs.next()){
-
-                iotBean.setIdIot(rs.getInt("IPV4") + 1);
-            }
-
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } finally {
-            try {
-                if (preparedStatement != null)
-                    preparedStatement.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            } finally {
-            if (connection != null)
-                connection.close();
-            }
-        }
-        try{
-
-            connection = ds.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setInt(1, id);
-            preparedStatement.setString(2, x);
-            preparedStatement.setString(3, y);
-            preparedStatement.setString(4, z);
-            preparedStatement.executeQuery();
+            ResultSet rs = preparedStatement.executeQuery();
 
-            return true;
+            if (rs.next()) {
+                bean.setIdIot(rs.getInt("idiot"));
+                bean.setIpv4(rs.getString("IPV4"));
+                bean.setAltitudine(rs.getString("altitudine"));
+                bean.setLongitudine(rs.getString("longitudine"));
+                bean.setStato(rs.getString("stato"));
+                bean.setLatitudine(rs.getString("latitudine"));
+                bean.setRegione(rs.getString("regione"));
+            }
 
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         } finally {
             try {
                 if (preparedStatement != null)
                     preparedStatement.close();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
             } finally {
                 if (connection != null)
                     connection.close();
             }
         }
-
+        return bean;
     }
-
 }

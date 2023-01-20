@@ -4,14 +4,14 @@ import java.util.Date;
 
 public class AlberoBean {
 
-    public Integer idAlbero, ordine;
+    public Integer idAlbero, ordine,iot;
     public String  co2, categoria, stato, utenteAlbero,regione;
     public Date dataPiantumazione;
 
     public AlberoBean() {
     }
 
-    public AlberoBean(Integer idAlbero, Integer ordine, String co2, String categoria, String stato, String utenteAlbero, Date dataPiantumazione,String regione) {
+    public AlberoBean(Integer idAlbero, Integer ordine, String co2, String categoria, String stato, String utenteAlbero, Date dataPiantumazione,String regione,Integer iot) {
         this.idAlbero = idAlbero;
         this.ordine = ordine;
         this.co2 = co2;
@@ -20,14 +20,7 @@ public class AlberoBean {
         this.utenteAlbero = utenteAlbero;
         this.dataPiantumazione = dataPiantumazione;
         this.regione = regione;
-    }
-
-    public String getRegione() {
-        return regione;
-    }
-
-    public void setRegione(String regione) {
-        this.regione = regione;
+        this.iot = iot;
     }
 
     public Integer getIdAlbero() {
@@ -44,6 +37,14 @@ public class AlberoBean {
 
     public void setOrdine(Integer ordine) {
         this.ordine = ordine;
+    }
+
+    public Integer getIot() {
+        return iot;
+    }
+
+    public void setIot(Integer iot) {
+        this.iot = iot;
     }
 
     public String getCo2() {
@@ -78,6 +79,14 @@ public class AlberoBean {
         this.utenteAlbero = utenteAlbero;
     }
 
+    public String getRegione() {
+        return regione;
+    }
+
+    public void setRegione(String regione) {
+        this.regione = regione;
+    }
+
     public Date getDataPiantumazione() {
         return dataPiantumazione;
     }
@@ -86,16 +95,17 @@ public class AlberoBean {
         this.dataPiantumazione = dataPiantumazione;
     }
 
-
     @Override
     public String toString() {
         return "AlberoBean{" +
                 "idAlbero=" + idAlbero +
                 ", ordine=" + ordine +
+                ", iot=" + iot +
                 ", co2='" + co2 + '\'' +
                 ", categoria='" + categoria + '\'' +
                 ", stato='" + stato + '\'' +
                 ", utenteAlbero='" + utenteAlbero + '\'' +
+                ", regione='" + regione + '\'' +
                 ", dataPiantumazione=" + dataPiantumazione +
                 '}';
     }

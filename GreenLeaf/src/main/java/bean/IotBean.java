@@ -3,17 +3,19 @@ package bean;
 public class IotBean {
 
     public Integer idIot;
-    public String ipv4, latitudine, longitudine, altitudine;
+    public String ipv4, latitudine, longitudine, altitudine,regione,stato;
 
     public IotBean() {
     }
 
-    public IotBean(Integer idIot, String ipv4, String latitudine, String longitudine, String altitudine) {
+    public IotBean(Integer idIot, String ipv4, String latitudine, String longitudine, String altitudine,String regione, String stato) {
         this.idIot = idIot;
         this.ipv4 = ipv4;
         this.latitudine = latitudine;
         this.longitudine = longitudine;
         this.altitudine = altitudine;
+        this.regione = regione;
+        this.stato = stato;
     }
 
     public Integer getIdIot() {
@@ -56,6 +58,22 @@ public class IotBean {
         this.altitudine = altitudine;
     }
 
+    public String getRegione() {
+        return regione;
+    }
+
+    public void setRegione(String regione) {
+        this.regione = regione;
+    }
+
+    public String getStato() {
+        return stato;
+    }
+
+    public void setStato(String stato) {
+        this.stato = stato;
+    }
+
     @Override
     public String toString() {
         return "IotBean{" +
@@ -64,6 +82,8 @@ public class IotBean {
                 ", latitudine='" + latitudine + '\'' +
                 ", longitudine='" + longitudine + '\'' +
                 ", altitudine='" + altitudine + '\'' +
+                ", regione='" + regione + '\'' +
+                ", stato='" + stato + '\'' +
                 '}';
     }
 }
