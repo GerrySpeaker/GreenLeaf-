@@ -366,10 +366,26 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML="Italia";
-        document.getElementById("percentuale").innerHTML="60%";
-        document.getElementById("co2").innerHTML="437kg/anno";
-        document.getElementById("polvere").innerHTML="470kg/anno";
-
+        if(document.getElementById("anno").value.match("2023")){
+            document.getElementById("percentuale").innerHTML="60%";
+            document.getElementById("co2").innerHTML="437kg/anno";
+            document.getElementById("polvere").innerHTML="470kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2024")){
+            document.getElementById("percentuale").innerHTML="65%";
+            document.getElementById("co2").innerHTML="437kg/anno";
+            document.getElementById("polvere").innerHTML="470kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2025")){
+            document.getElementById("percentuale").innerHTML="70%";
+            document.getElementById("co2").innerHTML="437kg/anno";
+            document.getElementById("polvere").innerHTML="470kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2026")){
+            document.getElementById("percentuale").innerHTML="75%";
+            document.getElementById("co2").innerHTML="437kg/anno";
+            document.getElementById("polvere").innerHTML="470kg/anno";
+        }
 
     }
 

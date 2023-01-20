@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="risorse/style/filtri.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"></script>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 </head>
 
 <%@ include file="header.jsp" %>
@@ -19,7 +21,7 @@
     <div class="border">
         <form action="#" class="all-filter">
             <div class="dropdown">
-                <input type="text" class="filterBox" placeholder="Anno" readonly>
+                <input type="text" class="filterBox" placeholder="Anno" id="anno" readonly>
                 <div class="option">
                     <div onclick="show('2023')">2023</div>
                     <div onclick="show('2024')">2024</div>

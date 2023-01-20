@@ -10,7 +10,7 @@
                 <h2>404</h2>
                 <h4>Pagina non trovata!</h4>
                 <p>La pagina che stai cercando non esiste.</p>
-                <a href="#">Torna alla Home</a>
+                <a href=homepage.jsp>Torna alla Home</a>
             </div>
         </div>
         <script type="text/javascript">

@@ -22,7 +22,7 @@
     Boolean Admin = (Boolean) session.getAttribute("adminRoles");
     if(Admin == null || Admin == false)
     {
-        response.sendRedirect(request.getContextPath()+"/error.jsp");
+        response.sendRedirect(request.getContextPath()+"/login.jsp");
         return;
     }
 
