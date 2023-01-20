@@ -54,7 +54,7 @@ public class RegistrazioneApplication extends HttpServlet {
 
                 Boolean mail = Pattern.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$", email);
                 Boolean pass = Pattern.matches("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$", psw);
-                Boolean nome = Pattern.matches("^[A-Za-z]+$", name);
+                Boolean nome = Pattern.matches("^[A-Za-z ,.']+$", name);
                 Boolean cognome = Pattern.matches("^[A-Za-z]+$", surname);
 
 
