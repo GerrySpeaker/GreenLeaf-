@@ -71,6 +71,16 @@
           <p><span>Stato</span>: <%= albero.getStato()%></p>
         </div>
 
+          <div class="iot">
+              <h3>IOT</h3>
+              <ul>
+                  <li><span>Ipv4</span>: </li>
+                  <li><span>Latitudine</span>: </li>
+                  <li><span>Longitudine</span>: </li>
+                  <li><span>Altitudine</span>: </li>
+              </ul>
+          </div>
+
         <div class="form-piantato">
           <p>L'albero e' stato piantato?</p>
 
@@ -87,24 +97,6 @@
   </div>
 </div>
 
-<div class="all-iot" id="form">
-    <div class="box-iot">
-        <h2>Inserire l'IOT</h2>
-
-        <form action="">
-            <div class="inf1">
-                <input type="text" id="ipv4" placeholder="ipv4" name="ipv4">
-            </div>
-            <div class="inf2">
-                <input type="text" id="longitudine" placeholder="inserire la longitudine" name="longitudine">
-                <input type="text" id="altitudine" placeholder="inserire l'altitudine" name="altitudine">
-                <input type="text" id="latitudine" placeholder="inserire la latitudine" name="latitudine">
-            </div>
-
-            <a class="go" href="AlberiPiantumati?idAlberoDaPiantare=<%= albero.getIdAlbero()%>" onclick="hideiot()">Procedi</a>
-        </form>
-    </div>
-</div>
 
 <script src="risorse/js/flush-submit.js"></script>
 
