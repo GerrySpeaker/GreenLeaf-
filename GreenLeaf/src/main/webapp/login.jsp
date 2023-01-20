@@ -21,11 +21,11 @@
     if(email != null)
     {
         UtenteBean utente = utenteDao.doRetrieveByEmail(email);
-        if(utente.getNomeUtente() == null){
+        if(utente.getEmail() == null){
             OperatoreBean operatoreBean = operatoreDao.doRetrieveByEmail(email);
-            if(operatoreBean.getNomeOperatore() == null){
+            if(operatoreBean.getEmail() == null){
                 AdminBean adminBean = adminDao.doRetrieveByEmail(email);
-                if(adminBean.getNomeAdmin() == null){
+                if(adminBean.getEmail() == null){
                     response.sendRedirect(request.getContextPath()+"/login.jsp");
                 }
                 else {
