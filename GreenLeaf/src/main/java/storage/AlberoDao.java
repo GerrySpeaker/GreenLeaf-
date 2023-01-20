@@ -52,6 +52,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
                 bean.setUtenteAlbero(rs.getString("utenteAlbero"));
                 bean.setOrdine(rs.getInt("ordine"));
                 bean.setRegione(rs.getString("regione"));
+                bean.setIot(rs.getInt("iot"));
                 prodotto.add(bean);
 
             }
@@ -102,6 +103,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
                 bean.setUtenteAlbero(rs.getString("utenteAlbero"));
                 bean.setOrdine(rs.getInt("ordine"));
                 bean.setRegione(rs.getString("regione"));
+                bean.setIot(rs.getInt("iot"));
             }
 
         } finally {

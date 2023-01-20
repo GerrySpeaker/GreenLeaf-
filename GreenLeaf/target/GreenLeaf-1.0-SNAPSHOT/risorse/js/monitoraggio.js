@@ -60,9 +60,26 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        document.getElementById("percentuale").innerHTML="65%";
-        document.getElementById("co2").innerHTML="55kg/anno";
-        document.getElementById("polvere").innerHTML="106kg/anno";
+        if(document.getElementById("anno").value.match("2023")){
+            document.getElementById("percentuale").innerHTML="65%";
+            document.getElementById("co2").innerHTML="55kg/anno";
+            document.getElementById("polvere").innerHTML="106kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2024")){
+            document.getElementById("percentuale").innerHTML="70%";
+            document.getElementById("co2").innerHTML="58kg/anno";
+            document.getElementById("polvere").innerHTML="109kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2025")){
+            document.getElementById("percentuale").innerHTML="70%";
+            document.getElementById("co2").innerHTML="61kg/anno";
+            document.getElementById("polvere").innerHTML="112kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2026")){
+            document.getElementById("percentuale").innerHTML="70%";
+            document.getElementById("co2").innerHTML="64kg/anno";
+            document.getElementById("polvere").innerHTML="106kg/anno";
+        }
     }
     else if(reg.match("Campania")){
         var pos = {lat: 40.850209995064105, lng: 14.2677241184705};
@@ -77,9 +94,26 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        document.getElementById("percentuale").innerHTML="53%";
-        document.getElementById("co2").innerHTML="355kg/anno";
-        document.getElementById("polvere").innerHTML="275kg/anno";
+        if(document.getElementById("anno").value.match("2023")){
+            document.getElementById("percentuale").innerHTML="53%";
+            document.getElementById("co2").innerHTML="355kg/anno";
+            document.getElementById("polvere").innerHTML="275kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2024")){
+            document.getElementById("percentuale").innerHTML="58%";
+            document.getElementById("co2").innerHTML="358kg/anno";
+            document.getElementById("polvere").innerHTML="278kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2025")){
+            document.getElementById("percentuale").innerHTML="63%";
+            document.getElementById("co2").innerHTML="358kg/anno";
+            document.getElementById("polvere").innerHTML="278kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2026")){
+            document.getElementById("percentuale").innerHTML="68%";
+            document.getElementById("co2").innerHTML="358kg/anno";
+            document.getElementById("polvere").innerHTML="278kg/anno";
+        }
     }
     else if(reg.match("Emilia Romagna")){
         var pos = {lat: 44.50863902142159, lng: 11.345928893896968};
@@ -94,9 +128,26 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        document.getElementById("percentuale").innerHTML="52%";
-        document.getElementById("co2").innerHTML="291kg/anno";
-        document.getElementById("polvere").innerHTML="275kg/anno";
+        if(document.getElementById("anno").value.match("2023")){
+            document.getElementById("percentuale").innerHTML="52%";
+            document.getElementById("co2").innerHTML="291kg/anno";
+            document.getElementById("polvere").innerHTML="275kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2024")){
+            document.getElementById("percentuale").innerHTML="57%";
+            document.getElementById("co2").innerHTML="294kg/anno";
+            document.getElementById("polvere").innerHTML="278kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2025")){
+            document.getElementById("percentuale").innerHTML="62%";
+            document.getElementById("co2").innerHTML="294kg/anno";
+            document.getElementById("polvere").innerHTML="278kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2026")){
+            document.getElementById("percentuale").innerHTML="67%";
+            document.getElementById("co2").innerHTML="294kg/anno";
+            document.getElementById("polvere").innerHTML="278kg/anno";
+        }
     }
     else if(reg.match("Friuli Venezia Giulia")){
         var pos = {lat: 45.6432401129663, lng: 13.800940564444039};
@@ -111,9 +162,26 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        document.getElementById("percentuale").innerHTML="82%";
-        document.getElementById("co2").innerHTML="725kg/anno";
-        document.getElementById("polvere").innerHTML="465kg/anno";
+        if(document.getElementById("anno").value.match("2023")){
+            document.getElementById("percentuale").innerHTML="82%";
+            document.getElementById("co2").innerHTML="725kg/anno";
+            document.getElementById("polvere").innerHTML="465kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2024")){
+            document.getElementById("percentuale").innerHTML="87%";
+            document.getElementById("co2").innerHTML="728kg/anno";
+            document.getElementById("polvere").innerHTML="468kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2025")){
+            document.getElementById("percentuale").innerHTML="87%";
+            document.getElementById("co2").innerHTML="731kg/anno";
+            document.getElementById("polvere").innerHTML="471kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2026")){
+            document.getElementById("percentuale").innerHTML="87%";
+            document.getElementById("co2").innerHTML="734kg/anno";
+            document.getElementById("polvere").innerHTML="474kg/anno";
+        }
     }
     else if(reg.match("Lazio")){
         var pos = {lat: 41.88215155186725, lng: 12.516216555329192};
@@ -128,9 +196,26 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        document.getElementById("percentuale").innerHTML="32%";
-        document.getElementById("co2").innerHTML="135kg/anno";
-        document.getElementById("polvere").innerHTML="305kg/anno";
+        if(document.getElementById("anno").value.match("2023")){
+            document.getElementById("percentuale").innerHTML="32%";
+            document.getElementById("co2").innerHTML="135kg/anno";
+            document.getElementById("polvere").innerHTML="305kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2024")){
+            document.getElementById("percentuale").innerHTML="37%";
+            document.getElementById("co2").innerHTML="141kg/anno";
+            document.getElementById("polvere").innerHTML="311kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2025")){
+            document.getElementById("percentuale").innerHTML="42%";
+            document.getElementById("co2").innerHTML="144kg/anno";
+            document.getElementById("polvere").innerHTML="314kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2026")){
+            document.getElementById("percentuale").innerHTML="47%";
+            document.getElementById("co2").innerHTML="148kg/anno";
+            document.getElementById("polvere").innerHTML="318kg/anno";
+        }
     }
     else if(reg.match("Liguria")){
         var pos = {lat: 44.40576535968975, lng: 8.948508416774295};
@@ -150,7 +235,21 @@ function seleziona() {
             document.getElementById("co2").innerHTML="87kg/anno";
             document.getElementById("polvere").innerHTML="55kg/anno";
         }
-        else
+        else if(document.getElementById("anno").value.match("2024")){
+            document.getElementById("percentuale").innerHTML="29%";
+            document.getElementById("co2").innerHTML="90kg/anno";
+            document.getElementById("polvere").innerHTML="58kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2025")){
+            document.getElementById("percentuale").innerHTML="34%";
+            document.getElementById("co2").innerHTML="93kg/anno";
+            document.getElementById("polvere").innerHTML="61kg/anno";
+        }
+        else if(document.getElementById("anno").value.match("2026")){
+            document.getElementById("percentuale").innerHTML="39%";
+            document.getElementById("co2").innerHTML="96kg/anno";
+            document.getElementById("polvere").innerHTML="64kg/anno";
+        }
     }
     else if(reg.match("Lombardia")){
         var pos = {lat: 45.46834724161193, lng: 9.187993796374455};
