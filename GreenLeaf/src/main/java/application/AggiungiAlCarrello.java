@@ -3,7 +3,9 @@ package application;
 import bean.BuonoregaloBean;
 import bean.CategoriaBean;
 import com.example.greenleaf.Servlet;
+import storage.AdminDao;
 import storage.CategoriaDao;
+import storage.OperatoreDao;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -23,6 +25,8 @@ public class AggiungiAlCarrello extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     static CategoriaDao model=new CategoriaDao();
+    static AdminDao adminDao = new AdminDao();
+    static OperatoreDao operatoreDao = new OperatoreDao();
     static ArrayList<CategoriaBean> articoli = new ArrayList<CategoriaBean>();
 
     static ArrayList<String> regioni = new ArrayList<String>();
@@ -40,14 +44,24 @@ public class AggiungiAlCarrello extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
+        String mail = request.getParameter("email");
         String categoria =  request.getParameter("categoria");
         String regione = request.getParameter("scelta");
+
+        try{
+            if(adminDao.doRetrieveByEmail(mail)== null){
+                response.sendRedirect(request.getContextPath() + "/homepage.jsp");
+            }
+            if(operatoreDao.doRetrieveByEmail(mail)== null){
+                response.sendRedirect(request.getContextPath() + "/homepage.jsp");
+            }
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
 
         if(regione!=null){
             try {
                 CategoriaBean product = model.doRetrieveByKeyAlbero(categoria);
-
                 articoli.add(product);
                 regioni.add(regione);
                 request.getSession().setAttribute("prodottiCart", articoli);
@@ -58,7 +72,6 @@ public class AggiungiAlCarrello extends HttpServlet {
                 e.printStackTrace();
             }
         }
-
         else if(regione==null) {
 
                 buono.add("Buono");

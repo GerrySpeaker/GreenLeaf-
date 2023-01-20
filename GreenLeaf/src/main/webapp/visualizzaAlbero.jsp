@@ -17,6 +17,10 @@
 <%@ page import="bean.CategoriaBean" %>
 <%@ page import="storage.RegioneDao" %>
 <%@ page import="bean.RegioneBean" %>
+<%@ page import="storage.OperatoreDao" %>
+<%@ page import="storage.AdminDao" %>
+<%@ page import="bean.AdminBean" %>
+<%@ page import="bean.OperatoreBean" %>
 
 <%
     System.out.println("Sono in visualizza albero");
@@ -26,6 +30,13 @@
     if(article == null){
         response.sendRedirect(request.getContextPath()+"/home.jsp");
     }
+
+    String email = (String) request.getSession().getAttribute("email");
+    OperatoreDao operatoreDao = new OperatoreDao();
+    AdminDao adminDao = new AdminDao();
+
+    AdminBean adminBean = adminDao.doRetrieveByEmail(email);
+    OperatoreBean operatoreBean = operatoreDao.doRetrieveByEmail(email);
 
     RegioneDao daoreg = new RegioneDao();
     ArrayList<RegioneBean> regione = (ArrayList<RegioneBean>) daoreg.doRetrieveAll();
@@ -97,10 +108,11 @@
         </div>
   
         <div class = "purchase-info">
-          <a id ="<%= article.getNomeCategoria()%>" class = "btn" onclick="showRegioniToSelectDettaglio(this)">Aggiungi al carrello <i class = "fas fa-shopping-cart"></i>
-          </a>
+            <% if(adminBean.getEmail() != null || operatoreBean.getEmail() != null){ %>
+            <%}else{%>
+          <a id ="<%= article.getNomeCategoria()%>" class = "btn" onclick="showRegioniToSelectDettaglio(this)">Aggiungi al carrello <i class = "fas fa-shopping-cart"></i></a>
+            <%}%>
         </div>
-
 
       </div>
     </div>

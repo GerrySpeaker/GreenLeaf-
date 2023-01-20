@@ -16,7 +16,16 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="storage.RegioneDao" %>
+<%@ page import="storage.OperatoreDao" %>
+<%@ page import="storage.AdminDao" %>
 <%
+    String email = (String) request.getSession().getAttribute("email");
+    OperatoreDao operatoreDao = new OperatoreDao();
+    AdminDao adminDao = new AdminDao();
+
+    AdminBean adminBean = adminDao.doRetrieveByEmail(email);
+    OperatoreBean operatoreBean = operatoreDao.doRetrieveByEmail(email);
+
     CategoriaDao dao = new CategoriaDao();
     ArrayList <CategoriaBean> article = (ArrayList<CategoriaBean>) dao.doRetrieveAll();
     if(article == null){
@@ -83,7 +92,11 @@
                 </div>
                 <div class="btn_area">
                     <a href="visualizzaAlbero.jsp?nome=<%= prod.getNomeCategoria()%>" class="btn_primary">Visualizza prodotto</a><br><br>
+                    <% if(adminBean.getEmail() != null || operatoreBean.getEmail() != null){ %>
+
+                    <%}else{%>
                     <a id="<%= prod.getNomeCategoria()%>" class="btn_secondary" onclick="showRegioniToSelect(this)" >Adotta un albero</a>
+                    <%}%>
                 </div>
             </div>
         </div>      <!-- a qui -->
