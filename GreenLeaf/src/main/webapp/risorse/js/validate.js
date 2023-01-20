@@ -14,7 +14,7 @@ function validation_name(input){
 
 function validation_surname(input){
 
-    var pattern =  /^[a-z ,.'-]+$/i;
+    var pattern =  /^[A-Za-z ,.']+$/i;
 
     if(input.match(pattern)){
         document.getElementById("txt-cognome").innerHTML="";
