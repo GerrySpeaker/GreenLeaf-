@@ -41,56 +41,64 @@ public class RegistrazioneApplication extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        if (request.getSession().getAttribute("email") == null) {
 
-        Boolean mail = Pattern.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$", request.getParameter("email"));
-        Boolean pass = Pattern.matches("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$", request.getParameter("password"));
-        Boolean nome = Pattern.matches("^[A-Za-z]+$", request.getParameter("nome"));
-        Boolean cognome = Pattern.matches("^[A-Za-z]+$", request.getParameter("cognome"));
+            String email = request.getParameter("email");
+            String psw = request.getParameter("password");
+            String name = request.getParameter("nome");
+            String surname = request.getParameter("cognome");
+            String data = request.getParameter("data");
 
-
-        String data = request.getParameter("data");
-        Date data1= null;
-        data1 = Date.valueOf(data);
-        bean.setDataNascita(data1);
-
-        bean.setEmail(request.getParameter("email"));
-        bean.setPassword(request.getParameter("password"));
-        bean.setNomeUtente(request.getParameter("nome"));
-        bean.setCognomeUtente(request.getParameter("cognome"));
-
-        if(mail == false){
-            response.sendRedirect(request.getContextPath() + "/registrazione.jsp?email=true");
-        }
-        if(pass == false){
-            response.sendRedirect(request.getContextPath() + "/registrazione.jsp?pass=true");
-        }
-        if(nome == false){
-            response.sendRedirect(request.getContextPath() + "/registrazione.jsp?nome=true");
-        }
-        if(cognome == false){
-            response.sendRedirect(request.getContextPath() + "/registrazione.jsp?cognome=true");
-        }
+            if (email != null && psw != null && name != null && surname != null) {
 
 
-        UtenteBean utenteLogin;
+                Boolean mail = Pattern.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$", email);
+                Boolean pass = Pattern.matches("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$", psw);
+                Boolean nome = Pattern.matches("^[A-Za-z]+$", name);
+                Boolean cognome = Pattern.matches("^[A-Za-z]+$", surname);
 
-            try {
-                utenteLogin = dao.doRetrieveByEmail(bean.getEmail());
-                adminBean = adminDao.doRetrieveByEmail(bean.getEmail());
-                operatore = operatoreDao.doRetrieveByEmail(bean.getEmail());
-                if (utenteLogin.getNomeUtente() == null && adminBean.getNomeAdmin() == null && operatore.getNomeOperatore() == null) {
-                    dao.registrazione(bean);
-                    response.sendRedirect(request.getContextPath() + "/login.jsp");
+
+                if (mail == false || pass == false || nome == false || cognome == false) {
+                   response.sendRedirect(request.getContextPath() + "/registrazione.jsp?check=true");
+                   return;
                 }
-                else{
-                    response.sendRedirect(request.getContextPath() + "/login.jsp?check=true");
+
+                Date data1 = null;
+                data1 = Date.valueOf(data);
+
+                bean.setDataNascita(data1);
+                bean.setEmail(email);
+                bean.setPassword(psw);
+                bean.setNomeUtente(name);
+                bean.setCognomeUtente(surname);
+
+                UtenteBean utenteLogin;
+
+                try {
+                    utenteLogin = dao.doRetrieveByEmail(bean.getEmail());
+                    adminBean = adminDao.doRetrieveByEmail(bean.getEmail());
+                    operatore = operatoreDao.doRetrieveByEmail(bean.getEmail());
+                    if (utenteLogin.getEmail() == null && adminBean.getEmail() == null && operatore.getNomeOperatore() == null) {
+                        dao.registrazione(bean);
+                        response.sendRedirect(request.getContextPath() + "/login.jsp");
+                        return;
+                    }
+                    else{
+                        response.sendRedirect(request.getContextPath() + "/login.jsp?check=true");
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    response.sendRedirect(request.getContextPath() + "/registrazione.jsp?check=true");
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
-                response.sendRedirect(request.getContextPath() + "/error.jsp");
+            }
+            else {
+                response.sendRedirect(request.getContextPath() + "/registrazione.jsp?check=true");
             }
         }
+        else{
+            response.sendRedirect(request.getContextPath() + "/homepage.jsp");
+        }
 
-
-
+    }
 }

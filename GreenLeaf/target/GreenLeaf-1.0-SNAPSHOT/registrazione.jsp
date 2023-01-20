@@ -17,7 +17,7 @@
 
     if(email != null)
     {
-        response.sendRedirect(request.getContextPath()+"/home.jsp");
+        response.sendRedirect(request.getContextPath()+"/homepage.jsp");
     }
 
   %>
@@ -25,27 +25,10 @@
     <div class="all-form">
         <section class="container ">
             <header>Registrazione</header>
-            <%if(Boolean.parseBoolean(request.getParameter("pass"))==true){%>
 
-            <p id="error" class="error" style="text-align: center" >La password non rispetta i parametri per la registrazione(minimo 8 caratteri alfa-numerici ed un carattere speciale alla fine)</p>
-            <%}else{ %>
-            <p id="error" class="error"></p>
-            <%} %>
-            <%if(Boolean.parseBoolean(request.getParameter("email"))==true){%>
+          <%if(Boolean.parseBoolean(request.getParameter("check"))==true){%>
 
-            <p id="error" class="error" style="text-align: center" >L'email non rispetta i parametri per la registrazione</p>
-            <%}else{ %>
-            <p id="error" class="error"></p>
-            <%} %>
-          <%if(Boolean.parseBoolean(request.getParameter("nome"))==true){%>
-
-          <p id="error" class="error" style="text-align: center" >Il nome non rispetta i parametri per la registrazione(non deve contere numeri)</p>
-          <%}else{ %>
-          <p id="error" class="error"></p>
-          <%} %>
-          <%if(Boolean.parseBoolean(request.getParameter("cognome"))==true){%>
-
-          <p id="error" class="error" style="text-align: center" >Il cognome non rispetta i parametri per la registrazione(non deve contere numeri)</p>
+          <p id="error" class="error" style="text-align: center" >Credenziali errate, riprovare</p>
           <%}else{ %>
           <p id="error" class="error"></p>
           <%} %>
