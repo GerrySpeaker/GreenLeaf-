@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,7 +36,7 @@ public class Delete extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
-        System.out.println("Sono all'interno della servelet");
+        System.out.println("Sono all'interno della servelet elimina account");
 
         try {
             String mailUtente = (String) request.getSession().getAttribute("email"); //l'email dell'utente che si prende dalla sessione
@@ -46,12 +47,19 @@ public class Delete extends HttpServlet {
             System.out.println("Utente letto: " + utente.toString());
             if(utente.getNomeUtente() != null){
                 utenteDao.eliminaAccount(mailUtente);
-                response.sendRedirect(request.getContextPath() + "/login.jsp");
+                request.getSession().removeAttribute("email");
+                request.getSession().removeAttribute("utente");
+                request.getSession().removeAttribute("prodottiCart");
+                request.getSession().removeAttribute("regione");
+                request.getSession().removeAttribute("buonoregalo");
+                response.sendRedirect(request.getContextPath() + "/homepage.jsp");
 
             }else{
                 OperatoreBean operatore = operatoreDao.doRetrieveByEmail(mailOperatore);
                 if(operatore != null){
                     operatoreDao.eliminaAccount(mailOperatore);
+                    request.getSession().removeAttribute("email");
+                    request.getSession().removeAttribute("operatore");
                     response.sendRedirect(request.getContextPath() + "/homepage.jsp");
                 }
             }
@@ -63,6 +71,5 @@ public class Delete extends HttpServlet {
             e.printStackTrace();
         }
     }
-
 
 }
