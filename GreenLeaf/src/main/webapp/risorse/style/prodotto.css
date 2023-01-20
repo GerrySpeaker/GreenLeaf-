@@ -152,6 +152,11 @@
     transition: 0.5s;
 }
 
+#map{
+    margin-top:30px;
+    height:230px;
+}
+
 .purchase-info .btn:last-of-type{
     background: var(--main-color);
 }

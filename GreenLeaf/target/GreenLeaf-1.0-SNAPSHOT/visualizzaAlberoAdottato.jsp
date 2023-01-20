@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="risorse/style/prodotto.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"></script>
 </head>
 <%@ page import="javax.servlet.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="storage.CategoriaDao" %>
@@ -61,11 +63,29 @@
                     <p><span>Stato</span>: <%= article.getStato()%></p>
                 </div>
 
+                <div id="map"></div>
 
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function(){
+        var pos = {lat: 41.87194, lng: 12.56738};<!-- inserire le coordinate iot-->
+        var map = new google.maps.Map(document.getElementById('map'),{
+            zoom:10,
+            center: pos
+
+        });
+        var marker = new google.maps.Marker({
+            position: {lat: 41.87194, lng: 12.56738},<!-- inserire le coordinate iot-->
+            map: map,
+            title: 'Aquila'
+        });
+    });
+
+</script>
 
 <%@ include file="footer.jsp" %>
 </html>

@@ -14,7 +14,7 @@ function validation_name(input){
 
 function validation_surname(input){
 
-    var pattern =  /^[a-z ,.'-]+$/i;
+    var pattern =  /^[A-Za-z ,.']+$/i;
 
     if(input.match(pattern)){
         document.getElementById("txt-cognome").innerHTML="";
@@ -28,7 +28,7 @@ function validation_surname(input){
 
 function validation_email(input){
 
-    var pattern =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var pattern =  /^\w+([\.]?\w+)*@\w+([\.]?\w+)*(\.\w{2,3})+$/;
 
     if(input.match(pattern)){
         document.getElementById("txt-email").innerHTML="";
