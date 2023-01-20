@@ -25,9 +25,9 @@
     <div class="all-form">
         <section class="container ">
             <header>Registrazione</header>
-              <%if(Boolean.parseBoolean(request.getParameter("errore"))==true){%> <!-- l'ho copiato dalla registrazione operatore,
-                                                                                                non so se ho fatto bene -->
-                  <p id="error" class="error">Email già registrata nel database</p>
+              <%if(Boolean.parseBoolean(request.getParameter("error"))==true){%> <!-- l'ho copiato dalla registrazione operatore,
+                                                                                               non so se ho fatto bene -->
+                  <p id="error" class="error" style="text-align: center" >Credenziali errate</p>
               <%}else{ %>
                   <p id="error" class="error"></p>
               <%} %>

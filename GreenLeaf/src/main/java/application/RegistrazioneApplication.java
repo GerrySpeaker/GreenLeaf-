@@ -15,9 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
-import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.util.regex.*;
 
 @WebServlet("/RegistrazioneApplication")
 public class RegistrazioneApplication extends HttpServlet {
@@ -43,20 +41,24 @@ public class RegistrazioneApplication extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
+        Boolean mail = Pattern.matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$", request.getParameter("email"));
+        Boolean pass = Pattern.matches("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$}", request.getParameter("password"));
+        Boolean nome = Pattern.matches("^[A-Za-z]+$", request.getParameter("nome"));
+        Boolean cognome = Pattern.matches("^[a-z ,.'-]+$", request.getParameter("cognome"));
+
+
         String data = request.getParameter("data");
         Date data1= null;
         data1 = Date.valueOf(data);
         bean.setDataNascita(data1);
 
-
         bean.setEmail(request.getParameter("email"));
         bean.setPassword(request.getParameter("password"));
         bean.setNomeUtente(request.getParameter("nome"));
         bean.setCognomeUtente(request.getParameter("cognome"));
-
-
         UtenteBean utenteLogin;
-        if(!bean.getEmail().contains("@")) {
+        if(mail == false || pass == false || nome == false || cognome == false){
             response.sendRedirect(request.getContextPath() + "/registrazione.jsp?error=true");
         }
 

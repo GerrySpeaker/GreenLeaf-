@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `greenleaf` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `greenleaf`;
--- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: greenleaf
 -- ------------------------------------------------------
--- Server version	8.0.19
+-- Server version	8.0.31
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -60,13 +60,16 @@ CREATE TABLE `albero` (
   `utenteAlbero` varchar(30) NOT NULL,
   `regione` varchar(30) NOT NULL,
   `ordine` int NOT NULL,
+  `iot` int DEFAULT NULL,
   PRIMARY KEY (`idalbero`),
   UNIQUE KEY `idalbero_UNIQUE` (`idalbero`),
   KEY `categoria_idx` (`categoria`),
   KEY `utente_idx` (`regione`),
   KEY `utenteAlbero_idx` (`utenteAlbero`),
   KEY `ordine_idx` (`ordine`),
+  KEY `iot_idx` (`iot`),
   CONSTRAINT `categoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `iot` FOREIGN KEY (`iot`) REFERENCES `iot` (`idiot`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `ordine` FOREIGN KEY (`ordine`) REFERENCES `ordine` (`idordine`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `utenteAlbero` FOREIGN KEY (`utenteAlbero`) REFERENCES `utente` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -78,7 +81,7 @@ CREATE TABLE `albero` (
 
 LOCK TABLES `albero` WRITE;
 /*!40000 ALTER TABLE `albero` DISABLE KEYS */;
-INSERT INTO `albero` VALUES (3,'-500','melo',NULL,'Da Piantare','laSabatino@gmail.com','Basilicata',3);
+INSERT INTO `albero` VALUES (3,'-500','melo','2023-01-20','Da piantare','laSabatino@gmail.com','Basilicata',3,NULL);
 /*!40000 ALTER TABLE `albero` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,6 +126,7 @@ CREATE TABLE `buonoregalo` (
   `key` varchar(6) NOT NULL,
   `stato` varchar(30) NOT NULL,
   `prezzo` double NOT NULL,
+  `url` varchar(100) NOT NULL,
   `utenteRegalo` varchar(30) NOT NULL,
   `ordineRegalo` int NOT NULL,
   PRIMARY KEY (`key`),
@@ -140,7 +144,6 @@ CREATE TABLE `buonoregalo` (
 
 LOCK TABLES `buonoregalo` WRITE;
 /*!40000 ALTER TABLE `buonoregalo` DISABLE KEYS */;
-INSERT INTO `buonoregalo` VALUES ('1','Da riscattare',50,'laSabatino@gmail.com',3);
 /*!40000 ALTER TABLE `buonoregalo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,6 +188,8 @@ CREATE TABLE `iot` (
   `latitudine` varchar(30) NOT NULL,
   `longitudine` varchar(30) NOT NULL,
   `altitudine` varchar(30) DEFAULT NULL,
+  `regione` varchar(30) NOT NULL,
+  `stato` varchar(45) NOT NULL,
   PRIMARY KEY (`idiot`),
   UNIQUE KEY `idiot_UNIQUE` (`idiot`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -228,7 +233,7 @@ CREATE TABLE `operatore` (
 
 LOCK TABLES `operatore` WRITE;
 /*!40000 ALTER TABLE `operatore` DISABLE KEYS */;
-INSERT INTO `operatore` VALUES ('anna@gmail.com','annarella03','Saccardo','Anna','fa.mikela@gmail.com','Calabria'),('fa.mikela@gmail.com','1234','vitale','mirko','fa.mikela@gmail.com','Basilicata'),('gerarda@gmail.com','gerra25a4','Desiderato','Gerarda','fa.mikela@gmail.com','Basilicata'),('hsjka@gmail.com','jakshdf02','klfas','klsamf','fa.mikela@gmail.com','Veneto'),('mitico@gmail.com','mitico085','Faella','Orazio','fa.mikela@gmail.com','Piemonte'),('napolitano@gmail.com','gerardo2','Napolitano','Gerardo','fa.mikela@gmail.com','Umbria');
+INSERT INTO `operatore` VALUES ('anna@gmail.com','annarella03','Saccardo','Anna','fa.mikela@gmail.com','Calabria'),('fa.mikela@gmail.com','1234','vitale','mirko','fa.mikela@gmail.com','Basilicata'),('gerarda@gmail.com','gerra25a4','Desiderato','Gerarda','fa.mikela@gmail.com','Basilicata'),('hsjka@gmail.com','jakshdf02','klfas','klsamf','fa.mikela@gmail.com','Veneto'),('mitico@gmail.com','mitico085','Faella','Orazio','fa.mikela@gmail.com','Piemonte');
 /*!40000 ALTER TABLE `operatore` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -336,7 +341,7 @@ CREATE TABLE `utente` (
 
 LOCK TABLES `utente` WRITE;
 /*!40000 ALTER TABLE `utente` DISABLE KEYS */;
-INSERT INTO `utente` VALUES ('hsjka@gmail.com','klfas','klsamf','jskdfsk02','2023-01-05'),('k@gmail.com','kilo','andrea','kbcd12d4','2022-12-29'),('laSabatino@gmail.com','Sabatino','Michelina','1','2023-01-05'),('pepe@gmail.com','Adreucci','Peppe','vessicchio1','2022-12-15'),('peppe@gmail.com','Vessicchio','Peppe','peppevess1','2023-01-04');
+INSERT INTO `utente` VALUES ('hsjka@gmail.com','klfas','klsamf','jskdfsk02','2023-01-05'),('k@gmail.com','kilo','andrea','kbcd12d4','2022-12-29'),('laSabatino@gmail.com','Sabatino','Michelina','abcd1aa2','2023-01-05'),('michela@gmail.com','si','Michea','1','2022-12-12'),('pepe@gmail.com','Adreucci','Peppe','vessicchio1','2022-12-15'),('peppe@gmail.com','Vessicchio','Peppe','peppevess1','2023-01-04'),('pippobaudo@gmail.com','Giametta','Antonio','pippobaudo1','2022-11-17');
 /*!40000 ALTER TABLE `utente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -349,4 +354,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-19 19:47:01
+-- Dump completed on 2023-01-20 11:09:20
