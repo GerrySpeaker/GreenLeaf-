@@ -5,6 +5,8 @@
 <%@ page import="storage.CategoriaDao" %>
 <%@ page import="bean.CategoriaBean" %>
 <%@ page import="storage.AlberoDao" %>
+<%@ page import="bean.IotBean" %>
+<%@ page import="storage.IotDao" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,9 +46,8 @@
 
     CategoriaBean cbean = cdao.doRetrieveByKeyAlbero(albero.getCategoria());
 
-    System.out.println(cbean.toString());
-
-    System.out.println("sono nelle jsp");
+    IotDao daoIot = new IotDao();
+    IotBean iot = daoIot.doRetriveByKey(albero.getIot());
 
 %>
 <div class="all-datail" id="albero">
@@ -74,10 +75,10 @@
           <div class="iot">
               <h3>IOT</h3>
               <ul>
-                  <li><span>Ipv4</span>: </li>
-                  <li><span>Latitudine</span>: </li>
-                  <li><span>Longitudine</span>: </li>
-                  <li><span>Altitudine</span>: </li>
+                  <li><span>Ipv4</span>: <%=iot.getIpv4()%></li>
+                  <li><span>Latitudine</span>: <%=iot.getLatitudine()%></li>
+                  <li><span>Longitudine</span>: <%=iot.getLongitudine()%></li>
+                  <li><span>Altitudine</span>: <%=iot.getAltitudine()%></li>
               </ul>
           </div>
 
@@ -90,7 +91,7 @@
         <%}else{ %>
             <input id="conferma" class="confermato" type="checkbox" value="piantato" onclick="conferma()">
             <label for="conferma">Si</label>
-            <a  onclick="showiot()" id="forzare" class="submit">Conferma</a>
+            <a  href="AlberiPiantumati?idAlberoDaPiantare=<%= albero.getIdAlbero()%>" id="forzare" class="submit">Conferma</a>
         <%} %>
       </div>
     </div>
