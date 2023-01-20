@@ -48,6 +48,7 @@ public class RegistrazioneApplication extends HttpServlet {
         data1 = Date.valueOf(data);
         bean.setDataNascita(data1);
 
+
         bean.setEmail(request.getParameter("email"));
         bean.setPassword(request.getParameter("password"));
         bean.setNomeUtente(request.getParameter("nome"));
@@ -58,10 +59,13 @@ public class RegistrazioneApplication extends HttpServlet {
         if(!bean.getEmail().contains("@")) {
             response.sendRedirect(request.getContextPath() + "/registrazione.jsp?error=true");
         }
+
         else {
             try {
                 utenteLogin = dao.doRetrieveByEmail(bean.getEmail());
-                if (utenteLogin.getNomeUtente() == null) {
+                adminBean = adminDao.doRetrieveByEmail(bean.getEmail());
+                operatore = operatoreDao.doRetrieveByEmail(bean.getEmail());
+                if (utenteLogin.getNomeUtente() == null && adminBean.getNomeAdmin() == null && operatore.getNomeOperatore() == null) {
                     dao.registrazione(bean);
                     response.sendRedirect(request.getContextPath() + "/login.jsp");
                 }
