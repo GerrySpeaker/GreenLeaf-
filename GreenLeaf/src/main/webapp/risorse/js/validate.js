@@ -49,7 +49,7 @@ function validation_password(input){
         return true;
     }
     else{
-        document.getElementById("txt-password").innerHTML="Password errata";
+        document.getElementById("txt-password").innerHTML="Minimo 8 (lettere/numeri)";
         return false
     }
 }

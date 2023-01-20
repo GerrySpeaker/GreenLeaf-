@@ -28,7 +28,7 @@ function validation_surname(input){
 
 function validation_email(input){
 
-    var pattern =  /^\w+([\.]?\w+)*@\w+([\.]?\w+)*(\.\w{2,3})+$/;
+    var pattern =  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if(input.match(pattern)){
         document.getElementById("txt-email").innerHTML="";
@@ -49,7 +49,7 @@ function validation_password(input){
         return true;
     }
     else{
-        document.getElementById("txt-password").innerHTML="Password errata";
+        document.getElementById("txt-password").innerHTML="Minimo 8 (lettere/numeri)";
         return false
     }
 }
