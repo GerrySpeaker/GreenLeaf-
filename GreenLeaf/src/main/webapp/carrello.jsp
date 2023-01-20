@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="storage.OperatoreDao" %>
+<%@ page import="storage.AdminDao" %>
 <%
   ServletContext cxt = request.getServletContext();
   ArrayList<String> buoni = new ArrayList<>();
@@ -30,6 +32,21 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
+
+<%
+  String email = (String) request.getSession().getAttribute("email");
+  OperatoreDao operatoreDao = new OperatoreDao();
+  AdminDao adminDao = new AdminDao();
+
+  if(operatoreDao.doRetrieveByEmail(email).getEmail() != null){
+    response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+  }
+  if(adminDao.doRetrieveByEmail(email).getEmail() != null){
+    response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+  }
+
+
+%>
 
 <%@ include file="header.jsp" %>
 
