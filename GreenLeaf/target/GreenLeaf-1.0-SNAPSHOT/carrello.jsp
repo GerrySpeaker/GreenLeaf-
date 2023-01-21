@@ -2,6 +2,24 @@
 <%@ page import="storage.OperatoreDao" %>
 <%@ page import="storage.AdminDao" %>
 <%
+  String email = (String) request.getSession().getAttribute("email");
+  OperatoreDao operatoreDao = new OperatoreDao();
+  AdminDao adminDao = new AdminDao();
+
+  if(email == null){
+    response.sendRedirect(request.getContextPath()+"/login.jsp");
+    return;
+  }
+
+  if(operatoreDao.doRetrieveByEmail(email).getEmail() != null){
+    response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+    return;
+  }
+  if(adminDao.doRetrieveByEmail(email).getEmail() != null){
+    response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+    return;
+  }
+
   ServletContext cxt = request.getServletContext();
   ArrayList<String> buoni = new ArrayList<>();
   buoni = (ArrayList<String>) session.getAttribute("buonoregalo");
@@ -15,6 +33,10 @@
   regioni = (ArrayList<String>) session.getAttribute("regione");
 
   int totale = 0;
+  int sconto = (int) request.getSession().getAttribute("sconto");
+
+
+
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,27 +52,7 @@
   <link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
-
-<%
-  String email = (String) request.getSession().getAttribute("email");
-  OperatoreDao operatoreDao = new OperatoreDao();
-  AdminDao adminDao = new AdminDao();
-
-  if(email == null){
-    response.sendRedirect(request.getContextPath()+"/login.jsp");
-  }
-
-  if(operatoreDao.doRetrieveByEmail(email).getEmail() != null){
-    response.sendRedirect(request.getContextPath()+"/homepage.jsp");
-  }
-  if(adminDao.doRetrieveByEmail(email).getEmail() != null){
-    response.sendRedirect(request.getContextPath()+"/homepage.jsp");
-  }
-
-
-%>
 
 <%@ include file="header.jsp" %>
 
@@ -139,15 +141,16 @@
           </div>
         </div>
 
+        <form action="Regalo" method="post">
         <div class="row py-5 p-4 bg-white rounded shadow-sm">
           <div class="col-lg-6">
             <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Buono regalo</div>
             <div class="p-4">
               <p class="font-italic mb-4">Hai un buono regalo? Inseriscilo qui</p>
               <div class="input-group mb-4 border rounded-pill p-2">
-                <input type="text" placeholder="Es: abcd12" aria-describedby="button-addon3" class="form-control border-0">
+                <input name="buono" type="text" placeholder="Es: abcd12" aria-describedby="button-addon3" class="form-control border-0">
                 <div class="input-group-append border-0">
-                  <button id="button-addon3" type="button" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Applica</button>
+                  <button  id="button-addon3" type="submit" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Applica</button>
                 </div>
               </div>
             </div>
@@ -158,7 +161,7 @@
               <p class="font-italic mb-4"></p>
               <ul class="list-unstyled mb-4">
                 <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Totale</strong>
-                  <h5 class="font-weight-bold"><%=totale%>€</h5>
+                  <h5 class="font-weight-bold"><%=totale - sconto%>€</h5>
                 </li>
                 <div id="smart-button-container" style="margin-top: 30px;">
                   <div style="text-align: center;">
@@ -210,7 +213,7 @@
             </div>
           </div>
         </div>
-
+        </form>
       </div>
     </div>
   </div>
