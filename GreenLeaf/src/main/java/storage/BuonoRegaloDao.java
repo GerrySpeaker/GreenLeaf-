@@ -1,5 +1,6 @@
 package storage;
 
+import bean.AlberoBean;
 import bean.BuonoregaloBean;
 
 import javax.naming.Context;
@@ -42,6 +43,63 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
     @Override
     public BuonoregaloBean doRetrieveByKey(int code) throws SQLException {
         return null;
+    }
+
+
+    public BuonoregaloBean RiscattaBuono(String key) throws SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        BuonoregaloBean bean = new BuonoregaloBean();
+        String selectSQL = "SELECT * FROM buonoregalo WHERE idBuono=? AND stato='Da riscattare'";
+
+        try {
+            connection = ds.getConnection();
+            preparedStatement = connection.prepareStatement(selectSQL);
+            preparedStatement.setString(1, key);
+            ResultSet rs = preparedStatement.executeQuery();
+
+            if(rs.next()) {
+                bean.setIdBuonoregalo(rs.getString("idBuono"));
+                bean.setStato(rs.getString("stato"));
+                bean.setPrezzo(rs.getDouble("prezzo"));
+                bean.setUtenteRegalo(rs.getString("utenteRegalo"));
+                bean.setOrdineRegalo(rs.getInt("ordineRegalo"));
+            }
+
+        } finally {
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+        return bean;
+    }
+
+    public Boolean CambioStato (String key) throws SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        BuonoregaloBean bean = new BuonoregaloBean();
+        String selectSQL = "UPDATE buonoregalo SET stato='Riscattato' WHERE idBuono = ?";
+
+        try {
+            connection = ds.getConnection();
+            preparedStatement = connection.prepareStatement(selectSQL);
+            preparedStatement.setString(1, key);
+            preparedStatement.executeUpdate();
+
+        } finally {
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+        return true;
     }
 
     @Override

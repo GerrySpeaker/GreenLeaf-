@@ -128,7 +128,7 @@
 
 
 <script src = "risorse/js/sceltaCatalogo.js"></script>
-<script src="risorse/js/AggiungiCatalogo.js"></script>
+<script src="risorse/js/RiscattaBuono.js"></script>
 
 <%@ include file="footer.jsp" %>
 
