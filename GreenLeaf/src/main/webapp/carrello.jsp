@@ -84,9 +84,8 @@
                   <%
                     if(buoni != null){
                         int i=0;
-                        System.out.println("1");
                         while(i<buoni.size()){
-                          System.out.println("2");%>
+                  %>
                       <tr>
                       <th scope="row" class="border-0">
                         <div class="p-1">
@@ -98,7 +97,7 @@
                       </th>
                       <td class="border-0 align-middle"><strong>50.0</strong></td>
                       <td class="border-0 align-middle"><strong></strong></td>
-                      <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                      <td class="border-0 align-middle"><a href="RimuoviDalCarrello?categoria=buono" class="text-dark"><i class="fa fa-trash"></i></a></td>
 
                       </tr>
                       <% i++;
@@ -122,7 +121,7 @@
                   </th>
                   <td class="border-0 align-middle"><strong><%= prod.getPrezzo()%></strong></td>
                   <td class="border-0 align-middle"><strong><%= reg %></strong></td>
-                  <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                  <td class="border-0 align-middle"><a href="RimuoviDalCarrello?categoria=<%=prod.getNomeCategoria()%>" class="text-dark"><i class="fa fa-trash"></i></a></td>
 
 
                   </tr>
