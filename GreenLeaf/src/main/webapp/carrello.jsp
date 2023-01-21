@@ -157,7 +157,52 @@
                 <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Totale</strong>
                   <h5 class="font-weight-bold"><%=totale%>€</h5>
                 </li>
-              </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Paypal</a> <br>
+                <div id="smart-button-container" style="margin-top: 30px;">
+                  <div style="text-align: center;">
+                    <div id="paypal-button-container"></div>
+                  </div>
+                </div>
+                <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=EUR" data-sdk-integration-source="button-factory"></script>
+                <script>
+                  function initPayPalButton() {
+                    paypal.Buttons({
+                      style: {
+                        shape: 'pill',
+                        color: 'black',
+                        layout: 'horizontal',
+                        label: 'paypal',
+                        tagline: true
+                      },
+
+                      createOrder: function(data, actions) {
+                        return actions.order.create({
+                          purchase_units: [{"amount":{"currency_code":"EUR","value":<%=totale%>}}]
+                        });
+                      },
+
+                      onApprove: function(data, actions) {
+                        return actions.order.capture().then(function(orderData) {
+
+                          // Full available details
+                          console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+                          // Show a success message within this page, e.g.
+                          const element = document.getElementById('paypal-button-container');
+                          element.innerHTML = '';
+                          element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+                          // Or go to another URL:  actions.redirect('thank_you.html');
+
+                        });
+                      },
+
+                      onError: function(err) {
+                        console.log(err);
+                      }
+                    }).render('#paypal-button-container');
+                  }
+                  initPayPalButton();
+                </script>
               </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procedi al checkout</a>
             </div>
           </div>

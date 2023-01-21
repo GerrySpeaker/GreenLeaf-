@@ -61,7 +61,7 @@
             <div class="content">
                 <h1>Monitorraggio</h1>
                 <p>Vuoi sapere quanto &egrave; inquinata la tua regione? Si? Sei nel posto giusto! </p>
-                <a href="">Monitora</a>
+                <a href="monitoraggio.jsp">Monitora</a>
             </div>
         </div>
     </div>
