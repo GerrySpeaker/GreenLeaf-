@@ -6,6 +6,10 @@
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
     </head>
+
+    <%@ include file="header.jsp" %>
+
+
     <div class="all-generate" onload="getCode()">
         <div class="inputBox">
             <h2>Codice regalo </h2>
@@ -15,3 +19,6 @@
              <script src="risorse/js/random.js"></script>
     </div>
 </html>
+
+<%@ include file="footer.jsp" %>
+
