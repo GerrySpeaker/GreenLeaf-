@@ -38,6 +38,10 @@
   OperatoreDao operatoreDao = new OperatoreDao();
   AdminDao adminDao = new AdminDao();
 
+  if(email == null){
+    response.sendRedirect(request.getContextPath()+"/login.jsp");
+  }
+
   if(operatoreDao.doRetrieveByEmail(email).getEmail() != null){
     response.sendRedirect(request.getContextPath()+"/homepage.jsp");
   }

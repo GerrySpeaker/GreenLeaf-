@@ -38,6 +38,10 @@
   OperatoreDao operatoreDao = new OperatoreDao();
   AdminDao adminDao = new AdminDao();
 
+  if(email == null){
+    response.sendRedirect(request.getContextPath()+"/login.jsp");
+  }
+
   if(operatoreDao.doRetrieveByEmail(email).getEmail() != null){
     response.sendRedirect(request.getContextPath()+"/homepage.jsp");
   }
@@ -116,7 +120,7 @@
                     <div class="p-1">
                       <img src="" alt="" width="100" class="img-fluid rounded shadow-sm">
                       <div class="ml-3 d-inline-block align-middle">
-                        <h5 class="mb-0"> <a href="#" class="text-dark d-inline-block align-middle"><%= prod.getNomeCategoria()%></a></h5><span class="text-muted font-weight-normal font-italic d-block"></span>
+                        <h5 class="mb-0" style="text-transform: capitalize"> <%= prod.getNomeCategoria()%></h5><span class="text-muted font-weight-normal font-italic d-block"></span>
                       </div>
                     </div>
                   </th>
