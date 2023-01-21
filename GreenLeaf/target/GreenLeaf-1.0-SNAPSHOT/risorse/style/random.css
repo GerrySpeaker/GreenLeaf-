@@ -20,7 +20,10 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: linear-gradient(to bottom right, var(--second-color),var( --notify-color));
+    background: linear-gradient(to bottom right,
+    var(--bg-color) 0%, var(--bg-color)30%,
+    var(--main-color) 30%, var(--main-color)70%,
+    var(--bg-color) 70%,  var(--bg-color) 100%);    grid-template-columns: repeat(3, 20rem);
 }
 
 .inputBox

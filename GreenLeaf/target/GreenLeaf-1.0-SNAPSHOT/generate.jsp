@@ -2,18 +2,16 @@
 <html>
     <head>
         <title>Random Codice Regalo Generator</title>
-        <link rel="stylesheet" href="random.css">
+        <link rel="stylesheet" href="risorse/style/random.css">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
     </head>
     <div class="all-generate" onload="getCode()">
         <div class="inputBox">
             <h2>Codice regalo </h2>
-            <input type="text" nmae= "" placeholder="" id="code"
-            readonly="">
-           <!-- <div id="btn" onclick="getCode();">Genera</div> -->
+            <input type="text" nama= "" placeholder="" id="code" readonly="" value="a"> <!-- al posto di  co-->
             <div id="btn-copy" onclick="copy();">Copia</div>
         </div>
-             <script src="random.js"></script>
+             <script src="risorse/js/random.js"></script>
     </div>
 </html>
