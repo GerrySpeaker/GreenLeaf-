@@ -196,6 +196,11 @@
                           const element = document.getElementById('paypal-button-container');
                           element.innerHTML = '';
                           element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                          $.ajax({ //GET categorie
+                            type: 'GET', //tipo POST, GET
+                            url: 'Ordine', //metto la servlet
+                            data: {totale : <%=totale%>}, //metto i campi che devo mandare tramite la richiesta
+                          });
 
                           // Or go to another URL:  actions.redirect('thank_you.html');
 

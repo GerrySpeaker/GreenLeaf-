@@ -142,5 +142,6 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
 
     }
 
+
 }
 

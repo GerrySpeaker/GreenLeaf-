@@ -6,12 +6,19 @@
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 
     </head>
+
+    <%@ include file="header.jsp" %>
+
+
     <div class="all-generate" onload="getCode()">
         <div class="inputBox">
             <h2>Codice regalo </h2>
-            <input type="text" nama= "" placeholder="" id="code" readonly="" value="a"> <!-- al posto di  co-->
+            <input type="text" nama= "" placeholder="" id="code" readonly="">
             <div id="btn-copy" onclick="copy();">Copia</div>
         </div>
              <script src="risorse/js/random.js"></script>
     </div>
 </html>
+
+<%@ include file="footer.jsp" %>
+
