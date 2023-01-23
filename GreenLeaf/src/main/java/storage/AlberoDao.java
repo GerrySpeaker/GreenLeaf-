@@ -2,6 +2,8 @@ package storage;
 
 import bean.AdminBean;
 import bean.AlberoBean;
+import bean.CategoriaBean;
+import bean.OrdineBean;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -154,6 +156,60 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
         }
         return false;
     }
+
+    public Boolean inserisciAlbero(CategoriaBean albero, OrdineBean ordineBean,String regione) throws SQLException  {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        String selectSQL = "INSERT INTO albero SET idalbero=?,CO2=?,categoria=?,datapiantumazione=?,stato=?,utenteAlbero=?,regione=?,ordine=?";
+        String selectId = "SELECT MAX(idalbero) as Id FROM albero";
+
+
+        int id = 0;
+
+        try {
+            connection = ds.getConnection();
+            preparedStatement = connection.prepareStatement(selectId);
+            ResultSet rs = preparedStatement.executeQuery();
+            if(rs.next())
+            {
+                id = (rs.getInt("Id")+1);
+            }
+        }finally {
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+
+
+        try {
+            connection = ds.getConnection();
+            preparedStatement = connection.prepareStatement(selectSQL);
+            preparedStatement.setInt(1,id);
+            preparedStatement.setString(2, albero.getCo2Max());
+            preparedStatement.setString(3,albero.getNomeCategoria());
+            preparedStatement.setDate(4,null);
+            preparedStatement.setString(5, "Da Piantare");
+            preparedStatement.setString(6,ordineBean.getUtenteOrdine());
+            preparedStatement.setString(7,regione);
+            preparedStatement.setInt(8,ordineBean.getIdOrdine());
+            preparedStatement.executeUpdate();
+
+        } finally {
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+        return false;
+    }
+
 
 
 }
