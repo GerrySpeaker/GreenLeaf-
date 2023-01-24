@@ -13,6 +13,7 @@
 </head>
 <%@ page import="javax.servlet.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="storage.CategoriaDao" %>
+<%@ page import="storage.IotDao" %>
 <%
     System.out.println("sono in visualizza albero adottato");
     ServletContext cxt = request.getServletContext();
@@ -28,7 +29,8 @@
 
     System.out.println(cbean.toString());
 
-    System.out.println("sono nelle jsp");
+    IotDao iotDao = new IotDao();
+    IotBean iot = iotDao.doRetriveByKey(article.getIot());
 
 
 %>
@@ -72,14 +74,14 @@
 
 <script>
     $(document).ready(function(){
-        var pos = {lat: 41.87194, lng: 12.56738};<!-- inserire le coordinate iot-->
+        var pos = {lat: <%=iot.getLatitudine()%>, lng: <%=iot.getLongitudine()%>};<!-- inserire le coordinate iot-->
         var map = new google.maps.Map(document.getElementById('map'),{
             zoom:10,
             center: pos
 
         });
         var marker = new google.maps.Marker({
-            position: {lat: 41.87194, lng: 12.56738},<!-- inserire le coordinate iot-->
+            position: {lat: <%=iot.getLatitudine()%>, lng: <%=iot.getLongitudine()%>},<!-- inserire le coordinate iot-->
             map: map,
             title: 'Aquila'
         });
