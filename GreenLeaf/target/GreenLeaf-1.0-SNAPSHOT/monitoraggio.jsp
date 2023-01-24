@@ -31,7 +31,7 @@
             </div>
     
             <div class="dropdown-reg">
-                <input type="text" class="filterBox-reg" placeholder="Regioni" readonly id="regione">
+                <input type="text" class="filterBox-reg" value="Regioni" readonly id="regione">
                 <div class="option">
                     <div onclick="showReg('Abruzzo')">Abruzzo</div>
                     <div onclick="showReg('Basilicata')">Basilicata</div>
