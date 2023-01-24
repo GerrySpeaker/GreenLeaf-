@@ -122,7 +122,7 @@ DROP TABLE IF EXISTS `buonoregalo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `buonoregalo` (
-  `idBuono` varchar(100) NOT NULL,
+  `idBuono` varchar(20) NOT NULL,
   `stato` varchar(30) NOT NULL,
   `prezzo` double NOT NULL,
   `utenteRegalo` varchar(30) NOT NULL,
@@ -142,7 +142,7 @@ CREATE TABLE `buonoregalo` (
 
 LOCK TABLES `buonoregalo` WRITE;
 /*!40000 ALTER TABLE `buonoregalo` DISABLE KEYS */;
-INSERT INTO `buonoregalo` VALUES ('1','Riscattato',50,'test@gmail.com',4),('2','Riscattato',50,'test@gmail.com',4),('ciilvoomah','Da riscattare',50,'test@gmail.com',14),('cptzkwmejt','Da riscattare',50,'test@gmail.com',13),('iroyhajizu','Da riscattare',50,'test@gmail.com',15),('krxffypxsh','Da riscattare',50,'test@gmail.com',14),('nbncxnmrqm','Da riscattare',50,'test@gmail.com',14),('qkrgtgiqma','Da riscattare',50,'test@gmail.com',15),('qrubpxovep','Da riscattare',50,'test@gmail.com',15),('vvodlqyxtw','Da riscattare',50,'test@gmail.com',14),('zsediooqve','Da riscattare',50,'test@gmail.com',15);
+INSERT INTO `buonoregalo` VALUES ('1','Riscattato',50,'test@gmail.com',4),('2','Riscattato',50,'test@gmail.com',4),('ciilvoomah','Da riscattare',50,'test@gmail.com',14),('cptzkwmejt','Da riscattare',50,'test@gmail.com',13),('iroyhajizu','Da riscattare',50,'test@gmail.com',15),('krxffypxsh','Da riscattare',50,'test@gmail.com',14),('mezzzdoqcs','Da riscattare',50,'test@gmail.com',16),('nbncxnmrqm','Da riscattare',50,'test@gmail.com',14),('qkrgtgiqma','Da riscattare',50,'test@gmail.com',15),('qrubpxovep','Da riscattare',50,'test@gmail.com',15),('vvodlqyxtw','Da riscattare',50,'test@gmail.com',14),('zsediooqve','Da riscattare',50,'test@gmail.com',15);
 /*!40000 ALTER TABLE `buonoregalo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -253,7 +253,7 @@ CREATE TABLE `ordine` (
   UNIQUE KEY `idordine_UNIQUE` (`idordine`),
   KEY `Utente_idx` (`Utente`),
   CONSTRAINT `Utente` FOREIGN KEY (`Utente`) REFERENCES `utente` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -262,7 +262,7 @@ CREATE TABLE `ordine` (
 
 LOCK TABLES `ordine` WRITE;
 /*!40000 ALTER TABLE `ordine` DISABLE KEYS */;
-INSERT INTO `ordine` VALUES (3,'2022-12-12',50,'laSabatino@gmail.com'),(4,'2022-12-12',100,'test@gmail.com'),(5,'2023-01-24',50,'test@gmail.com'),(6,'2023-01-24',100,'test@gmail.com'),(7,'2023-01-24',100,'test@gmail.com'),(8,'2023-01-24',100,'test@gmail.com'),(9,'2023-01-24',100,'test@gmail.com'),(10,'2023-01-24',50,'test@gmail.com'),(11,'2023-01-24',100,'test@gmail.com'),(12,'2023-01-24',100,'test@gmail.com'),(13,'2023-01-24',100,'test@gmail.com'),(14,'2023-01-24',400,'test@gmail.com'),(15,'2023-01-24',400,'test@gmail.com');
+INSERT INTO `ordine` VALUES (3,'2022-12-12',50,'laSabatino@gmail.com'),(4,'2022-12-12',100,'test@gmail.com'),(5,'2023-01-24',50,'test@gmail.com'),(6,'2023-01-24',100,'test@gmail.com'),(7,'2023-01-24',100,'test@gmail.com'),(8,'2023-01-24',100,'test@gmail.com'),(9,'2023-01-24',100,'test@gmail.com'),(10,'2023-01-24',50,'test@gmail.com'),(11,'2023-01-24',100,'test@gmail.com'),(12,'2023-01-24',100,'test@gmail.com'),(13,'2023-01-24',100,'test@gmail.com'),(14,'2023-01-24',400,'test@gmail.com'),(15,'2023-01-24',400,'test@gmail.com'),(16,'2023-01-24',50,'test@gmail.com');
 /*!40000 ALTER TABLE `ordine` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -354,4 +354,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-24 11:21:01
+-- Dump completed on 2023-01-24 11:27:51
