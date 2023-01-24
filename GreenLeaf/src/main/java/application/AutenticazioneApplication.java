@@ -90,6 +90,8 @@ public class AutenticazioneApplication extends HttpServlet {
                     System.out.println("accesso consentito");
                     request.getSession().setAttribute("email", email);
                     request.getSession().setAttribute("utente", utente);
+                    int sconto = 0;
+                    request.getSession().setAttribute("sconto",sconto);
                     response.sendRedirect(request.getContextPath() + "/utente.jsp");
 
             }
