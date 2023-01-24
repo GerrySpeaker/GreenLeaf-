@@ -60,7 +60,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="51%";
             document.getElementById("co2").innerHTML="181kg/anno";
             document.getElementById("polvere").innerHTML="71kg/anno";
@@ -94,7 +94,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="65%";
             document.getElementById("co2").innerHTML="55kg/anno";
             document.getElementById("polvere").innerHTML="106kg/anno";
@@ -128,7 +128,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="53%";
             document.getElementById("co2").innerHTML="355kg/anno";
             document.getElementById("polvere").innerHTML="275kg/anno";
@@ -162,7 +162,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="52%";
             document.getElementById("co2").innerHTML="291kg/anno";
             document.getElementById("polvere").innerHTML="275kg/anno";
@@ -196,7 +196,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="82%";
             document.getElementById("co2").innerHTML="725kg/anno";
             document.getElementById("polvere").innerHTML="465kg/anno";
@@ -230,7 +230,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="32%";
             document.getElementById("co2").innerHTML="135kg/anno";
             document.getElementById("polvere").innerHTML="305kg/anno";
@@ -264,7 +264,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="24%";
             document.getElementById("co2").innerHTML="87kg/anno";
             document.getElementById("polvere").innerHTML="55kg/anno";
@@ -298,7 +298,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="80%";
             document.getElementById("co2").innerHTML="703kg/anno";
             document.getElementById("polvere").innerHTML="505kg/anno";
@@ -335,7 +335,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="90%";
             document.getElementById("co2").innerHTML="1601kg/anno";
             document.getElementById("polvere").innerHTML="962kg/anno";
@@ -369,7 +369,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="55%";
             document.getElementById("co2").innerHTML="372kg/anno";
             document.getElementById("polvere").innerHTML="135kg/anno";
@@ -403,7 +403,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="24%";
             document.getElementById("co2").innerHTML="181kg/anno";
             document.getElementById("polvere").innerHTML="45kg/anno";
@@ -437,7 +437,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="33%";
             document.getElementById("co2").innerHTML="207kg/anno";
             document.getElementById("polvere").innerHTML="95kg/anno";
@@ -471,7 +471,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="38%";
             document.getElementById("co2").innerHTML="201kg/anno";
             document.getElementById("polvere").innerHTML="105kg/anno";
@@ -505,7 +505,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="10%";
             document.getElementById("co2").innerHTML="9kg/anno";
             document.getElementById("polvere").innerHTML="6kg/anno";
@@ -539,7 +539,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="88%";
             document.getElementById("co2").innerHTML="1530kg/anno";
             document.getElementById("polvere").innerHTML="1032kg/anno";
@@ -573,7 +573,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="14%";
             document.getElementById("co2").innerHTML="24kg/anno";
             document.getElementById("polvere").innerHTML="35kg/anno";
@@ -607,7 +607,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="25%";
             document.getElementById("co2").innerHTML="187kg/anno";
             document.getElementById("polvere").innerHTML="408kg/anno";
@@ -658,7 +658,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="57%";
             document.getElementById("co2").innerHTML="437kg/anno";
             document.getElementById("polvere").innerHTML="470kg/anno";
@@ -692,7 +692,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML="Italia";
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023")|| document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="60%";
             document.getElementById("co2").innerHTML="437kg/anno";
             document.getElementById("polvere").innerHTML="470kg/anno";
