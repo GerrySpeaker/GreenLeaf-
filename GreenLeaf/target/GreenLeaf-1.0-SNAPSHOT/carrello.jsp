@@ -202,8 +202,6 @@
                             data: {totale : <%=totale%>}, //metto i campi che devo mandare tramite la richiesta
                           });
 
-                          actions.redirect("http://localhost:8080/GreenLeaf_war_exploded/acquisto_completato.jsp"); //non funzia
-
                         });
                       },
 
@@ -214,7 +212,6 @@
                   }
                   initPayPalButton();
                 </script>
-              </ul><a href="acquisto_completato.jsp" class="btn btn-dark rounded-pill py-2 btn-block">Procedi</a>
             </div>
           </div>
         </div>

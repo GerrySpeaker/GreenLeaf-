@@ -1,10 +1,76 @@
 var page = document.getElementById("all-page");
 var km = document.getElementById("km")
+var plane = 0;
+var bus = 0;
+var car = 0;
+var underground = 0;
+var ship = 0;
+var cruise = 0;
+var scooter = 0;
+var taxi = 0;
+var tram = 0;
+var train = 0;
 
 
 function attiva(mezzo){
+
     if(mezzo.classList.contains("active")){
-        mezzo.classList.remove("active");
+
+        var ciccio=mezzo.id;
+        console.log(ciccio);
+        if(ciccio.match("risorse\\img\\plane.png")){
+            console.log("Mirko");
+            var y =(+document.getElementById("qui").value) - plane;
+            console.log(y);
+            document.getElementById("qui").value= y;
+
+        }
+        else if(mezzo.id.match("risorse\\img\\bus.png")){
+            var y =(+document.getElementById("qui").value) - bus;
+            document.getElementById("qui").value= y;
+            mezzo.classList.remove("active");
+        }
+        else if("risorse\\img\\sports-car.png"){
+            var y =(+document.getElementById("qui").value) - car;
+            document.getElementById("qui").value= y;
+            mezzo.classList.remove("active");
+        }
+        else if(mezzo.id.match("risorse\\img\\underground.png")){
+            var y =(+document.getElementById("qui").value) - underground;
+            document.getElementById("qui").value= y;
+            mezzo.classList.remove("active");
+        }
+        else if(mezzo.id.match("risorse\\img\\ship.png")){
+            var y =(+document.getElementById("qui").value) - ship;
+            document.getElementById("qui").value= y;
+            mezzo.classList.remove("active");
+        }
+        else if(mezzo.id.match("risorse\\img\\cruise.png")){
+            var y =(+document.getElementById("qui").value) - cruise;
+            document.getElementById("qui").value= y;
+            mezzo.classList.remove("active");
+        }
+        else if(mezzo.id.match("risorse\\img\\scooter.png")){
+            var y =(+document.getElementById("qui").value) - scooter;
+            document.getElementById("qui").value= y;
+            mezzo.classList.remove("active");
+        }
+        else if(mezzo.id.match("risorse\\img\\taxi.png")){
+            var y =(+document.getElementById("qui").value) - taxi;
+            document.getElementById("qui").value= y;
+            mezzo.classList.remove("active");
+        }
+        else if(mezzo.id.match("risorse\\img\\tram.png")){
+            var y =(+document.getElementById("qui").value) - tram;
+            document.getElementById("qui").value= y;
+            mezzo.classList.remove("active");
+        }
+        else if(mezzo.id.match("risorse\\img\\train.png")){
+            var y =(+document.getElementById("qui").value) - train;
+            document.getElementById("qui").value= y;
+            mezzo.classList.remove("active");
+        }
+
     }
     else{
         mezzo.classList.add("active");
@@ -74,12 +140,12 @@ function filtro(obj){
 function calcola(){
     console.log("ciao");
     var x = document.getElementById("add").src
-    console.log(x);
     if (x.match("http://localhost:8080/GreenLeaf_war_exploded/risorse/img/plane.png")){
         var calc = 26 * document.getElementById("inputRange").value;
         var y =(+document.getElementById("qui").value) + calc;
         document.getElementById("qui").value= y;
         console.log(calc);
+        plane = calc;
         page.style.display = "block";
         km.style.display = "none";
         document.getElementById('rangeValue').innerHTML = 0;
@@ -91,6 +157,7 @@ function calcola(){
         var y =(+document.getElementById("qui").value) + calc;
         document.getElementById("qui").value= y;
         console.log(calc);
+        bus = calc;
         page.style.display = "block";
         km.style.display = "none";
         document.getElementById('rangeValue').innerHTML = 0;
@@ -102,6 +169,7 @@ function calcola(){
         var y =(+document.getElementById("qui").value) + calc;
         document.getElementById("qui").value= y;
         console.log(calc);
+        car = calc;
         page.style.display = "block";
         km.style.display = "none";
         document.getElementById('rangeValue').innerHTML = 0;
@@ -113,6 +181,7 @@ function calcola(){
         var y =(+document.getElementById("qui").value) + calc;
         document.getElementById("qui").value= y;
         console.log(calc);
+        underground = calc;
         page.style.display = "block";
         km.style.display = "none";
         document.getElementById('rangeValue').innerHTML = 0;
@@ -124,6 +193,7 @@ function calcola(){
         var y =(+document.getElementById("qui").value) + calc;
         document.getElementById("qui").value= y;
         console.log(calc);
+        ship = calc;
         page.style.display = "block";
         km.style.display = "none";
         document.getElementById('rangeValue').innerHTML = 0;
@@ -135,6 +205,7 @@ function calcola(){
         var y =(+document.getElementById("qui").value) + calc;
         document.getElementById("qui").value= y;
         console.log(calc);
+        cruise = calc;
         page.style.display = "block";
         km.style.display = "none";
         document.getElementById('rangeValue').innerHTML = 0;
@@ -146,6 +217,7 @@ function calcola(){
         var y =(+document.getElementById("qui").value) + calc;
         document.getElementById("qui").value= y;
         console.log(calc);
+        scooter = calc;
         page.style.display = "block";
         km.style.display = "none";
         document.getElementById('rangeValue').innerHTML = 0;
@@ -157,6 +229,7 @@ function calcola(){
         var y =(+document.getElementById("qui").value) + calc;
         document.getElementById("qui").value= y;
         console.log(calc);
+        taxi = calc;
         page.style.display = "block";
         km.style.display = "none";
         document.getElementById('rangeValue').innerHTML = 0;
@@ -168,6 +241,7 @@ function calcola(){
         var y =(+document.getElementById("qui").value) + calc;
         document.getElementById("qui").value= y;
         console.log(calc);
+        tram = calc;
         page.style.display = "block";
         km.style.display = "none";
         document.getElementById('rangeValue').innerHTML = 0;
@@ -179,6 +253,7 @@ function calcola(){
         var y =(+document.getElementById("qui").value) + calc;
         document.getElementById("qui").value= y;
         console.log(calc);
+        train = calc;
         page.style.display = "block";
         km.style.display = "none";
         document.getElementById('rangeValue').innerHTML = 0;
