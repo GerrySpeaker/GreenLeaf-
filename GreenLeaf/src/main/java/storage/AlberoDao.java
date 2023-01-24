@@ -1,9 +1,6 @@
 package storage;
 
-import bean.AdminBean;
-import bean.AlberoBean;
-import bean.CategoriaBean;
-import bean.OrdineBean;
+import bean.*;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -157,7 +154,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
         return false;
     }
 
-    public Boolean inserisciAlbero(CategoriaBean albero, OrdineBean ordineBean,String regione) throws SQLException  {
+    public Boolean inserisciAlbero(CategoriaBean albero, OrdineBean ordineBean, String regione, IotBean iot) throws SQLException  {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         String selectSQL = "INSERT INTO albero SET idalbero=?,CO2=?,categoria=?,datapiantumazione=?,stato=?,utenteAlbero=?,regione=?,ordine=?,iot=?";
@@ -196,7 +193,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
             preparedStatement.setString(6,ordineBean.getUtenteOrdine());
             preparedStatement.setString(7,regione);
             preparedStatement.setInt(8,ordineBean.getIdOrdine());
-            preparedStatement.setInt(9,10);
+            preparedStatement.setInt(9,iot.getIdIot());
             preparedStatement.executeUpdate();
 
         } finally {

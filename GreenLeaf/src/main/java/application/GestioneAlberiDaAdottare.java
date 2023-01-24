@@ -1,6 +1,7 @@
 package application;
 
 import bean.CategoriaBean;
+import bean.IotBean;
 import bean.OrdineBean;
 import storage.*;
 
@@ -24,6 +25,8 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
     static CategoriaDao model = new CategoriaDao();
     static OrdineDao ordineDao = new OrdineDao();
     static AlberoDao alberoDao = new AlberoDao();
+
+    static IotDao iotDao = new IotDao();
 
     static BuonoRegaloDao buonoregaloDao = new BuonoRegaloDao();
     static OrdineBean ordineBean = new OrdineBean();
@@ -67,13 +70,17 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
         if (buoni.size() == 0 && prodotti.size() !=0) {// non sono stati comprati buoni, allora inserisco solo albero e ordine (DB)
             System.out.println("comprati solo alberi");
                 try {
+
                     int id = ordineDao.inserisciOrdine(mail, total);
                     ordineBean = ordineDao.doRetrieveByKey(id);
 
                     if (ordineBean != null) {
                         System.out.println("Inserimento ordine effettuato con successo, procedo ad inserire gli alberi nel db....");
                         while (i < prodotti.size()) {
-                            alberoDao.inserisciAlbero(prodotti.get(i), ordineBean, regione.get(i));
+
+                            IotBean iot = iotDao.doRetriveByRegione(regione.get(i));
+                            iotDao.CambioStatoIot(iot.getIdIot());
+                            alberoDao.inserisciAlbero(prodotti.get(i), ordineBean, regione.get(i),iot);
                             i++;
                         }
                     }
@@ -89,7 +96,9 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
                     if (ordineBean != null) {
                         System.out.println("Inserimento ordine effettuato con successo, procedo ad inserire gli alberi nel db....");
                         while (i < prodotti.size() || j <buoni.size()) {
-                            alberoDao.inserisciAlbero(prodotti.get(i), ordineBean, regione.get(i));
+                            IotBean iot = iotDao.doRetriveByRegione(regione.get(i));
+                            iotDao.CambioStatoIot(iot.getIdIot());
+                            alberoDao.inserisciAlbero(prodotti.get(i), ordineBean, regione.get(i), iot);
                             buonoregaloDao.InserisciBuono(ordineBean,GeneraBuono());
                             //inserisco buoni
                             i++;
