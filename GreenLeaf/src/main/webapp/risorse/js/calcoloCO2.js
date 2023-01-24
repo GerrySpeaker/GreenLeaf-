@@ -17,68 +17,69 @@ function attiva(mezzo){
 
         console.log(mezzo.id);
         console.log(document.getElementById("risorse\\img\\plane.png").id);
+        console.log(mezzo.id===document.getElementById("risorse\\img\\plane.png").id)
 
-        if(mezzo.id.match(document.getElementById("risorse\\img\\plane.png").id)){
+        if(mezzo.id===document.getElementById("risorse\\img\\plane.png").id){
             var y =(+document.getElementById("qui").value) - plane;
             console.log("sono 1");
             document.getElementById("qui").value= y;
             mezzo.classList.remove("active");
         }
-        else if(mezzo.id.match("risorse\\img\\bus.png")){
+        else if(mezzo.id===document.getElementById("risorse\\img\\bus.png").id){
             console.log("sono 2");
             var y =(+document.getElementById("qui").value) - bus;
             document.getElementById("qui").value= y;
             mezzo.classList.remove("active");
         }
-        else if(mezzo.id.match("risorse\\img\\sports-car.png")){
+        else if(mezzo.id===document.getElementById("risorse\\img\\sports-car.png").id){
             var y =(+document.getElementById("qui").value) - car;
             document.getElementById("qui").value= y;
             mezzo.classList.remove("active");
             console.log("sono 3");
 
         }
-        else if(mezzo.id.match("risorse\\img\\underground.png")){
+        else if(mezzo.id===document.getElementById("risorse\\img\\underground.png").id){
             var y =(+document.getElementById("qui").value) - underground;
             document.getElementById("qui").value= y;
             console.log("sono 4");
 
             mezzo.classList.remove("active");
         }
-        else if(mezzo.id.match("risorse\\img\\ship.png")){
+        else if(mezzo.id===document.getElementById("risorse\\img\\ship.png").id){
             var y =(+document.getElementById("qui").value) - ship;
             document.getElementById("qui").value= y;
             console.log("sono 5");
 
             mezzo.classList.remove("active");
         }
-        else if(mezzo.id.match("risorse\\img\\cruise.png")){
+        else if(mezzo.id===document.getElementById("risorse\\img\\cruise.png").id){
             var y =(+document.getElementById("qui").value) - cruise;
             document.getElementById("qui").value= y;
             console.log("sono 6");
 
             mezzo.classList.remove("active");
         }
-        else if(mezzo.id.match("risorse\\img\\scooter.png")){
+        else if(mezzo.id===document.getElementById("risorse\\img\\scooter.png").id){
             var y =(+document.getElementById("qui").value) - scooter;
             document.getElementById("qui").value= y;
             console.log("sono 7");
 
             mezzo.classList.remove("active");
         }
-        else if(mezzo.id.match("risorse\\img\\taxi.png")){
+        else if(mezzo.id===document.getElementById("risorse\\img\\taxi.png").id){
             var y =(+document.getElementById("qui").value) - taxi;
             document.getElementById("qui").value= y;
             console.log("sono 8");
 
             mezzo.classList.remove("active");
         }
-        else if(mezzo.id.match("risorse\\img\\tram.png")){
+        else if(mezzo.id===document.getElementById("risorse\\img\\tram.png").id){
             var y =(+document.getElementById("qui").value) - tram;
             console.log("sono 9");
 
             document.getElementById("qui").value= y;
         }
-        else if(mezzo.id.match("risorse\\img\\train.png")){
+        else if(mezzo.id===document.getElementById("risorse\\img\\train.png").id){
             var y =(+document.getElementById("qui").value) - train;
             console.log("sono 10");
 
