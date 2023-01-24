@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `greenleaf` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `greenleaf`;
--- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
 --
 -- Host: localhost    Database: greenleaf
 -- ------------------------------------------------------
--- Server version	8.0.31
+-- Server version	8.0.19
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -69,7 +69,6 @@ CREATE TABLE `albero` (
   KEY `ordine_idx` (`ordine`),
   KEY `iot_idx` (`iot`),
   CONSTRAINT `categoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `iot` FOREIGN KEY (`iot`) REFERENCES `iot` (`idiot`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `ordine` FOREIGN KEY (`ordine`) REFERENCES `ordine` (`idordine`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `utenteAlbero` FOREIGN KEY (`utenteAlbero`) REFERENCES `utente` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -81,7 +80,7 @@ CREATE TABLE `albero` (
 
 LOCK TABLES `albero` WRITE;
 /*!40000 ALTER TABLE `albero` DISABLE KEYS */;
-INSERT INTO `albero` VALUES (3,'-500','melo','2023-01-20','Da piantare','laSabatino@gmail.com','Basilicata',3,NULL);
+INSERT INTO `albero` VALUES (3,'-500','melo','2023-01-24','Piantato','test@gmail.com','Basilicata',3,1);
 /*!40000 ALTER TABLE `albero` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,14 +122,13 @@ DROP TABLE IF EXISTS `buonoregalo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `buonoregalo` (
-  `key` varchar(6) NOT NULL,
+  `idBuono` varchar(6) NOT NULL,
   `stato` varchar(30) NOT NULL,
   `prezzo` double NOT NULL,
-  `url` varchar(100) NOT NULL,
   `utenteRegalo` varchar(30) NOT NULL,
   `ordineRegalo` int NOT NULL,
-  PRIMARY KEY (`key`),
-  UNIQUE KEY `key_UNIQUE` (`key`),
+  PRIMARY KEY (`idBuono`),
+  UNIQUE KEY `key_UNIQUE` (`idBuono`),
   KEY `utenteRegalo_idx` (`utenteRegalo`),
   KEY `ordineRegalo_idx` (`ordineRegalo`),
   CONSTRAINT `ordineRegalo` FOREIGN KEY (`ordineRegalo`) REFERENCES `ordine` (`idordine`) ON DELETE CASCADE ON UPDATE CASCADE,
@@ -144,6 +142,7 @@ CREATE TABLE `buonoregalo` (
 
 LOCK TABLES `buonoregalo` WRITE;
 /*!40000 ALTER TABLE `buonoregalo` DISABLE KEYS */;
+INSERT INTO `buonoregalo` VALUES ('1','Riscattato',50,'test@gmail.com',4),('2','Riscattato',50,'test@gmail.com',4);
 /*!40000 ALTER TABLE `buonoregalo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -192,7 +191,7 @@ CREATE TABLE `iot` (
   `stato` varchar(45) NOT NULL,
   PRIMARY KEY (`idiot`),
   UNIQUE KEY `idiot_UNIQUE` (`idiot`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -201,6 +200,7 @@ CREATE TABLE `iot` (
 
 LOCK TABLES `iot` WRITE;
 /*!40000 ALTER TABLE `iot` DISABLE KEYS */;
+INSERT INTO `iot` VALUES (1,'192.158.2.254','125666','1235448','12335678','Campania','Non usato');
 /*!40000 ALTER TABLE `iot` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -253,7 +253,7 @@ CREATE TABLE `ordine` (
   UNIQUE KEY `idordine_UNIQUE` (`idordine`),
   KEY `Utente_idx` (`Utente`),
   CONSTRAINT `Utente` FOREIGN KEY (`Utente`) REFERENCES `utente` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -262,7 +262,7 @@ CREATE TABLE `ordine` (
 
 LOCK TABLES `ordine` WRITE;
 /*!40000 ALTER TABLE `ordine` DISABLE KEYS */;
-INSERT INTO `ordine` VALUES (3,'2022-12-12',50,'laSabatino@gmail.com');
+INSERT INTO `ordine` VALUES (3,'2022-12-12',50,'laSabatino@gmail.com'),(4,'2022-12-12',100,'test@gmail.com');
 /*!40000 ALTER TABLE `ordine` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -341,7 +341,7 @@ CREATE TABLE `utente` (
 
 LOCK TABLES `utente` WRITE;
 /*!40000 ALTER TABLE `utente` DISABLE KEYS */;
-INSERT INTO `utente` VALUES ('hsjka@gmail.com','klfas','klsamf','jskdfsk02','2023-01-05'),('k@gmail.com','kilo','andrea','kbcd12d4','2022-12-29'),('laSabatino@gmail.com','Sabatino','Michelina','abcd1aa2','2023-01-05'),('michela@gmail.com','si','Michea','1','2022-12-12'),('pepe@gmail.com','Adreucci','Peppe','vessicchio1','2022-12-15'),('peppe@gmail.com','Vessicchio','Peppe','peppevess1','2023-01-04'),('pippobaudo@gmail.com','Giametta','Antonio','pippobaudo1','2022-11-17');
+INSERT INTO `utente` VALUES ('fa.mikela121@gmail.com','Cercielloa','Vincenzo','ciao123245','2023-01-04'),('laSabatino@gmail.com','Sabatino','Michelina','abcd1aa2','2023-01-05'),('mirk155o@gmail.com','vitale','mirko','ciaoottto89','2022-10-01'),('mirko@gmail.com','Cercielloa','Vincenzo','0cerciello','2023-01-03'),('pepe@gmail.com','Adreucci','Peppe','vessicchio1','2022-12-15'),('peppe@gmail.com','Vessicchio','Peppe','peppevess1','2023-01-04'),('pippobaudo@gmail.com','Giametta','Antonio','pippobaudo1','2022-11-17'),('test@gmail.com','michele','alaia','1','2022-11-17');
 /*!40000 ALTER TABLE `utente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -354,4 +354,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-20 11:09:20
+-- Dump completed on 2023-01-24 10:30:41
