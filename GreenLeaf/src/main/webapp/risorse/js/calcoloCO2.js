@@ -13,62 +13,76 @@ var train = 0;
 
 
 function attiva(mezzo){
-
     if(mezzo.classList.contains("active")){
 
-        var ciccio=mezzo.id;
-        console.log(ciccio);
-        if(ciccio.match("risorse\\img\\plane.png")){
-            console.log("Mirko");
-            var y =(+document.getElementById("qui").value) - plane;
-            console.log(y);
-            document.getElementById("qui").value= y;
+        console.log(mezzo.id);
+        console.log(document.getElementById("risorse\\img\\plane.png").id);
 
+        if(mezzo.id.match(document.getElementById("risorse\\img\\plane.png").id)){
+            var y =(+document.getElementById("qui").value) - plane;
+            console.log("sono 1");
+            document.getElementById("qui").value= y;
+            mezzo.classList.remove("active");
         }
         else if(mezzo.id.match("risorse\\img\\bus.png")){
+            console.log("sono 2");
             var y =(+document.getElementById("qui").value) - bus;
             document.getElementById("qui").value= y;
             mezzo.classList.remove("active");
         }
-        else if("risorse\\img\\sports-car.png"){
+        else if(mezzo.id.match("risorse\\img\\sports-car.png")){
             var y =(+document.getElementById("qui").value) - car;
             document.getElementById("qui").value= y;
             mezzo.classList.remove("active");
+            console.log("sono 3");
+
         }
         else if(mezzo.id.match("risorse\\img\\underground.png")){
             var y =(+document.getElementById("qui").value) - underground;
             document.getElementById("qui").value= y;
+            console.log("sono 4");
+
             mezzo.classList.remove("active");
         }
         else if(mezzo.id.match("risorse\\img\\ship.png")){
             var y =(+document.getElementById("qui").value) - ship;
             document.getElementById("qui").value= y;
+            console.log("sono 5");
+
             mezzo.classList.remove("active");
         }
         else if(mezzo.id.match("risorse\\img\\cruise.png")){
             var y =(+document.getElementById("qui").value) - cruise;
             document.getElementById("qui").value= y;
+            console.log("sono 6");
+
             mezzo.classList.remove("active");
         }
         else if(mezzo.id.match("risorse\\img\\scooter.png")){
             var y =(+document.getElementById("qui").value) - scooter;
             document.getElementById("qui").value= y;
+            console.log("sono 7");
+
             mezzo.classList.remove("active");
         }
         else if(mezzo.id.match("risorse\\img\\taxi.png")){
             var y =(+document.getElementById("qui").value) - taxi;
             document.getElementById("qui").value= y;
+            console.log("sono 8");
+
             mezzo.classList.remove("active");
         }
         else if(mezzo.id.match("risorse\\img\\tram.png")){
             var y =(+document.getElementById("qui").value) - tram;
+            console.log("sono 9");
+
             document.getElementById("qui").value= y;
-            mezzo.classList.remove("active");
         }
         else if(mezzo.id.match("risorse\\img\\train.png")){
             var y =(+document.getElementById("qui").value) - train;
+            console.log("sono 10");
+
             document.getElementById("qui").value= y;
-            mezzo.classList.remove("active");
         }
 
     }
@@ -140,6 +154,7 @@ function filtro(obj){
 function calcola(){
     console.log("ciao");
     var x = document.getElementById("add").src
+    console.log(x);
     if (x.match("http://localhost:8080/GreenLeaf_war_exploded/risorse/img/plane.png")){
         var calc = 26 * document.getElementById("inputRange").value;
         var y =(+document.getElementById("qui").value) + calc;
