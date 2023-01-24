@@ -1,17 +1,14 @@
 package application;
 
-import bean.BuonoregaloBean;
 import bean.CategoriaBean;
 import bean.OrdineBean;
 import storage.*;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Random;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 
@@ -20,8 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/Ordine")
-public class Ordine extends HttpServlet {
+@WebServlet("/GestioneAlberiDaAdottare")
+public class GestioneAlberiDaAdottare extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     static CategoriaDao model = new CategoriaDao();
@@ -32,7 +29,7 @@ public class Ordine extends HttpServlet {
     static OrdineBean ordineBean = new OrdineBean();
 
 
-    public Ordine() {
+    public GestioneAlberiDaAdottare() {
         super();
     }
 

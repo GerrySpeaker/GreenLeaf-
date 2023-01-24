@@ -1,9 +1,6 @@
 package storage;
 
-import application.Ordine;
-import bean.AlberoBean;
 import bean.OrdineBean;
-import bean.UtenteBean;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
