@@ -160,7 +160,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
     public Boolean inserisciAlbero(CategoriaBean albero, OrdineBean ordineBean,String regione) throws SQLException  {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        String selectSQL = "INSERT INTO albero SET idalbero=?,CO2=?,categoria=?,datapiantumazione=?,stato=?,utenteAlbero=?,regione=?,ordine=?";
+        String selectSQL = "INSERT INTO albero SET idalbero=?,CO2=?,categoria=?,datapiantumazione=?,stato=?,utenteAlbero=?,regione=?,ordine=?,iot=?";
         String selectId = "SELECT MAX(idalbero) as Id FROM albero";
 
 
@@ -196,6 +196,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
             preparedStatement.setString(6,ordineBean.getUtenteOrdine());
             preparedStatement.setString(7,regione);
             preparedStatement.setInt(8,ordineBean.getIdOrdine());
+            preparedStatement.setInt(9,10);
             preparedStatement.executeUpdate();
 
         } finally {
