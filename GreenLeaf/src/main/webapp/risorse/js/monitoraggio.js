@@ -26,7 +26,7 @@ function seleziona() {
 
         document.getElementById("monitor").style.display="block";
         document.getElementById("selezionato").innerHTML=reg;
-        if(document.getElementById("anno").value.match("2023")){
+        if(document.getElementById("anno").value.match("2023") || document.getElementById("anno").value.match("Anno")){
             document.getElementById("percentuale").innerHTML="23%";
             document.getElementById("co2").innerHTML="180kg/anno";
             document.getElementById("polvere").innerHTML="36kg/anno";

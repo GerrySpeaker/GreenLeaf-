@@ -93,6 +93,10 @@
     font-weight: 500;
 }
 
+.dropdown .filterBox::placeholder{
+    color: var(--text-color);
+}
+
 .dropdown .option{
     position: absolute;
     top: 60px;

@@ -21,7 +21,7 @@
     <div class="border">
         <form action="#" class="all-filter">
             <div class="dropdown">
-                <input type="text" class="filterBox" placeholder="Anno" id="anno" readonly>
+                <input type="text" class="filterBox" value="Anno" id="anno" readonly>
                 <div class="option">
                     <div onclick="show('2023')">2023</div>
                     <div onclick="show('2024')">2024</div>

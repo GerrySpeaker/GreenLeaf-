@@ -21,7 +21,7 @@
     <div class="border">
         <form action="#" class="all-filter">
             <div class="dropdown">
-                <input type="text" class="filterBox" placeholder="Anno" id="anno" readonly>
+                <input type="text" class="filterBox" value="Anno" id="anno" readonly>
                 <div class="option">
                     <div onclick="show('2023')">2023</div>
                     <div onclick="show('2024')">2024</div>
@@ -31,7 +31,7 @@
             </div>
     
             <div class="dropdown-reg">
-                <input type="text" class="filterBox-reg" placeholder="Regioni" readonly id="regione">
+                <input type="text" class="filterBox-reg" value="Regioni" readonly id="regione">
                 <div class="option">
                     <div onclick="showReg('Abruzzo')">Abruzzo</div>
                     <div onclick="showReg('Basilicata')">Basilicata</div>
