@@ -1,6 +1,5 @@
 package application;
 
-import bean.BuonoregaloBean;
 import bean.CategoriaBean;
 import bean.OrdineBean;
 import storage.*;
@@ -8,8 +7,8 @@ import storage.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Random;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 
@@ -18,18 +17,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/Ordine")
-public class Ordine extends HttpServlet {
+@WebServlet("/GestioneAlberiDaAdottare")
+public class GestioneAlberiDaAdottare extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     static CategoriaDao model = new CategoriaDao();
     static OrdineDao ordineDao = new OrdineDao();
     static AlberoDao alberoDao = new AlberoDao();
 
+    static BuonoRegaloDao buonoregaloDao = new BuonoRegaloDao();
     static OrdineBean ordineBean = new OrdineBean();
 
 
-    public Ordine() {
+    public GestioneAlberiDaAdottare() {
         super();
     }
 
@@ -44,7 +44,10 @@ public class Ordine extends HttpServlet {
 
         String mail = (String) request.getSession().getAttribute("email");
 
+        System.out.println("check 1");
+
         ArrayList<CategoriaBean> prodotti = (ArrayList<CategoriaBean>) request.getSession().getAttribute("prodottiCart");
+
 
         ArrayList<String> regione = (ArrayList<String>) request.getSession().getAttribute("regione");
 
@@ -87,6 +90,7 @@ public class Ordine extends HttpServlet {
                         System.out.println("Inserimento ordine effettuato con successo, procedo ad inserire gli alberi nel db....");
                         while (i < prodotti.size() || j <buoni.size()) {
                             alberoDao.inserisciAlbero(prodotti.get(i), ordineBean, regione.get(i));
+                            buonoregaloDao.InserisciBuono(ordineBean,GeneraBuono());
                             //inserisco buoni
                             i++;
                             j++;
@@ -106,6 +110,7 @@ public class Ordine extends HttpServlet {
                         System.out.println("Inserimento ordine effettuato con successo, procedo ad inserire gli alberi nel db....");
                         while (j < buoni.size()) {
                             //inserisco solo buoni
+                            buonoregaloDao.InserisciBuono(ordineBean,GeneraBuono());
                             j++;
                         }
                     }
@@ -119,7 +124,22 @@ public class Ordine extends HttpServlet {
 
 
     }
-    public String 
+    public String GeneraBuono(){
+        int leftLimit = 97; // letter 'a'
+        int rightLimit = 122; // letter 'z'
+        int targetStringLength = 10;
+        Random random = new Random();
+        StringBuilder buffer = new StringBuilder(targetStringLength);
+        for (int i = 0; i < targetStringLength; i++) {
+            int randomLimitedInt = leftLimit + (int)
+                    (random.nextFloat() * (rightLimit - leftLimit + 1));
+            buffer.append((char) randomLimitedInt);
+        }
+        String generatedString = buffer.toString();
+
+        System.out.println(generatedString);
+        return  generatedString;
+    }
 }
 
 

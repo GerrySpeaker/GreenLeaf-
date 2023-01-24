@@ -2,15 +2,13 @@ package storage;
 
 import bean.AlberoBean;
 import bean.BuonoregaloBean;
+import bean.OrdineBean;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -142,6 +140,33 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
 
     }
 
+    public Boolean InserisciBuono(OrdineBean ordine,String chiave)throws SQLException{
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        String selectSQL = "INSERT INTO buonoregalo SET idBuono=?,stato=?,prezzo=?,utenteRegalo=?,ordineRegalo=?";
+
+
+        try {
+            connection = ds.getConnection();
+            preparedStatement = connection.prepareStatement(selectSQL);
+            preparedStatement.setString(1, chiave);
+            preparedStatement.setString(2, "Da riscattare");
+            preparedStatement.setDouble(3, Double.valueOf(50));
+            preparedStatement.setString(4, ordine.getUtenteOrdine());
+            preparedStatement.setInt(5, ordine.getIdOrdine());
+            preparedStatement.executeUpdate();
+
+        } finally {
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+        return false;
+    }
 
 }
 
