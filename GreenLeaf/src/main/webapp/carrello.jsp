@@ -161,7 +161,7 @@
               <p class="font-italic mb-4"></p>
               <ul class="list-unstyled mb-4">
                 <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Totale</strong>
-                  <h5 class="font-weight-bold"><%=totale - sconto%>€</h5>
+                  <h5 class="font-weight-bold"><%=totale= totale - sconto%>€</h5>
                 </li>
                 <div id="smart-button-container" style="margin-top: 30px;">
                   <div style="text-align: center;">
@@ -195,14 +195,14 @@
                           // Show a success message within this page, e.g.
                           const element = document.getElementById('paypal-button-container');
                           element.innerHTML = '';
-                          element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                          element.innerHTML = '<h3>Aquisto effettuato!</h3>';
                           $.ajax({ //GET categorie
                             type: 'GET', //tipo POST, GET
                             url: 'Ordine', //metto la servlet
                             data: {totale : <%=totale%>}, //metto i campi che devo mandare tramite la richiesta
                           });
 
-                          // Or go to another URL:  actions.redirect('thank_you.html');
+                          actions.redirect("http://localhost:8080/GreenLeaf_war_exploded/acquisto_completato.jsp"); //non funzia
 
                         });
                       },
@@ -214,7 +214,7 @@
                   }
                   initPayPalButton();
                 </script>
-              </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procedi al checkout</a>
+              </ul><a href="acquisto_completato.jsp" class="btn btn-dark rounded-pill py-2 btn-block">Procedi</a>
             </div>
           </div>
         </div>
