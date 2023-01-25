@@ -33,6 +33,13 @@
           <p id="error" class="error"></p>
           <%} %>
 
+          <%if(Boolean.parseBoolean(request.getParameter("data"))==true){%>
+
+          <p id="error" class="error" style="text-align: center" >Data errata, riprovare</p>
+          <%}else{ %>
+          <p id="error" class="error"></p>
+          <%} %>
+
 
             <form action="RegistrazioneApplication" class="form" method="post" onsubmit="return validate(this)">
       

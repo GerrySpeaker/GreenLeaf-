@@ -8,6 +8,7 @@ import storage.AdminDao;
 import storage.OperatoreDao;
 import storage.UtenteDao;
 
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.regex.*;
 
 @WebServlet("/RegistrazioneApplication")
@@ -43,11 +45,15 @@ public class RegistrazioneApplication extends HttpServlet {
 
         if (request.getSession().getAttribute("email") == null) {
 
+
             String email = request.getParameter("email");
             String psw = request.getParameter("password");
             String name = request.getParameter("nome");
             String surname = request.getParameter("cognome");
             String data = request.getParameter("data");
+
+            Date date = Date.valueOf(LocalDate.now());
+
 
             if (email != null && psw != null && name != null && surname != null) {
 
@@ -65,6 +71,12 @@ public class RegistrazioneApplication extends HttpServlet {
 
                 Date data1 = null;
                 data1 = Date.valueOf(data);
+
+
+                if(data1.after(date) || data1.equals(date)){
+                    response.sendRedirect(request.getContextPath() + "/registrazione.jsp?data=true");
+                    return;
+                }
 
                 bean.setDataNascita(data1);
                 bean.setEmail(email);
