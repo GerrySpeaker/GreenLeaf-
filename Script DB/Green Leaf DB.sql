@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `greenleaf` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `greenleaf`;
--- MySQL dump 10.13  Distrib 8.0.19, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
 --
 -- Host: localhost    Database: greenleaf
 -- ------------------------------------------------------
--- Server version	8.0.19
+-- Server version	8.0.27
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -80,7 +80,7 @@ CREATE TABLE `albero` (
 
 LOCK TABLES `albero` WRITE;
 /*!40000 ALTER TABLE `albero` DISABLE KEYS */;
-INSERT INTO `albero` VALUES (3,'-500','melo','2023-01-24','Piantato','test@gmail.com','Basilicata',3,1),(4,'-800 kg','melo',NULL,'Da Piantare','test@gmail.com','Piemonte',15,10),(5,'-800 kg','melo',NULL,'Da Piantare','test@gmail.com','Piemonte',15,10),(6,'-1200 kg','pino',NULL,'Da Piantare','test@gmail.com','Lombardia',15,10),(7,'-150 kg','ciliegio',NULL,'Da Piantare','test@gmail.com','Veneto',15,10);
+INSERT INTO `albero` VALUES (4,'-800 kg','melo',NULL,'Da Piantare','test@gmail.com','Piemonte',15,10),(5,'-800 kg','melo',NULL,'Da Piantare','test@gmail.com','Piemonte',15,10),(6,'-1200 kg','pino',NULL,'Da Piantare','test@gmail.com','Lombardia',15,10),(7,'-150 kg','ciliegio',NULL,'Da Piantare','test@gmail.com','Veneto',15,10);
 /*!40000 ALTER TABLE `albero` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -101,7 +101,7 @@ CREATE TABLE `associato` (
   KEY `regioneAssociato_idx` (`regioneAssociato`),
   CONSTRAINT `categoriaAssociato` FOREIGN KEY (`categoriaAssociato`) REFERENCES `categoria` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `regioneAssociato` FOREIGN KEY (`regioneAssociato`) REFERENCES `regione` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -110,7 +110,7 @@ CREATE TABLE `associato` (
 
 LOCK TABLES `associato` WRITE;
 /*!40000 ALTER TABLE `associato` DISABLE KEYS */;
-INSERT INTO `associato` VALUES (1,'melo','Trentino Alto Adige'),(2,'melo','Emilia Romagna'),(3,'melo','Piemonte'),(4,'melo','Veneto'),(5,'pero','Emilia Romagna'),(6,'pero','Veneto'),(7,'pero','Lombardia'),(8,'pero','Toscana'),(9,'ciliegio','Campania'),(10,'ciliegio','Puglia'),(11,'ciliegio','Veneto'),(12,'pino','Lazio'),(13,'pino','Campania'),(14,'pino','Trentino Alto Adige');
+INSERT INTO `associato` VALUES (1,'melo','Trentino Alto Adige'),(2,'melo','Emilia Romagna'),(3,'melo','Piemonte'),(4,'melo','Veneto'),(5,'pero','Emilia Romagna'),(6,'pero','Veneto'),(7,'pero','Lombardia'),(8,'pero','Toscana'),(9,'ciliegio','Campania'),(10,'ciliegio','Puglia'),(11,'ciliegio','Veneto'),(12,'pino','Lazio'),(13,'pino','Campania'),(14,'pino','Trentino Alto Adige'),(15,'pesco','Basilicata'),(16,'pesco','Calabria'),(17,'pesco','Campania'),(18,'fico','Puglia'),(19,'fico','Campania'),(20,'fico','Sicilia'),(21,'banano','Sardegna'),(22,'banano','Sicilia'),(23,'mandorlo','Calabria'),(24,'mandorlo','Sicilia'),(25,'mandorlo','Liguria'),(26,'limone','Campania'),(27,'limone','Sicilia'),(28,'limone','Calabria'),(29,'limone','Toscana'),(30,'castagno','Campania'),(31,'castagno','Marche');
 /*!40000 ALTER TABLE `associato` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -170,7 +170,7 @@ CREATE TABLE `categoria` (
 
 LOCK TABLES `categoria` WRITE;
 /*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
-INSERT INTO `categoria` VALUES ('ciliegio','-150 kg','Il ciliegio è una pianta a foglia caduca, semplice, ovato-oblunga, con apice pronunciato, appuntito e margine seghettato.',50,'risorse\\img\\ciliegio.jpg'),('melo','-800 kg','Il melo domestico  è una pianta da frutto appartenente alla famiglia delle Rosacee. È una delle più diffuse piante da frutto coltivate.',50,'risorse\\img\\melo.jpg'),('pero','-55 kg','Il pero è uno di quegli alberi da frutto che si sviluppano alla perfezione in tutte quelle zone caratterizzate da un clima temperato. In particolar modo, all’interno della penisola italiana, si caratterizza per crescere ottimamente in ogni regione.',50,'risorse\\img\\pero.jpg'),('pino','-1200 kg','La sua chioma è piramidale o ovale, il tronco è dritto ed i rami tesi verso l\'esterno.',50,'risorse\\img\\pino.jpg');
+INSERT INTO `categoria` VALUES ('banano','-130kg','La pianta di banano ha una crescita molto rapida, raggiungendo infatti anche i tre metri di altezza in pochi mesi',50,'risorse\\img\\banano.jpg'),('castagno','-330kg','Il castagno europeo si caratterizza per essere una pianta decisamente longeva, che si può sviluppare fino a raggiungere un\'altezza pari a 25 metri',50,'risorse\\img\\castagno.jpg'),('ciliegio','-150 kg','Il ciliegio è una pianta a foglia caduca, semplice, ovato-oblunga, con apice pronunciato, appuntito e margine seghettato.',50,'risorse\\img\\ciliegio.jpg'),('fico','-20kg','La pianta di fico rappresenta un albero che può arrivare fino ad altezze anche piuttosto elevate, dal momento che raggiunge i sette-otto metri',50,'risorse\\img\\fico.jpg'),('limone','-167kg','La pianta del limone può arrivare ad un’altezza di 6 metri, i suoi rami, di solito, sono spinosi, le foglie cambiano colore a seconda dell’età della pianta.',50,'risorse\\img\\limone.jpg'),('mandorlo','-100kg','Quando parliamo della pianta di mandorlo, dobbiamo ricordare come faccia parte di due categorie molto importanti, come quella delle piante rustiche e, soprattutto, di quelle piante estremamente longeva.',50,'risorse\\img\\mandorlo.jpg'),('melo','-800 kg','Il melo domestico  è una pianta da frutto appartenente alla famiglia delle Rosacee. È una delle più diffuse piante da frutto coltivate.',50,'risorse\\img\\melo.jpg'),('pero','-55 kg','Il pero è uno di quegli alberi da frutto che si sviluppano alla perfezione in tutte quelle zone caratterizzate da un clima temperato. In particolar modo, all’interno della penisola italiana, si caratterizza per crescere ottimamente in ogni regione.',50,'risorse\\img\\pero.jpg'),('pesco','-70kg','Raggiunge un\'altezza media di 3-5 metri, I fiori, di colore rosa, hanno 5 petali, ed il frutto, la pesca, è una drupa tonda e carnosa, con un solco laterale',50,'risorse\\img\\pesco.jpg'),('pino','-1200 kg','La sua chioma è piramidale o ovale, il tronco è dritto ed i rami tesi verso l\'esterno.',50,'risorse\\img\\pino.jpg');
 /*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -262,7 +262,7 @@ CREATE TABLE `ordine` (
 
 LOCK TABLES `ordine` WRITE;
 /*!40000 ALTER TABLE `ordine` DISABLE KEYS */;
-INSERT INTO `ordine` VALUES (3,'2022-12-12',50,'laSabatino@gmail.com'),(4,'2022-12-12',100,'test@gmail.com'),(5,'2023-01-24',50,'test@gmail.com'),(6,'2023-01-24',100,'test@gmail.com'),(7,'2023-01-24',100,'test@gmail.com'),(8,'2023-01-24',100,'test@gmail.com'),(9,'2023-01-24',100,'test@gmail.com'),(10,'2023-01-24',50,'test@gmail.com'),(11,'2023-01-24',100,'test@gmail.com'),(12,'2023-01-24',100,'test@gmail.com'),(13,'2023-01-24',100,'test@gmail.com'),(14,'2023-01-24',400,'test@gmail.com'),(15,'2023-01-24',400,'test@gmail.com'),(16,'2023-01-24',50,'test@gmail.com');
+INSERT INTO `ordine` VALUES (4,'2022-12-12',100,'test@gmail.com'),(5,'2023-01-24',50,'test@gmail.com'),(6,'2023-01-24',100,'test@gmail.com'),(7,'2023-01-24',100,'test@gmail.com'),(8,'2023-01-24',100,'test@gmail.com'),(9,'2023-01-24',100,'test@gmail.com'),(10,'2023-01-24',50,'test@gmail.com'),(11,'2023-01-24',100,'test@gmail.com'),(12,'2023-01-24',100,'test@gmail.com'),(13,'2023-01-24',100,'test@gmail.com'),(14,'2023-01-24',400,'test@gmail.com'),(15,'2023-01-24',400,'test@gmail.com'),(16,'2023-01-24',50,'test@gmail.com');
 /*!40000 ALTER TABLE `ordine` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -341,7 +341,7 @@ CREATE TABLE `utente` (
 
 LOCK TABLES `utente` WRITE;
 /*!40000 ALTER TABLE `utente` DISABLE KEYS */;
-INSERT INTO `utente` VALUES ('fa.mikela121@gmail.com','Cercielloa','Vincenzo','ciao123245','2023-01-04'),('laSabatino@gmail.com','Sabatino','Michelina','abcd1aa2','2023-01-05'),('mirk155o@gmail.com','vitale','mirko','ciaoottto89','2022-10-01'),('mirko@gmail.com','Cercielloa','Vincenzo','0cerciello','2023-01-03'),('pepe@gmail.com','Adreucci','Peppe','vessicchio1','2022-12-15'),('peppe@gmail.com','Vessicchio','Peppe','peppevess1','2023-01-04'),('pippobaudo@gmail.com','Giametta','Antonio','pippobaudo1','2022-11-17'),('test@gmail.com','michele','alaia','1','2022-11-17');
+INSERT INTO `utente` VALUES ('fa.mikela121@gmail.com','Cercielloa','Vincenzo','ciao123245','2023-01-04'),('lucaverdi@gmail.com','Verdi','Luca','lucave05','1994-04-12'),('mariorossi@gmail.com','Rossi','Mario','marioro01','1990-10-03'),('mirko@gmail.com','Cercielloa','Vincenzo','0cerciello','2023-01-03'),('test@gmail.com','michele','alaia','1','2022-11-17');
 /*!40000 ALTER TABLE `utente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -354,4 +354,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-24 12:09:15
+-- Dump completed on 2023-01-25 10:41:38
