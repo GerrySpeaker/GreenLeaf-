@@ -83,6 +83,10 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
                             alberoDao.inserisciAlbero(prodotti.get(i), ordineBean, regione.get(i),iot);
                             i++;
                         }
+                        prodotti.clear();
+                        request.getSession().setAttribute("prodottiCart", prodotti);
+                        regione.clear();
+                        request.getSession().setAttribute("regione",regione);
                     }
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
@@ -104,6 +108,13 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
                             i++;
                             j++;
                         }
+                        prodotti.clear();
+                        request.getSession().setAttribute("prodottiCart", prodotti);
+                        regione.clear();
+                        request.getSession().setAttribute("regione",regione);
+                        buoni.clear();
+                        request.getSession().setAttribute("buonoregalo",buoni);
+
                     }
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
@@ -122,7 +133,10 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
                             buonoregaloDao.InserisciBuono(ordineBean,GeneraBuono());
                             j++;
                         }
+                        buoni.clear();
+                        request.getSession().setAttribute("buonoregalo",buoni);
                     }
+
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }

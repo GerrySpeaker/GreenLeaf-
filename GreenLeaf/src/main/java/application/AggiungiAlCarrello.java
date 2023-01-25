@@ -70,7 +70,6 @@ public class AggiungiAlCarrello extends HttpServlet {
                 request.getSession().setAttribute("regione", regioni);
                 request.getSession().setAttribute("buonoregalo", buono);
                 response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
-
             } catch (SQLException e) {
                 e.printStackTrace();
             }

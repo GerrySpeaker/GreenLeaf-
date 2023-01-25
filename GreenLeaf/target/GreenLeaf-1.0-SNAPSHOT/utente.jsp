@@ -13,7 +13,7 @@
 <%@ page import="bean.UtenteBean" %>
 
 <%
-    String utente = session.getAttribute("email").toString();
+    String utente = (String) session.getAttribute("email");
     if(utente == null)
     {
         response.sendRedirect(request.getContextPath()+"/error.jsp");

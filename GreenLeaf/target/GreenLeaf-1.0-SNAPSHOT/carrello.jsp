@@ -20,12 +20,10 @@
     return;
   }
 
-  ServletContext cxt = request.getServletContext();
   ArrayList<String> buoni = new ArrayList<>();
   buoni = (ArrayList<String>) session.getAttribute("buonoregalo");
 
   ArrayList<CategoriaBean> categoria = new ArrayList<>();
-
   categoria = (ArrayList<CategoriaBean>) session.getAttribute("prodottiCart");
 
 
@@ -34,8 +32,6 @@
 
   int totale = 0;
   int sconto = (int) request.getSession().getAttribute("sconto");
-
-
 
 %>
 <!DOCTYPE html>
