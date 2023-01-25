@@ -121,7 +121,7 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
                 BuonoregaloBean bean = new BuonoregaloBean();
                 bean.setPrezzo(rs.getDouble("prezzo"));
                 bean.setUtenteRegalo(rs.getString("utenteRegalo"));
-                bean.setIdBuonoregalo(rs.getString("key"));
+                bean.setIdBuonoregalo(rs.getString("idBuono"));
                 bean.setStato(rs.getString("stato"));
                 bean.setOrdineRegalo(rs.getInt("ordineRegalo"));
                 lista.add(bean);

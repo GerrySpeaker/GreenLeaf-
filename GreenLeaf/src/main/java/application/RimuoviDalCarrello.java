@@ -33,16 +33,20 @@ public class RimuoviDalCarrello extends HttpServlet {
         }else {
             ArrayList<CategoriaBean> articoli = (ArrayList<CategoriaBean>) request.getSession().getAttribute("prodottiCart");
             Iterator<CategoriaBean> prodotti = articoli.iterator();
+            ArrayList<String> regioni =  (ArrayList<String>) request.getSession().getAttribute("regione");
+            int i = 0;
 
             while (prodotti.hasNext()) {
                 CategoriaBean prod = prodotti.next();
                 if (prod.getNomeCategoria().equals(categoria)) {
                     prodotti.remove();
+                    regioni.remove(i);
                     break;
                 }
-
+                i++;
             }
             request.getSession().setAttribute("prodottiCart", articoli);
+            request.getSession().setAttribute("regione", regioni);
         }
 
         response.sendRedirect(request.getContextPath()+"/carrello.jsp");
