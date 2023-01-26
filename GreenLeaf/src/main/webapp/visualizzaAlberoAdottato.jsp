@@ -65,7 +65,11 @@
                     <p><span>Stato</span>: <%= article.getStato()%></p>
                 </div>
 
-                <div id="map"></div>
+                <% if(article.getStato().equals("Da Piantare")){%>
+                    <div id="map" style="display: none"></div>
+                <% } else{%>
+                    <div id="map" ></div>
+                <%}%>
 
             </div>
         </div>
