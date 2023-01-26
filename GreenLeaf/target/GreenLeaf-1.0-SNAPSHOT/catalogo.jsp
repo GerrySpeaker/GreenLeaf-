@@ -23,7 +23,6 @@
     AdminBean adminBean = adminDao.doRetrieveByEmail(email);
     OperatoreBean operatoreBean = operatoreDao.doRetrieveByEmail(email);
 
-    String x = null;
 
     CategoriaDao dao = new CategoriaDao();
     ArrayList <CategoriaBean> article = (ArrayList<CategoriaBean>) dao.doRetrieveAll();
@@ -39,42 +38,6 @@
 %>
 <%@ include file="header.jsp" %>
 
-<div class="nontavere" id="popup">
-    <form action="AggiungiCarrello" method="post">
-    <input id="categoria" name="categoria" style="display:none" >
-    <div class="scelta">
-        <div class="all-regione">
-            <!-- ripetere le regioni da qui -->
-
-            <%
-                ArrayList<AssociatoBean> associato = daoAsso.doRetrieveAlbero();
-                Iterator<AssociatoBean> ass = associato.iterator();
-
-                while(ass.hasNext()){
-                        AssociatoBean association = ass.next();
-                        RegioneBean prod = daoreg.doRetrieveByNome(association.getRegioneAssociato());
-
-            %>
-            <div class="regione" id="<%=prod.getNomeRegione()%>">
-                <div class="reg-card">
-                    <div class="radio-group">
-                        <img src="<%= prod.getUrl() %>"><!-- inserire  la regione -->
-                        <label class="radio">
-                            <input type="radio" id="regione" value ="<%= prod.getNomeRegione() %>" name="scelta">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <% } %>
-            <!-- a qui-->
-        </div>
-
-    </div>
-    <button class="close" type="reset"><i class="fa-solid fa-xmark" onclick="tornaCatalogo()"></i></button>
-    <button class="btn-regione" type="submit" >Aggiungi al carrello</button>
-    </form>
-</div>
 
 <div class="all" id="cat">
     <div class="container-card">
@@ -100,7 +63,7 @@
                     <% if(adminBean.getEmail() != null || operatoreBean.getEmail() != null){ %>
 
                     <%}else{%>
-                    <a href="regione.jsp?nome=<%= prod.getNomeCategoria()%>" class="btn_secondary" " >Adotta un albero</a>
+                    <a href="regione.jsp?nome=<%= prod.getNomeCategoria()%>" class="btn_secondary"  >Adotta un albero</a>
                     <%}%>
                 </div>
             </div>
