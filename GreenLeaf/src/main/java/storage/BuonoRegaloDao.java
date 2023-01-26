@@ -48,7 +48,7 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         BuonoregaloBean bean = new BuonoregaloBean();
-        String selectSQL = "SELECT * FROM buonoregalo WHERE idBuono=? AND stato='Da riscattare'";
+        String selectSQL = "SELECT * FROM buonoregalo WHERE idBuono=?";
 
         try {
             connection = ds.getConnection();

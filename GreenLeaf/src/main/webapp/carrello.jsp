@@ -142,6 +142,12 @@
           <div class="col-lg-6">
             <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Buono regalo</div>
             <div class="p-4">
+              <%if(Boolean.parseBoolean(request.getParameter("check"))==true){%>
+
+              <p id="error" class="error" style="text-align: center" >Buono già inserito</p>
+              <%}else{ %>
+              <p id="error" class="error"></p>
+              <%} %>
               <p class="font-italic mb-4">Hai un buono regalo? Inseriscilo qui</p>
               <div class="input-group mb-4 border rounded-pill p-2">
                 <input name="buono" type="text" placeholder="Es: abcd12" aria-describedby="button-addon3" class="form-control border-0">
@@ -161,7 +167,11 @@
                 </li>
                 <div id="smart-button-container" style="margin-top: 30px;">
                   <div style="text-align: center;">
-                    <div id="paypal-button-container"></div>
+                    <% if(totale!=0){ %>
+                            <div id="paypal-button-container"></div>
+                    <% } else if (totale == 0){
+                      response.sendRedirect(request.getContextPath() + "/Ordine?totale="+totale);
+                    }%>
                   </div>
                 </div>
                 <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=EUR" data-sdk-integration-source="button-factory"></script>
@@ -208,6 +218,7 @@
                   }
                   initPayPalButton();
                 </script>
+              </ul>
             </div>
           </div>
         </div>
