@@ -58,10 +58,11 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
 
         ArrayList<String> buoni = (ArrayList<String>) request.getSession().getAttribute("buonoregalo");
 
-
+        ArrayList<String> buoniDaRiscattare = (ArrayList<String>) request.getSession().getAttribute("controllo");
 
         int i = 0;
         int j = 0;
+        int k = 0;
 
         Double total = Double.valueOf(totale);
 
@@ -104,7 +105,10 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
                             iotDao.CambioStatoIot(iot.getIdIot());
                             alberoDao.inserisciAlbero(prodotti.get(i), ordineBean, regione.get(i), iot);
                             buonoregaloDao.InserisciBuono(ordineBean,GeneraBuono());
-                            //inserisco buoni
+                            while(k<buoniDaRiscattare.size()){
+                                buonoregaloDao.CambioStato(buoniDaRiscattare.get(k));
+                                k++;
+                            }
                             i++;
                             j++;
                         }
