@@ -26,6 +26,11 @@
     <div class="all-list" id="list">
         <div class="list">
             <h3>Buoni da te creati</h3>
+            <div class="testa">
+                <p>Codice</p>
+                <p>Stato</p>
+                <p>Ordine</p>
+            </div>
             <% Iterator<BuonoregaloBean> prodotto = article.iterator();
                 int i = 0;
                 while(prodotto.hasNext()){

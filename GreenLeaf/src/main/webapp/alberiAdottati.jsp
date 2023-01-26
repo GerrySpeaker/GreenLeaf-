@@ -38,6 +38,11 @@
     <div class="all-list">
         <div class="list">
             <h3>Alberi Adottati</h3>
+            <div class="testa">
+                <p>Id</p>
+                <p>Categoria</p>
+                <p>Regione</p>
+            </div>
             <% Iterator<AlberoBean> albero = article.iterator();
                 int i = 0;
                 while(albero.hasNext()){

@@ -5,6 +5,7 @@ $(document).ready(function(){
         center: pos
 
     });
+
 });
 
 function seleziona() {

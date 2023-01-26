@@ -16,8 +16,6 @@ function attiva(mezzo){
     if(mezzo.classList.contains("active")){
 
         console.log(mezzo.id);
-        console.log(document.getElementById("risorse\\img\\plane.png").id);
-        console.log(mezzo.id===document.getElementById("risorse\\img\\plane.png").id)
 
         if(mezzo.id===document.getElementById("risorse\\img\\plane.png").id){
             var y =(+document.getElementById("qui").value) - plane;
@@ -75,15 +73,17 @@ function attiva(mezzo){
         }
         else if(mezzo.id===document.getElementById("risorse\\img\\tram.png").id){
             var y =(+document.getElementById("qui").value) - tram;
+            document.getElementById("qui").value= y;
+            mezzo.classList.remove("active");
             console.log("sono 9");
 
-            document.getElementById("qui").value= y;
         }
         else if(mezzo.id===document.getElementById("risorse\\img\\train.png").id){
             var y =(+document.getElementById("qui").value) - train;
+            document.getElementById("qui").value= y;
+            mezzo.classList.remove("active");
             console.log("sono 10");
 
-            document.getElementById("qui").value= y;
         }
 
     }

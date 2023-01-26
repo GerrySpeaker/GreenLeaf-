@@ -20,7 +20,7 @@
 
 
         <div class="btn-buy">
-            <a class="home" onclick="showBuono()">Visualizza buoni</a>
+            <a class="home" onclick="showBuono()">Riscatta buoni</a>
             <a class="home" href="homepage.jsp">Torna all'homepage</a>
         </div>
     </div>
@@ -30,7 +30,17 @@
 <div class="all-buy buono" id="y">
     <div class="buy">
         <p class="big">Buoni appena acquistati</p>
-        <input type="text" readonly value="abcdefgh"> <!-- ripeti questo input quanti buoni ha-->
+
+        <div class="input-area"> <!-- ripetere da qui -->
+            <input type="text" readonly value="abcdefgh" id="1"> <!-- creare una variabile i da incrementare a ogni ciclo di while da mettere come id -->
+            <a class="copy" onclick="copy(1)">Copia</a><!--e passarla anche a copy -->
+        </div> <!-- a qui -->
+
+        <div class="input-area">
+            <input type="text" readonly value="jhfsk">
+            <a class="copy" onclick="copy()">Copia</a>
+        </div>
+
 
 
         <div class="btn-buy">
@@ -43,19 +53,4 @@
 
 <%@ include file="footer.jsp" %>
 
-<script>
-    var x = document.getElementById("all-buy");
-    var y = document.getElementById("y");
-
-    function showBuono(){
-        console.log("ci sono")
-        x.style.display="none";
-        y.style.display="flex";
-    }
-
-    function hideBuono(){
-        console.log("ci sono 2")
-        x.style.display="flex";
-        y.style.display="none";
-    }
-</script>
+<script src="risorse/js/acquisto.js"></script>

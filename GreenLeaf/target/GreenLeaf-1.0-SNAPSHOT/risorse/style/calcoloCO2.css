@@ -183,6 +183,12 @@ input#qui {}
     color: var(--text-color);
 }
 
+@media screen and (max-width: 1338px){
+    .box-calc .mezzi{
+        grid-template-columns: repeat(4, 18rem);
+    }
+}
+
 @media screen and (max-width: 1230px){
     .box-calc .mezzi{
         grid-template-columns: repeat(3, 20rem);

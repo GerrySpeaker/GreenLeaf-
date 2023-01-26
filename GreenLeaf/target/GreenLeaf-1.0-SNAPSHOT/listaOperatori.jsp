@@ -29,6 +29,11 @@
     <div class="all-list" id="list">
         <div class="list">
             <h3>Operatori da te creati</h3>
+            <div class="testa">
+                <p>Nome</p>
+                <p>Cognome</p>
+                <p>Regione</p>
+            </div>
             <% Iterator<OperatoreBean> prodotto = article.iterator();
                 int i = 0;
                 String em = null;
