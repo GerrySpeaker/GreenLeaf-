@@ -12,12 +12,9 @@
     <title>Catalogo</title>
 </head>
 <%@ page import="javax.servlet.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="storage.CategoriaDao" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Iterator" %>
-<%@ page import="storage.RegioneDao" %>
-<%@ page import="storage.OperatoreDao" %>
-<%@ page import="storage.AdminDao" %>
+<%@ page import="storage.*" %>
 <%
     String email = (String) request.getSession().getAttribute("email");
     OperatoreDao operatoreDao = new OperatoreDao();
@@ -26,28 +23,36 @@
     AdminBean adminBean = adminDao.doRetrieveByEmail(email);
     OperatoreBean operatoreBean = operatoreDao.doRetrieveByEmail(email);
 
+    String x = null;
+
     CategoriaDao dao = new CategoriaDao();
     ArrayList <CategoriaBean> article = (ArrayList<CategoriaBean>) dao.doRetrieveAll();
     if(article == null){
         response.sendRedirect(request.getContextPath()+"/home.jsp");
     }
 
+    AssociatoDao daoAsso = new AssociatoDao();
+
     RegioneDao daoreg = new RegioneDao();
-    ArrayList<RegioneBean> regione = (ArrayList<RegioneBean>) daoreg.doRetrieveAll();
+
 
 %>
 <%@ include file="header.jsp" %>
 
 <div class="nontavere" id="popup">
     <form action="AggiungiCarrello" method="post">
-    <input id="categoria" name="categoria" style="display:none">
+    <input id="categoria" name="categoria" style="display:none" >
     <div class="scelta">
         <div class="all-regione">
             <!-- ripetere le regioni da qui -->
 
-            <% Iterator<RegioneBean> reg = regione.iterator();
-                while(reg.hasNext()){
-                    RegioneBean prod = reg.next();
+            <%
+                ArrayList<AssociatoBean> associato = daoAsso.doRetrieveAlbero();
+                Iterator<AssociatoBean> ass = associato.iterator();
+
+                while(ass.hasNext()){
+                        AssociatoBean association = ass.next();
+                        RegioneBean prod = daoreg.doRetrieveByNome(association.getRegioneAssociato());
 
             %>
             <div class="regione" id="<%=prod.getNomeRegione()%>">
@@ -95,7 +100,7 @@
                     <% if(adminBean.getEmail() != null || operatoreBean.getEmail() != null){ %>
 
                     <%}else{%>
-                    <a id="<%= prod.getNomeCategoria()%>" class="btn_secondary" onclick="showRegioniToSelect(this)" >Adotta un albero</a>
+                    <a href="regione.jsp?nome=<%= prod.getNomeCategoria()%>" class="btn_secondary" " >Adotta un albero</a>
                     <%}%>
                 </div>
             </div>
@@ -129,6 +134,7 @@
 
 <script src = "risorse/js/sceltaCatalogo.js"></script>
 <script src="risorse/js/RiscattaBuono.js"></script>
+
 
 <%@ include file="footer.jsp" %>
 

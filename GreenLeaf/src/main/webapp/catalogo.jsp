@@ -23,6 +23,8 @@
     AdminBean adminBean = adminDao.doRetrieveByEmail(email);
     OperatoreBean operatoreBean = operatoreDao.doRetrieveByEmail(email);
 
+    String x = null;
+
     CategoriaDao dao = new CategoriaDao();
     ArrayList <CategoriaBean> article = (ArrayList<CategoriaBean>) dao.doRetrieveAll();
     if(article == null){
@@ -39,7 +41,7 @@
 
 <div class="nontavere" id="popup">
     <form action="AggiungiCarrello" method="post">
-    <input id="categoria" name="categoria" style="display:none">
+    <input id="categoria" name="categoria" style="display:none" >
     <div class="scelta">
         <div class="all-regione">
             <!-- ripetere le regioni da qui -->
@@ -98,7 +100,7 @@
                     <% if(adminBean.getEmail() != null || operatoreBean.getEmail() != null){ %>
 
                     <%}else{%>
-                    <a id="<%= prod.getNomeCategoria()%>" class="btn_secondary" onclick="showRegioniToSelect(this)" >Adotta un albero</a>
+                    <a href="regione.jsp?nome=<%= prod.getNomeCategoria()%>" class="btn_secondary" " >Adotta un albero</a>
                     <%}%>
                 </div>
             </div>
@@ -132,6 +134,7 @@
 
 <script src = "risorse/js/sceltaCatalogo.js"></script>
 <script src="risorse/js/RiscattaBuono.js"></script>
+
 
 <%@ include file="footer.jsp" %>
 
