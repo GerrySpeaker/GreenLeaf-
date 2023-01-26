@@ -12,12 +12,9 @@
     <title>Catalogo</title>
 </head>
 <%@ page import="javax.servlet.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="storage.CategoriaDao" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Iterator" %>
-<%@ page import="storage.RegioneDao" %>
-<%@ page import="storage.OperatoreDao" %>
-<%@ page import="storage.AdminDao" %>
+<%@ page import="storage.*" %>
 <%
     String email = (String) request.getSession().getAttribute("email");
     OperatoreDao operatoreDao = new OperatoreDao();
@@ -32,8 +29,10 @@
         response.sendRedirect(request.getContextPath()+"/home.jsp");
     }
 
+    AssociatoDao daoAsso = new AssociatoDao();
+
     RegioneDao daoreg = new RegioneDao();
-    ArrayList<RegioneBean> regione = (ArrayList<RegioneBean>) daoreg.doRetrieveAll();
+
 
 %>
 <%@ include file="header.jsp" %>
@@ -45,9 +44,13 @@
         <div class="all-regione">
             <!-- ripetere le regioni da qui -->
 
-            <% Iterator<RegioneBean> reg = regione.iterator();
-                while(reg.hasNext()){
-                    RegioneBean prod = reg.next();
+            <%
+                ArrayList<AssociatoBean> associato = daoAsso.doRetrieveAlbero();
+                Iterator<AssociatoBean> ass = associato.iterator();
+
+                while(ass.hasNext()){
+                        AssociatoBean association = ass.next();
+                        RegioneBean prod = daoreg.doRetrieveByNome(association.getRegioneAssociato());
 
             %>
             <div class="regione" id="<%=prod.getNomeRegione()%>">
