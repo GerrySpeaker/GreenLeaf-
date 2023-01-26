@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <%@ page import="storage.OperatoreDao" %>
 <%@ page import="storage.AdminDao" %>
 <%@ page import="bean.AdminBean" %>
@@ -36,8 +38,12 @@
   RegioneDao daoreg = new RegioneDao();
 
 %>
+<%@ include file="header.jsp" %>
 
 <div class="nontavere" id="popup">
+  <script language="JavaScript">
+    document.getElementById("popup").style.display = "block";
+  </script>
   <form action="AggiungiCarrello" method="post">
     <input id="categoria" name="categoria" style="display:none" >
     <div class="scelta">
@@ -48,8 +54,13 @@
           Iterator<AssociatoBean> ass = associato.iterator();
 
           while(ass.hasNext()){
+
             AssociatoBean association = ass.next();
-            RegioneBean prod = daoreg.doRetrieveByNome(association.getRegioneAssociato());
+            String regione = association.getRegioneAssociato();
+            System.out.println(regione);
+            RegioneBean prod = daoreg.doRetrieveByNome(regione);
+
+            System.out.println(prod.toString());
 
         %>
 
@@ -64,7 +75,7 @@
             </div>
           </div>
         </div>
-        <% } %>
+        <% System.out.println("STampato");} %>
         <!-- a qui-->
       </div>
 
@@ -73,3 +84,8 @@
     <button class="btn-regione" type="submit" >Aggiungi al carrello</button>
   </form>
 </div>
+
+<script src = "risorse/js/sceltaCatalogo.js"></script>
+
+<%@ include file="footer.jsp" %>
+</html>

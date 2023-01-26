@@ -1,7 +1,6 @@
 package storage;
 
 import bean.RegioneBean;
-import bean.TrasportiBean;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -51,6 +50,7 @@ public class RegioneDao implements InterfacciaDao<RegioneBean>{
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         String selectSQL = "SELECT * FROM regione WHERE nome = ?";
+        RegioneBean bean = new RegioneBean();
 
         try {
             connection = ds.getConnection();
@@ -58,13 +58,10 @@ public class RegioneDao implements InterfacciaDao<RegioneBean>{
             preparedStatement.setString(1, nome);
             ResultSet rs = preparedStatement.executeQuery();
 
-
-            RegioneBean regione = new RegioneBean();
-            regione.setNomeRegione(rs.getString("nome"));
-            regione.setUrl(rs.getString("url"));
-
-
-            return regione;
+            if (rs.next()) {
+                bean.setNomeRegione(rs.getString("nome"));
+                bean.setUrl(rs.getString("url"));
+            }
 
         } finally {
             try {
@@ -75,7 +72,7 @@ public class RegioneDao implements InterfacciaDao<RegioneBean>{
                     connection.close();
             }
         }
-
+        return bean;
     }
 
     @Override

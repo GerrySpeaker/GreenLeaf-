@@ -30,10 +30,6 @@
         response.sendRedirect(request.getContextPath()+"/home.jsp");
     }
 
-    AssociatoDao daoAsso = new AssociatoDao();
-
-    RegioneDao daoreg = new RegioneDao();
-
 
 %>
 <%@ include file="header.jsp" %>

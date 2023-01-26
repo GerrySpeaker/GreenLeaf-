@@ -68,7 +68,7 @@ public class AssociatoDao implements InterfacciaDao<AssociatoBean>{
                 AssociatoBean associato = new AssociatoBean();
                 associato.setIdAssociato(rs.getInt("id"));
                 associato.setCategoriaAssociato(rs.getString("categoriaAssociato"));
-                associato.setCategoriaAssociato(rs.getString("regioneAssociato"));
+                associato.setRegioneAssociato(rs.getString("regioneAssociato"));
                 lista.add(associato);
             }
 
