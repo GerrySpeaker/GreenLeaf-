@@ -31,8 +31,6 @@
 
   String nome = request.getParameter("nome");
 
-  System.out.println(nome);
-
   AssociatoDao daoAsso = new AssociatoDao();
 
   RegioneDao daoreg = new RegioneDao();
@@ -45,7 +43,7 @@
     document.getElementById("popup").style.display = "block";
   </script>
   <form action="AggiungiCarrello" method="post">
-    <input id="categoria" name="categoria" style="display:none" >
+    <input id="categoria" name="categoria" style="display:none" value="<%=nome%>">
     <div class="scelta">
       <div class="all-regione">
         <!-- ripetere le regioni da qui -->
@@ -57,17 +55,14 @@
 
             AssociatoBean association = ass.next();
             String regione = association.getRegioneAssociato();
-            System.out.println(regione);
             RegioneBean prod = daoreg.doRetrieveByNome(regione);
-
-            System.out.println(prod.toString());
 
         %>
 
         <div class="regione" id="<%=prod.getNomeRegione()%>">
           <div class="reg-card">
             <div class="radio-group">
-              <img src="<%= prod.getUrl() %>"><!-- inserire  la regione -->
+              <img src="<%= prod.getUrl() %>"><!-- inserire la regione -->
               <label class="radio">
                 <input type="radio" id="regione" value ="<%=prod.getNomeRegione()%>" name="scelta">
                 <span class="checkmark"></span>
@@ -75,7 +70,7 @@
             </div>
           </div>
         </div>
-        <% System.out.println("STampato");} %>
+        <% } %>
         <!-- a qui-->
       </div>
 

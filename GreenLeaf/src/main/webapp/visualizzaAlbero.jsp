@@ -110,7 +110,7 @@
         <div class = "purchase-info">
             <% if(adminBean.getEmail() != null || operatoreBean.getEmail() != null){ %>
             <%}else{%>
-          <a id ="<%= article.getNomeCategoria()%>" class = "btn" onclick="showRegioniToSelectDettaglio(this)">Aggiungi al carrello <i class = "fas fa-shopping-cart"></i></a>
+          <a id ="<%= article.getNomeCategoria()%>" href="regione.jsp?nome=<%=id%>" class = "btn" ">Aggiungi al carrello <i class = "fas fa-shopping-cart"></i></a>
             <%}%>
         </div>
 

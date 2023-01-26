@@ -22,6 +22,10 @@
 
   ArrayList<String> buoni = new ArrayList<>();
   buoni = (ArrayList<String>) session.getAttribute("buonoregalo");
+  if (buoni == null){
+    response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+    return;
+  }
 
   ArrayList<CategoriaBean> categoria = new ArrayList<>();
   categoria = (ArrayList<CategoriaBean>) session.getAttribute("prodottiCart");

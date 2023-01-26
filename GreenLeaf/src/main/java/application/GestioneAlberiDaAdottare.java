@@ -32,6 +32,7 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
     static OrdineBean ordineBean = new OrdineBean();
 
 
+
     public GestioneAlberiDaAdottare() {
         super();
     }
@@ -41,13 +42,9 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
 
-        System.out.println("sto scrivendo l'ordine all'interno del DB...");
 
         String mail = (String) request.getSession().getAttribute("email");
-
-        System.out.println("check 1");
 
         ArrayList<CategoriaBean> prodotti = (ArrayList<CategoriaBean>) request.getSession().getAttribute("prodottiCart");
 
@@ -58,12 +55,11 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
 
         ArrayList<String> buoni = (ArrayList<String>) request.getSession().getAttribute("buonoregalo");
 
-        ArrayList<String> buoniDaRiscattare = (ArrayList<String>) request.getSession().getAttribute("controllo");
+       //inutile, è sempre vuoto ArrayList<String> buoniDaRiscattare = (ArrayList<String>) request.getSession().getAttribute("controllo");
 
         int i = 0;
         int j = 0;
-        int k = 0;
-
+        ArrayList<String> buonoReaglo = new ArrayList<>();
         Double total = Double.valueOf(totale);
 
         //Ogni IF è composto da due condizion in AND, in questo modo si è sicuri del fatto che verrà eseguito solo 1 di questi 3 casi
@@ -99,19 +95,34 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
                    int id = ordineDao.inserisciOrdine(mail, total);
                     ordineBean = ordineDao.doRetrieveByKey(id);
                     if (ordineBean != null) {
-                        System.out.println("Inserimento ordine effettuato con successo, procedo ad inserire gli alberi nel db....");
-                        while (i < prodotti.size() || j <buoni.size()) {
+                        System.out.println("Inserimento ordine effettuato con successo, procedo ad inserire gli alberi e i buoni nel db....");
+
+                        System.out.println(prodotti);
+                        System.out.println(buoni);
+
+                        int dimProdotto = prodotti.size();
+                        int dimBuoni = buoni.size();
+
+                        for(i=0; i<dimProdotto; i++){
                             IotBean iot = iotDao.doRetriveByRegione(regione.get(i));
                             iotDao.CambioStatoIot(iot.getIdIot());
                             alberoDao.inserisciAlbero(prodotti.get(i), ordineBean, regione.get(i), iot);
-                            buonoregaloDao.InserisciBuono(ordineBean,GeneraBuono());
-                            while(k<buoniDaRiscattare.size()){
-                                buonoregaloDao.CambioStato(buoniDaRiscattare.get(k));
-                                k++;
-                            }
-                            i++;
-                            j++;
                         }
+
+                        System.out.println("Numero di buoni inseriti "+ buoni.size());
+
+                        for(int k = 0; k<dimBuoni; k++){
+                            String buono = GeneraBuono();
+                            buonoReaglo.add(buono);
+                        }
+
+
+
+                       for(j =0; j< dimBuoni; j++){
+                            buonoregaloDao.InserisciBuono(ordineBean,buonoReaglo.get(j));
+                            buonoregaloDao.CambioStato(buonoReaglo.get(j));
+                        }
+
                         prodotti.clear();
                         request.getSession().setAttribute("prodottiCart", prodotti);
                         regione.clear();
@@ -158,13 +169,11 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
         Random random = new Random();
         StringBuilder buffer = new StringBuilder(targetStringLength);
         for (int i = 0; i < targetStringLength; i++) {
-            int randomLimitedInt = leftLimit + (int)
-                    (random.nextFloat() * (rightLimit - leftLimit + 1));
+            int randomLimitedInt = leftLimit + (int) (random.nextFloat() * (rightLimit - leftLimit + 1));
             buffer.append((char) randomLimitedInt);
         }
         String generatedString = buffer.toString();
 
-        System.out.println(generatedString);
         return  generatedString;
     }
 }
