@@ -197,7 +197,7 @@
                             url: 'Ordine', //metto la servlet
                             data: {totale : <%=totale%>}, //metto i campi che devo mandare tramite la richiesta
                           });
-
+                          location.replace("http://localhost:8080/GreenLeaf_war_exploded/acquisto_completato.jsp");
                         });
                       },
 

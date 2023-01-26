@@ -28,10 +28,10 @@
 
 .buy{
     position: absolute;
-    width: 500px;
-    height: 200px;
+    width: 700px;
+    height: 300px;
     bottom: 20%;
-    left: 30%;
+    left: 25%;
     background-color: var(--popup-color);
     border-radius: 30px;
     text-align: center;
@@ -49,6 +49,7 @@
 .buy .big{
     font-size: 25px;
     font-weight: 500;
+    margin-bottom: 20px;
 }
 
 .btn-buy .home{
@@ -72,8 +73,36 @@
     15px 10px 15px rgba(0, 0, 0, 0.025);
 }
 
+.copy{
+    background-color: var(--second-color);
+    width: 100px;
+    height: 10px;
+    transition: 0.5s;
+    color: var(--popup-color);
+    text-transform: uppercase;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin: 25px 50px;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 52px;
+    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
+    15px 15px 10px rgba(0, 0, 0, 0.05),
+    15px 10px 15px rgba(0, 0, 0, 0.025);
+}
+
 .btn-buy .home:hover{
     opacity: 0.8;
+}
+
+.copy:hover{
+    opacity: 0.8;
+
 }
 
 .btn-buy{
@@ -85,10 +114,15 @@
     font-size: 18px;
 }
 
-.buy input
+
+.input-area{
+    display: flex;
+}
+
+.input-area input
 {
     position: relative;
-    width: 100%;
+    width: 70%;
     height: 60px;
     border: none;
     margin: 15px 0 20px;

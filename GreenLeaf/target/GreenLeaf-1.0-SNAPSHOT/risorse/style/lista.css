@@ -6,12 +6,12 @@
 }
 
 :root{
-	--bg-color: whitesmoke;
-	--text-color: #282828;
-	--main-color: #007a00;
-	--second-color: #004700;
-	--notify-color: #80ff81;
-	--popup-color: white;
+    --bg-color: whitesmoke;
+    --text-color: #282828;
+    --main-color: #007a00;
+    --second-color: #004700;
+    --notify-color: #80ff81;
+    --popup-color: white;
 }
 
 .all-list{
@@ -55,6 +55,13 @@
     text-align: center;
     margin-bottom: 10px;
     border-bottom: 1px solid var(--text-color);
+}
+
+.testa{
+    display: grid;
+    grid-template-columns: repeat(4, 11rem);
+    font-weight:600;
+    margin-left: 60px;
 }
 
 .list .row{

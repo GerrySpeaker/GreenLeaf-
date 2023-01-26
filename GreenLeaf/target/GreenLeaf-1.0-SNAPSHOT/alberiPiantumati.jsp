@@ -30,7 +30,11 @@
     <div class="all-list">
         <div class="list">
             <h3>Alberi da piantumare</h3>
-
+            <div class="testa">
+                <p>Id</p>
+                <p>Categoria</p>
+                <p>Stato</p>
+            </div>
             <% Iterator<AlberoBean> albero = alberiDaPiantare.iterator();
                 int i = 0;
                 while(albero.hasNext()){
