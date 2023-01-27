@@ -34,13 +34,12 @@
                 <p>Cognome</p>
                 <p>Regione</p>
             </div>
+
             <% Iterator<OperatoreBean> prodotto = article.iterator();
                 int i = 0;
-                String em = null;
                 while(prodotto.hasNext()){
                     OperatoreBean prod = prodotto.next();
                     i++;
-                    em = prod.getEmail();
 
             %>
             <div class="row"><!-- ripetere questo con un for da qui -->
@@ -49,34 +48,42 @@
                     <h4><%= prod.getNomeOperatore()%></h4>
                     <p><%= prod.getCognomeOperatore()%></p>
                     <p><%= prod.getRegione()%></p>
-                    <a onclick="showConferma()" class="remove"><i class="fa-solid fa-user-minus"></i></a>
+                    <a onclick="showConferma('<%=prod.getEmail()%>')" class="remove"><i class="fa-solid fa-user-minus"></i></a>
                 </div>
 
             </div><!-- a qui -->
 
             <% } %>
 
-
         </div>
     </div>
 
-    <div id="conf" class="all-canc">
-        <div class="cancella">
-            <p>Sicuro di voler eliminare questo account?</p>
-            <div class="btn-canc">
-                <a class="elimina" onclick="eliminaAccount('<%= em%>')">SI</a>
-                <a class="elimina" onclick="hideConferma()">NO</a>
+    <form action="Delete" method="get">
+        <input id="operatore" name="emailOP" style="display:none">
+        <div id="conf" class="all-canc">
+            <div class="cancella">
+                <p>Sicuro di voler eliminare questo account?</p>
+                <div class="btn-canc">
+                    <button class="elimina" type="submit">SI</button>
+                    <a class="elimina" onclick="hideConferma()">NO</a>
+                </div>
             </div>
         </div>
-    </div>
+    </form>
+
+
+
 
     <script>
         var lista = document.getElementById("list");
         var conf = document.getElementById("conf");
 
-        function showConferma(){
+        function showConferma(mail){
             lista.style.display="none";
             conf.style.display="block";
+
+            document.getElementById("operatore").value = mail;
+
         }
 
         function hideConferma(){
