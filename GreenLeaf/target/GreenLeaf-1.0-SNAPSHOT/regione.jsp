@@ -75,12 +75,11 @@
       </div>
 
     </div>
-    <button class="close" type="reset"><i class="fa-solid fa-xmark" ></i></button>
     <button class="btn-regione" type="submit" >Aggiungi al carrello</button>
+    <button class="close" type="reset"><i class="fa-solid fa-xmark" onclick="history.back()"></i></button>
   </form>
 </div>
 
-<script src = "risorse/js/sceltaCatalogo.js"></script>
 
 <%@ include file="footer.jsp" %>
 </html>

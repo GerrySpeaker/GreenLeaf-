@@ -1,7 +1,4 @@
 
-
-
-
 function seleziona() {
     console.log("ciao");
     var reg = document.getElementById("regione").value;

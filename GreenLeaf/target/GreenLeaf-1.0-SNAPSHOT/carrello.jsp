@@ -23,7 +23,7 @@
   ArrayList<String> buoni = new ArrayList<>();
   buoni = (ArrayList<String>) session.getAttribute("buonoregalo");
   if (buoni == null){
-    response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+      response.sendRedirect(request.getContextPath()+"/homepage.jsp"); //perché se non ha buoni lo ridirezioni all'homepage?
     return;
   }
 
@@ -167,6 +167,7 @@
               <p class="font-italic mb-4"></p>
               <ul class="list-unstyled mb-4">
                 <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Totale</strong>
+
                   <h5 class="font-weight-bold"><%=totale= totale - sconto%>€</h5>
                 </li>
                 <div id="smart-button-container" style="margin-top: 30px;">

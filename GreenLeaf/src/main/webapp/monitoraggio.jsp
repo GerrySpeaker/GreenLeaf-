@@ -74,6 +74,7 @@
     <script src="risorse/js/monitoraggio.js"></script>
     <script>
         $(document).ready(function(){
+
             var pos = {lat: 41.87194, lng: 12.56738};
             var map = new google.maps.Map(document.getElementById('map'),{
                 zoom:6,

@@ -91,7 +91,6 @@
 
 
 
-<script src = "risorse/js/sceltaCatalogo.js"></script>
 <script src="risorse/js/RiscattaBuono.js"></script>
 
 

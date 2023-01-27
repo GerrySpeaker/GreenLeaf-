@@ -48,37 +48,6 @@
 
 <%@ include file="header.jsp" %>
 
-<div class="nontavere" id="popup">
-    <form action="AggiungiCarrello" method="post">
-    <input id="categoria" name="categoria" style="display:none">
-    <div class="scelta">
-        <div class="all-regione">
-            <!-- ripetere le regioni da qui -->
-
-            <% Iterator<RegioneBean> reg = regione.iterator();
-                while(reg.hasNext()){
-                    RegioneBean prod = reg.next();
-
-            %>
-            <div class="regione" id="<%=prod.getNomeRegione()%>">
-                <div class="reg-card">
-                    <div class="radio-group">
-                        <img src="<%= prod.getUrl() %>"><!-- inserire  la regione -->
-                        <label class="radio">
-                            <input type="radio" id="regione" value ="<%= prod.getNomeRegione() %>" name="scelta">
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            <% } %>
-            <!-- a qui-->
-        </div>
-    </div>
-    <button class="close" type="reset"><i class="fa-solid fa-xmark" onclick="tornaDettaglio()"></i></button>
-    <button class="btn-regione" type="submit" >Aggiungi al carrello</button>
-    </form>
-</div>
 
 <div class="all-datail" id="all">
   <div class = "card-wrapper">
@@ -110,7 +79,7 @@
         <div class = "purchase-info">
             <% if(adminBean.getEmail() != null || operatoreBean.getEmail() != null){ %>
             <%}else{%>
-          <a id ="<%= article.getNomeCategoria()%>" href="regione.jsp?nome=<%=id%>" class = "btn" ">Aggiungi al carrello <i class = "fas fa-shopping-cart"></i></a>
+          <a id ="<%= article.getNomeCategoria()%>" href="regione.jsp?nome=<%=id%>" class = "btn" >Aggiungi al carrello <i class = "fas fa-shopping-cart"></i></a>
             <%}%>
         </div>
 
@@ -122,7 +91,6 @@
 
 
 
-<script src = "risorse/js/sceltaCatalogo.js"></script>
 <script src="risorse/js/prodotto.js"></script>
 
 
