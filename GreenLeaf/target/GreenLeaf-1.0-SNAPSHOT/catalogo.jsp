@@ -77,7 +77,12 @@
                     <p class="imp">Prezzo: <span>50</span></p>
                 </div>
                 <div class="btn_area">
+                    <% if(adminBean.getEmail() != null || operatoreBean.getEmail() != null){ %>
+
+                    <%}else{%>
                     <a class="btn_secondary" href="AggiungiCarrello" >Aggiungi al carrello</a>
+                    <%}%>
+
                 </div>
             </div>
         </div>

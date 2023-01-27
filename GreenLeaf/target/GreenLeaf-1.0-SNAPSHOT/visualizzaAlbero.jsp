@@ -39,8 +39,6 @@
     OperatoreBean operatoreBean = operatoreDao.doRetrieveByEmail(email);
 
 
-    System.out.println(id);
-
 %>
 
 

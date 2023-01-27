@@ -78,7 +78,6 @@
                   <li><span>Ipv4</span>: <%=iot.getIpv4()%></li>
                   <li><span>Latitudine</span>: <%=iot.getLatitudine()%></li>
                   <li><span>Longitudine</span>: <%=iot.getLongitudine()%></li>
-                  <li><span>Altitudine</span>: <%=iot.getAltitudine()%></li>
               </ul>
           </div>
 

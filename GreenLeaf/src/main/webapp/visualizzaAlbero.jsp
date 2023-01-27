@@ -37,7 +37,7 @@
 
     AdminBean adminBean = adminDao.doRetrieveByEmail(email);
     OperatoreBean operatoreBean = operatoreDao.doRetrieveByEmail(email);
-    
+
 
 %>
 
