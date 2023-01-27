@@ -112,7 +112,7 @@
 
 .calcolo{
     position: relative;
-    width: 80%;
+    width: 50%;
     height: 80px;
     background-color: var(--popup-color);
     border-radius: 30px;
