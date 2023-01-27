@@ -23,7 +23,7 @@
   ArrayList<String> buoni = new ArrayList<>();
   buoni = (ArrayList<String>) session.getAttribute("buonoregalo");
   if (buoni == null){
-      response.sendRedirect(request.getContextPath()+"/homepage.jsp"); //perché se non ha buoni lo ridirezioni all'homepage?
+      response.sendRedirect(request.getContextPath()+"/catalogo.jsp"); //perché se non ha buoni lo ridirezioni all'homepage?
     return;
   }
 
@@ -174,9 +174,10 @@
                   <div style="text-align: center;">
                     <% if(totale!=0){ %>
                             <div id="paypal-button-container"></div>
-                    <% } else if (totale == 0){
-                      response.sendRedirect(request.getContextPath() + "/Ordine?totale="+totale);
-                    }%>
+                    <% } else if (totale == 0){%>
+                         <div id="paypal-button-container" style="display: none"></div>
+                         <a href="<%= request.getContextPath() %>/Ordine?totale=0">Ciao</a>
+                    <% } %>
                   </div>
                 </div>
                 <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=EUR" data-sdk-integration-source="button-factory"></script>
