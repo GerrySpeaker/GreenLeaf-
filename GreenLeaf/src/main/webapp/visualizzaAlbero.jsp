@@ -37,12 +37,8 @@
 
     AdminBean adminBean = adminDao.doRetrieveByEmail(email);
     OperatoreBean operatoreBean = operatoreDao.doRetrieveByEmail(email);
+    
 
-    RegioneDao daoreg = new RegioneDao();
-    ArrayList<RegioneBean> regione = (ArrayList<RegioneBean>) daoreg.doRetrieveAll();
-
-    System.out.println(id);
-    System.out.println(article.toString());
 %>
 
 
@@ -79,6 +75,7 @@
         <div class = "purchase-info">
             <% if(adminBean.getEmail() != null || operatoreBean.getEmail() != null){ %>
             <%}else{%>
+
           <a id ="<%= article.getNomeCategoria()%>" href="regione.jsp?nome=<%=id%>" class = "btn" >Aggiungi al carrello <i class = "fas fa-shopping-cart"></i></a>
             <%}%>
         </div>

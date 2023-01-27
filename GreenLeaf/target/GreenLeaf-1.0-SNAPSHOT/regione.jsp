@@ -48,6 +48,7 @@
       <div class="all-regione">
         <!-- ripetere le regioni da qui -->
         <%
+          System.out.println("ciao "+nome);
           ArrayList<AssociatoBean> associato = (ArrayList<AssociatoBean>) daoAsso.doRetrieveAlbero(nome);
           Iterator<AssociatoBean> ass = associato.iterator();
 
