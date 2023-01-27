@@ -179,13 +179,16 @@
 @media screen and (max-width:1054px){
 
     .all-regione {
-        grid-template-columns: repeat(2, 20rem);
+        width: 500px
+    }
+
+    .close{
+        top: 240px;
+        right: 150px;
+    }
+
+    .btn-regione{
+        left:30%;
     }
 }
 
-@media screen and (max-width:700px){
-
-    .all-regione {
-        grid-template-columns: repeat(1, 20rem);
-    }
-}
