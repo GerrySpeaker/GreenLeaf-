@@ -170,3 +170,9 @@
         color: rgb(175, 175, 175);
     }
 }
+
+@media (max-width: 600px){
+    .contact{
+        display:none;
+    }
+}

@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="risorse/style/monitoraggio.css">
     <link rel="stylesheet" href="risorse/style/filtri.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"></script>
+    <script defer type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&libraries=places&callback=selziona"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
@@ -73,7 +72,7 @@
     
     <script src="risorse/js/monitoraggio.js"></script>
     <script>
-        $(document).ready(function(){
+        $(document).ready(function (){
 
             var pos = {lat: 41.87194, lng: 12.56738};
             var map = new google.maps.Map(document.getElementById('map'),{
@@ -83,6 +82,8 @@
             });
             seleziona();
         });
+
+
     </script>
     <script src="risorse/js/filtri.js"></script>
 </div>

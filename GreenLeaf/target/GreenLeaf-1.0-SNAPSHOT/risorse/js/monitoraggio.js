@@ -1,3 +1,9 @@
+function initMap(): void {
+    map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
+        center: {lat: 41.87194, lng: 12.56738},
+        zoom: 8,
+    });
+}
 
 function seleziona() {
     console.log("ciao");
