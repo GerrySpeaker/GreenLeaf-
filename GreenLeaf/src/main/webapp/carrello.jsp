@@ -23,7 +23,7 @@
   ArrayList<String> buoni = new ArrayList<>();
   buoni = (ArrayList<String>) session.getAttribute("buonoregalo");
   if (buoni == null){
-      response.sendRedirect(request.getContextPath()+"/catalogo.jsp"); //perché se non ha buoni lo ridirezioni all'homepage?
+      response.sendRedirect(request.getContextPath()+"/catalogo.jsp");
     return;
   }
 
@@ -36,6 +36,16 @@
 
   int totale = 0;
   int sconto = (int) request.getSession().getAttribute("sconto");
+
+  if(categoria == null && buoni == null){
+    if(categoria.size()==0 && buoni.size() == 0 ){
+      ArrayList<String> buoniDaRiscattare = (ArrayList<String>) request.getSession().getAttribute("controllo");
+      buoniDaRiscattare.clear();
+      request.getSession().setAttribute("controllo",buoniDaRiscattare);
+      request.getSession().setAttribute("sconto", 0);
+    }
+  }
+
 
 %>
 <!DOCTYPE html>
@@ -168,16 +178,26 @@
               <ul class="list-unstyled mb-4">
                 <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Totale</strong>
 
+                  <%if(totale <= 0){%>
+                      <h5 class="font-weight-bold">0€</h5>
+                  <%}else{ %>
                   <h5 class="font-weight-bold"><%=totale= totale - sconto%>€</h5>
+                  <%} %>
+
                 </li>
                 <div id="smart-button-container" style="margin-top: 30px;">
                   <div style="text-align: center;">
                     <% if(totale!=0){ %>
                             <div id="paypal-button-container"></div>
-                    <% } else if (totale == 0){%>
+                    <% } else if (totale == 0 && (categoria.size()!=0 || buoni.size() != 0)){%>
                          <div id="paypal-button-container" style="display: none"></div>
                          <a class="btn btn-dark rounded-pill py-2 btn-block" href="<%= request.getContextPath() %>/Ordine?totale=0">Procedi</a>
+                    <% }if (categoria.size() == 0 && buoni.size() == 0 ){%>
+                        <div id="paypal-button-container" style="display: none"></div>
+                        <a style="display: none" class="btn btn-dark rounded-pill py-2 btn-block" href="<%= request.getContextPath() %>/Ordine?totale=0">Procedi</a>
                     <% } %>
+
+
                   </div>
                 </div>
                 <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=EUR" data-sdk-integration-source="button-factory"></script>

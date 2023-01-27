@@ -47,8 +47,6 @@ public class AggiungiAlCarrello extends HttpServlet {
         String categoria =  request.getParameter("categoria");
         String regione = request.getParameter("scelta");
 
-        int sconto = 0;
-        request.getSession().setAttribute("sconto",sconto);
 
         try{
             if(adminDao.doRetrieveByEmail(mail)== null){

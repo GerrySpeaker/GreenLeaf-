@@ -43,11 +43,11 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        ArrayList<String> buonoReaglo = new ArrayList<>();
 
         String mail = (String) request.getSession().getAttribute("email");
 
         ArrayList<CategoriaBean> prodotti = (ArrayList<CategoriaBean>) request.getSession().getAttribute("prodottiCart");
-
 
         ArrayList<String> regione = (ArrayList<String>) request.getSession().getAttribute("regione");
 
@@ -55,11 +55,13 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
 
         ArrayList<String> buoni = (ArrayList<String>) request.getSession().getAttribute("buonoregalo");
 
-       //inutile, è sempre vuoto ArrayList<String> buoniDaRiscattare = (ArrayList<String>) request.getSession().getAttribute("controllo");
+       ArrayList<String> buoniDaRiscattare = (ArrayList<String>) request.getSession().getAttribute("controllo"); //cambiare lo stato del buono utilizzato in Riscattato
 
         int i = 0;
         int j = 0;
-        ArrayList<String> buonoReaglo = new ArrayList<>();
+        int sconto;
+
+
         Double total = Double.valueOf(totale);
 
         //Ogni IF è composto da due condizion in AND, in questo modo si è sicuri del fatto che verrà eseguito solo 1 di questi 3 casi
@@ -74,16 +76,28 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
                     if (ordineBean != null) {
                         System.out.println("Inserimento ordine effettuato con successo, procedo ad inserire gli alberi nel db....");
                         while (i < prodotti.size()) {
-
                             IotBean iot = iotDao.doRetriveByRegione(regione.get(i));
                             iotDao.CambioStatoIot(iot.getIdIot());
                             alberoDao.inserisciAlbero(prodotti.get(i), ordineBean, regione.get(i),iot);
                             i++;
                         }
+
+                        if(buoniDaRiscattare != null){
+                            while (j<buoniDaRiscattare.size()){
+                                buonoregaloDao.CambioStato(buoniDaRiscattare.get(j));
+                                j++;
+                            }
+                            buoniDaRiscattare.clear();
+                            request.getSession().setAttribute("controllo",buoniDaRiscattare);
+                        }
+
                         prodotti.clear();
                         request.getSession().setAttribute("prodottiCart", prodotti);
                         regione.clear();
                         request.getSession().setAttribute("regione",regione);
+                        total = 0.0;
+                        request.getSession().setAttribute("totale",total);
+                        request.getSession().setAttribute("sconto",0);
                     }
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
@@ -92,7 +106,7 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
         else if (buoni.size()!=0 && prodotti.size() !=0) { // sono stati comprati anche dei buoni, insieme ai prodotti, che vanno inseriti
             System.out.println("comprati sia alberi che buoni");
                 try {
-                   int id = ordineDao.inserisciOrdine(mail, total);
+                    int id = ordineDao.inserisciOrdine(mail, total);
                     ordineBean = ordineDao.doRetrieveByKey(id);
                     if (ordineBean != null) {
                         System.out.println("Inserimento ordine effettuato con successo, procedo ad inserire gli alberi e i buoni nel db....");
@@ -114,14 +128,21 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
                         for(int k = 0; k<dimBuoni; k++){
                             String buono = GeneraBuono();
                             buonoReaglo.add(buono);
+                            buonoregaloDao.InserisciBuono(ordineBean,buonoReaglo.get(k));
                         }
 
+                        System.out.println(buonoReaglo);
+                        request.getSession().setAttribute("chiavi",buonoReaglo);
 
-
-                       for(j =0; j< dimBuoni; j++){
-                            buonoregaloDao.InserisciBuono(ordineBean,buonoReaglo.get(j));
-                            buonoregaloDao.CambioStato(buonoReaglo.get(j));
+                        if(buoniDaRiscattare != null){
+                            while (j<buoniDaRiscattare.size()){
+                                buonoregaloDao.CambioStato(buoniDaRiscattare.get(j));
+                                j++;
+                            }
+                            buoniDaRiscattare.clear();
+                            request.getSession().setAttribute("controllo",buoniDaRiscattare);
                         }
+
 
                         prodotti.clear();
                         request.getSession().setAttribute("prodottiCart", prodotti);
@@ -138,16 +159,31 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
             }
         else if (buoni.size()!=0 && prodotti.size() ==0) { //comprati solo buoni.
             System.out.println("comprati solo buoni");
+            int k = 0;
                 try {
-                  int id = ordineDao.inserisciOrdine(mail, total);
+                    int id = ordineDao.inserisciOrdine(mail, total);
                     ordineBean = ordineDao.doRetrieveByKey(id);
                     if (ordineBean != null) {
                         System.out.println("Inserimento ordine effettuato con successo, procedo ad inserire gli alberi nel db....");
-                        while (j < buoni.size()) {
-                            //inserisco solo buoni
-                            buonoregaloDao.InserisciBuono(ordineBean,GeneraBuono());
-                            j++;
+                        while (k < buoni.size()) {
+                            String buono = GeneraBuono();
+                            buonoReaglo.add(buono);
+                            buonoregaloDao.InserisciBuono(ordineBean,buonoReaglo.get(k));
+                            k++;
                         }
+
+                        request.getSession().setAttribute("chiavi",buonoReaglo);
+
+                        if(buoniDaRiscattare != null){
+                            while (j<buoniDaRiscattare.size()){
+                                buonoregaloDao.CambioStato(buoniDaRiscattare.get(j));
+                                j++;
+                            }
+                            buoniDaRiscattare.clear();
+                            request.getSession().setAttribute("controllo",buoniDaRiscattare);
+
+                        }
+
                         buoni.clear();
                         request.getSession().setAttribute("buonoregalo",buoni);
                     }
@@ -156,9 +192,6 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
                     throw new RuntimeException(e);
                 }
         }
-
-
-        response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
 
 
     }

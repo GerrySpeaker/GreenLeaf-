@@ -28,9 +28,6 @@ public class GestioneRegaloApplication extends HttpServlet{
         String key = request.getParameter("buono");
 
 
-
-
-
         if(controllo.size()>0){
             while(i<controllo.size()){
                 if (key.equals(controllo.get(i))){
