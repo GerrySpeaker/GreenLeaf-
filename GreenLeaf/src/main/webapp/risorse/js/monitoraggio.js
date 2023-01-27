@@ -1,9 +1,13 @@
-function initMap(): void {
-    map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
-        center: {lat: 41.87194, lng: 12.56738},
-        zoom: 8,
+$(document).ready(function(){
+
+    var pos = {lat: 41.87194, lng: 12.56738};
+    var map = new google.maps.Map(document.getElementById('map'),{
+        zoom:6,
+        center: pos
+
     });
-}
+    seleziona();
+});
 
 function seleziona() {
     console.log("ciao");

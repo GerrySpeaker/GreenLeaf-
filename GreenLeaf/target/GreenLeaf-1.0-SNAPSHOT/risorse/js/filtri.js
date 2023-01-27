@@ -1,5 +1,6 @@
 function show(anything) {
     document.querySelector(".filterBox").value =anything;
+    console.log("inserito");
 }
 
 let dropdown = document.querySelector(".dropdown");
@@ -9,6 +10,7 @@ dropdown.onclick = function () {
 
 function showReg(anything) {
     document.querySelector(".filterBox-reg").value =anything;
+    console.log("inserito");
 }
 
 let dropdown2 = document.querySelector(".dropdown-reg");

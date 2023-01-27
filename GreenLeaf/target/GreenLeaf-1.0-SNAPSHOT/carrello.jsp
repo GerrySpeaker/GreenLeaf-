@@ -154,7 +154,7 @@
               <%} %>
               <p class="font-italic mb-4">Hai un buono regalo? Inseriscilo qui</p>
               <div class="input-group mb-4 border rounded-pill p-2">
-                <input name="buono" type="text" placeholder="Es: abcd12" aria-describedby="button-addon3" class="form-control border-0">
+                <input name="buono" type="text" placeholder="Es: abcd12" aria-describedby="button-addon3" class="form-control border-0" id="buono">
                 <div class="input-group-append border-0">
                   <button  id="button-addon3" type="submit" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-gift mr-2"></i>Applica</button>
                 </div>
@@ -176,7 +176,7 @@
                             <div id="paypal-button-container"></div>
                     <% } else if (totale == 0){%>
                          <div id="paypal-button-container" style="display: none"></div>
-                         <a href="<%= request.getContextPath() %>/Ordine?totale=0">Ciao</a>
+                         <a class="btn btn-dark rounded-pill py-2 btn-block" href="<%= request.getContextPath() %>/Ordine?totale=0">Ciao</a>
                     <% } %>
                   </div>
                 </div>
