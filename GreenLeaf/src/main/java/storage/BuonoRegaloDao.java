@@ -43,6 +43,49 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
         return null;
     }
 
+    public ArrayList<BuonoregaloBean> buoniUtenteAcquistati(String email) throws SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ArrayList<BuonoregaloBean> lista = new ArrayList<>();
+        String selectId = "SELECT MAX(ordineRegalo) as maxordine FROM buonoregalo WHERE utenteRegalo = ?";
+        int id = 0;
+        try {
+                connection = ds.getConnection();
+                preparedStatement = connection.prepareStatement(selectId);
+                preparedStatement.setString(1, email);
+                ResultSet rs1 = preparedStatement.executeQuery();
+                if (rs1.next()) {
+                        id = (rs1.getInt("maxordine"));
+                }
+                String selectSQL = "SELECT * FROM buonoregalo WHERE ordineRegalo = ? AND utenteRegalo=?";
+                connection = ds.getConnection();
+                preparedStatement = connection.prepareStatement(selectSQL);
+                preparedStatement.setInt(1, id);
+                preparedStatement.setString(2,email);
+                ResultSet rs = preparedStatement.executeQuery();
+
+                while (rs.next()) {
+                    BuonoregaloBean bean = new BuonoregaloBean();
+                    bean.setPrezzo(rs.getDouble("prezzo"));
+                    bean.setUtenteRegalo(rs.getString("utenteRegalo"));
+                    bean.setIdBuonoregalo(rs.getString("idBuono"));
+                    bean.setStato(rs.getString("stato"));
+                    bean.setOrdineRegalo(rs.getInt("ordineRegalo"));
+                    lista.add(bean);
+                }
+
+            } finally {
+                try {
+                    if (preparedStatement != null)
+                        preparedStatement.close();
+                } finally {
+                    if (connection != null)
+                        connection.close();
+                }
+            }
+            return lista;
+    }
+
 
     public BuonoregaloBean RiscattaBuono(String key) throws SQLException {
         Connection connection = null;

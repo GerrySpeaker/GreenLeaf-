@@ -2,6 +2,7 @@
 <%@ page language="java" import="java.util.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="storage.OperatoreDao" %>
 <%@ page import="storage.AdminDao" %>
+<%@ page import="storage.BuonoRegaloDao" %>
 <%
     String email = (String) request.getSession().getAttribute("email");
     OperatoreDao operatoreDao = new OperatoreDao();
@@ -21,9 +22,15 @@
         return;
     }
 
-    ArrayList<String> buoni = new ArrayList<>();
-    buoni = (ArrayList<String>) session.getAttribute("chiavi");
+    BuonoRegaloDao dao =  new BuonoRegaloDao();
 
+   Boolean check = (Boolean) request.getSession().getAttribute("checkBuono");
+
+    ArrayList<BuonoregaloBean> buoni = new ArrayList<>();
+
+    if (check != false) {
+        buoni = dao.buoniUtenteAcquistati(email);
+    }
 
 
 %>
@@ -52,12 +59,10 @@
                 while (i < buoni.size()){%>
 
         <div class="input-area"> <!-- ripetere da qui -->
-            <input type="text" readonly value="<%=buoni.get(i)%>" id="<%=i+1%>"> <!-- creare una variabile i da incrementare a ogni ciclo di while da mettere come id -->
+            <input type="text" readonly value="<%=buoni.get(i).getIdBuonoregalo()%>" id="<%=i+1%>"> <!-- creare una variabile i da incrementare a ogni ciclo di while da mettere come id -->
             <a class="copy" onclick="copy(<%=i+1%>)">Copia</a><!--e passarla anche a copy -->
         </div>
-        <% i++;}} %>
-
-
+        <% i++;}buoni.clear();} %>
 
     </div>
 </div>

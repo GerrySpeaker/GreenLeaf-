@@ -69,6 +69,7 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
 
         if (buoni.size() == 0 && prodotti.size() !=0) {// non sono stati comprati buoni, allora inserisco solo albero e ordine (DB)
             System.out.println("comprati solo alberi");
+            request.getSession().setAttribute("checkBuono",false);
                 try {
 
                     int id = ordineDao.inserisciOrdine(mail, total);
@@ -106,6 +107,7 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
             }
         else if (buoni.size()!=0 && prodotti.size() !=0) { // sono stati comprati anche dei buoni, insieme ai prodotti, che vanno inseriti
             System.out.println("comprati sia alberi che buoni");
+            request.getSession().setAttribute("checkBuono",true);
                 try {
                     int id = ordineDao.inserisciOrdine(mail, total);
                     ordineBean = ordineDao.doRetrieveByKey(id);
@@ -132,8 +134,6 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
                             buonoregaloDao.InserisciBuono(ordineBean,buonoReaglo.get(k));
                         }
 
-                        System.out.println(buonoReaglo);
-                        request.getSession().setAttribute("chiavi",buonoReaglo);
 
                         if(buoniDaRiscattare != null){
                             while (j<buoniDaRiscattare.size()){
@@ -160,6 +160,7 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
             }
         else if (buoni.size()!=0 && prodotti.size() ==0) { //comprati solo buoni.
             System.out.println("comprati solo buoni");
+            request.getSession().setAttribute("checkBuono",true);
             int k = 0;
                 try {
                     int id = ordineDao.inserisciOrdine(mail, total);
@@ -172,8 +173,6 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
                             buonoregaloDao.InserisciBuono(ordineBean,buonoReaglo.get(k));
                             k++;
                         }
-
-                        request.getSession().setAttribute("chiavi",buonoReaglo);
 
                         if(buoniDaRiscattare != null){
                             while (j<buoniDaRiscattare.size()){
