@@ -52,12 +52,16 @@ public class Delete extends HttpServlet {
                 request.getSession().removeAttribute("prodottiCart");
                 request.getSession().removeAttribute("regione");
                 request.getSession().removeAttribute("buonoregalo");
+                request.getSession().removeAttribute("sconto");
+                request.getSession().removeAttribute("chiavi");
+                request.getSession().removeAttribute("controllo");
                 response.sendRedirect(request.getContextPath() + "/homepage.jsp");
 
             }else{
                 OperatoreBean operatore = operatoreDao.doRetrieveByEmail(mailOperatore);
                 if(operatore != null){
                     operatoreDao.eliminaAccount(mailOperatore);
+                    request.getSession().removeAttribute("email");
                     request.getSession().removeAttribute("operatore");
                     response.sendRedirect(request.getContextPath() + "/listaOperatori.jsp");
                 }

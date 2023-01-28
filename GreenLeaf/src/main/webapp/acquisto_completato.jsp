@@ -1,5 +1,32 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="header.jsp" %>
+<%@ page language="java" import="java.util.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="storage.OperatoreDao" %>
+<%@ page import="storage.AdminDao" %>
+<%
+    String email = (String) request.getSession().getAttribute("email");
+    OperatoreDao operatoreDao = new OperatoreDao();
+    AdminDao adminDao = new AdminDao();
+
+    if(email == null){
+        response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+        return;
+    }
+
+    if(operatoreDao.doRetrieveByEmail(email).getEmail() != null){
+        response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+        return;
+    }
+    if(adminDao.doRetrieveByEmail(email).getEmail() != null){
+        response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+        return;
+    }
+
+    ArrayList<String> buoni = new ArrayList<>();
+    buoni = (ArrayList<String>) session.getAttribute("chiavi");
+
+
+
+%>
 
 <html>
 <head>
@@ -18,10 +45,19 @@
         <p class="big">Grazie per il tuo acquisto!</p>
         <p class="big">Puoi trovare i tuoi articoli nella sezione a te dedicata</p>
 
+        <%if(buoni == null || buoni.size() == 0){%>
+
+        <%}else{
+            int i = 0;
+                while (i < buoni.size()){%>
+
         <div class="input-area"> <!-- ripetere da qui -->
-            <input type="text" readonly value="abcdefgh" id="1"> <!-- creare una variabile i da incrementare a ogni ciclo di while da mettere come id -->
-            <a class="copy" onclick="copy(1)">Copia</a><!--e passarla anche a copy -->
+            <input type="text" readonly value="<%=buoni.get(i)%>" id="<%=i+1%>"> <!-- creare una variabile i da incrementare a ogni ciclo di while da mettere come id -->
+            <a class="copy" onclick="copy(<%=i+1%>)">Copia</a><!--e passarla anche a copy -->
         </div>
+        <% i++;}} %>
+
+
 
     </div>
 </div>

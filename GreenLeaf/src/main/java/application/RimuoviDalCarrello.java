@@ -24,6 +24,7 @@ public class RimuoviDalCarrello extends HttpServlet {
 
         String categoria = request.getParameter("categoria");
 
+
         if(categoria.equals("buono")){
             ArrayList<String> buono = (ArrayList<String>) request.getSession().getAttribute("buonoregalo");
             for(int i = 0; i<1; i++){
@@ -34,8 +35,8 @@ public class RimuoviDalCarrello extends HttpServlet {
             ArrayList<CategoriaBean> articoli = (ArrayList<CategoriaBean>) request.getSession().getAttribute("prodottiCart");
             Iterator<CategoriaBean> prodotti = articoli.iterator();
             ArrayList<String> regioni =  (ArrayList<String>) request.getSession().getAttribute("regione");
-            int i = 0;
 
+            int i = 0;
             while (prodotti.hasNext()) {
                 CategoriaBean prod = prodotti.next();
                 if (prod.getNomeCategoria().equals(categoria)) {
@@ -45,6 +46,8 @@ public class RimuoviDalCarrello extends HttpServlet {
                 }
                 i++;
             }
+
+
             request.getSession().setAttribute("prodottiCart", articoli);
             request.getSession().setAttribute("regione", regioni);
         }
