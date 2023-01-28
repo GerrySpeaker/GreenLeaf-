@@ -61,7 +61,6 @@ public class Delete extends HttpServlet {
                 OperatoreBean operatore = operatoreDao.doRetrieveByEmail(mailOperatore);
                 if(operatore != null){
                     operatoreDao.eliminaAccount(mailOperatore);
-                    request.getSession().removeAttribute("email");
                     request.getSession().removeAttribute("operatore");
                     response.sendRedirect(request.getContextPath() + "/listaOperatori.jsp");
                 }
