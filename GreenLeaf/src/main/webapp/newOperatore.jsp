@@ -7,6 +7,7 @@
   <title>Registrazione Operatore</title>
   <link rel="stylesheet" href="risorse/style/registrazioneOp.css" />
   <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
+  <link rel="shortcut icon" href="risorse/img/logo2_icon.png" />
 
 </head>
 

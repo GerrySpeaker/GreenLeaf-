@@ -64,6 +64,7 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
 
         Double total = Double.valueOf(totale);
 
+
         //Ogni IF è composto da due condizion in AND, in questo modo si è sicuri del fatto che verrà eseguito solo 1 di questi 3 casi
 
         if (buoni.size() == 0 && prodotti.size() !=0) {// non sono stati comprati buoni, allora inserisco solo albero e ordine (DB)
@@ -193,6 +194,7 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
                 }
         }
 
+        response.sendRedirect(request.getContextPath()+"/acquisto_completato.jsp");
 
     }
     public String GeneraBuono(){

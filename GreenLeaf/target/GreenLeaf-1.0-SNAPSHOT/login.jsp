@@ -7,6 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="risorse/style/login.css"> <!-- style -->
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
+    <link rel="shortcut icon" href="risorse/img/logo2_icon.png" />
 </head>
 <%@ page language="java" import="java.util.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="storage.UtenteDao" %>
