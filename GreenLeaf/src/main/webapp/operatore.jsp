@@ -53,7 +53,7 @@
             </li>
     
             <li class="list">
-                <a href="">
+                <a href="piant.jsp">
                     <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
                     <span class="title">Informazioni formtive</span>
                 </a>
