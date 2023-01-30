@@ -11,6 +11,7 @@ import java.util.Collection;
 
 public class UtenteDao implements InterfacciaDao<UtenteBean>{
 
+
     private static DataSource ds;
 
     static {
