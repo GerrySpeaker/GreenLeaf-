@@ -1,0 +1,8 @@
+.all-cart{
+    background-image: url(background.jpg);
+    font-family: "Montserrat";
+}
+
+#buono:focus {
+    outline: none;
+}
