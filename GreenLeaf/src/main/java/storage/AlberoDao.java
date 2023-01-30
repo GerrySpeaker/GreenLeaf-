@@ -13,19 +13,7 @@ import java.util.Collection;
 
 public class AlberoDao implements InterfacciaDao<AlberoBean>{
 
-    private static DataSource ds;
 
-    static {
-        try {
-            Context initCtx = new InitialContext();
-            Context envCtx = (Context) initCtx.lookup("java:comp/env");
-
-            ds = (DataSource) envCtx.lookup("jdbc/greenleaf");
-
-        } catch (NamingException e) {
-            System.out.println("Error:" + e.getMessage());
-        }
-    }
 
 
     public Collection<AlberoBean> doRetrieveBymail(String email) throws SQLException  {
@@ -35,7 +23,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
         String selectSQL = "SELECT * FROM albero WHERE utenteAlbero = ?";
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, email);
             ResultSet rs = preparedStatement.executeQuery();
@@ -88,7 +76,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
         String selectSQL = "SELECT * FROM albero WHERE idalbero=?";
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setInt(1, code);
             ResultSet rs = preparedStatement.executeQuery();
@@ -134,7 +122,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
         LocalDate oggi = LocalDate.now();
         Date data = Date.valueOf(oggi);
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, "Piantato" );
             preparedStatement.setDate(2, data);
@@ -164,7 +152,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
         int id = 0;
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectId);
             ResultSet rs = preparedStatement.executeQuery();
             if(rs.next())
@@ -183,7 +171,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
 
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setInt(1,id);
             preparedStatement.setString(2, albero.getCo2Max());

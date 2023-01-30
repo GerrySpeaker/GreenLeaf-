@@ -16,20 +16,6 @@ import java.util.Collection;
 
 public class RegioneDao implements InterfacciaDao<RegioneBean>{
 
-    private static DataSource ds;
-
-    static {
-
-        try {
-            Context initCtx = new InitialContext();
-            Context envCtx = (Context) initCtx.lookup("java:comp/env");
-
-            ds = (DataSource) envCtx.lookup("jdbc/greenleaf");
-
-        } catch (NamingException e) {
-            System.out.println("Error:" + e.getMessage());
-        }
-    }
 
     @Override
     public void registrazione(RegioneBean bean) throws SQLException {
@@ -53,7 +39,7 @@ public class RegioneDao implements InterfacciaDao<RegioneBean>{
         RegioneBean bean = new RegioneBean();
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, nome);
             ResultSet rs = preparedStatement.executeQuery();
@@ -84,7 +70,7 @@ public class RegioneDao implements InterfacciaDao<RegioneBean>{
 
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             ResultSet rs = preparedStatement.executeQuery();
 

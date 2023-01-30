@@ -1,41 +1,60 @@
 package storage;
 
 import bean.UtenteBean;
-import org.junit.jupiter.api.*;
-import javax.naming.NamingException;
-import java.sql.*;
-import java.util.Date;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 
-class UtenteDaoTest {
 
-    UtenteDao utenteDao = new UtenteDao();
-    UtenteBean utenteBean = new UtenteBean("testgf@gmail.com","Password1","Afeltra","Roberto",new Date(1999,01,01));
+import java.sql.Date;
+import java.sql.SQLException;
 
-    UtenteDaoTest() throws NamingException {
+import static org.junit.jupiter.api.Assertions.*;
+
+public class UtenteDaoTest {
+    static UtenteDao dao= new UtenteDao();
+    public UtenteBean utenteBean=new UtenteBean("test6@gmail.com","Angelo99","Afeltra","Angelo", Date.valueOf("2021-01-14"));
+
+
+    @Before
+    public void setUp() throws SQLException {
+        System.out.println("SetUp");
+        dao.registrazione(utenteBean);
     }
 
-    @BeforeEach
-    public void Inizializzazione() throws SQLException{
+    @After
+    public void tearDown() throws SQLException {
+        System.out.println("After");
+        dao.eliminaAccount(utenteBean.email);
 
-        utenteDao.registrazione(utenteBean);
+    }
+
+
+   @Test
+    public void TC_Login_1() throws SQLException {
+        System.out.println("Test1");
+        String email="test6@gmail.com";
+        String pass="Angelo99";
+        UtenteBean utenteLogin=dao.login(email,pass);
+        assertEquals(email,utenteLogin.getEmail());
     }
 
     @Test
-    public void testLogin() throws SQLException {
-        String email = "testgf@gmail.com";
-        String pass = "Password1";
-
-        //UtenteBean loginTest = utenteDao.login(email,pass);
-        //assertEquals(email,loginTest.getEmail());
-    }
-    /*
-    @BeforeAll
-    public void clear() throws SQLException {
-        utenteDao.eliminaAccount(utenteBean.getEmail());
+    public void TC_Login_2() throws SQLException {
+        System.out.println("Test2");
+        String email="test6@gmail.com";
+        String pass="Angelo";
+        UtenteBean utenteLogin=dao.login(email,pass);
+        assertEquals(null,utenteLogin);
     }
 
-*/
-
-
+    @Test
+    public void TC_Login_3() throws SQLException {
+        System.out.println("Test3");
+        String email="testolo@gmail.com";
+        String pass="Angelo";
+        UtenteBean utenteLogin=dao.login(email,pass);
+        assertEquals(null,utenteLogin);
+    }
 
 }

@@ -17,21 +17,6 @@ import java.util.Collection;
 
 public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
 
-    private static DataSource ds;
-
-    static {
-
-        try {
-            Context initCtx = new InitialContext();
-            Context envCtx = (Context) initCtx.lookup("java:comp/env");
-
-            ds = (DataSource) envCtx.lookup("jdbc/greenleaf");
-
-        } catch (NamingException e) {
-            System.out.println("Error:" + e.getMessage());
-        }
-    }
-
 
     public synchronized OperatoreBean login(String email, String password) throws SQLException {
         Connection connection = null;
@@ -44,7 +29,7 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
         if(confpass != null){
             if(confpass.equals(password)){
                 try {
-                    connection = ds.getConnection();
+                    connection = DriverManagerConnectionPool.getConnection();
                     preparedStatement = connection.prepareStatement(selectSQL);
                     preparedStatement.setString(1, email);
                     preparedStatement.setString(2, password);
@@ -89,7 +74,7 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
 
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, email);
             ResultSet rs = preparedStatement.executeQuery();
@@ -126,7 +111,7 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
 
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, bean.getEmail());
             preparedStatement.setString(2, bean.getPassword());
@@ -159,7 +144,7 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
         String deleteSQL = "DELETE FROM  operatore  WHERE email = ?";
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(deleteSQL);
             preparedStatement.setString(1,email);
 
@@ -195,7 +180,7 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
 
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, email);
             ResultSet rs = preparedStatement.executeQuery();
@@ -236,7 +221,7 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
 
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, operatoreBean.getRegione());
             ResultSet rs = preparedStatement.executeQuery();

@@ -15,20 +15,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class TrasportiDao implements InterfacciaDao<TrasportiBean>{
-    private static DataSource ds;
-
-    static {
-
-        try {
-            Context initCtx = new InitialContext();
-            Context envCtx = (Context) initCtx.lookup("java:comp/env");
-
-            ds = (DataSource) envCtx.lookup("jdbc/greenleaf");
-
-        } catch (NamingException e) {
-            System.out.println("Error:" + e.getMessage());
-        }
-    }
     @Override
     public void registrazione(TrasportiBean bean) throws SQLException {
 
@@ -54,7 +40,7 @@ public class TrasportiDao implements InterfacciaDao<TrasportiBean>{
 
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             ResultSet rs = preparedStatement.executeQuery();
 

@@ -12,20 +12,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class OrdineDao implements InterfacciaDao<OrdineBean> {
-    private static DataSource ds;
-
-    static {
-        try {
-            Context initCtx = new InitialContext();
-            Context envCtx = (Context) initCtx.lookup("java:comp/env");
-
-            ds = (DataSource) envCtx.lookup("jdbc/greenleaf");
-
-        } catch (NamingException e) {
-            System.out.println("Error:" + e.getMessage());
-        }
-    }
-
 
 
 
@@ -48,7 +34,7 @@ public class OrdineDao implements InterfacciaDao<OrdineBean> {
 
         try {
 
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setInt(1,code);
             ResultSet rs = preparedStatement.executeQuery();
@@ -82,7 +68,7 @@ public class OrdineDao implements InterfacciaDao<OrdineBean> {
 
         try {
 
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             ResultSet rs = preparedStatement.executeQuery();
 
@@ -122,7 +108,7 @@ public class OrdineDao implements InterfacciaDao<OrdineBean> {
         int id = 0;
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectId);
             ResultSet rs = preparedStatement.executeQuery();
             if(rs.next())
@@ -141,7 +127,7 @@ public class OrdineDao implements InterfacciaDao<OrdineBean> {
 
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setInt(1,id);
             preparedStatement.setDate(2, data);
