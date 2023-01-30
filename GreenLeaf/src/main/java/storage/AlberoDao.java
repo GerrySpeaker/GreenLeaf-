@@ -118,6 +118,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
         ArrayList<AlberoBean> prodotto = new ArrayList<>();
         PreparedStatement preparedStatement = null;
         String selectSQL = "UPDATE albero SET stato=?, datapiantumazione=? WHERE idalbero = ?";
+        boolean check = false;
 
         LocalDate oggi = LocalDate.now();
         Date data = Date.valueOf(oggi);
@@ -127,8 +128,11 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
             preparedStatement.setString(1, "Piantato" );
             preparedStatement.setDate(2, data);
             preparedStatement.setInt(3, id );
-            preparedStatement.executeUpdate();
+            Integer rs = preparedStatement.executeUpdate();
 
+            if(rs != 0){
+                check = true;
+            }
 
         } finally {
             try {
@@ -139,7 +143,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
                     connection.close();
             }
         }
-        return false;
+        return check;
     }
 
     public Boolean inserisciAlbero(CategoriaBean albero, OrdineBean ordineBean, String regione, IotBean iot) throws SQLException  {

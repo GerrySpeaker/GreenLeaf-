@@ -107,16 +107,16 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
         return bean;
     }
 
-    public Boolean CambioStato (String key) throws SQLException {
+    public void eliminaBuono(String key)throws  SQLException{
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        BuonoregaloBean bean = new BuonoregaloBean();
-        String selectSQL = "UPDATE buonoregalo SET stato='Riscattato' WHERE idBuono = ?";
+
+        String deleteSQL = "DELETE FROM  buonoregalo  WHERE idBuono = ?";
 
         try {
             connection = DriverManagerConnectionPool.getConnection();
-            preparedStatement = connection.prepareStatement(selectSQL);
-            preparedStatement.setString(1, key);
+            preparedStatement = connection.prepareStatement(deleteSQL);
+            preparedStatement.setString(1,key);
             preparedStatement.executeUpdate();
 
         } finally {
@@ -128,7 +128,39 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
                     connection.close();
             }
         }
-        return true;
+
+    }
+
+    public Boolean CambioStato (String key) throws SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        BuonoregaloBean bean = new BuonoregaloBean();
+        String selectSQL = "UPDATE buonoregalo SET stato='Riscattato' WHERE idBuono = ?";
+        boolean check = false;
+
+        try {
+            connection = DriverManagerConnectionPool.getConnection();
+            preparedStatement = connection.prepareStatement(selectSQL);
+            preparedStatement.setString(1, key);
+            Integer rs = preparedStatement.executeUpdate();
+
+
+            if(rs != 0){
+                check = true;
+            }
+
+        } finally {
+            try {
+                if (preparedStatement != null){
+                    preparedStatement.close();
+                }
+
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+      return  check;
     }
 
     @Override

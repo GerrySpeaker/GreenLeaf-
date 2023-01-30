@@ -25,6 +25,29 @@ public class OrdineDao implements InterfacciaDao<OrdineBean> {
         return false;
     }
 
+    public void eliminaOrdine(int ordine)throws SQLException{
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        String deleteSQL = "DELETE FROM  ordine  WHERE idordine = ?";
+
+        try {
+            connection = DriverManagerConnectionPool.getConnection();
+            preparedStatement = connection.prepareStatement(deleteSQL);
+            preparedStatement.setInt(1,ordine);
+            preparedStatement.executeUpdate();
+
+        } finally {
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+    }
+
     @Override
     public OrdineBean doRetrieveByKey(int code) throws SQLException {
         Connection connection = null;
