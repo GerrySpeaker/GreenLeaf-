@@ -66,7 +66,7 @@
     <div class="all-calc">
           <div class="calcolo">
             <div class="somma">
-                <input type="button" id="qui" value="0" readonly>
+                <input type="button" id="qui" value="0">
                 <p> kg</p>
             </div>
 
