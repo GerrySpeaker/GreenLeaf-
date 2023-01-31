@@ -13,19 +13,6 @@ import java.util.Collection;
 
 public class AdminDao implements InterfacciaDao<AdminBean>{
 
-    private static DataSource ds;
-
-    static {
-        try {
-            Context initCtx = new InitialContext();
-            Context envCtx = (Context) initCtx.lookup("java:comp/env");
-
-            ds = (DataSource) envCtx.lookup("jdbc/greenleaf");
-
-        } catch (NamingException e) {
-            System.out.println("Error:" + e.getMessage());
-        }
-    }
 
 
     public synchronized AdminBean login(String email, String password) throws SQLException {
@@ -40,7 +27,7 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
                 AdminBean bean = new AdminBean();
                 String selectSQL = "SELECT * FROM admin WHERE email=? AND password=? ";
                 try {
-                    connection = ds.getConnection();
+                    connection = DriverManagerConnectionPool.getConnection();
                     preparedStatement = connection.prepareStatement(selectSQL);
                     preparedStatement.setString(1, email);
                     preparedStatement.setString(2, password);
@@ -84,7 +71,7 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
 
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, email);
             ResultSet rs = preparedStatement.executeQuery();
@@ -118,7 +105,7 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
 
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, bean.getEmail());
             preparedStatement.setString(2, bean.getPassword());
@@ -149,7 +136,7 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
         String deleteSQL = "DELETE FROM  admin  WHERE email = ?";
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(deleteSQL);
             preparedStatement.setString(1,email);
 

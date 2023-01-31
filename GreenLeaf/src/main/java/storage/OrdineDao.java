@@ -12,20 +12,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class OrdineDao implements InterfacciaDao<OrdineBean> {
-    private static DataSource ds;
-
-    static {
-        try {
-            Context initCtx = new InitialContext();
-            Context envCtx = (Context) initCtx.lookup("java:comp/env");
-
-            ds = (DataSource) envCtx.lookup("jdbc/greenleaf");
-
-        } catch (NamingException e) {
-            System.out.println("Error:" + e.getMessage());
-        }
-    }
-
 
 
 
@@ -39,6 +25,29 @@ public class OrdineDao implements InterfacciaDao<OrdineBean> {
         return false;
     }
 
+    public void eliminaOrdine(int ordine)throws SQLException{
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        String deleteSQL = "DELETE FROM  ordine  WHERE idordine = ?";
+
+        try {
+            connection = DriverManagerConnectionPool.getConnection();
+            preparedStatement = connection.prepareStatement(deleteSQL);
+            preparedStatement.setInt(1,ordine);
+            preparedStatement.executeUpdate();
+
+        } finally {
+            try {
+                if (preparedStatement != null)
+                    preparedStatement.close();
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+    }
+
     @Override
     public OrdineBean doRetrieveByKey(int code) throws SQLException {
         Connection connection = null;
@@ -48,7 +57,7 @@ public class OrdineDao implements InterfacciaDao<OrdineBean> {
 
         try {
 
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setInt(1,code);
             ResultSet rs = preparedStatement.executeQuery();
@@ -82,7 +91,7 @@ public class OrdineDao implements InterfacciaDao<OrdineBean> {
 
         try {
 
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             ResultSet rs = preparedStatement.executeQuery();
 
@@ -122,7 +131,7 @@ public class OrdineDao implements InterfacciaDao<OrdineBean> {
         int id = 0;
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectId);
             ResultSet rs = preparedStatement.executeQuery();
             if(rs.next())
@@ -141,7 +150,7 @@ public class OrdineDao implements InterfacciaDao<OrdineBean> {
 
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setInt(1,id);
             preparedStatement.setDate(2, data);

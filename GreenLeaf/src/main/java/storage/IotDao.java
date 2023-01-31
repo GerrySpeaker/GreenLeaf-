@@ -13,19 +13,6 @@ import java.util.ArrayList;
 
 public class IotDao {
 
-    private static DataSource ds;
-
-    static {
-        try {
-            Context initCtx = new InitialContext();
-            Context envCtx = (Context) initCtx.lookup("java:comp/env");
-
-            ds = (DataSource) envCtx.lookup("jdbc/greenleaf");
-
-        } catch (NamingException e) {
-            System.out.println("Error:" + e.getMessage());
-        }
-    }
 
     public IotBean doRetriveByKey(Integer id) throws SQLException {
 
@@ -35,7 +22,7 @@ public class IotDao {
         String selectSQL = "SELECT * FROM iot WHERE idiot=?";
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setInt(1, id);
             ResultSet rs = preparedStatement.executeQuery();
@@ -70,7 +57,7 @@ public class IotDao {
         String selectSQL = "SELECT * FROM iot WHERE regione=? AND stato='Non usato' LIMIT 1";
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, regione);
             ResultSet rs = preparedStatement.executeQuery();
@@ -104,7 +91,7 @@ public class IotDao {
         String selectSQL = "UPDATE iot SET stato=? WHERE idiot = ?";
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, "Usato" );
             preparedStatement.setInt(2, id );

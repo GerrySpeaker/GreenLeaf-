@@ -13,19 +13,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
-    private static DataSource ds;
 
-    static {
-        try {
-            Context initCtx = new InitialContext();
-            Context envCtx = (Context) initCtx.lookup("java:comp/env");
-
-            ds = (DataSource) envCtx.lookup("jdbc/greenleaf");
-
-        } catch (NamingException e) {
-            System.out.println("Error:" + e.getMessage());
-        }
-    }
 
 
     @Override
@@ -50,16 +38,16 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
         String selectId = "SELECT MAX(ordineRegalo) as maxordine FROM buonoregalo WHERE utenteRegalo = ?";
         int id = 0;
         try {
-                connection = ds.getConnection();
-                preparedStatement = connection.prepareStatement(selectId);
+            connection = DriverManagerConnectionPool.getConnection();
+            preparedStatement = connection.prepareStatement(selectId);
                 preparedStatement.setString(1, email);
                 ResultSet rs1 = preparedStatement.executeQuery();
                 if (rs1.next()) {
                         id = (rs1.getInt("maxordine"));
                 }
                 String selectSQL = "SELECT * FROM buonoregalo WHERE ordineRegalo = ? AND utenteRegalo=?";
-                connection = ds.getConnection();
-                preparedStatement = connection.prepareStatement(selectSQL);
+            connection = DriverManagerConnectionPool.getConnection();
+            preparedStatement = connection.prepareStatement(selectSQL);
                 preparedStatement.setInt(1, id);
                 preparedStatement.setString(2,email);
                 ResultSet rs = preparedStatement.executeQuery();
@@ -94,7 +82,7 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
         String selectSQL = "SELECT * FROM buonoregalo WHERE idBuono=?";
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, key);
             ResultSet rs = preparedStatement.executeQuery();
@@ -119,16 +107,16 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
         return bean;
     }
 
-    public Boolean CambioStato (String key) throws SQLException {
+    public void eliminaBuono(String key)throws  SQLException{
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        BuonoregaloBean bean = new BuonoregaloBean();
-        String selectSQL = "UPDATE buonoregalo SET stato='Riscattato' WHERE idBuono = ?";
+
+        String deleteSQL = "DELETE FROM  buonoregalo  WHERE idBuono = ?";
 
         try {
-            connection = ds.getConnection();
-            preparedStatement = connection.prepareStatement(selectSQL);
-            preparedStatement.setString(1, key);
+            connection = DriverManagerConnectionPool.getConnection();
+            preparedStatement = connection.prepareStatement(deleteSQL);
+            preparedStatement.setString(1,key);
             preparedStatement.executeUpdate();
 
         } finally {
@@ -140,7 +128,39 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
                     connection.close();
             }
         }
-        return true;
+
+    }
+
+    public Boolean CambioStato (String key) throws SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        BuonoregaloBean bean = new BuonoregaloBean();
+        String selectSQL = "UPDATE buonoregalo SET stato='Riscattato' WHERE idBuono = ?";
+        boolean check = false;
+
+        try {
+            connection = DriverManagerConnectionPool.getConnection();
+            preparedStatement = connection.prepareStatement(selectSQL);
+            preparedStatement.setString(1, key);
+            Integer rs = preparedStatement.executeUpdate();
+
+
+            if(rs != 0){
+                check = true;
+            }
+
+        } finally {
+            try {
+                if (preparedStatement != null){
+                    preparedStatement.close();
+                }
+
+            } finally {
+                if (connection != null)
+                    connection.close();
+            }
+        }
+      return  check;
     }
 
     @Override
@@ -155,7 +175,7 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
         String selectSQL = "SELECT * FROM buonoregalo WHERE utenteRegalo=?";
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, email);
             ResultSet rs = preparedStatement.executeQuery();
@@ -190,7 +210,7 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
 
 
         try {
-            connection = ds.getConnection();
+            connection = DriverManagerConnectionPool.getConnection();
             preparedStatement = connection.prepareStatement(selectSQL);
             preparedStatement.setString(1, chiave);
             preparedStatement.setString(2, "Da riscattare");
