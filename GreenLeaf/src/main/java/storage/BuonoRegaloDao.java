@@ -45,9 +45,10 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
                 if (rs1.next()) {
                         id = (rs1.getInt("maxordine"));
                 }
+
                 String selectSQL = "SELECT * FROM buonoregalo WHERE ordineRegalo = ? AND utenteRegalo=?";
-            connection = DriverManagerConnectionPool.getConnection();
-            preparedStatement = connection.prepareStatement(selectSQL);
+                connection = DriverManagerConnectionPool.getConnection();
+                preparedStatement = connection.prepareStatement(selectSQL);
                 preparedStatement.setInt(1, id);
                 preparedStatement.setString(2,email);
                 ResultSet rs = preparedStatement.executeQuery();
