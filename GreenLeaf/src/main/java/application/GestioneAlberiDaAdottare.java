@@ -193,7 +193,10 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
                 }
         }
 
-        response.sendRedirect(request.getContextPath()+"/acquisto_completato.jsp");
+        if(total == 0){
+            response.sendRedirect(request.getContextPath()+"/acquisto_completato.jsp");
+        }
+
 
     }
     public String GeneraBuono(){
