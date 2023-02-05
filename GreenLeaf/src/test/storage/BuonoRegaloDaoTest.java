@@ -19,14 +19,14 @@ public class BuonoRegaloDaoTest{
     static OrdineDao ordineDao = new OrdineDao();
 
     public OrdineBean ordineBean = new OrdineBean();
-    public BuonoregaloBean buonoregaloBean = new BuonoregaloBean("kyzffg","Da riscattare","mirko@gmail.com", 50.0,33);
-
+    public BuonoregaloBean buonoregaloBean = new BuonoregaloBean("kyzffgdfrg","Da riscattare","mirko@gmail.com", 50.0,33);
+    int id = 0;
 
     @Before
     public void setUp() throws SQLException {
         System.out.println("Registrazione Buono ed ordine");
-        ordineDao.inserisciOrdine("mirko@gmail.com",50.0);
-        ordineBean = ordineDao.doRetrieveByKey(24);
+        id = ordineDao.inserisciOrdine("mirko@gmail.com",50.0);
+        ordineBean = ordineDao.doRetrieveByKey(id);
         dao.InserisciBuono(ordineBean,buonoregaloBean.getIdBuonoregalo());
     }
 
@@ -42,7 +42,7 @@ public class BuonoRegaloDaoTest{
     @Test
     public void TC_Stato_1() throws SQLException {
         System.out.println("Test1");
-        String key = "kyzffg";
+        String key = "kyzffgdfrg";
         boolean test = dao.CambioStato(key);
         assertTrue(test);
     }
@@ -50,7 +50,7 @@ public class BuonoRegaloDaoTest{
     @Test
     public void TC_Stato_2() throws SQLException {
         System.out.println("Test1");
-        String key = "12343";
+        String key = "12343gdf";
         boolean test = dao.CambioStato(key);
         assertFalse(test);
     }

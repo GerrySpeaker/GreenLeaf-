@@ -2,10 +2,7 @@ import application.AutenticazioneApplicationTest;
 import junit.framework.TestCase;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import storage.AlberoDaoTest;
-import storage.BuonoRegaloDao;
-import storage.OperatoreDaoTest;
-import storage.UtenteDaoTest;
+import storage.*;
 
 
 @RunWith(Suite.class)
@@ -14,7 +11,7 @@ import storage.UtenteDaoTest;
         AutenticazioneApplicationTest.class,
         OperatoreDaoTest.class,
         AlberoDaoTest.class,
-        BuonoRegaloDao.class
+        BuonoRegaloDaoTest.class
 
 })
 public class JUnitTestSuite extends TestCase {

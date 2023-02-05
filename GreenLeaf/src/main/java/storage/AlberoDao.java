@@ -146,7 +146,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
         return check;
     }
 
-    public Boolean inserisciAlbero(CategoriaBean albero, OrdineBean ordineBean, String regione, IotBean iot) throws SQLException  {
+    public int inserisciAlbero(CategoriaBean albero, OrdineBean ordineBean, String regione, IotBean iot) throws SQLException  {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         String selectSQL = "INSERT INTO albero SET idalbero=?,CO2=?,categoria=?,datapiantumazione=?,stato=?,utenteAlbero=?,regione=?,ordine=?,iot=?";
@@ -197,7 +197,7 @@ public class AlberoDao implements InterfacciaDao<AlberoBean>{
                     connection.close();
             }
         }
-        return false;
+        return id;
     }
 
 
