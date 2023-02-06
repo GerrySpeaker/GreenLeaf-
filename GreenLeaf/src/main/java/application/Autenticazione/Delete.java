@@ -1,4 +1,4 @@
-package application;
+package application.Autenticazione;
 
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;

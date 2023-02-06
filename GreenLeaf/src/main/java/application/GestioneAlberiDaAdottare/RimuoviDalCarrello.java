@@ -1,4 +1,4 @@
-package application;
+package application.GestioneAlberiDaAdottare;
 
 
 import bean.CategoriaBean;

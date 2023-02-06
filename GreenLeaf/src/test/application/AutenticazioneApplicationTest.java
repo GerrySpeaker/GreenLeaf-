@@ -1,5 +1,6 @@
 package application;
 
+import application.Autenticazione.AutenticazioneApplication;
 import bean.UtenteBean;
 import org.junit.After;
 import org.junit.Before;

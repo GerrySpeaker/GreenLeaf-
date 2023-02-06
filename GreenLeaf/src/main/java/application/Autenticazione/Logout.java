@@ -1,4 +1,4 @@
-package application;
+package application.Autenticazione;
 
 import java.io.IOException;
 import java.util.ArrayList;

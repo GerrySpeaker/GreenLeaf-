@@ -1,4 +1,4 @@
-package application;
+package application.Registrazione;
 
 
 import java.io.IOException;

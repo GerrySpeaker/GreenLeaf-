@@ -1,4 +1,4 @@
-package application;
+package application.GestioneAlberiDaAdottare;
 
 import bean.CategoriaBean;
 import bean.IotBean;
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 @WebServlet("/Ordine")
-public class GestioneAlberiDaAdottare extends HttpServlet {
+public class GestioneAlberiDaAdottareApplication extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     static CategoriaDao model = new CategoriaDao();
@@ -33,7 +33,7 @@ public class GestioneAlberiDaAdottare extends HttpServlet {
 
 
 
-    public GestioneAlberiDaAdottare() {
+    public GestioneAlberiDaAdottareApplication() {
         super();
     }
 

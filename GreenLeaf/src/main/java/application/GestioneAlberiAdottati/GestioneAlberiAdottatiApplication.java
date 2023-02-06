@@ -1,4 +1,4 @@
-package application;
+package application.GestioneAlberiAdottati;
 
 import bean.AlberoBean;
 import storage.AlberoDao;

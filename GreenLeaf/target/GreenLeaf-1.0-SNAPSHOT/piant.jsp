@@ -68,7 +68,7 @@
 
         <div class="card__content">
             <h1 class="card__title">Conclusione</h1>
-            <p>Dopo aver eseguito le operazioni prima indicate sarà necessario annaffiare bene l'area d'impianto.
+            <p>Dopo aver eseguito le operazioni prima indicate sara' necessario annaffiare bene l'area d'impianto.
                 Un'irrigazione abbondantemente consente al concime precedentemente aggiunto alla buca
                 di sciogliersi e apportare i nutrimenti necessari allo sviluppo della pianta.</p>
         </div>

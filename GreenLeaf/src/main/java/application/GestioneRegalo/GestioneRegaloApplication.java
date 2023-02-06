@@ -1,4 +1,4 @@
-package application;
+package application.GestioneRegalo;
 
 import bean.BuonoregaloBean;
 import storage.BuonoRegaloDao;
