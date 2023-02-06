@@ -73,7 +73,6 @@ public class AggiungiAlCarrello extends HttpServlet {
             }
         }
         else if(regione==null) {
-
                 buono.add("Buono");
                 request.getSession().setAttribute("prodottiCart", articoli);
                 request.getSession().setAttribute("regione", regioni);

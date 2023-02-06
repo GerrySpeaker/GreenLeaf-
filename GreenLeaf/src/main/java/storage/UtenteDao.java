@@ -124,35 +124,6 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
     }
 
 
-    public int doUpdatePass(UtenteBean bean) throws SQLException {
-
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        String email = bean.getEmail();
-        String selectSQL = "Update utente SET Password=? WHERE email = " + email;
-
-
-
-        try {
-            connection = DriverManagerConnectionPool.getConnection();
-            preparedStatement = connection.prepareStatement(selectSQL);;
-            preparedStatement.setString(1, bean.getPassword());
-            preparedStatement.executeUpdate();
-
-        }
-
-        finally {
-            try {
-                if (preparedStatement != null)
-                    preparedStatement.close();
-            } finally {
-                if (connection != null)
-                    connection.close();
-            }
-        }
-        return 1;
-    }
-
 
     @Override
     public boolean eliminaAccount(String email) throws SQLException {
