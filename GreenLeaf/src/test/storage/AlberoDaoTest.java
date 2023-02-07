@@ -5,11 +5,8 @@ import bean.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.internal.matchers.Or;
 
-import java.sql.Date;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -38,7 +35,7 @@ public class AlberoDaoTest{
 
 
     @Test
-    public void TC_Piantumazione_1() throws SQLException {
+    public void TC_ADT_P_1() throws SQLException {
         System.out.println("Test1");
         AlberoBean alberoBean = dao.doRetrieveByKey(idAlbero);
         boolean test = dao.inserisciPiantumazione(alberoBean.getIdAlbero());
@@ -46,7 +43,7 @@ public class AlberoDaoTest{
     }
 
     @Test
-    public void TC_Piantumazione_2() throws SQLException {
+    public void TC_ADT_P_2() throws SQLException {
         System.out.println("Test2");
         boolean test = dao.inserisciPiantumazione(88);
         assertFalse(test);

@@ -47,7 +47,7 @@
     CategoriaBean cbean = cdao.doRetrieveByKeyAlbero(albero.getCategoria());
 
     IotDao daoIot = new IotDao();
-    IotBean iot = daoIot.doRetriveByKey(albero.getIot());
+    IotBean iot = daoIot.doRetrieveByKey(albero.getIot());
 
 %>
 <div class="all-datail" id="albero">

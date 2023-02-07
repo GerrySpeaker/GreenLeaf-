@@ -1,8 +1,10 @@
 package application.GestioneAlberiDaAdottare;
 
+import bean.AssociatoBean;
 import bean.BuonoregaloBean;
 import bean.CategoriaBean;
 import storage.AdminDao;
+import storage.AssociatoDao;
 import storage.CategoriaDao;
 import storage.OperatoreDao;
 
@@ -47,6 +49,19 @@ public class AggiungiAlCarrello extends HttpServlet {
         String categoria =  request.getParameter("categoria");
         String regione = request.getParameter("scelta");
 
+        Boolean check=false;
+
+        AssociatoDao associatoDao = new AssociatoDao();
+
+        ArrayList<AssociatoBean> associati;
+
+        try {
+            associati = (ArrayList<AssociatoBean>) associatoDao.doRetrieveAlbero(categoria);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
 
         try{
             if(adminDao.doRetrieveByEmail(mail)== null){
@@ -59,7 +74,17 @@ public class AggiungiAlCarrello extends HttpServlet {
             e.printStackTrace();
         }
 
-        if(regione!=null){
+        for(int i = 0;i<associati.size();i++){
+            if (associati.get(i).getRegioneAssociato().equals(regione)){
+                check=true;
+            }
+        }
+
+        if(check==false){
+            response.sendRedirect(request.getContextPath() + "/homepage.jsp");
+        }
+
+        if(regione!=null && check==true){
             try {
                 CategoriaBean product = model.doRetrieveByKeyAlbero(categoria);
                 articoli.add(product);

@@ -30,7 +30,7 @@
     System.out.println(cbean.toString());
 
     IotDao iotDao = new IotDao();
-    IotBean iot = iotDao.doRetriveByKey(article.getIot());
+    IotBean iot = iotDao.doRetrieveByKey(article.getIot());
 
 
 %>

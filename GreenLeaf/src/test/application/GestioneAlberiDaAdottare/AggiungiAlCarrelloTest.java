@@ -1,12 +1,15 @@
-package application;
+package application.GestioneAlberiDaAdottare;
 
 import application.Autenticazione.AutenticazioneApplication;
+import bean.AssociatoBean;
+import bean.CategoriaBean;
 import bean.UtenteBean;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
+import storage.AssociatoDao;
 import storage.UtenteDao;
 
 
@@ -18,10 +21,11 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class AutenticazioneApplicationTest extends Mockito {
+public class AggiungiAlCarrelloTest extends Mockito{
 
     private static final HttpServletRequest httpServletRequest = Mockito.mock(HttpServletRequest.class);
     private static final HttpServletResponse httpServletResponse = Mockito.mock(HttpServletResponse.class);
@@ -30,9 +34,24 @@ public class AutenticazioneApplicationTest extends Mockito {
 
 
     static UtenteDao dao= new UtenteDao();
+
+    static AssociatoDao associatoDao = new AssociatoDao();
     public UtenteBean utenteBean=new UtenteBean("test6@gmail.com","Angelo99","Afeltra","Angelo", Date.valueOf("2021-01-14"));
-    AutenticazioneApplication test = new AutenticazioneApplication();
+    AggiungiAlCarrello test = new AggiungiAlCarrello();
     ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
+
+    public CategoriaBean categoriaBean = new CategoriaBean("pesco","-70kg","un bellissimo albero","risorse\\img\\pesco.jpg",50.0);
+
+    ArrayList<AssociatoBean> associati;
+
+    {
+        try {
+            associati = (ArrayList<AssociatoBean>) associatoDao.doRetrieveAlbero(categoriaBean.getNomeCategoria());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     @Before
     public void setUp() throws SQLException {
@@ -47,51 +66,36 @@ public class AutenticazioneApplicationTest extends Mockito {
     }
 
     @Test
-    public void TC_AAT_1() throws ServletException, IOException {
+    public void TC_AAC_1() throws ServletException, IOException {
 
         System.out.println("test1");
         when(httpServletRequest.getSession()).thenReturn(session);
         when(httpServletRequest.getParameter("email")).thenReturn("test6@gmail.com");
-        when(httpServletRequest.getParameter("password")).thenReturn("Angelo99");
+        when(httpServletRequest.getParameter("scelta")).thenReturn(associati.get(1).getRegioneAssociato());
+        when(httpServletRequest.getParameter("categoria")).thenReturn(categoriaBean.getNomeCategoria());
         when(httpServletRequest.getContextPath()).thenReturn("http://localhost:8080/GreenLeaf_war_exploded");
         test.doPost(httpServletRequest,httpServletResponse);
 
         verify(httpServletResponse,times(1)).sendRedirect(captor.capture());
-        assertEquals("http://localhost:8080/GreenLeaf_war_exploded/utente.jsp", captor.getValue());
+        assertEquals("http://localhost:8080/GreenLeaf_war_exploded/catalogo.jsp", captor.getValue());
 
     }
 
 
     @Test
-    public void TC_AAT_2() throws ServletException, IOException {
+    public void TC_AAC_2() throws ServletException, IOException {
 
-
-        System.out.println("test2");
         when(httpServletRequest.getSession()).thenReturn(session);
         when(httpServletRequest.getParameter("email")).thenReturn("test6@gmail.com");
-        when(httpServletRequest.getParameter("password")).thenReturn("Angelo");
+        when(httpServletRequest.getParameter("scelta")).thenReturn("Lazio");
+        when(httpServletRequest.getParameter("categoria")).thenReturn(categoriaBean.getNomeCategoria());
         when(httpServletRequest.getContextPath()).thenReturn("http://localhost:8080/GreenLeaf_war_exploded");
         test.doPost(httpServletRequest,httpServletResponse);
 
         verify(httpServletResponse,times(2)).sendRedirect(captor.capture());
-        assertEquals("http://localhost:8080/GreenLeaf_war_exploded/login.jsp?errore=true", captor.getValue());
-
+        assertEquals("http://localhost:8080/GreenLeaf_war_exploded/homepage.jsp", captor.getValue());
     }
 
-    @Test
-    public void TC_AAT_3() throws ServletException, IOException {
-
-        System.out.println("test3");
-        when(httpServletRequest.getSession()).thenReturn(session);
-        when(httpServletRequest.getParameter("email")).thenReturn("tes6@gmail.com");
-        when(httpServletRequest.getParameter("password")).thenReturn("Angelo");
-        when(httpServletRequest.getContextPath()).thenReturn("http://localhost:8080/GreenLeaf_war_exploded");
-        test.doPost(httpServletRequest,httpServletResponse);
-
-        verify(httpServletResponse,times(3)).sendRedirect(captor.capture());
-        assertEquals("http://localhost:8080/GreenLeaf_war_exploded/login.jsp?errore=true", captor.getValue());
-
-    }
 
 
 }

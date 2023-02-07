@@ -1,4 +1,6 @@
 import application.AutenticazioneApplicationTest;
+import application.GestioneAlberiDaAdottare.AggiungiAlCarrello;
+import application.GestioneAlberiDaAdottare.AggiungiAlCarrelloTest;
 import junit.framework.TestCase;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -11,7 +13,7 @@ import storage.*;
         AutenticazioneApplicationTest.class,
         OperatoreDaoTest.class,
         AlberoDaoTest.class,
-        BuonoRegaloDaoTest.class
+        AggiungiAlCarrelloTest.class
 
 })
 public class JUnitTestSuite extends TestCase {
