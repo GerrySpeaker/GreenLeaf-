@@ -129,8 +129,7 @@ public class UtenteDao implements InterfacciaDao<UtenteBean>{
     public boolean eliminaAccount(String email) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-
-        System.out.println("Chiamata la funzione per eliminare l'account utente");
+        
         int result = 0;
 
         String deleteSQL = "DELETE FROM  utente  WHERE email = ?";

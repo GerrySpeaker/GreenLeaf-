@@ -39,7 +39,7 @@ public class GestioneRegaloApplication extends HttpServlet{
         }
 
         try {
-            BuonoregaloBean buono = dao.RiscattaBuono(key);
+            BuonoregaloBean buono = dao.riscattaBuono(key);
             if(buono!=null) {
                 if (buono.getStato().equals("Da riscattare")){
                     controllo.add(key);

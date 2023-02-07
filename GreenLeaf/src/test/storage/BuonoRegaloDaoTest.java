@@ -6,11 +6,8 @@ import bean.OrdineBean;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.internal.matchers.Or;
 
-import java.sql.Date;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -27,7 +24,7 @@ public class BuonoRegaloDaoTest{
         System.out.println("Registrazione Buono ed ordine");
         id = ordineDao.inserisciOrdine("mirko@gmail.com",50.0);
         ordineBean = ordineDao.doRetrieveByKey(id);
-        dao.InserisciBuono(ordineBean,buonoregaloBean.getIdBuonoregalo());
+        dao.inserisciBuono(ordineBean,buonoregaloBean.getIdBuonoregalo());
     }
 
     @After
@@ -43,7 +40,7 @@ public class BuonoRegaloDaoTest{
     public void TC_Stato_1() throws SQLException {
         System.out.println("Test1");
         String key = "kyzffgdfrg";
-        boolean test = dao.CambioStato(key);
+        boolean test = dao.cambioStato(key);
         assertTrue(test);
     }
 
@@ -51,7 +48,7 @@ public class BuonoRegaloDaoTest{
     public void TC_Stato_2() throws SQLException {
         System.out.println("Test1");
         String key = "12343gdf";
-        boolean test = dao.CambioStato(key);
+        boolean test = dao.cambioStato(key);
         assertFalse(test);
     }
 

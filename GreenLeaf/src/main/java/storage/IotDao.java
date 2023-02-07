@@ -1,20 +1,13 @@
 package storage;
 
-import bean.AlberoBean;
 import bean.IotBean;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
 import java.sql.*;
-import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class IotDao {
 
 
-    public IotBean doRetriveByKey(Integer id) throws SQLException {
+    public IotBean doRetrieveByKey(Integer id) throws SQLException {
 
         Connection connection = null;
         IotBean bean = new IotBean();
@@ -49,7 +42,7 @@ public class IotDao {
         return bean;
     }
 
-    public IotBean doRetriveByRegione(String regione) throws SQLException {
+    public IotBean doRetrieveByRegione(String regione) throws SQLException {
 
         Connection connection = null;
         IotBean bean = new IotBean();
@@ -84,7 +77,7 @@ public class IotDao {
         return bean;
     }
 
-    public Boolean CambioStatoIot(int id) throws SQLException  {
+    public Boolean cambioStatoIot(int id) throws SQLException  {
 
         Connection connection = null;
         PreparedStatement preparedStatement = null;

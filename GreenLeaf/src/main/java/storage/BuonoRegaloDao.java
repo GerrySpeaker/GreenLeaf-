@@ -1,13 +1,8 @@
 package storage;
 
-import bean.AlberoBean;
 import bean.BuonoregaloBean;
 import bean.OrdineBean;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -76,7 +71,7 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
     }
 
 
-    public BuonoregaloBean RiscattaBuono(String key) throws SQLException {
+    public BuonoregaloBean riscattaBuono(String key) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         BuonoregaloBean bean = new BuonoregaloBean();
@@ -132,7 +127,7 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
 
     }
 
-    public Boolean CambioStato (String key) throws SQLException {
+    public Boolean cambioStato(String key) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         BuonoregaloBean bean = new BuonoregaloBean();
@@ -204,7 +199,7 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
 
     }
 
-    public Boolean InserisciBuono(OrdineBean ordine,String chiave)throws SQLException{
+    public Boolean inserisciBuono(OrdineBean ordine, String chiave)throws SQLException{
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         String selectSQL = "INSERT INTO buonoregalo SET idBuono=?,stato=?,prezzo=?,utenteRegalo=?,ordineRegalo=?";

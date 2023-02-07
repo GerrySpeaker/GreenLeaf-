@@ -206,7 +206,6 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
                     connection.close();
             }
         }
-        System.out.println(lista.toString());
         return lista;
 
     }
@@ -253,7 +252,6 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
                     connection.close();
             }
         }
-        System.out.println(lista.toString());
         return  lista;
     }
 }

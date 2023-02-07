@@ -62,7 +62,6 @@ public class TrasportiDao implements InterfacciaDao<TrasportiBean>{
                     connection.close();
             }
         }
-        System.out.println(lista.toString());
         return lista;
     }
 }
