@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: "Montserrat";
 }
 
-:root{
+:root {
     --bg-color: whitesmoke;
     --text-color: #282828;
     --main-color: #007a00;
@@ -13,7 +13,7 @@
     --popup-color: white;
 }
 
-.submit{
+.submit {
     background-color: var(--second-color);
     width: 120px;
     transition: 0.5s;
@@ -32,17 +32,17 @@
     15px 10px 15px rgba(0, 0, 0, 0.025);
 }
 
-.submit:hover{
+.submit:hover {
     width: 150px;
 }
 
-.border{
+.border {
     box-sizing: border-box;
 }
 
-.all-filter{
+.all-filter {
     display: grid;
-    background:transparent;
+    background: transparent;
     grid-template-columns: repeat(3, 20rem);
     width: 100%;
     padding-top: 20px;
@@ -50,13 +50,13 @@
     padding-left: 20px;
 }
 
-.dropdown{
+.dropdown {
     position: relative;
     width: 300px;
     height: 50px;
 }
 
-.dropdown::before{
+.dropdown::before {
     content: '';
     width: 8px;
     height: 8px;
@@ -73,12 +73,12 @@
     pointer-events: none;
 }
 
-.dropdown.active::before{
+.dropdown.active::before {
     transform: rotate(-225deg);
-    top:20px;
+    top: 20px;
 }
 
-.dropdown .filterBox{
+.dropdown .filterBox {
     position: absolute;
     top: 0;
     left: 0;
@@ -94,11 +94,11 @@
     font-weight: 500;
 }
 
-.dropdown .filterBox::placeholder{
+.dropdown .filterBox::placeholder {
     color: var(--text-color);
 }
 
-.dropdown .option{
+.dropdown .option {
     position: absolute;
     top: 60px;
     width: 100%;
@@ -110,30 +110,30 @@
     display: none;
 }
 
-.dropdown.active .option{
+.dropdown.active .option {
     display: block;
 }
 
-.dropdown .option div{
+.dropdown .option div {
     padding: 12px 20px;
     cursor: pointer;
     text-align: center;
-    box-shadow: 1px 11px 15px -8px rgba(0,0,0,0.1);
+    box-shadow: 1px 11px 15px -8px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown .option div:hover{
+.dropdown .option div:hover {
     background-color: var(--main-color);
     color: var(--popup-color);
 }
 
 
-.dropdown-reg{
+.dropdown-reg {
     position: relative;
     width: 300px;
     height: 50px;
 }
 
-.dropdown-reg::before{
+.dropdown-reg::before {
     content: '';
     width: 8px;
     height: 8px;
@@ -150,12 +150,12 @@
     pointer-events: none;
 }
 
-.dropdown-reg.active::before{
+.dropdown-reg.active::before {
     transform: rotate(-225deg);
-    top:20px;
+    top: 20px;
 }
 
-.dropdown-reg .filterBox-reg{
+.dropdown-reg .filterBox-reg {
     position: absolute;
     top: 0;
     left: 0;
@@ -171,7 +171,7 @@
     font-weight: 500;
 }
 
-.dropdown-reg .option{
+.dropdown-reg .option {
     position: absolute;
     top: 60px;
     width: 100%;
@@ -184,44 +184,44 @@
     display: none;
 }
 
-.dropdown-reg.active .option{
+.dropdown-reg.active .option {
     display: block;
 }
 
-.dropdown-reg .option div{
+.dropdown-reg .option div {
     padding: 12px 20px;
     cursor: pointer;
     text-align: center;
-    box-shadow: 1px 11px 15px -8px rgba(0,0,0,0.1);
+    box-shadow: 1px 11px 15px -8px rgba(0, 0, 0, 0.1);
 }
 
-.dropdown-reg .option div:hover{
+.dropdown-reg .option div:hover {
     background-color: var(--main-color);
     color: var(--popup-color);
 }
 
-@media screen and (max-width:1054px){
+@media screen and (max-width: 1054px) {
 
-    .all-filter{
+    .all-filter {
         grid-template-columns: repeat(2, 20rem);
     }
 
-    .submit{
+    .submit {
         margin-top: 20px;
     }
 }
 
-@media screen and (max-width:700px){
+@media screen and (max-width: 700px) {
 
-    .all-filter{
+    .all-filter {
         grid-template-columns: repeat(2, 15rem);
     }
 
-    .dropdown{
+    .dropdown {
         width: 200px;
     }
 
-    .dropdown-reg{
+    .dropdown-reg {
         width: 200px;
     }
 }

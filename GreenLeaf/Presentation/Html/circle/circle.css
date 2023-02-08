@@ -1,15 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roborto:300,400,500,700,900&display=swap');
 
-*
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roborto', sans-serif;
 }
 
-body
-{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,8 +15,7 @@ body
     background: #222;
 }
 
-.contenitore
-{
+.contenitore {
     position: relative;
     display: flex;
     justify-content: center;
@@ -27,8 +24,7 @@ body
     gap: 40px;
 }
 
-.contenitore .card
-{
+.contenitore .card {
     position: relative;
     width: 220px;
     height: 250px;
@@ -39,32 +35,31 @@ body
 
 }
 
-.contenitore .card .percent
-{
+.contenitore .card .percent {
     position: relative;
     width: 150px;
     height: 150px;
-    
+
 }
-.contenitore .card .percent svg
-{
+
+.contenitore .card .percent svg {
     position: relative;
     width: 150px;
     height: 150px;
     transform: rotate(270deg);
 }
-.contenitore .card .percent svg circle
-{
-    
+
+.contenitore .card .percent svg circle {
+
     width: 100%;
     height: 100%;
     fill: transparent;
     stroke-width: 2;
     stroke: #191919;
-    transform: translate(5px,5px);
+    transform: translate(5px, 5px);
 }
-.contenitore .card .percent svg circle:nth-child(2)
-{
+
+.contenitore .card .percent svg circle:nth-child(2) {
     stroke: var(--clr);
     stroke-dasharray: 440;
     stroke-dashoffset: calc(440 - (440 * var(--num)) / 100);
@@ -72,41 +67,35 @@ body
     animation: fadeIn 1s linear forwards;
     animation-delay: 2.5s;
 }
-@keyframes fadeIn 
-{
-    0%
-    {
+
+@keyframes fadeIn {
+    0% {
         opacity: 0;
     }
-    100%
-    {
+    100% {
         opacity: 1;
     }
 
-    
+
 }
 
-.dot
-{
+.dot {
     position: absolute;
     inset: 5px;
     z-index: 10;
     animation: animateDot 2s linear forwards;
 }
-@keyframes animateDot
-{
-    0%
-    {
+
+@keyframes animateDot {
+    0% {
         transform: rotate(0deg);
     }
-    100%
-    {
+    100% {
         transform: rotate(calc(3.6deg * var(--num)));
     }
 }
 
-.dot::before
-{
+.dot::before {
     content: '';
     position: absolute;
     top: -5px;
@@ -121,8 +110,7 @@ body
     0 0 30px var(--clr);
 }
 
-.number
-{
+.number {
     position: absolute;
     inset: 0;
     display: flex;
@@ -134,8 +122,7 @@ body
     animation-delay: 2.5s;
 }
 
-.number h2
-{
+.number h2 {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -144,18 +131,16 @@ body
     font-size: 2.5em;
 }
 
-.number h2 span
-{
+.number h2 span {
     font-weight: 300;
     color: #fff;
     font-size: 0.5em;
 }
 
-.number p
-{
+.number p {
     font-weight: 300;
     font-size: 0.75em;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.75);
+    color: rgba(255, 255, 255, 0.75);
 }

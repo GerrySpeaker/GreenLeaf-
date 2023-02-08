@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="risorse/style/filtri.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
 </head>
 
@@ -28,7 +30,7 @@
                     <div onclick="show('2026')">2026</div>
                 </div>
             </div>
-    
+
             <div class="dropdown-reg">
                 <input type="text" class="filterBox-reg" value="Regioni" readonly id="regione">
                 <div class="option">
@@ -55,7 +57,7 @@
                     <div onclick="showReg('Nazionale')">Nazionale</div>
                 </div>
             </div>
-        
+
             <div class="submit" onclick="seleziona()">Cerca</div>
         </div>
     </div>
@@ -69,7 +71,7 @@
             <p id="polvere-p">Polveri sottili:</p><span id="polvere"></span>
         </div>
     </div>
-    
+
     <script src="risorse/js/monitoraggio.js"></script>
     <script src="risorse/js/filtri.js"></script>
 </div>

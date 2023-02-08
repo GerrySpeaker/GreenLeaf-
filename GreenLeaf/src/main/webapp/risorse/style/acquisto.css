@@ -1,10 +1,10 @@
-*{
+* {
     padding: 0;
     margin: 0;
     font-family: "Montserrat";
 }
 
-:root{
+:root {
     --bg-color: whitesmoke;
     --text-color: #282828;
     --main-color: #007a00;
@@ -13,7 +13,7 @@
     --popup-color: white;
 }
 
-.all-buy{
+.all-buy {
     width: 100%;
     min-height: 100vh;
     align-items: center;
@@ -22,11 +22,11 @@
     /* display: none; */
 }
 
-.all-buy.buono{
+.all-buy.buono {
     display: none;
 }
 
-.buy{
+.buy {
     position: absolute;
     width: 700px;
     height: 300px;
@@ -42,19 +42,19 @@
     align-items: center;
 }
 
-.buy p{
+.buy p {
     margin-top: 15px;
     font-size: 20px;
     font-weight: 500;
 }
 
-.buy .big{
+.buy .big {
     font-size: 25px;
     font-weight: 500;
     margin-bottom: 20px;
 }
 
-.btn-buy .home{
+.btn-buy .home {
     background-color: var(--second-color);
     width: 200px;
     transition: 0.5s;
@@ -67,7 +67,7 @@
     margin-top: 20px;
     font-size: 0.8em;
     font-weight: 500;
-    margin:  45px 15px;
+    margin: 45px 15px;
     padding: 15px;
     border-radius: 52px;
     box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
@@ -75,7 +75,7 @@
     15px 10px 15px rgba(0, 0, 0, 0.025);
 }
 
-.copy{
+.copy {
     background-color: var(--second-color);
     width: 100px;
     height: 10px;
@@ -98,16 +98,16 @@
     15px 10px 15px rgba(0, 0, 0, 0.025);
 }
 
-.btn-buy .home:hover{
+.btn-buy .home:hover {
     opacity: 0.8;
 }
 
-.copy:hover{
+.copy:hover {
     opacity: 0.8;
 
 }
 
-.btn-buy{
+.btn-buy {
     display: flex;
     text-align: center;
     justify-content: center;
@@ -117,12 +117,11 @@
 }
 
 
-.input-area{
+.input-area {
     display: flex;
 }
 
-.input-area input
-{
+.input-area input {
     position: relative;
     width: 70%;
     height: 60px;

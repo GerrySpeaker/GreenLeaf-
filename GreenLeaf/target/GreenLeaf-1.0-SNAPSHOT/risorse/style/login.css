@@ -1,11 +1,11 @@
-.all-form{
-	padding: 0;
-	margin-top: 50px;
-	font-family: "Montserrat";
+.all-form {
+    padding: 0;
+    margin-top: 50px;
+    font-family: "Montserrat";
     box-sizing: border-box;
 }
 
-.all-body{
+.all-body {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,16 +16,16 @@
     min-height: 100vh;
 }
 
-:root{
+:root {
     --bg-color: whitesmoke;
-	--text-color: #282828;
-	--main-color: #007a00;
-	--second-color: #004700;
-	--notify-color: #80ff81;
-	--popup-color: white;
+    --text-color: #282828;
+    --main-color: #007a00;
+    --second-color: #004700;
+    --notify-color: #80ff81;
+    --popup-color: white;
 }
 
-.form-container{
+.form-container {
     position: relative;
     left: -80px;
     display: flex;
@@ -33,20 +33,20 @@
     align-items: center;
 }
 
-.error{
+.error {
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     color: #c80e00;
 }
 
-.form-container .drop{
+.form-container .drop {
     position: relative;
     width: 500px;
     height: 500px;
     box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.2),
-                25px 35px 20px rgba(0, 0, 0, 0.1),
-                25px 30px 30px rgba(0, 0, 0, 0.1),
-                inset -20px -20px 25px rgba(255, 255, 255, 0.5);
+    25px 35px 20px rgba(0, 0, 0, 0.1),
+    25px 30px 30px rgba(0, 0, 0, 0.1),
+    inset -20px -20px 25px rgba(255, 255, 255, 0.5);
     transition: 0.5s;
     display: flex;
     justify-content: center;
@@ -55,11 +55,11 @@
     background-color: rgba(255, 255, 255, 0.7);
 }
 
-.form-container .drop:hover{
+.form-container .drop:hover {
     border-radius: 50%;
 }
 
-.form-container .drop::before{
+.form-container .drop::before {
     content: '';
     position: absolute;
     width: 35px;
@@ -71,7 +71,7 @@
     border-radius: 50%;
 }
 
-.form-container .drop::after{
+.form-container .drop::after {
     content: '';
     position: absolute;
     width: 15px;
@@ -83,7 +83,7 @@
     border-radius: 50%;
 }
 
-.form-container .drop .content{
+.form-container .drop .content {
     position: relative;
     display: flex;
     justify-content: center;
@@ -94,7 +94,7 @@
     gap: 15px;
 }
 
-.form-container .drop .content h2{
+.form-container .drop .content h2 {
     font-weight: bold;
     text-transform: capitalize;
     position: relative;
@@ -102,7 +102,7 @@
     color: var(--text-color);
 }
 
-.form-container .drop .content form{
+.form-container .drop .content form {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -114,13 +114,13 @@
     position: relative;
     width: 225px;
     box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
-                inset -2px -5px 10px rgba(255, 255, 255, 0.3),
-                15px 15px 10px rgba(0, 0, 0, 0.05),
-                15px 10px 15px rgba(0, 0, 0, 0.025);
+    inset -2px -5px 10px rgba(255, 255, 255, 0.3),
+    15px 15px 10px rgba(0, 0, 0, 0.05),
+    15px 10px 15px rgba(0, 0, 0, 0.025);
     border-radius: 25px;
 }
 
-.form-container .drop .content form .inputBox::before{
+.form-container .drop .content form .inputBox::before {
     content: '';
     position: absolute;
     top: 8px;
@@ -133,14 +133,14 @@
     opacity: 0.7;
 }
 
-#txt-email{
+#txt-email {
     font-weight: bold;
     margin-left: 10px;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
-  }
+}
 
-.form-container .drop .content form .inputBox input{
+.form-container .drop .content form .inputBox input {
     border: none;
     outline: none;
     background: transparent;
@@ -149,13 +149,13 @@
     padding: 10px 15px;
 }
 
-.form-container .drop .content form .inputBox input::placeholder{
+.form-container .drop .content form .inputBox input::placeholder {
     color: var(--text-color);
     opacity: 0.9;
     color: black;
 }
 
-.form-container .drop .content form .inputBox input[type="submit"]{
+.form-container .drop .content form .inputBox input[type="submit"] {
     color: var(--popup-color);
     text-transform: uppercase;
     font-size: 1em;
@@ -164,51 +164,51 @@
     font-weight: 500;
 }
 
-.form-container .drop .content form .inputBox:last-child{
+.form-container .drop .content form .inputBox:last-child {
     background-color: var(--second-color);
     width: 120px;
     transition: 0.5s;
     box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
-                15px 15px 10px rgba(0, 0, 0, 0.05),
-                15px 10px 15px rgba(0, 0, 0, 0.025);
+    15px 15px 10px rgba(0, 0, 0, 0.05),
+    15px 10px 15px rgba(0, 0, 0, 0.025);
 }
 
-.form-container .drop .content form .inputBox:last-child:hover{
+.form-container .drop .content form .inputBox:last-child:hover {
     width: 150px;
 }
 
-.btns{
-   position: absolute;
-   right: -120px; 
-   bottom: 0;
-   width: 130px;
-   height: 130px;
-   background-color: rgba(255, 255, 255, 0.5);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   cursor: pointer;
-   text-decoration: none;
-   color: black;
-   line-height: 1.2em;
-   letter-spacing: 0.1em;
-   font-size: 1em;
-   transition: 0.25s;
-   box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
-                25px 35px 20px rgba(0, 0, 0, 0.1),
-                25px 30px 30px rgba(0, 0, 0, 0.1),
-                inset -20px -20px 25px rgba(255, 255, 255, 0.5);
+.btns {
+    position: absolute;
+    right: -120px;
+    bottom: 0;
+    width: 130px;
+    height: 130px;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    line-height: 1.2em;
+    letter-spacing: 0.1em;
+    font-size: 1em;
+    transition: 0.25s;
+    box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.05),
+    25px 35px 20px rgba(0, 0, 0, 0.1),
+    25px 30px 30px rgba(0, 0, 0, 0.1),
+    inset -20px -20px 25px rgba(255, 255, 255, 0.5);
     border-radius: 44% 56% 65% 35% / 57% 58% 42% 43%;
     text-align: center;
     font-weight: 900;
     font-size: 0.9em;
 }
 
-.btns:hover{
+.btns:hover {
     border-radius: 50%;
 }
 
-.btns::before{
+.btns::before {
     content: '';
     top: 15px;
     left: 30px;
@@ -220,7 +220,7 @@
     opacity: 0.7;
 }
 
-.btns.signup{
+.btns.signup {
     bottom: 150px;
     right: -140px;
     width: 95px;
@@ -228,11 +228,11 @@
     border-radius: 49% 51% 52% 48% / 63% 59% 41% 37%;
 }
 
-.btns.signup:hover{
+.btns.signup:hover {
     border-radius: 50%;
 }
 
-#toggle{
+#toggle {
     position: absolute;
     top: 56%;
     right: 10px;
@@ -243,21 +243,21 @@
     background-size: cover;
 }
 
-#toggle.hide{
+#toggle.hide {
     background: url(hide.png);
     background-size: cover;
 }
 
-#txt-email{
+#txt-email {
     font-weight: bold;
     margin-left: 10px;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  #txt-password{
+}
+
+#txt-password {
     font-weight: bold;
     margin-left: 10px;
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
-  }
+}

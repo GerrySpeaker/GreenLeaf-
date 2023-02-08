@@ -1,19 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: "Montserrat";
 }
 
-:root{
-	--bg-color: whitesmoke;
-	--text-color: #282828;
-	--main-color: #007a00;
-	--second-color: #004700;
-	--notify-color: #80ff81;
-	--popup-color: white;
+:root {
+    --bg-color: whitesmoke;
+    --text-color: #282828;
+    --main-color: #007a00;
+    --second-color: #004700;
+    --notify-color: #80ff81;
+    --popup-color: white;
 }
 
-.nontavere{
+.nontavere {
     display: none;
     background: var(--bg-color);
     width: 100%;
@@ -24,7 +24,7 @@
 
 }
 
-.all-regione{
+.all-regione {
     display: grid;
     width: 1000px;
     padding: 70px;
@@ -33,9 +33,9 @@
     align-items: center;
     border-radius: 20px;
     background: linear-gradient(to bottom right,
-    var(--popup-color) 0%, var(--popup-color)30%,
-    var(--main-color) 30%, var(--main-color)70%,
-    var(--popup-color) 70%,  var(--popup-color) 100%);    
+    var(--popup-color) 0%, var(--popup-color) 30%,
+    var(--main-color) 30%, var(--main-color) 70%,
+    var(--popup-color) 70%, var(--popup-color) 100%);
     grid-template-columns: repeat(3, 20rem);
     max-height: calc(100vh - 9rem);
     overflow-y: auto;
@@ -43,18 +43,18 @@
     position: absolute;
 }
 
-.scelta{
+.scelta {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
 
-.regione{
+.regione {
     position: relative;
 }
 
-.regione .reg-card{
+.regione .reg-card {
     position: relative;
     width: 300px;
     height: 400px;
@@ -65,18 +65,18 @@
     transition: 0.5s ease;
 }
 
-.regione .reg-card:hover{
+.regione .reg-card:hover {
     transform: translateY(-20px);
 }
 
-.regione .reg-card .radio-group{
+.regione .reg-card .radio-group {
     width: 100%;
     height: 80%;
     align-items: center;
     text-align: center;
 }
 
-.regione .reg-card .radio-group img{
+.regione .reg-card .radio-group img {
     width: 250px;
     height: 250px;
     top: 10px;
@@ -85,7 +85,7 @@
     margin: 5px;
 }
 
-.regione .reg-card .radio-group{
+.regione .reg-card .radio-group {
     font-size: 20px;
     font-weight: bold;
     color: var(--text-color);
@@ -93,7 +93,7 @@
     text-transform: capitalize;
 }
 
-.regione .reg-card .radio-group .radio{
+.regione .reg-card .radio-group .radio {
     position: absolute;
     bottom: 30px;
     margin-left: 20%;
@@ -102,23 +102,23 @@
     display: block;
 }
 
-.regione .reg-card .radio-group .radio p{
+.regione .reg-card .radio-group .radio p {
     text-align: center;
 }
 
-.regione .reg-card .radio-group .radio input[type="radio"]{
+.regione .reg-card .radio-group .radio input[type="radio"] {
     display: none;
 }
 
-.regione .reg-card .radio-group .radio input[type="radio"]:checked~ .checkmark {
+.regione .reg-card .radio-group .radio input[type="radio"]:checked ~ .checkmark {
     background-color: var(--notify-color);
-  }
+}
 
-  .checkmark:after {
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
+}
 
 .checkmark {
     position: absolute;
@@ -128,19 +128,19 @@
     width: 25px;
     background-color: #4a4a4a6f;
     border-radius: 50%;
-  }
+}
 
 
-@media screen and (max-width:1054px){
+@media screen and (max-width: 1054px) {
 
     .all-regione {
-    grid-template-columns: repeat(2, 20rem);
+        grid-template-columns: repeat(2, 20rem);
     }
 }
 
-@media screen and (max-width:700px){
+@media screen and (max-width: 700px) {
 
     .all-regione {
-    grid-template-columns: repeat(1, 20rem);
+        grid-template-columns: repeat(1, 20rem);
     }
 }

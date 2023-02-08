@@ -1,43 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="css/registrazioneOp.css" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    <link href="css/registrazioneOp.css" rel="stylesheet"/>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- font -->
 
-  </head>
-  <body class="all-body">
-    <div class="all-form">
-        <section class="container">
-            <header>Operatore</header>
-            <form action="#" class="form" onsubmit="event.preventDefault(); validate(this)">
-      
-              <div class="input-box">
+</head>
+<body class="all-body">
+<div class="all-form">
+    <section class="container">
+        <header>Operatore</header>
+        <form action="#" class="form" onsubmit="event.preventDefault(); validate(this)">
+
+            <div class="input-box">
                 <label>Nome</label> <span id="txt-nome"></span>
-                <input id="nome" type="text" placeholder="Inserisci qui il tuo nome" name ="nome" required />
-              </div>
-      
-              <div class="input-box">
+                <input id="nome" name="nome" placeholder="Inserisci qui il tuo nome" required type="text"/>
+            </div>
+
+            <div class="input-box">
                 <label>Cognome</label> <span id="txt-cognome"></span>
-                <input id="cognome" type="text" placeholder="Inserisci qui il tuo cognome" name ="cognome" required />
-              </div>
-      
-              <div class="column">
+                <input id="cognome" name="cognome" placeholder="Inserisci qui il tuo cognome" required type="text"/>
+            </div>
+
+            <div class="column">
                 <div class="input-box">
-                  <label>E-mail</label> <span id="txt-email"></span>
-                  <input id="email" type="text" placeholder="Inserisci qui la tua e-mail" name ="email" required />
+                    <label>E-mail</label> <span id="txt-email"></span>
+                    <input id="email" name="email" placeholder="Inserisci qui la tua e-mail" required type="text"/>
                 </div>
                 <div class="input-box">
-                  <label style="margin-left: 15px;">Password </label><span id="txt-password"></span>
-                  <input id="password" type="password" placeholder="Inserisci qui la tua password" name ="password" required />
-                  <div id="toggle" onclick="showHide()"></div>
+                    <label style="margin-left: 15px;">Password </label><span id="txt-password"></span>
+                    <input id="password" name="password" placeholder="Inserisci qui la tua password" required
+                           type="password"/>
+                    <div id="toggle" onclick="showHide()"></div>
                 </div>
-              </div>
-              
-              <div class="dropdown">
-                <input type="text" class="filterBox" placeholder="Regioni" readonly>
+            </div>
+
+            <div class="dropdown">
+                <input class="filterBox" placeholder="Regioni" readonly type="text">
                 <div class="option">
                     <div onclick="show('Abruzzo')">Abruzzo</div>
                     <div onclick="show('Basilicata')">Basilicata</div>
@@ -61,26 +62,26 @@
                     <div onclick="show('Veneto')">Veneto</div>
                 </div>
             </div>
-              
-              <div class="btn">
+
+            <div class="btn">
                 <button class="submit">Procedi</button>
-              </div>
-            </form>
-          </section>
-    </div>
+            </div>
+        </form>
+    </section>
+</div>
 
-    <script src="js/validate.js"></script>
-    <script src="js/password.js"></script>
-    <script >
-      function show(anything) {
-          document.querySelector(".filterBox").value =anything
-      }
+<script src="js/validate.js"></script>
+<script src="js/password.js"></script>
+<script>
+    function show(anything) {
+        document.querySelector(".filterBox").value = anything
+    }
 
-      let dropdown = document.querySelector(".dropdown");
-      dropdown.onclick = function () {
-          dropdown.classList.toggle('active');
-      }
-  </script>
-  </body>
+    let dropdown = document.querySelector(".dropdown");
+    dropdown.onclick = function () {
+        dropdown.classList.toggle('active');
+    }
+</script>
+</body>
 </html>
 

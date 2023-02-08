@@ -1,16 +1,16 @@
 var x = document.getElementById("all-buy");
 var y = document.getElementById("y");
 
-function showBuono(){
+function showBuono() {
     console.log("ci sono")
-    x.style.display="none";
-    y.style.display="flex";
+    x.style.display = "none";
+    y.style.display = "flex";
 }
 
-function hideBuono(){
+function hideBuono() {
     console.log("ci sono 2")
-    x.style.display="flex";
-    y.style.display="none";
+    x.style.display = "flex";
+    y.style.display = "none";
 }
 
 function copy(i) {
