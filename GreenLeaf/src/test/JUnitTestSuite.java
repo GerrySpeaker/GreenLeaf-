@@ -1,5 +1,4 @@
 import application.AutenticazioneApplicationTest;
-import application.GestioneAlberiDaAdottare.AggiungiAlCarrello;
 import application.GestioneAlberiDaAdottare.AggiungiAlCarrelloTest;
 import junit.framework.TestCase;
 import org.junit.runner.RunWith;
@@ -9,7 +8,7 @@ import storage.*;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        UtenteDaoTest.class,
+        OperatoreDaoEliminaTest.class,
         AutenticazioneApplicationTest.class,
         OperatoreDaoTest.class,
         AlberoDaoTest.class,

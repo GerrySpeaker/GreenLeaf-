@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 
-import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -46,14 +45,14 @@ public class OperatoreDaoTest {
 
 
     @Test
-    public void TC_PA_1() throws SQLException {
+    public void TC_ODT_VP_1() throws SQLException {
         System.out.println("Test1");
         ArrayList<AlberoBean> alberi = dao.visualizzaPiantumazioni(operatoreBean.getEmail());
         assertNotEquals(null,alberi);
     }
 
     @Test
-    public void TC_PA_2() throws SQLException {
+    public void TC_ODT_VP_2() throws SQLException {
         System.out.println("Test2");
         System.out.println("Test1");
         ArrayList<AlberoBean> alberi = dao.visualizzaPiantumazioni("GiggiBuffon@gmail.com");

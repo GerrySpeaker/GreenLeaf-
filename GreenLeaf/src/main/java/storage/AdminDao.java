@@ -101,7 +101,7 @@ public class AdminDao implements InterfacciaDao<AdminBean>{
     public void registrazione(AdminBean bean) throws SQLException {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
-        String selectSQL = "Insert INTO utente (email,password,cognome,nome) values (?,?,?,?)";
+        String selectSQL = "Insert INTO admin (email,password,cognome,nome) values (?,?,?,?)";
 
 
         try {

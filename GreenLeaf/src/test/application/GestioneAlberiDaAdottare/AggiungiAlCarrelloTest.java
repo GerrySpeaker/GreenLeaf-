@@ -1,6 +1,5 @@
 package application.GestioneAlberiDaAdottare;
 
-import application.Autenticazione.AutenticazioneApplication;
 import bean.AssociatoBean;
 import bean.CategoriaBean;
 import bean.UtenteBean;
@@ -66,7 +65,7 @@ public class AggiungiAlCarrelloTest extends Mockito{
     }
 
     @Test
-    public void TC_AAC_1() throws ServletException, IOException {
+    public void TC_AACT_1() throws ServletException, IOException {
 
         System.out.println("test1");
         when(httpServletRequest.getSession()).thenReturn(session);
@@ -83,7 +82,7 @@ public class AggiungiAlCarrelloTest extends Mockito{
 
 
     @Test
-    public void TC_AAC_2() throws ServletException, IOException {
+    public void TC_AACT_2() throws ServletException, IOException {
 
         when(httpServletRequest.getSession()).thenReturn(session);
         when(httpServletRequest.getParameter("email")).thenReturn("test6@gmail.com");
