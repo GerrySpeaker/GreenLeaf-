@@ -6,9 +6,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Classe che contiene informazioni per accedere all'entità IOT.
+ **/
 public class IotDao {
 
-
+  /**
+   * Metodo che restituisce un IOT dato un id.
+   **/
   public IotBean doRetrieveByKey(Integer id) throws SQLException {
 
     Connection connection = null;
@@ -46,6 +51,9 @@ public class IotDao {
     return bean;
   }
 
+  /**
+   * Metodo che restituisce un IOT che appartiene a una data regione.
+   **/
   public IotBean doRetrieveByRegione(String regione) throws SQLException {
 
     Connection connection = null;
@@ -83,6 +91,9 @@ public class IotDao {
     return bean;
   }
 
+  /**
+   * Metodo che cambia lo stato di un IOT.
+   **/
   public Boolean cambioStatoIot(int id) throws SQLException {
 
     Connection connection = null;

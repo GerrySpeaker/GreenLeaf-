@@ -21,6 +21,9 @@ import org.mockito.Mockito;
 import storage.AssociatoDao;
 import storage.UtenteDao;
 
+/**
+ * Questa classe permette di testare l’operazione di aggiunta al carrello.
+ **/
 public class AggiungiAlCarrelloTest extends Mockito {
 
   private static final HttpServletRequest httpServletRequest =

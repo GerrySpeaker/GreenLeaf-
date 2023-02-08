@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import storage.BuonoRegaloDao;
 
+/**
+ * Questa classe permette di gestire le operazioni relative ai buoni regalo.
+ **/
 @WebServlet("/Regalo")
 public class GestioneRegaloApplication extends HttpServlet {
 

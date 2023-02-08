@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+/**
+ * Classe che contiene informazioni per accedere all'entità Categoria.
+ **/
 public class CategoriaDao implements InterfacciaDao<CategoriaBean> {
 
 
@@ -25,6 +28,9 @@ public class CategoriaDao implements InterfacciaDao<CategoriaBean> {
     return null;
   }
 
+  /**
+   * Metodo che restituisce tutte le categorie.
+   **/
   @Override
   public ArrayList<CategoriaBean> doRetrieveAll() throws SQLException {
     Connection connection = null;
@@ -61,7 +67,9 @@ public class CategoriaDao implements InterfacciaDao<CategoriaBean> {
     return prodotto;
   }
 
-
+  /**
+   * Metodo che restituisce una categoria.
+   **/
   public CategoriaBean doRetrieveByKeyAlbero(String categoria) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;

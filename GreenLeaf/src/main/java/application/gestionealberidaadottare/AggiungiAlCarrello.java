@@ -15,7 +15,9 @@ import storage.AssociatoDao;
 import storage.CategoriaDao;
 import storage.OperatoreDao;
 
-
+/**
+ * Questa classe permette di gestire l’operazione di aggiunta al carrello.
+ **/
 @WebServlet("/AggiungiCarrello")
 public class AggiungiAlCarrello extends HttpServlet {
 

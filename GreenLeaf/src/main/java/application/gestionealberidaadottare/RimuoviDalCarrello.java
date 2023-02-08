@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * Questa classe permette di gestire l’operazione di rimozione dal carrello.
+ **/
 @WebServlet("/RimuoviDalCarrello")
 public class RimuoviDalCarrello extends HttpServlet {
 

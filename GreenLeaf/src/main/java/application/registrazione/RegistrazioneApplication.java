@@ -17,6 +17,9 @@ import storage.AdminDao;
 import storage.OperatoreDao;
 import storage.UtenteDao;
 
+/**
+ * Questa classe permette di gestire le operazioni relative  alla registrazione.
+ **/
 @WebServlet("/RegistrazioneApplication")
 public class RegistrazioneApplication extends HttpServlet {
 

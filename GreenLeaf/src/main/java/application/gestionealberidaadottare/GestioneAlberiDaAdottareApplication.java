@@ -18,7 +18,9 @@ import storage.CategoriaDao;
 import storage.IotDao;
 import storage.OrdineDao;
 
-
+/**
+ * Questa classe permette di gestire le operazioni relative agli alberi da adottare.
+ **/
 @WebServlet("/Ordine")
 public class GestioneAlberiDaAdottareApplication extends HttpServlet {
 
@@ -212,6 +214,9 @@ public class GestioneAlberiDaAdottareApplication extends HttpServlet {
 
   }
 
+  /**
+   * Metodo che genera un buono.
+   **/
   public String generaBuono() {
     int leftLimit = 97; // letter 'a'
     int rightLimit = 122; // letter 'z'

@@ -1,5 +1,8 @@
 package bean;
 
+/**
+ * Questa classe rappresenta l'entità Associato.
+ **/
 public class AssociatoBean {
 
   public Integer idAssociato;
@@ -9,6 +12,9 @@ public class AssociatoBean {
   public AssociatoBean() {
   }
 
+  /**
+   * Costruttore della classe.
+   **/
   public AssociatoBean(Integer idAssociato, String categoriaAssociato, String regioneAssociato) {
     this.idAssociato = idAssociato;
     this.categoriaAssociato = categoriaAssociato;

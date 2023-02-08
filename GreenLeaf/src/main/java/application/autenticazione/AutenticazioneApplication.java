@@ -38,6 +38,9 @@ public class AutenticazioneApplication extends HttpServlet {
     doPost(request, response);
   }
 
+  /**
+   * Questo metodo richiama la doPost.
+   **/
   public void doPost(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
     Boolean admin = false;

@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import storage.AlberoDao;
 
+/**
+ * Questa classe permette di gestire le operazioni relative  alla piantumazione.
+ **/
 @WebServlet("/AlberiPiantumati")
 public class GestionePiantumazioniApplication extends HttpServlet {
 

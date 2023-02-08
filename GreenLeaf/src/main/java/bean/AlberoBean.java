@@ -2,6 +2,9 @@ package bean;
 
 import java.util.Date;
 
+/**
+ * Questa classe rappresenta l'entità Albero.
+ **/
 public class AlberoBean {
 
   public Integer idAlbero;
@@ -17,6 +20,9 @@ public class AlberoBean {
   public AlberoBean() {
   }
 
+  /**
+   * Cosytruttore della classe.
+   **/
   public AlberoBean(Integer idAlbero, Integer ordine, String co2, String categoria, String stato,
                     String utenteAlbero, Date dataPiantumazione, String regione, Integer iot) {
     this.idAlbero = idAlbero;

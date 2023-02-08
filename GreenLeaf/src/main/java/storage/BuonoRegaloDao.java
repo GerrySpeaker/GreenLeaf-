@@ -9,6 +9,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * Classe che contiene informazioni per accedere all'entità BuonoRegalo.
+ **/
 public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
 
 
@@ -27,6 +30,9 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
     return null;
   }
 
+  /**
+   * Metodo che restituisce tutti i buoni acquistati da un utente.
+   **/
   public ArrayList<BuonoregaloBean> buoniUtenteAcquistati(String email) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -74,7 +80,9 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
     return lista;
   }
 
-
+  /**
+   * Metodo che riscatta un buono utente.
+   **/
   public BuonoregaloBean riscattaBuono(String key) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -109,6 +117,9 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
     return bean;
   }
 
+  /**
+   * Non lo usiamo.
+   **/
   public void eliminaBuono(String key) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -135,6 +146,9 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
 
   }
 
+  /**
+   * Metodo che cambia lo stato di un buono.
+   **/
   public Boolean cambioStato(String key) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -168,11 +182,17 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
     return check;
   }
 
+  /**
+   * Metodo che restituisce tutti i buoni .
+   **/
   @Override
   public Collection<BuonoregaloBean> doRetrieveAll() throws SQLException {
     return null;
   }
 
+  /**
+   * Metodo che restituisce tutti i buoni acquistati da un utente.
+   **/
   public ArrayList<BuonoregaloBean> doRetriveByUtente(String email) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -210,6 +230,9 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
 
   }
 
+  /**
+   * Metodo che inserisce un buono nel database.
+   **/
   public Boolean inserisciBuono(OrdineBean ordine, String chiave) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;

@@ -7,9 +7,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
 
+/**
+ * Classe che contiene informazioni per accedere all'entità Admin.
+ **/
 public class AdminDao implements InterfacciaDao<AdminBean> {
 
-
+  /**
+   * Metodo che permette l'autenticazione di un Admin.
+   **/
   public synchronized AdminBean login(String email, String password) throws SQLException {
 
     String confpass = doRetrieveByEmail(email).getPassword();
@@ -60,6 +65,9 @@ public class AdminDao implements InterfacciaDao<AdminBean> {
 
   }
 
+  /**
+   * Metodo che restituisce un Admin in base alla sua email.
+   **/
   public synchronized AdminBean doRetrieveByEmail(String email) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -124,7 +132,9 @@ public class AdminDao implements InterfacciaDao<AdminBean> {
     }
   }
 
-
+  /**
+   * Metodo che permettere di eliminare l'account Admin.
+   **/
   @Override
   public boolean eliminaAccount(String email) throws SQLException {
     Connection connection = null;

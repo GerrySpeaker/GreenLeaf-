@@ -7,7 +7,9 @@ import storage.AlberoDaoTest;
 import storage.OperatoreDaoEliminaTest;
 import storage.OperatoreDaoTest;
 
-
+/**
+ * Test suite.
+ **/
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
     OperatoreDaoEliminaTest.class,

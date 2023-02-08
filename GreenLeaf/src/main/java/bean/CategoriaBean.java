@@ -1,5 +1,8 @@
 package bean;
 
+/**
+ * Questa classe rappresenta l'entità Associato.
+ **/
 public class CategoriaBean {
 
   public String nomeCategoria;
@@ -11,6 +14,9 @@ public class CategoriaBean {
   public CategoriaBean() {
   }
 
+  /**
+   * Cosytruttore della classe.
+   **/
   public CategoriaBean(String nomeCategoria, String co2Max, String descrizione, String url,
                        Double prezzo) {
     this.nomeCategoria = nomeCategoria;

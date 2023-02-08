@@ -1,5 +1,8 @@
 package bean;
 
+/**
+ * Classe che rappresenta l'entità Admin nel Database.
+ **/
 public class AdminBean {
 
   public String email;
@@ -10,6 +13,9 @@ public class AdminBean {
   public AdminBean() {
   }
 
+  /**
+   * Costruttore della classe.
+   **/
   public AdminBean(String email, String password, String cognomeAdmin, String nomeAdmin) {
     this.email = email;
     this.password = password;

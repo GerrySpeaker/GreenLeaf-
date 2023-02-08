@@ -15,6 +15,10 @@ import storage.AdminDao;
 import storage.OperatoreDao;
 import storage.UtenteDao;
 
+/**
+ * Questa classe permette di gestire le operazioni relative alla registrazione di un
+ * nuovo operatore.
+ **/
 @WebServlet("/CreaOperatoreApplication")
 public class CreaOperatoreApplication extends HttpServlet {
 

@@ -8,6 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * Classe che contiene informazioni per accedere all'entità Catagoria.
+ **/
 public class AssociatoDao implements InterfacciaDao<AssociatoBean> {
 
   @Override
@@ -30,6 +33,9 @@ public class AssociatoDao implements InterfacciaDao<AssociatoBean> {
     return null;
   }
 
+  /**
+   * Metodo che restituisce tutte le regioni associate a una data categoria.
+   **/
   public Collection<AssociatoBean> doRetrieveAlbero(String nome) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;

@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import storage.OperatoreDao;
 import storage.UtenteDao;
 
-
+/**
+ * Questa classe permette a un attore del sistema di cancellare il suo account.
+ **/
 @WebServlet("/Delete")
 public class Delete extends HttpServlet {
 
@@ -28,6 +30,7 @@ public class Delete extends HttpServlet {
       throws ServletException, IOException {
     doGet(request, response);
   }
+
 
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {

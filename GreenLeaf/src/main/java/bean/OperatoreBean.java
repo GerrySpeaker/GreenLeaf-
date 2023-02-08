@@ -1,5 +1,8 @@
 package bean;
 
+/**
+ * Questa classe rappresenta l'entità Operatore.
+ **/
 public class OperatoreBean {
 
   public String email;

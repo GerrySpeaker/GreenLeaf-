@@ -18,6 +18,9 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mockito;
 import storage.UtenteDao;
 
+/**
+ * Questa classe permette di testare l’operazione di autenticazione.
+ **/
 public class AutenticazioneApplicationTest extends Mockito {
 
   private static final HttpServletRequest httpServletRequest =

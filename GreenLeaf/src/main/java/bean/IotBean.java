@@ -1,5 +1,8 @@
 package bean;
 
+/**
+ * Questa classe rappresenta l'entità IOT.
+ **/
 public class IotBean {
 
   public Integer idIot;
@@ -13,6 +16,9 @@ public class IotBean {
   public IotBean() {
   }
 
+  /**
+   * Costruttore della classe.
+   **/
   public IotBean(Integer idIot, String ipv4, String latitudine, String longitudine,
                  String altitudine, String regione, String stato) {
     this.idIot = idIot;

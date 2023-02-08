@@ -13,6 +13,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Questa classe permette di testare un AlberoDao.
+ **/
 public class AlberoDaoTest {
   static AlberoDao dao = new AlberoDao();
   static OrdineDao ordineDao = new OrdineDao();
@@ -26,6 +29,9 @@ public class AlberoDaoTest {
   int id = 0;
   int idAlbero = 0;
 
+  /**
+   * Inizializzazione.
+   **/
   @Before
   public void setUp() throws SQLException {
     System.out.println("Registrazione Buono e albero");

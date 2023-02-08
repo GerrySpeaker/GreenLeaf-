@@ -13,9 +13,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * Classe che contiene informazioni per accedere all'entità Albero.
+ **/
 public class AlberoDao implements InterfacciaDao<AlberoBean> {
 
-
+  /**
+   * Metodo che restituisce tutti gli alberi adottati da un dato utente.
+   **/
   public Collection<AlberoBean> doRetrieveBymail(String email) throws SQLException {
     Connection connection = null;
     ArrayList<AlberoBean> prodotto = new ArrayList<>();
@@ -109,12 +114,17 @@ public class AlberoDao implements InterfacciaDao<AlberoBean> {
     return bean;
   }
 
-
+  /**
+   * Metodo che restituisce tutti gli alberi presenti nel DB.
+   **/
   @Override
   public Collection<AlberoBean> doRetrieveAll() throws SQLException {
     return null;
   }
 
+  /**
+   * Metodo che aggiorna lo stato dell'albero una volta che è stato piantato.
+   **/
   public Boolean inserisciPiantumazione(int id) throws SQLException {
 
     Connection connection = null;
@@ -150,6 +160,10 @@ public class AlberoDao implements InterfacciaDao<AlberoBean> {
     }
     return check;
   }
+
+  /**
+   * Metodo che inserisce un albero nel Database.
+   **/
 
   public int inserisciAlbero(CategoriaBean albero, OrdineBean ordineBean, String regione,
                              IotBean iot) throws SQLException {

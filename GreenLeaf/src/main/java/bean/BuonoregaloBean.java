@@ -1,5 +1,8 @@
 package bean;
 
+/**
+ * Questa classe rappresenta l'entità Associato.
+ **/
 public class BuonoregaloBean {
 
   public String idBuonoregalo;
@@ -11,6 +14,9 @@ public class BuonoregaloBean {
   public BuonoregaloBean() {
   }
 
+  /**
+   * Cosytruttore della classe.
+   **/
   public BuonoregaloBean(String idBuonoregalo, String stato, String utenteRegalo, Double prezzo,
                          Integer ordineRegalo) {
     this.idBuonoregalo = idBuonoregalo;

@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import storage.AlberoDao;
 
+/**
+ * Questa classe permette di gestire le operazioni relative agli alberi già adottati.
+ **/
 @WebServlet("/AlberiAdottati")
 public class GestioneAlberiAdottatiApplication extends HttpServlet {
   private static final long serialVersionUID = 1L;
