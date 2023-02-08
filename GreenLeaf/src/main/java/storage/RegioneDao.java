@@ -8,7 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-
+/**
+ * Classe che contiene informazioni per accedere all'entità Regione.
+ **/
 public class RegioneDao implements InterfacciaDao<RegioneBean> {
 
 
@@ -27,6 +29,9 @@ public class RegioneDao implements InterfacciaDao<RegioneBean> {
     return null;
   }
 
+  /**
+   * Metodo che restituisce una Regione in base al suo nome.
+   **/
   public RegioneBean doRetrieveByNome(String nome) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;

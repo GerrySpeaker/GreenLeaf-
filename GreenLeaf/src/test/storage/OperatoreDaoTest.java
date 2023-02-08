@@ -14,6 +14,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Questa classe permette di testare un OperatoreDao.
+ **/
 public class OperatoreDaoTest {
   static OperatoreDao dao = new OperatoreDao();
   static AlberoDao alberoDao = new AlberoDao();
@@ -35,6 +38,9 @@ public class OperatoreDaoTest {
   int id = 0;
   int idAlbero = 0;
 
+  /**
+   * Inizializzazione.
+   **/
   @Before
   public void setUp() throws SQLException {
     System.out.println("Registrazione Operatore");
@@ -44,6 +50,9 @@ public class OperatoreDaoTest {
     idAlbero = alberoDao.inserisciAlbero(categoriaBean, ordineBean, "Calabria", iot);
   }
 
+  /**
+   * Terminazione.
+   **/
   @After
   public void tearDown() throws SQLException {
     System.out.println("Eliminazione Operatore");

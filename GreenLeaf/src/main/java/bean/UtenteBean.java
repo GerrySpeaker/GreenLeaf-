@@ -2,6 +2,9 @@ package bean;
 
 import java.util.Date;
 
+/**
+ * Classe che rappresenta l'entità Utente nel Database.
+ **/
 public class UtenteBean {
 
   public String email;
@@ -14,6 +17,9 @@ public class UtenteBean {
 
   }
 
+  /**
+   * Costruttore della classe.
+   **/
   public UtenteBean(String email, String password, String cognomeUtente, String nomeUtente,
                     Date dataNascita) {
     this.email = email;

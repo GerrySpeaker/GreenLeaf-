@@ -15,6 +15,9 @@ public class OperatoreBean {
   public OperatoreBean() {
   }
 
+  /**
+   * Costruttore della classe.
+   **/
   public OperatoreBean(String email, String password, String nomeOperatore,
                        String cognomeOperatore,
                        String adminCreatore, String regione) {

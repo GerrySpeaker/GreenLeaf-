@@ -10,9 +10,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * Classe che contiene informazioni per accedere all'entità Admin.
+ **/
 public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
 
-
+  /**
+   * Metodo che permette l'autenticazione di un Operatore.
+   **/
   public synchronized OperatoreBean login(String email, String password) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -61,7 +66,9 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
     return null;
   }
 
-
+  /**
+   * Metodo che restituisce un Operatore in base alla sua email.
+   **/
   public synchronized OperatoreBean doRetrieveByEmail(String email) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -133,6 +140,9 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
 
   }
 
+  /**
+   * Metodo che permette di eliminare un account Operatore.
+   **/
   @Override
   public boolean eliminaAccount(String email) throws SQLException {
     Connection connection = null;
@@ -173,6 +183,9 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
     return null;
   }
 
+  /**
+   * Metodo che restituisce tutti gli Operatori di un dato Admin.
+   **/
   public ArrayList<OperatoreBean> allOperatori(String email) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -214,6 +227,9 @@ public class OperatoreDao implements InterfacciaDao<OperatoreBean> {
 
   }
 
+  /**
+   * Metodo che restituisce la lista di tutti gli alberi che può piantare quell'Operatore.
+   **/
   public ArrayList<AlberoBean> visualizzaPiantumazioni(String email) throws SQLException {
     OperatoreDao operatoreDao = new OperatoreDao();
     OperatoreBean operatoreBean = operatoreDao.doRetrieveByEmail(email);

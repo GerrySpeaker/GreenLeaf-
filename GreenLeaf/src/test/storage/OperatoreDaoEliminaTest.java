@@ -10,6 +10,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Questa classe permette di testare un OperatoreDaoElimina.
+ **/
 public class OperatoreDaoEliminaTest {
 
   static OperatoreDao op = new OperatoreDao();
@@ -24,6 +27,9 @@ public class OperatoreDaoEliminaTest {
           "gerryspeaker@gmail.com", "Marche");
 
 
+  /**
+   * Inizializzazione.
+   **/
   @Before
   public void setUp() throws SQLException {
     System.out.println("SetUp");
@@ -32,6 +38,9 @@ public class OperatoreDaoEliminaTest {
 
   }
 
+  /**
+   * Terminazione.
+   **/
   @After
   public void tearDown() throws SQLException {
     System.out.println("After");

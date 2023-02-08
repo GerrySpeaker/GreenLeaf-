@@ -8,6 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * Classe che contiene informazioni per accedere all'entità Trasporti.
+ **/
 public class TrasportiDao implements InterfacciaDao<TrasportiBean> {
   @Override
   public void registrazione(TrasportiBean bean) throws SQLException {

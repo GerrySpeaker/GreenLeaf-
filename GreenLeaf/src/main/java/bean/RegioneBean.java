@@ -1,5 +1,8 @@
 package bean;
 
+/**
+ * Classe che rappresenta l'entità Regione nel Database.
+ **/
 public class RegioneBean {
 
   public String nomeRegione;

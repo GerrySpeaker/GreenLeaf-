@@ -10,6 +10,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * Classe che contiene informazioni per accedere all'entità Ordine.
+ **/
 public class OrdineDao implements InterfacciaDao<OrdineBean> {
 
 
@@ -23,6 +26,9 @@ public class OrdineDao implements InterfacciaDao<OrdineBean> {
     return false;
   }
 
+  /**
+   * Metodo che permettere di eliminare l'Ordine in base all'id.
+   **/
   public void eliminaOrdine(int ordine) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -121,7 +127,9 @@ public class OrdineDao implements InterfacciaDao<OrdineBean> {
     return lista;
   }
 
-
+  /**
+   * Metodo che permettere l'inserimento dell'Ordine all'interno del Database.
+   **/
   public int inserisciOrdine(String mail, Double totale) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;

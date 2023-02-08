@@ -1,5 +1,8 @@
 package bean;
 
+/**
+ * Classe che rappresenta l'entità Trasporti nel Database.
+ **/
 public class TrasportiBean {
 
   public String nomeTrasporto;
@@ -9,6 +12,9 @@ public class TrasportiBean {
   public TrasportiBean() {
   }
 
+  /**
+   * Costruttore della classe.
+   **/
   public TrasportiBean(String nomeTrasporto, String url, Integer co2Media) {
     this.nomeTrasporto = nomeTrasporto;
     this.url = url;

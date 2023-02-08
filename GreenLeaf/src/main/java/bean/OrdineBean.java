@@ -2,6 +2,9 @@ package bean;
 
 import java.sql.Date;
 
+/**
+ * Classe che rappresenta l'entità Ordine nel Database.
+ **/
 public class OrdineBean {
 
   public Integer idOrdine;
@@ -12,6 +15,9 @@ public class OrdineBean {
   public OrdineBean() {
   }
 
+  /**
+   * Costruttore della classe.
+   **/
   public OrdineBean(Integer idOrdine, Date data, Double totale, String utenteOrdine) {
     this.idOrdine = idOrdine;
     this.data = data;

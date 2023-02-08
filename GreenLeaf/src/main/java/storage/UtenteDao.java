@@ -8,9 +8,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
 
+/**
+ * Classe che contiene informazioni per accedere all'entità Utente.
+ **/
 public class UtenteDao implements InterfacciaDao<UtenteBean> {
 
 
+  /**
+   * Metodo che permette l'autenticazione di un Utente.
+   **/
   public synchronized UtenteBean login(String email, String password) throws SQLException {
 
     UtenteBean utente = doRetrieveByEmail(email);
@@ -59,6 +65,9 @@ public class UtenteDao implements InterfacciaDao<UtenteBean> {
 
   }
 
+  /**
+   * Metodo che restituisce un Utente in base alla sua email.
+   **/
   public synchronized UtenteBean doRetrieveByEmail(String email) throws SQLException {
     Connection connection = null;
     PreparedStatement preparedStatement = null;
