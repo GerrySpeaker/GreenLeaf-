@@ -40,5 +40,5 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ./
       with: 
-        path: '**/Google_checks.xml'
+        path: 'GreenLeaf-\GreenLeaf\librerieEsterne\Google_checks.xml'
 
