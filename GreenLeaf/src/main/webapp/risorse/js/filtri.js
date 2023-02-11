@@ -1,5 +1,5 @@
 function show(anything) {
-    document.querySelector(".filterBox").value = anything;
+    document.querySelector(".filterBox").value =anything;
     console.log("inserito");
 }
 
@@ -9,7 +9,7 @@ dropdown.onclick = function () {
 }
 
 function showReg(anything) {
-    document.querySelector(".filterBox-reg").value = anything;
+    document.querySelector(".filterBox-reg").value =anything;
     console.log("inserito");
 }
 

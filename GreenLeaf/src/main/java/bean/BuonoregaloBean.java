@@ -1,87 +1,70 @@
 package bean;
 
-/**
- * Questa classe rappresenta l'entità Associato.
- **/
 public class BuonoregaloBean {
 
-  public String idBuonoregalo;
-  public String stato;
-  public String utenteRegalo;
-  public Double prezzo;
-  public Integer ordineRegalo;
+    public String idBuonoregalo, stato, utenteRegalo;
+    public Double prezzo;
+    public Integer ordineRegalo;
 
-  public BuonoregaloBean() {
-  }
+    public BuonoregaloBean() {
+    }
 
-  /**
-   * Cosytruttore della classe.
-   **/
-  public BuonoregaloBean(String idBuonoregalo, String stato, String utenteRegalo, Double prezzo,
-                         Integer ordineRegalo) {
-    this.idBuonoregalo = idBuonoregalo;
-    this.stato = stato;
-    this.utenteRegalo = utenteRegalo;
-    this.prezzo = prezzo;
-    this.ordineRegalo = ordineRegalo;
-  }
+    public BuonoregaloBean(String idBuonoregalo, String stato,  String utenteRegalo, Double prezzo, Integer ordineRegalo) {
+        this.idBuonoregalo = idBuonoregalo;
+        this.stato = stato;
+        this.utenteRegalo = utenteRegalo;
+        this.prezzo = prezzo;
+        this.ordineRegalo = ordineRegalo;
+    }
 
-  public String getIdBuonoregalo() {
-    return idBuonoregalo;
-  }
+    public String getIdBuonoregalo() {
+        return idBuonoregalo;
+    }
 
-  public void setIdBuonoregalo(String idBuonoregalo) {
-    this.idBuonoregalo = idBuonoregalo;
-  }
+    public void setIdBuonoregalo(String idBuonoregalo) {
+        this.idBuonoregalo = idBuonoregalo;
+    }
 
-  public String getStato() {
-    return stato;
-  }
+    public String getStato() {
+        return stato;
+    }
 
-  public void setStato(String stato) {
-    this.stato = stato;
-  }
+    public void setStato(String stato) {
+        this.stato = stato;
+    }
 
-  public String getUtenteRegalo() {
-    return utenteRegalo;
-  }
+    public String getUtenteRegalo() {
+        return utenteRegalo;
+    }
 
-  public void setUtenteRegalo(String utenteRegalo) {
-    this.utenteRegalo = utenteRegalo;
-  }
+    public void setUtenteRegalo(String utenteRegalo) {
+        this.utenteRegalo = utenteRegalo;
+    }
 
-  public Double getPrezzo() {
-    return prezzo;
-  }
+    public Double getPrezzo() {
+        return prezzo;
+    }
 
-  public void setPrezzo(Double prezzo) {
-    this.prezzo = prezzo;
-  }
+    public void setPrezzo(Double prezzo) {
+        this.prezzo = prezzo;
+    }
 
-  public Integer getOrdineRegalo() {
-    return ordineRegalo;
-  }
+    public Integer getOrdineRegalo() {
+        return ordineRegalo;
+    }
 
-  public void setOrdineRegalo(Integer ordineRegalo) {
-    this.ordineRegalo = ordineRegalo;
-  }
+    public void setOrdineRegalo(Integer ordineRegalo) {
+        this.ordineRegalo = ordineRegalo;
+    }
 
-  @Override
-  public String toString() {
-    return "BuonoregaloBean{"
-        + "idBuonoregalo='"
-        + idBuonoregalo
-        + '\''
-        + ", stato='"
-        + stato
-        + '\''
-        + ", utenteRegalo='"
-        + utenteRegalo
-        + '\''
-        + ", prezzo="
-        + prezzo
-        + ", ordineRegalo="
-        + ordineRegalo
-        + '}';
-  }
+    @Override
+    public String toString() {
+        return "BuonoregaloBean{" +
+                "idBuonoregalo='" + idBuonoregalo + '\'' +
+                ", stato='" + stato + '\'' +
+                ", utenteRegalo='" + utenteRegalo + '\'' +
+                ", prezzo=" + prezzo +
+                ", ordineRegalo=" + ordineRegalo +
+                '}';
+    }
 }

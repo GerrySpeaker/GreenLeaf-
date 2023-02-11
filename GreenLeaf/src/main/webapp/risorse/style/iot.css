@@ -1,10 +1,10 @@
-* {
+*{
     padding: 0;
     margin: 0;
     font-family: "Montserrat";
 }
 
-:root {
+:root{
     --bg-color: whitesmoke;
     --text-color: #282828;
     --main-color: #007a00;
@@ -13,13 +13,13 @@
     --popup-color: white;
 }
 
-* {
+*{
     padding: 0;
     margin: 0;
     font-family: "Montserrat";
 }
 
-:root {
+:root{
     --bg-color: whitesmoke;
     --text-color: #282828;
     --main-color: #007a00;
@@ -28,19 +28,19 @@
     --popup-color: white;
 }
 
-.iot {
+.iot{
     margin-top: 20px;
     text-align: left;
 }
 
-.iot h3 {
+.iot h3{
     /* text-align:center; */
     margin-bottom: 20px;
-    font-size: 23px;
+    font-size:23px;
     font-weight: bold;
 }
 
-.iot li {
+.iot li{
     /* text-align:center; */
     margin: 15px 0;
 }

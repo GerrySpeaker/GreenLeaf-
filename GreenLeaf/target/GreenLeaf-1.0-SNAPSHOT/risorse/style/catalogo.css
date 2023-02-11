@@ -1,12 +1,12 @@
-:root {
-    --bg-color: whitesmoke;
-    --text-color: #282828;
-    --main-color: #007a00;
-    --second-color: #004700;
-    --notify-color: #80ff81;
-    --popup-color: white;
+:root{
+	--bg-color: whitesmoke;
+	--text-color: #282828;
+	--main-color: #007a00;
+	--second-color: #004700;
+	--notify-color: #80ff81;
+	--popup-color: white;
 }
-
+    
 .all {
     box-sizing: border-box;
     justify-content: center;
@@ -14,14 +14,14 @@
     font-family: "Montserrat";
     z-index: -100;
     padding-top: 10px;
-    text-decoration: none;
-    list-style: none;
+	text-decoration: none;
+	list-style: none;
     background-color: var(--bg-color);
     min-height: 100vh;
     padding-bottom: 20px;
 }
 
-.btn-select {
+.btn-select{
     align-items: center;
     justify-content: center;
 }
@@ -47,12 +47,12 @@
     width: 300px;
 }
 
-.card:hover {
+.card:hover{
     transform: translateY(4px);
     transition: all .40s ease;
 }
 
-.card-status {
+.card-status{
     margin-top: 0;
     font-size: 13px;
 }
@@ -75,7 +75,7 @@
     min-height: 200px;
 }
 
-.card-body h3 {
+.card-body h3{
     color: var(--text-color);
     font-weight: bold;
     margin: 10px 0;
@@ -88,7 +88,7 @@
     margin-bottom: 10px;
 }
 
-.btn_area {
+.btn_area{
     text-align: center;
     margin-top: 25px;
 }
@@ -106,7 +106,7 @@
     text-transform: uppercase;
 }
 
-.btn_primary:hover {
+.btn_primary:hover{
     background-color: var(--second-color);
     color: var(--popup-color);
     border: none;
@@ -126,30 +126,30 @@
     text-transform: uppercase;
 }
 
-.btn_secondary:hover {
+.btn_secondary:hover{
     background-color: var(--second-color);
     color: var(--popup-color);
     border: none;
 }
 
-.imp {
+.imp{
     font-size: 15px;
     font-weight: bold;
 }
 
-.imp span {
+.imp span{
     font-weight: 300;
 }
 
 
-@media screen and (max-width: 1220px) {
+@media screen and (max-width:1220px){
 
     .container-card {
         grid-template-columns: repeat(2, 20rem);
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width:700px){
 
     .container-card {
         grid-template-columns: repeat(1, 20rem);

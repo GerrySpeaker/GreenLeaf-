@@ -5,27 +5,27 @@
     font-family: "Montserrat";
 }
 
-:root {
+:root{
     --bg-color: whitesmoke;
     --text-color: #282828;
-    --main-color: #007a00;
-    --second-color: #004700;
-    --notify-color: #80ff81;
-    --popup-color: white;
+	--main-color: #007a00;
+	--second-color: #004700;
+	--notify-color: #80ff81;
+	--popup-color: white;
 }
 
 .all-body {
-    min-height: 100vh;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-image: url("background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-image: url("background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
     display: flex;
 }
 
-.error {
+.error{
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     color: #c80e00;
@@ -37,21 +37,21 @@
     width: 100%;
     background-color: rgba(255, 255, 255, 0.7);
     padding: 65px;
-    border-radius: 55% 45% 66% 34% / 31% 69% 31% 69%;
+    border-radius: 55% 45% 66% 34% / 31% 69% 31% 69% ;
     box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.2),
-    25px 35px 20px rgba(0, 0, 0, 0.1),
-    25px 30px 30px rgba(0, 0, 0, 0.1),
-    inset -20px -20px 25px rgba(255, 255, 255, 0.5);
-    transition: 0.5s;
+                    25px 35px 20px rgba(0, 0, 0, 0.1),
+                    25px 30px 30px rgba(0, 0, 0, 0.1),
+                    inset -20px -20px 25px rgba(255, 255, 255, 0.5);
+        transition: 0.5s;
     align-items: center;
     justify-content: center;
 }
 
-.container:hover {
+.container:hover{
     border-radius: 50%;
 }
 
-.container::before {
+.container::before{
     content: '';
     position: absolute;
     width: 35px;
@@ -63,7 +63,7 @@
     border-radius: 50%;
 }
 
-.container::after {
+.container::after{
     content: '';
     position: absolute;
     width: 15px;
@@ -83,41 +83,40 @@
     color: var(--text-color);
     text-align: center;
 }
-
 .container .form {
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .form .input-box {
-    width: 100%;
-    margin-top: 20px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .input-box label {
-    color: var(--text-color);
-    font-size: 1.1em;
-    font-weight: 600;
-    font-style: italic;
-    margin-left: 20px;
+  color: var(--text-color);
+  font-size: 1.1em;
+  font-weight: 600;
+  font-style: italic;
+  margin-left: 20px;
 }
 
-.input-box label.pass {
-    color: var(--text-color);
-    font-size: 0.7em;
-    font-weight: 600;
-    font-style: italic;
-    margin-left: 0px;
+.input-box label.pass{
+  color: var(--text-color);
+  font-size: 0.7em;
+  font-weight: 600;
+  font-style: italic;
+  margin-left: 0 px;
 }
 
-.btn {
-    margin-top: 20px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+.btn{
+  margin-top: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.submit {
-    background-color: var(--second-color);
+.submit{
+  background-color: var(--second-color);
     width: 120px;
     transition: 0.5s;
     color: var(--popup-color);
@@ -130,79 +129,79 @@
     padding: 15px;
     border-radius: 25px;
     box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
-    15px 15px 10px rgba(0, 0, 0, 0.05),
-    15px 10px 15px rgba(0, 0, 0, 0.025);
+                15px 15px 10px rgba(0, 0, 0, 0.05),
+                15px 10px 15px rgba(0, 0, 0, 0.025);
 }
 
-.submit:hover {
-    width: 150px;
+.submit:hover{
+  width: 150px;
 }
 
-.form input::placeholder {
-    color: var(--text-color);
-    color: black;
+.form input::placeholder{
+  color: var(--text-color);
+  color: black;
 }
 
 .form :where(.input-box input, .select-box) {
-    position: relative;
-    height: 50px;
-    width: 100%;
-    outline: none;
-    font-size: 1rem;
-    color: black;
-    background: transparent;
-    margin-top: 8px;
-    border: none;
-    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
-    inset -2px -5px 10px rgba(255, 255, 255, 0.3),
-    15px 15px 10px rgba(0, 0, 0, 0.05),
-    15px 10px 15px rgba(0, 0, 0, 0.025);
-    border-radius: 25px;
-    padding: 0 15px;
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: black;
+  background: transparent;
+  margin-top: 8px;
+  border: none;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
+                inset -2px -5px 10px rgba(255, 255, 255, 0.3),
+                15px 15px 10px rgba(0, 0, 0, 0.05),
+                15px 10px 15px rgba(0, 0, 0, 0.025);
+  border-radius: 25px;
+  padding: 0 15px;
 }
 
 .form .column {
-    display: flex;
-    column-gap: 15px;
+  display: flex;
+  column-gap: 15px;
 }
 
-#txt-nome {
-    font-weight: bold;
-    margin-left: 10px;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+#txt-nome{
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
     color: #c80e00;
 
 }
 
-#txt-cognome {
-    font-weight: bold;
-    margin-left: 10px;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+#txt-cognome{
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
     color: #c80e00;
 
 }
 
-#txt-email {
-    font-weight: bold;
-    margin-left: 10px;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+#txt-email{
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
     color: #c80e00;
 
 }
 
-#txt-password {
-    font-weight: bold;
-    margin-left: 10px;
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
+#txt-password{
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
     color: #c80e00;
 
 }
 
-#toggle {
+#toggle{
     position: absolute;
     top: 55%;
     right: 75px;
@@ -213,101 +212,100 @@
     background-size: cover;
 }
 
-#toggle.hide {
+#toggle.hide{
     background: url(hide.png);
     background-size: cover;
 }
 
-.dropdown {
-    position: relative;
-    margin-top: 10px;
-    width: 100%;
-    height: 50px;
+.dropdown{
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
 }
 
-.dropdown::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    position: absolute;
-    border: 2px solid var(--text-color);
-    right: 20px;
-    top: 15px;
-    z-index: 10000;
-    border: 2px solid var(--text-color);
-    border-top: 2px solid transparent;
-    border-right: 2px solid transparent;
-    transform: rotate(-45deg);
-    transition: 0.5s;
-    pointer-events: none;
+.dropdown::before{
+  content: '';
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  border: 2px solid var(--text-color);
+  right: 20px;
+  top: 15px;
+  z-index: 10000;
+  border: 2px solid var(--text-color);
+  border-top: 2px solid transparent;
+  border-right: 2px solid transparent;
+  transform: rotate(-45deg);
+  transition: 0.5s;
+  pointer-events: none;
 }
 
-.dropdown.active::before {
-    transform: rotate(-225deg);
-    top: 20px;
+.dropdown.active::before{
+  transform: rotate(-225deg);
+  top:20px;
 }
 
-.dropdown .filterBox {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    font-size: 1rem;
-    cursor: pointer;
-    background-color: var(--popup-color);
-    border: none;
-    outline: none;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    padding: 12px 20px;
-    box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
-    inset -2px -5px 10px rgba(255, 255, 255, 0.3),
-    15px 15px 10px rgba(0, 0, 0, 0.05),
-    15px 10px 15px rgba(0, 0, 0, 0.025);
-    border-radius: 25px;
-    background: transparent;
-    color: black;
-    font-size: 1.2em;
-    font-weight: 500;
+.dropdown .filterBox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--popup-color);
+  border: none;
+  outline: none;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  padding: 12px 20px;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
+                inset -2px -5px 10px rgba(255, 255, 255, 0.3),
+                15px 15px 10px rgba(0, 0, 0, 0.05),
+                15px 10px 15px rgba(0, 0, 0, 0.025);
+  border-radius: 25px;
+  background: transparent;
+  color: black;
+  font-size: 1.2em;
+  font-weight: 500;
 }
 
-.dropdown .option {
-    position: absolute;
-    top: 60px;
-    width: 100%;
-    background-color: var(--popup-color);
-    max-height: calc(40vh - 9rem);
-    overflow-y: auto;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    font-size: 1em;
-    display: none;
+.dropdown .option{
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  background-color: var(--popup-color);
+  max-height: calc(40vh - 9rem);
+  overflow-y: auto;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-size: 1em;
+  display: none;
 }
 
-.dropdown.active .option {
-    display: block;
+.dropdown.active .option{
+  display: block;
 }
 
-.dropdown .option div {
-    padding: 12px 20px;
-    cursor: pointer;
-    text-align: center;
-    box-shadow: 1px 11px 15px -8px rgba(0, 0, 0, 0.1);
+.dropdown .option div{
+  padding: 12px 20px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 1px 11px 15px -8px rgba(0,0,0,0.1);
 }
 
-.dropdown .option div:hover {
-    background-color: var(--main-color);
-    color: var(--popup-color);
+.dropdown .option div:hover{
+  background-color: var(--main-color);
+  color: var(--popup-color);
 }
 
 /*Responsive*/
 @media screen and (max-width: 500px) {
-    .form .column {
-        flex-wrap: wrap;
-    }
-
-    .form :where(.gender-option, .gender) {
-        row-gap: 15px;
-    }
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
 }
 

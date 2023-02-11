@@ -42,8 +42,8 @@ public class DriverManagerConnectionPool {
       String port = "3306";
       String db =
           "greenleaf?serverTimezone=UTC&useLegacyDatetimeCode=false&useUnicode=true"
-              + "&useJDBCCompliantTimezoneShift=true&zeroDateTimeBehavior=convertToNull"
-              + "&autoReconnect=true&useSSL=false";
+                  + "&useJDBCCompliantTimezoneShift=true&zeroDateTimeBehavior=convertToNull"
+                  + "&autoReconnect=true&useSSL=false";
       String username = "root";
       String password = "root";
 

@@ -1,23 +1,23 @@
-* {
+*{
     margin: 0;
     padding: 0;
     font-family: "Montserrat";
 }
 
-:root {
+:root{
     --bg-color: whitesmoke;
-    --text-color: #282828;
-    --main-color: #007a00;
-    --second-color: #004700;
-    --notify-color: #80ff81;
-    --popup-color: white;
+	--text-color: #282828;
+	--main-color: #007a00;
+	--second-color: #004700;
+	--notify-color: #80ff81;
+	--popup-color: white;
 }
 
-.all-headerbody {
+.all-headerbody{
     box-sizing: border-box;
 }
 
-header {
+header{
     background: var(--popup-color);
     width: 100%;
     top: 0;
@@ -34,7 +34,7 @@ header {
     box-shadow: 0 4px 2px -2px gray;
 }
 
-header .logo {
+header .logo{
     position: absolute;
     width: 350px;
     top: -25px;
@@ -42,7 +42,7 @@ header .logo {
     margin-top: 0;
 }
 
-header .user {
+header .user{
     display: flex;
     justify-content: center;
     position: absolute;
@@ -51,23 +51,23 @@ header .user {
 }
 
 
-.user a {
+.user a{
     margin-left: 10px;
     text-decoration: none;
 }
 
-.user a i {
+ .user a i{
     font-size: 24px;
-    color: var(--text-color);
-    cursor: pointer;
-    margin: 10px 0 0 5px;
+     color: var(--text-color);
+     cursor: pointer;
+     margin: 10px 0 0 5px;
 }
 
-.user a i:hover {
+.user a i:hover{
     color: var(--main-color);
 }
 
-header .nav-menu {
+header .nav-menu{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,12 +75,12 @@ header .nav-menu {
     overflow: hidden;
 }
 
-header .nav-menu li {
+header .nav-menu li{
     list-style: none;
     position: relative;
 }
 
-header .nav-menu li a {
+header .nav-menu li a{
     position: relative;
     margin: 0 15px;
     text-decoration: none;
@@ -93,18 +93,18 @@ header .nav-menu li a {
 }
 
 
-header .nav-menu li a:hover {
+header .nav-menu li a:hover{
     color: var(--main-color);
     font-size: 1.3em;
 }
 
-.hamburger {
+.hamburger{
     display: none;
     cursor: pointer;
     margin-left: 95%;
 }
 
-.bar {
+.bar{
     display: block;
     width: 25px;
     height: 3px;
@@ -113,24 +113,24 @@ header .nav-menu li a:hover {
     background-color: var(--text-color);
 }
 
-@media (max-width: 1210px) {
-    .hamburger {
+@media(max-width: 1210px){
+    .hamburger{
         display: block;
     }
 
-    .hamburger.active .bar:nth-child(2) {
+    .hamburger.active .bar:nth-child(2){
         opacity: 0;
     }
 
-    .hamburger.active .bar:nth-child(1) {
+    .hamburger.active .bar:nth-child(1){
         transform: translateY(8px) rotate(45deg);
     }
 
-    .hamburger.active .bar:nth-child(3) {
+    .hamburger.active .bar:nth-child(3){
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    header .nav-menu {
+    header .nav-menu{
         position: fixed;
         top: 70px;
         left: -100%;
@@ -143,16 +143,16 @@ header .nav-menu li a:hover {
         box-shadow: 0 4px 2px -2px gray;
     }
 
-    header .nav-menu li {
+    header .nav-menu li{
         margin: 16px 0;
-
+        
     }
 
-    header .nav-menu.active {
+    header .nav-menu.active{
         left: 0;
     }
 
-    header .nav-menu li a {
+    header .nav-menu li a{
         font-size: 1em;
 
     }
