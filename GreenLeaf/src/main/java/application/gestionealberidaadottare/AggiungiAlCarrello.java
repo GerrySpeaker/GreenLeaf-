@@ -2,18 +2,19 @@ package application.gestionealberidaadottare;
 
 import bean.AssociatoBean;
 import bean.CategoriaBean;
-import java.io.IOException;
-import java.sql.SQLException;
-import java.util.ArrayList;
+import storage.AdminDao;
+import storage.AssociatoDao;
+import storage.CategoriaDao;
+import storage.OperatoreDao;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import storage.AdminDao;
-import storage.AssociatoDao;
-import storage.CategoriaDao;
-import storage.OperatoreDao;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * Questa classe permette di gestire l’operazione di aggiunta al carrello.
@@ -37,12 +38,12 @@ public class AggiungiAlCarrello extends HttpServlet {
   }
 
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
+          throws ServletException, IOException {
     doPost(request, response);
   }
 
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
-      throws ServletException, IOException {
+          throws ServletException, IOException {
 
     String mail = request.getParameter("email");
     String categoria = request.getParameter("categoria");
@@ -72,15 +73,14 @@ public class AggiungiAlCarrello extends HttpServlet {
       e.printStackTrace();
     }
 
-    for (int i = 0; i < associati.size(); i++) {
-      if (associati.get(i).getRegioneAssociato().equals(regione)) {
-        check = true;
+    if (associati.size() > 0) {
+      for (int i = 0; i < associati.size(); i++) {
+        if (associati.get(i).getRegioneAssociato().equals(regione)) {
+          check = true;
+        }
       }
     }
 
-    if (check == false) {
-      response.sendRedirect(request.getContextPath() + "/homepage.jsp");
-    }
 
     if (regione != null && check == true) {
       try {
@@ -101,6 +101,11 @@ public class AggiungiAlCarrello extends HttpServlet {
       request.getSession().setAttribute("buonoregalo", buono);
       response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
 
+    }
+
+
+    if (check == false && buono.isEmpty()) {
+      response.sendRedirect(request.getContextPath() + "/homepage.jsp");
     }
 
   }
