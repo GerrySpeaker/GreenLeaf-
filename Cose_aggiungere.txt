@@ -1,0 +1,10 @@
+Inserire in ODD CreaOperatoreApplication
+Aggiungere logout all'ODD
+Togliere AreaUtente Application ODD
+
+Cose da rivedere nel class diagram:
+
+	I nomi degli attributi ridondanti nel class diagram vanno scritti con uno / avanti
+	O solo nome o anche la sua firma scritte in camel case
+
+Rivedere matrice di tracciabilità
