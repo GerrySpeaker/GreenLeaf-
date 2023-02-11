@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>i_Emilia Romagna_fa fa-trash</name>
+   <tag></tag>
+   <elementGuidId>ca8cba91-4406-473b-958e-024438da7aac</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//tr[2]/td[3]/a/i</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>i</value>
+      <webElementGuid>69e2af25-2230-4711-b9ac-d3a462ce5e6d</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>fa fa-trash</value>
+      <webElementGuid>a0373403-9518-4a55-9298-ec60dfe3383e</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[1]/body[1]/div[@class=&quot;all-cart&quot;]/div[@class=&quot;px-4 px-lg-0&quot;]/div[@class=&quot;pb-5&quot;]/div[@class=&quot;container&quot;]/div[@class=&quot;row&quot;]/div[@class=&quot;col-lg-12 p-5 bg-white rounded shadow-sm mb-5&quot;]/div[@class=&quot;table-responsive&quot;]/table[@class=&quot;table&quot;]/tbody[1]/tr[2]/td[@class=&quot;border-0 align-middle&quot;]/a[@class=&quot;text-dark&quot;]/i[@class=&quot;fa fa-trash&quot;]</value>
+      <webElementGuid>824734a3-368f-4ee1-b242-1cb3dba66d76</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//tr[2]/td[3]/a/i</value>
+      <webElementGuid>0dd3dd0f-b799-458d-874e-1841ef2ac50b</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

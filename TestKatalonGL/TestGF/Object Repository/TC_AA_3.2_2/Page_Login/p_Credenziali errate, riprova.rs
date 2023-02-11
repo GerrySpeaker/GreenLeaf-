@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>p_Credenziali errate, riprova</name>
+   <tag></tag>
+   <elementGuidId>5a98edee-6a16-45d4-84d5-64294237e904</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>#errore</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//p[@id='errore']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>p</value>
+      <webElementGuid>30de74d4-c773-4e94-975d-03eb7997a3b9</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>errore</value>
+      <webElementGuid>804b7b34-0854-46b3-a7e2-92453bd29eb9</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>error</value>
+      <webElementGuid>dcab0a44-55ae-4f0c-8b20-eb5ce5ce977b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Credenziali errate, riprova</value>
+      <webElementGuid>fec91e31-f776-4735-beca-99e1ab1d9aa8</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[1]/body[@class=&quot;all-body&quot;]/div[@class=&quot;all-form&quot;]/div[@class=&quot;form-container&quot;]/div[@class=&quot;drop&quot;]/div[@class=&quot;content&quot;]/p[@id=&quot;errore&quot;]</value>
+      <webElementGuid>3949cc83-f36e-4aa9-ab68-5bcca2ea5b4d</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//p[@id='errore']</value>
+      <webElementGuid>f8ac75ab-eb75-48c5-a717-66afa388a2b6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Login'])[2]/following::p[1]</value>
+      <webElementGuid>185de996-5bfe-4b5c-b582-8d1213d05632</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Registrati'])[1]/preceding::p[2]</value>
+      <webElementGuid>1dd2a011-7bf9-4232-855d-709737ae5094</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Credenziali errate, riprova']/parent::*</value>
+      <webElementGuid>1ae5c6fa-b00f-4005-995b-fd1e7a2c0244</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//p</value>
+      <webElementGuid>16bda5fd-fb0c-4f88-9e51-cda7e5e2995f</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//p[@id = 'errore' and (text() = 'Credenziali errate, riprova' or . = 'Credenziali errate, riprova')]</value>
+      <webElementGuid>539790ac-d030-4baf-ac20-a10d205512d9</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

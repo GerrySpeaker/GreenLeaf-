@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>span_Calcolo CO2_checkmark</name>
+   <tag></tag>
+   <elementGuidId>261e8b73-0d66-4417-88c3-991afd6c7d79</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>span.checkmark</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='Trentino Alto Adige']/div/div/label/span</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>span</value>
+      <webElementGuid>b7e333da-7ea9-4517-8fbb-4a1bf22a0d0b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>checkmark</value>
+      <webElementGuid>a2ec59b4-f33d-4ef0-a237-de510e1e7f48</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;Trentino Alto Adige&quot;)/div[@class=&quot;reg-card&quot;]/div[@class=&quot;radio-group&quot;]/label[@class=&quot;radio&quot;]/span[@class=&quot;checkmark&quot;]</value>
+      <webElementGuid>f7beeddf-8edf-4ae9-b382-54ec502bc098</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='Trentino Alto Adige']/div/div/label/span</value>
+      <webElementGuid>5e0d1c52-a3ec-410d-bcb1-67d482fa70e8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//label/span</value>
+      <webElementGuid>9278b471-125e-409e-b436-95e2edd7719d</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

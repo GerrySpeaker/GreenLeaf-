@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>div_Calcolo CO2_reg-card</name>
+   <tag></tag>
+   <elementGuidId>9dd773fc-233d-4b33-8c1c-5aa9b0328347</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value>#Piemonte > div.reg-card</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='Piemonte']/div</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>div</value>
+      <webElementGuid>36d4acb4-a05e-4e56-93f9-909865d8cd09</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>reg-card</value>
+      <webElementGuid>72f14a88-51b6-4bfb-9318-7cbc846d5751</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;Piemonte&quot;)/div[@class=&quot;reg-card&quot;]</value>
+      <webElementGuid>8f32375b-97b0-4d10-8653-79c134d1962e</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='Piemonte']/div</value>
+      <webElementGuid>0bfb0edd-01dd-403f-96f4-a6532b52738a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Calcolo CO2'])[1]/following::div[13]</value>
+      <webElementGuid>8470b5f9-e93a-41e3-b6a9-e19d07f2106e</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Monitoraggio'])[1]/following::div[13]</value>
+      <webElementGuid>6566dffc-784d-4823-8216-5721afa83591</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Aggiungi al carrello'])[1]/preceding::div[5]</value>
+      <webElementGuid>4124e19a-04f6-444f-aef9-d42bfb973e2d</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Chi siamo?'])[1]/preceding::div[5]</value>
+      <webElementGuid>35ea9fa9-6697-40ee-ac68-2cf3beefe350</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div/div[3]/div</value>
+      <webElementGuid>74733828-7b3d-49d3-9da9-890a047d9b99</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
