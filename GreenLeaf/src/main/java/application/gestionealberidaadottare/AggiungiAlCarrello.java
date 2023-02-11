@@ -78,9 +78,6 @@ public class AggiungiAlCarrello extends HttpServlet {
       }
     }
 
-    if (check == false) {
-      response.sendRedirect(request.getContextPath() + "/homepage.jsp");
-    }
 
     if (regione != null && check == true) {
       try {
@@ -102,6 +99,11 @@ public class AggiungiAlCarrello extends HttpServlet {
       response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
 
     }
+
+    if (check == false && regione != null) {
+      response.sendRedirect(request.getContextPath() + "/homepage.jsp");
+    }
+
 
   }
 
