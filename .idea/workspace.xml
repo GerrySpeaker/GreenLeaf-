@@ -9,104 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69b6b016-128a-40c4-8d35-c443c2f20acd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyle-idea.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/checkstyleidea-libs/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_beust_jcommander_1_78.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_3_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_12_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_12_16.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_4_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_testng_0_4_30.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_3_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_32.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_testng_testng_7_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_jquery_3_5_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/GreenLeaf_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/GreenLeaf_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/src/main/java/application/gestionealberidaadottare/AggiungiAlCarrello.java" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/src/main/java/application/gestionealberidaadottare/AggiungiAlCarrello.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/Autenticazione/AutenticazioneApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/Autenticazione/AutenticazioneApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/Autenticazione/Delete.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/Autenticazione/Delete.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/Autenticazione/Logout.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/Autenticazione/Logout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/GestioneAlberiAdottati/GestioneAlberiAdottatiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/GestioneAlberiAdottati/GestioneAlberiAdottatiApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/GestioneAlberiDaAdottare/AggiungiAlCarrello.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/GestioneAlberiDaAdottare/AggiungiAlCarrello.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/GestioneAlberiDaAdottare/GestioneAlberiDaAdottareApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/GestioneAlberiDaAdottare/GestioneAlberiDaAdottareApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/GestioneAlberiDaAdottare/RimuoviDalCarrello.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/GestioneAlberiDaAdottare/RimuoviDalCarrello.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/GestioneRegalo/GestioneRegaloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/GestioneRegalo/GestioneRegaloApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/GestioniPiantumazioni/GestionePiantumazioniApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/GestioniPiantumazioni/GestionePiantumazioniApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/Registrazione/CreaOperatoreApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/Registrazione/CreaOperatoreApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/Registrazione/RegistrazioneApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/Registrazione/RegistrazioneApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/AdminBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/AdminBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/AlberoBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/AlberoBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/AssociatoBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/AssociatoBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/BuonoregaloBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/BuonoregaloBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/CategoriaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/CategoriaBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/IotBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/IotBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/OperatoreBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/OperatoreBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/OrdineBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/OrdineBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/RegioneBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/RegioneBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/TrasportiBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/TrasportiBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/UtenteBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/bean/UtenteBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/AdminDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/AdminDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/AlberoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/AlberoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/AssociatoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/AssociatoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/BuonoRegaloDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/BuonoRegaloDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/CategoriaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/CategoriaDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/IotDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/IotDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/OperatoreDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/OperatoreDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/OrdineDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/OrdineDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/RegioneDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/RegioneDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/TrasportiDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/TrasportiDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/UtenteDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/UtenteDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/application/autenticazione/AutenticazioneApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/application/autenticazione/AutenticazioneApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/application/autenticazione/Delete.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/application/autenticazione/Delete.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/application/autenticazione/Logout.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/application/autenticazione/Logout.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/application/gestionealberiadottati/GestioneAlberiAdottatiApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/application/gestionealberiadottati/GestioneAlberiAdottatiApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/application/gestionealberidaadottare/AggiungiAlCarrello.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/application/gestionealberidaadottare/AggiungiAlCarrello.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/application/gestionealberidaadottare/GestioneAlberiDaAdottareApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/application/gestionealberidaadottare/GestioneAlberiDaAdottareApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/application/gestionealberidaadottare/RimuoviDalCarrello.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/application/gestionealberidaadottare/RimuoviDalCarrello.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/application/gestioneregalo/GestioneRegaloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/application/gestioneregalo/GestioneRegaloApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/application/gestionipiantumazioni/GestionePiantumazioniApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/application/gestionipiantumazioni/GestionePiantumazioniApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/application/registrazione/CreaOperatoreApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/application/registrazione/CreaOperatoreApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/application/registrazione/RegistrazioneApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/application/registrazione/RegistrazioneApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/AdminBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/AdminBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/AlberoBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/AlberoBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/AssociatoBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/AssociatoBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/BuonoregaloBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/BuonoregaloBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/CategoriaBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/CategoriaBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/IotBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/IotBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/OperatoreBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/OperatoreBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/OrdineBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/OrdineBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/RegioneBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/RegioneBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/TrasportiBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/TrasportiBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/UtenteBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/bean/UtenteBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/AdminDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/AdminDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/AlberoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/AlberoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/AssociatoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/AssociatoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/BuonoRegaloDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/BuonoRegaloDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/CategoriaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/CategoriaDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/IotDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/IotDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/OperatoreDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/OperatoreDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/OrdineDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/OrdineDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/RegioneDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/RegioneDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/TrasportiDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/TrasportiDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/UtenteDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/UtenteDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/test-classes/JUnitTestSuite.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/test-classes/JUnitTestSuite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/test-classes/application/AutenticazioneApplicationTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/test-classes/application/AutenticazioneApplicationTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/test-classes/application/gestionealberidaadottare/AggiungiAlCarrelloTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/test-classes/application/gestionealberidaadottare/AggiungiAlCarrelloTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/test-classes/storage/AlberoDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/test-classes/storage/AlberoDaoTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/test-classes/storage/OperatoreDaoEliminaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/test-classes/storage/OperatoreDaoEliminaTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/test-classes/storage/OperatoreDaoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/test-classes/storage/OperatoreDaoTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Green_Leaf_presentation.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/Green_Leaf_presentation.pptx" afterDir="false" />
-    </list>
+    <list default="true" id="69b6b016-128a-40c4-8d35-c443c2f20acd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -263,7 +166,7 @@
       <updated>1673344777818</updated>
       <workItem from="1673344778991" duration="18000" />
       <workItem from="1676138479094" duration="243000" />
-      <workItem from="1676138740753" duration="446000" />
+      <workItem from="1676138740753" duration="1223000" />
     </task>
     <servers />
   </component>
