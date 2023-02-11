@@ -74,15 +74,15 @@ public class AggiungiAlCarrello extends HttpServlet {
             e.printStackTrace();
         }
 
-        for(int i = 0;i<associati.size();i++){
-            if (associati.get(i).getRegioneAssociato().equals(regione)){
-                check=true;
+
+        if(associati.size()>0){
+            for(int i = 0;i<associati.size();i++){
+                if (associati.get(i).getRegioneAssociato().equals(regione)){
+                    check=true;
+                }
             }
         }
 
-        if(check==false){
-            response.sendRedirect(request.getContextPath() + "/homepage.jsp");
-        }
 
         if(regione!=null && check==true){
             try {
@@ -103,7 +103,10 @@ public class AggiungiAlCarrello extends HttpServlet {
                 request.getSession().setAttribute("regione", regioni);
                 request.getSession().setAttribute("buonoregalo", buono);
                 response.sendRedirect(request.getContextPath() + "/catalogo.jsp");
+        }
 
+        if(check==false && buono.isEmpty()){
+            response.sendRedirect(request.getContextPath() + "/homepage.jsp");
         }
 
     }
