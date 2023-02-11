@@ -1,5 +1,7 @@
-CREATE DATABASE  IF NOT EXISTS `greenleaf` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `greenleaf`;
+CREATE
+DATABASE  IF NOT EXISTS `greenleaf` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE
+`greenleaf`;
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
 -- Host: localhost    Database: greenleaf
@@ -24,13 +26,14 @@ USE `greenleaf`;
 DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `admin` (
-  `email` varchar(30) NOT NULL,
-  `password` varchar(30) NOT NULL,
-  `cognome` varchar(30) NOT NULL,
-  `nome` varchar(30) NOT NULL,
-  PRIMARY KEY (`email`),
-  UNIQUE KEY `email_UNIQUE` (`email`)
+CREATE TABLE `admin`
+(
+    `email`    varchar(30) NOT NULL,
+    `password` varchar(30) NOT NULL,
+    `cognome`  varchar(30) NOT NULL,
+    `nome`     varchar(30) NOT NULL,
+    PRIMARY KEY (`email`),
+    UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,11 +41,16 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-LOCK TABLES `admin` WRITE;
+LOCK
+TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES ('alexborelli2001@gmail.com','123','borelli','alessandro'),('fa.mikela@gmail.com','peppevessicchio','faella','michela'),('vincenzocerciello02@gmail.com','vincenzoebello','cerciello','vincenzo');
+INSERT INTO `admin`
+VALUES ('alexborelli2001@gmail.com', '123', 'borelli', 'alessandro'),
+       ('fa.mikela@gmail.com', 'peppevessicchio', 'faella', 'michela'),
+       ('vincenzocerciello02@gmail.com', 'vincenzoebello', 'cerciello', 'vincenzo');
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
-UNLOCK TABLES;
+UNLOCK
+TABLES;
 
 --
 -- Table structure for table `albero`
@@ -51,27 +59,28 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `albero`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `albero` (
-  `idalbero` int NOT NULL AUTO_INCREMENT,
-  `CO2` varchar(10) NOT NULL,
-  `categoria` varchar(30) NOT NULL,
-  `datapiantumazione` date DEFAULT NULL,
-  `stato` varchar(30) NOT NULL,
-  `utenteAlbero` varchar(30) NOT NULL,
-  `regione` varchar(30) NOT NULL,
-  `ordine` int NOT NULL,
-  `iot` int DEFAULT NULL,
-  PRIMARY KEY (`idalbero`),
-  UNIQUE KEY `idalbero_UNIQUE` (`idalbero`),
-  KEY `categoria_idx` (`categoria`),
-  KEY `utente_idx` (`regione`),
-  KEY `utenteAlbero_idx` (`utenteAlbero`),
-  KEY `ordine_idx` (`ordine`),
-  KEY `iot_idx` (`iot`),
-  CONSTRAINT `categoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `iot` FOREIGN KEY (`iot`) REFERENCES `iot` (`idiot`),
-  CONSTRAINT `ordine` FOREIGN KEY (`ordine`) REFERENCES `ordine` (`idordine`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `utenteAlbero` FOREIGN KEY (`utenteAlbero`) REFERENCES `utente` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE `albero`
+(
+    `idalbero`          int         NOT NULL AUTO_INCREMENT,
+    `CO2`               varchar(10) NOT NULL,
+    `categoria`         varchar(30) NOT NULL,
+    `datapiantumazione` date DEFAULT NULL,
+    `stato`             varchar(30) NOT NULL,
+    `utenteAlbero`      varchar(30) NOT NULL,
+    `regione`           varchar(30) NOT NULL,
+    `ordine`            int         NOT NULL,
+    `iot`               int  DEFAULT NULL,
+    PRIMARY KEY (`idalbero`),
+    UNIQUE KEY `idalbero_UNIQUE` (`idalbero`),
+    KEY                 `categoria_idx` (`categoria`),
+    KEY                 `utente_idx` (`regione`),
+    KEY                 `utenteAlbero_idx` (`utenteAlbero`),
+    KEY                 `ordine_idx` (`ordine`),
+    KEY                 `iot_idx` (`iot`),
+    CONSTRAINT `categoria` FOREIGN KEY (`categoria`) REFERENCES `categoria` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `iot` FOREIGN KEY (`iot`) REFERENCES `iot` (`idiot`),
+    CONSTRAINT `ordine` FOREIGN KEY (`ordine`) REFERENCES `ordine` (`idordine`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `utenteAlbero` FOREIGN KEY (`utenteAlbero`) REFERENCES `utente` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -79,11 +88,21 @@ CREATE TABLE `albero` (
 -- Dumping data for table `albero`
 --
 
-LOCK TABLES `albero` WRITE;
+LOCK
+TABLES `albero` WRITE;
 /*!40000 ALTER TABLE `albero` DISABLE KEYS */;
-INSERT INTO `albero` VALUES (1,'-220 kg','mandarino',NULL,'Da Piantare','test@gmail.com','Sicilia',17,52),(2,'-100kg','mandorlo',NULL,'Da Piantare','test@gmail.com','Liguria',18,40),(3,'-20kg','fico',NULL,'Da Piantare','test@gmail.com','Puglia',18,10),(4,'-70kg','pesco','2023-02-04','Piantato','test@gmail.com','Basilicata',18,4),(5,'-55 kg','pero',NULL,'Da Piantare','test@gmail.com','Lombardia',18,34),(6,'-130kg','banano',NULL,'Da Piantare','test@gmail.com','Sardegna',18,49),(7,'-70kg','pesco','2023-02-04','Piantato','test@gmail.com','Basilicata',19,5),(8,'-70kg','pesco',NULL,'Da Piantare','test@gmail.com','Basilicata',19,6);
+INSERT INTO `albero`
+VALUES (1, '-220 kg', 'mandarino', NULL, 'Da Piantare', 'test@gmail.com', 'Sicilia', 17, 52),
+       (2, '-100kg', 'mandorlo', NULL, 'Da Piantare', 'test@gmail.com', 'Liguria', 18, 40),
+       (3, '-20kg', 'fico', NULL, 'Da Piantare', 'test@gmail.com', 'Puglia', 18, 10),
+       (4, '-70kg', 'pesco', '2023-02-04', 'Piantato', 'test@gmail.com', 'Basilicata', 18, 4),
+       (5, '-55 kg', 'pero', NULL, 'Da Piantare', 'test@gmail.com', 'Lombardia', 18, 34),
+       (6, '-130kg', 'banano', NULL, 'Da Piantare', 'test@gmail.com', 'Sardegna', 18, 49),
+       (7, '-70kg', 'pesco', '2023-02-04', 'Piantato', 'test@gmail.com', 'Basilicata', 19, 5),
+       (8, '-70kg', 'pesco', NULL, 'Da Piantare', 'test@gmail.com', 'Basilicata', 19, 6);
 /*!40000 ALTER TABLE `albero` ENABLE KEYS */;
-UNLOCK TABLES;
+UNLOCK
+TABLES;
 
 --
 -- Table structure for table `associato`
@@ -92,16 +111,17 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `associato`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `associato` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `categoriaAssociato` varchar(30) NOT NULL,
-  `regioneAssociato` varchar(30) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `categoriaAssociato_idx` (`categoriaAssociato`),
-  KEY `regioneAssociato_idx` (`regioneAssociato`),
-  CONSTRAINT `categoriaAssociato` FOREIGN KEY (`categoriaAssociato`) REFERENCES `categoria` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `regioneAssociato` FOREIGN KEY (`regioneAssociato`) REFERENCES `regione` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE `associato`
+(
+    `id`                 int         NOT NULL AUTO_INCREMENT,
+    `categoriaAssociato` varchar(30) NOT NULL,
+    `regioneAssociato`   varchar(30) NOT NULL,
+    PRIMARY KEY (`id`),
+    UNIQUE KEY `id_UNIQUE` (`id`),
+    KEY                  `categoriaAssociato_idx` (`categoriaAssociato`),
+    KEY                  `regioneAssociato_idx` (`regioneAssociato`),
+    CONSTRAINT `categoriaAssociato` FOREIGN KEY (`categoriaAssociato`) REFERENCES `categoria` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `regioneAssociato` FOREIGN KEY (`regioneAssociato`) REFERENCES `regione` (`nome`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -109,11 +129,47 @@ CREATE TABLE `associato` (
 -- Dumping data for table `associato`
 --
 
-LOCK TABLES `associato` WRITE;
+LOCK
+TABLES `associato` WRITE;
 /*!40000 ALTER TABLE `associato` DISABLE KEYS */;
-INSERT INTO `associato` VALUES (1,'melo','Trentino Alto Adige'),(2,'melo','Emilia Romagna'),(3,'melo','Piemonte'),(4,'melo','Veneto'),(5,'pero','Emilia Romagna'),(6,'pero','Veneto'),(7,'pero','Lombardia'),(8,'pero','Toscana'),(9,'ciliegio','Campania'),(10,'ciliegio','Puglia'),(11,'ciliegio','Veneto'),(12,'pino','Lazio'),(13,'pino','Campania'),(14,'pino','Trentino Alto Adige'),(15,'pesco','Basilicata'),(16,'pesco','Calabria'),(17,'pesco','Campania'),(18,'fico','Puglia'),(19,'fico','Campania'),(20,'fico','Sicilia'),(21,'banano','Sardegna'),(22,'banano','Sicilia'),(23,'mandorlo','Calabria'),(24,'mandorlo','Sicilia'),(25,'mandorlo','Liguria'),(26,'limone','Campania'),(27,'limone','Sicilia'),(28,'limone','Calabria'),(29,'limone','Toscana'),(30,'castagno','Campania'),(31,'castagno','Marche'),(32,'mandarino','Campania'),(33,'mandarino','Sicilia'),(34,'mandarino','Calabria');
+INSERT INTO `associato`
+VALUES (1, 'melo', 'Trentino Alto Adige'),
+       (2, 'melo', 'Emilia Romagna'),
+       (3, 'melo', 'Piemonte'),
+       (4, 'melo', 'Veneto'),
+       (5, 'pero', 'Emilia Romagna'),
+       (6, 'pero', 'Veneto'),
+       (7, 'pero', 'Lombardia'),
+       (8, 'pero', 'Toscana'),
+       (9, 'ciliegio', 'Campania'),
+       (10, 'ciliegio', 'Puglia'),
+       (11, 'ciliegio', 'Veneto'),
+       (12, 'pino', 'Lazio'),
+       (13, 'pino', 'Campania'),
+       (14, 'pino', 'Trentino Alto Adige'),
+       (15, 'pesco', 'Basilicata'),
+       (16, 'pesco', 'Calabria'),
+       (17, 'pesco', 'Campania'),
+       (18, 'fico', 'Puglia'),
+       (19, 'fico', 'Campania'),
+       (20, 'fico', 'Sicilia'),
+       (21, 'banano', 'Sardegna'),
+       (22, 'banano', 'Sicilia'),
+       (23, 'mandorlo', 'Calabria'),
+       (24, 'mandorlo', 'Sicilia'),
+       (25, 'mandorlo', 'Liguria'),
+       (26, 'limone', 'Campania'),
+       (27, 'limone', 'Sicilia'),
+       (28, 'limone', 'Calabria'),
+       (29, 'limone', 'Toscana'),
+       (30, 'castagno', 'Campania'),
+       (31, 'castagno', 'Marche'),
+       (32, 'mandarino', 'Campania'),
+       (33, 'mandarino', 'Sicilia'),
+       (34, 'mandarino', 'Calabria');
 /*!40000 ALTER TABLE `associato` ENABLE KEYS */;
-UNLOCK TABLES;
+UNLOCK
+TABLES;
 
 --
 -- Table structure for table `buonoregalo`
@@ -122,18 +178,19 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `buonoregalo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `buonoregalo` (
-  `idBuono` varchar(20) NOT NULL,
-  `stato` varchar(30) NOT NULL,
-  `prezzo` double NOT NULL,
-  `utenteRegalo` varchar(30) NOT NULL,
-  `ordineRegalo` int NOT NULL,
-  PRIMARY KEY (`idBuono`),
-  UNIQUE KEY `key_UNIQUE` (`idBuono`),
-  KEY `utenteRegalo_idx` (`utenteRegalo`),
-  KEY `ordineRegalo_idx` (`ordineRegalo`),
-  CONSTRAINT `ordineRegalo` FOREIGN KEY (`ordineRegalo`) REFERENCES `ordine` (`idordine`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `utenteRegalo` FOREIGN KEY (`utenteRegalo`) REFERENCES `utente` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE `buonoregalo`
+(
+    `idBuono`      varchar(20) NOT NULL,
+    `stato`        varchar(30) NOT NULL,
+    `prezzo`       double      NOT NULL,
+    `utenteRegalo` varchar(30) NOT NULL,
+    `ordineRegalo` int         NOT NULL,
+    PRIMARY KEY (`idBuono`),
+    UNIQUE KEY `key_UNIQUE` (`idBuono`),
+    KEY            `utenteRegalo_idx` (`utenteRegalo`),
+    KEY            `ordineRegalo_idx` (`ordineRegalo`),
+    CONSTRAINT `ordineRegalo` FOREIGN KEY (`ordineRegalo`) REFERENCES `ordine` (`idordine`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `utenteRegalo` FOREIGN KEY (`utenteRegalo`) REFERENCES `utente` (`email`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -141,11 +198,28 @@ CREATE TABLE `buonoregalo` (
 -- Dumping data for table `buonoregalo`
 --
 
-LOCK TABLES `buonoregalo` WRITE;
+LOCK
+TABLES `buonoregalo` WRITE;
 /*!40000 ALTER TABLE `buonoregalo` DISABLE KEYS */;
-INSERT INTO `buonoregalo` VALUES ('ddxrbvoxry','Riscattato',50,'test@gmail.com',15),('dnhgfopbpq','Da riscattare',50,'test@gmail.com',14),('ehpovjblci','Da riscattare',50,'test@gmail.com',14),('jeiautxfac','Da riscattare',50,'test@gmail.com',15),('kettbeowwz','Da riscattare',50,'test@gmail.com',14),('kuhjlzumra','Da riscattare',50,'test@gmail.com',13),('kyrdvkajpd','Da riscattare',50,'test@gmail.com',12),('lhnkwuuxul','Da riscattare',50,'test@gmail.com',14),('pyhlefkqnl','Da riscattare',50,'test@gmail.com',13),('qheehsuuaz','Da riscattare',50,'test@gmail.com',12),('qydlmgqqay','Da riscattare',50,'test@gmail.com',16),('syijyzgbgn','Riscattato',50,'test@gmail.com',1),('tjsbqigwjc','Da riscattare',50,'test@gmail.com',13),('tyfvokrski','Da riscattare',50,'test@gmail.com',15),('vdtipqvhiq','Da riscattare',50,'test@gmail.com',13);
+INSERT INTO `buonoregalo`
+VALUES ('ddxrbvoxry', 'Riscattato', 50, 'test@gmail.com', 15),
+       ('dnhgfopbpq', 'Da riscattare', 50, 'test@gmail.com', 14),
+       ('ehpovjblci', 'Da riscattare', 50, 'test@gmail.com', 14),
+       ('jeiautxfac', 'Da riscattare', 50, 'test@gmail.com', 15),
+       ('kettbeowwz', 'Da riscattare', 50, 'test@gmail.com', 14),
+       ('kuhjlzumra', 'Da riscattare', 50, 'test@gmail.com', 13),
+       ('kyrdvkajpd', 'Da riscattare', 50, 'test@gmail.com', 12),
+       ('lhnkwuuxul', 'Da riscattare', 50, 'test@gmail.com', 14),
+       ('pyhlefkqnl', 'Da riscattare', 50, 'test@gmail.com', 13),
+       ('qheehsuuaz', 'Da riscattare', 50, 'test@gmail.com', 12),
+       ('qydlmgqqay', 'Da riscattare', 50, 'test@gmail.com', 16),
+       ('syijyzgbgn', 'Riscattato', 50, 'test@gmail.com', 1),
+       ('tjsbqigwjc', 'Da riscattare', 50, 'test@gmail.com', 13),
+       ('tyfvokrski', 'Da riscattare', 50, 'test@gmail.com', 15),
+       ('vdtipqvhiq', 'Da riscattare', 50, 'test@gmail.com', 13);
 /*!40000 ALTER TABLE `buonoregalo` ENABLE KEYS */;
-UNLOCK TABLES;
+UNLOCK
+TABLES;
 
 --
 -- Table structure for table `categoria`
@@ -154,14 +228,15 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `categoria`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `categoria` (
-  `nome` varchar(30) NOT NULL,
-  `CO2max` varchar(10) NOT NULL,
-  `descrizione` varchar(500) DEFAULT NULL,
-  `prezzo` double NOT NULL,
-  `url` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`nome`),
-  UNIQUE KEY `nome_UNIQUE` (`nome`)
+CREATE TABLE `categoria`
+(
+    `nome`        varchar(30) NOT NULL,
+    `CO2max`      varchar(10) NOT NULL,
+    `descrizione` varchar(500) DEFAULT NULL,
+    `prezzo`      double      NOT NULL,
+    `url`         varchar(100) DEFAULT NULL,
+    PRIMARY KEY (`nome`),
+    UNIQUE KEY `nome_UNIQUE` (`nome`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -169,9 +244,30 @@ CREATE TABLE `categoria` (
 -- Dumping data for table `categoria`
 --
 
-LOCK TABLES `categoria` WRITE;
+LOCK
+TABLES `categoria` WRITE;
 /*!40000 ALTER TABLE `categoria` DISABLE KEYS */;
-INSERT INTO `categoria` VALUES ('banano','-130kg','La pianta di banano ha una crescita molto rapida, raggiungendo infatti anche i tre metri di altezza in pochi mesi',50,'risorse\\img\\banano.jpg'),('castagno','-330kg','Il castagno europeo si caratterizza per essere una pianta decisamente longeva, che si può sviluppare fino a raggiungere un\'altezza pari a 25 metri',50,'risorse\\img\\castagno.jpg'),('ciliegio','-150 kg','Il ciliegio è una pianta a foglia caduca, semplice, ovato-oblunga, con apice pronunciato, appuntito e margine seghettato.',50,'risorse\\img\\ciliegio.jpg'),('fico','-20kg','La pianta di fico rappresenta un albero che può arrivare fino ad altezze anche piuttosto elevate, dal momento che raggiunge i sette-otto metri',50,'risorse\\img\\fico.jpg'),('limone','-167kg','La pianta del limone può arrivare ad un’altezza di 6 metri, i suoi rami, di solito, sono spinosi, le foglie cambiano colore a seconda dell’età della pianta.',50,'risorse\\img\\limone.jpg'),('mandarino','-220 kg','I mandarini, hanno una caratteristica specifica, ovvero quella di non contenere tutta quella serie di fastidiosi semi che si trovano nella polpa.',50,'risorse\\img\\mandarino.jpg'),('mandorlo','-100kg','Quando parliamo della pianta di mandorlo, dobbiamo ricordare come faccia parte di due categorie molto importanti, come quella delle piante rustiche e, soprattutto, di quelle piante estremamente longeva.',50,'risorse\\img\\mandorlo.jpg'),('melo','-800 kg','Il melo domestico  è una pianta da frutto appartenente alla famiglia delle Rosacee. È una delle più diffuse piante da frutto coltivate.',50,'risorse\\img\\melo.jpg'),('pero','-55 kg','Il pero è uno di quegli alberi da frutto che si sviluppano alla perfezione in tutte quelle zone caratterizzate da un clima temperato. In particolar modo, all’interno della penisola italiana, si caratterizza per crescere ottimamente in ogni regione.',50,'risorse\\img\\pero.jpg'),('pesco','-70kg','Raggiunge un\'altezza media di 3-5 metri, I fiori, di colore rosa, hanno 5 petali, ed il frutto, la pesca, è una drupa tonda e carnosa, con un solco laterale',50,'risorse\\img\\pesco.jpg'),('pino','-1200 kg','La sua chioma è piramidale o ovale, il tronco è dritto ed i rami tesi verso l\'esterno.',50,'risorse\\img\\pino.jpg');
+INSERT INTO `categoria`
+VALUES ('banano', '-130kg',
+        'La pianta di banano ha una crescita molto rapida, raggiungendo infatti anche i tre metri di altezza in pochi mesi',
+        50, 'risorse\\img\\banano.jpg'),
+       ('castagno', '-330kg',
+        'Il castagno europeo si caratterizza per essere una pianta decisamente longeva, che si può sviluppare fino a raggiungere un\'altezza pari a 25 metri',50,'risorse\\img\\castagno.jpg'),('ciliegio','-150 kg','Il ciliegio è una pianta a foglia caduca,
+        semplice, ovato - oblunga, con apice pronunciato,
+        appuntito e margine seghettato.',50,'risorse\\img\\ciliegio.jpg'),('fico','-20kg','La pianta di fico rappresenta un albero che può arrivare fino ad altezze anche piuttosto elevate,
+        dal momento che raggiunge i sette-otto metri',50,'risorse\\img\\fico.jpg'),('limone','-167kg','La pianta del limone può arrivare ad un’altezza di 6 metri,
+        i suoi rami, di solito, sono spinosi,
+        le foglie cambiano colore a seconda dell’età della pianta.',50,'risorse\\img\\limone.jpg'),('mandarino','-220 kg','I mandarini,
+        hanno una caratteristica specifica,
+        ovvero quella di non contenere tutta quella serie di fastidiosi semi che si trovano nella polpa.',50,'risorse\\img\\mandarino.jpg'),('mandorlo','-100kg','Quando parliamo della pianta di mandorlo,
+        dobbiamo ricordare come faccia parte di due categorie molto importanti, come quella delle piante rustiche e,
+        soprattutto,
+        di quelle piante estremamente longeva.',50,'risorse\\img\\mandorlo.jpg'),('melo','-800 kg','Il melo domestico  è una pianta da frutto appartenente alla famiglia delle Rosacee. È una delle più diffuse piante da frutto coltivate.',50,'risorse\\img\\melo.jpg'),('pero','-55 kg','Il pero è uno di quegli alberi da frutto che si sviluppano alla perfezione in tutte quelle zone caratterizzate da un clima temperato. In particolar modo, all’interno
+        della penisola italiana,
+        si caratterizza per crescere ottimamente in ogni regione.',50,'risorse\\img\\pero.jpg'),('pesco','-70kg','Raggiunge un\'altezza media di 3-5 metri, I fiori, di colore rosa, hanno 5 petali, ed il frutto, la pesca, è una drupa tonda e carnosa, con un solco laterale',
+        50, 'risorse\\img\\pesco.jpg'),
+       ('pino', '-1200 kg',
+        'La sua chioma è piramidale o ovale, il tronco è dritto ed i rami tesi verso l\'esterno.',50,'risorse\\img\\pino.jpg');
 /*!40000 ALTER TABLE `categoria` ENABLE KEYS */;
 UNLOCK TABLES;
 

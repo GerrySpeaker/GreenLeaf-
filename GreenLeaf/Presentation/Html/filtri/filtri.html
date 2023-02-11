@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>Document</title>
-    <link rel="stylesheet" href="filtri.css">
+    <link href="filtri.css" rel="stylesheet">
 </head>
 <div class="all-filter">
     <div class="dropdown">
-        <input type="text" class="filterBox" placeholder="Regioni" readonly>
+        <input class="filterBox" placeholder="Regioni" readonly type="text">
         <div class="option">
             <div onclick="show('Abruzzo')">Abruzzo</div>
             <div onclick="show('Basilicata')">Basilicata</div>
@@ -34,9 +34,9 @@
         </div>
     </div>
 
-    <script >
+    <script>
         function show(anything) {
-            document.querySelector(".filterBox").value =anything
+            document.querySelector(".filterBox").value = anything
         }
 
         let dropdown = document.querySelector(".dropdown");

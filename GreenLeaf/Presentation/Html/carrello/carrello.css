@@ -1,91 +1,83 @@
-*
-{
+* {
     overflow-x: auto;
 }
-table
-{
+
+table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
     white-space: nowrap;
 }
 
-table img 
-{
+table img {
     width: 70px;
 }
 
-table td:nth-child(1)
-{
+table td:nth-child(1) {
     width: 100px;
     text-align: center;
 }
-table td:nth-child(2)
-{
+
+table td:nth-child(2) {
     width: 150px;
     text-align: center;
 }
-table td:nth-child(3)
-{
+
+table td:nth-child(3) {
     width: 200px;
     text-align: center;
 }
+
 table td:nth-child(4),
 table td:nth-child(5),
-table td:nth-child(6)
-{
+table td:nth-child(6) {
     width: 150px;
     text-align: center;
 }
-table td:nth-child(5) input
-{
+
+table td:nth-child(5) input {
     width: 70px;
     padding: 10px 5px 10px 15px;
 }
 
-table thead
-{
+table thead {
     border: 1px solid #e2e9e1;
     border-left: none;
     border-right: none;
 }
-table thead td
-{
+
+table thead td {
     font-weight: 700;
     text-transform: uppercase;
     font-size: 13px;
     padding: 18px 0;
 }
-table tbody tr td
-{
+
+table tbody tr td {
     padding-top: 15px;
 }
 
-table tbody td
-{
+table tbody td {
     font-size: 13px;
 }
 
-#cart-add
-{
+#cart-add {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-#buono 
-{
+#buono {
     width: 50%;
     margin-bottom: 30px;
 }
 
 #buono h1,
-#total h1
-{
+#total h1 {
     padding-bottom: 15px;
 }
-#buono input
-{
+
+#buono input {
     padding: 10px 20px;
     outline: none;
     width: 60%;
@@ -94,48 +86,42 @@ table tbody td
 }
 
 #buono button,
-#total button
-{
+#total button {
     background-color: #1ffc02;
     color: #fff;
     padding: 12px 20px;
 }
 
-#total
-{
+#total {
     width: 50%;
     margin-bottom: 30px;
     border: 1px solid #e2e9e1;
     padding: 30px;
 }
 
-#total table
-{
+#total table {
     border-collapse: collapse;
     width: 100%;
     margin-bottom: 20px;
 }
 
-#total table td 
-{
+#total table td {
     width: 50%;
     border: 1px solid #e2e9e1;
     padding: 10px;
     font-size: 13px;
 }
 
-@media (max-width: 477px)
-{
-    #cart-add
-    {
+@media (max-width: 477px) {
+    #cart-add {
         flex-direction: column;
     }
-    #buono
-    {
+
+    #buono {
         width: 100%;
     }
-    #total
-    {
+
+    #total {
         width: 100%;
         padding: 20px;
     }

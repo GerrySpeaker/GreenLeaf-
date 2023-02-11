@@ -1,46 +1,43 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
     font-family: "Montserrat";
 }
 
-:root{
-	--bg-color: whitesmoke;
-	--text-color: #282828;
-	--main-color: #007a00;
-	--second-color: #004700;
-	--notify-color: #80ff81;
-	--popup-color: white;
+:root {
+    --bg-color: whitesmoke;
+    --text-color: #282828;
+    --main-color: #007a00;
+    --second-color: #004700;
+    --notify-color: #80ff81;
+    --popup-color: white;
 }
 
-.all-generate
-{
+.all-generate {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(to bottom right,
-    var(--bg-color) 0%, var(--bg-color)30%,
-    var(--main-color) 30%, var(--main-color)70%,
-    var(--bg-color) 70%,  var(--bg-color) 100%);    grid-template-columns: repeat(3, 20rem);
+    var(--bg-color) 0%, var(--bg-color) 30%,
+    var(--main-color) 30%, var(--main-color) 70%,
+    var(--bg-color) 70%, var(--bg-color) 100%);
+    grid-template-columns: repeat(3, 20rem);
 }
 
-.inputBox
-{
-  position: relative;
-  width: 500px;  
+.inputBox {
+    position: relative;
+    width: 500px;
 }
 
-.inputBox h2
-{
+.inputBox h2 {
     font-size: 28px;
     font-weight: bold;
     margin-left: 20px;
     color: var(--popup-color);
 }
-.inputBox input
-{
+
+.inputBox input {
     position: relative;
     width: 100%;
     height: 60px;
@@ -56,13 +53,12 @@
     background-color: var(--popup-color);
     color: var(--text-color);
     box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.2),
-                25px 35px 20px rgba(0, 0, 0, 0.1),
-                25px 30px 30px rgba(0, 0, 0, 0.1),
-                inset -20px -20px 25px rgba(255, 255, 255, 0.5);
+    25px 35px 20px rgba(0, 0, 0, 0.1),
+    25px 30px 30px rgba(0, 0, 0, 0.1),
+    inset -20px -20px 25px rgba(255, 255, 255, 0.5);
 }
 
-.inputBox #btn
-{
+.inputBox #btn {
     position: absolute;
     cursor: pointer;
     color: var(--popup-color);
@@ -79,19 +75,17 @@
     transition: 0.5s;
     right: 0;
     box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
-                15px 15px 10px rgba(0, 0, 0, 0.05),
-                15px 10px 15px rgba(0, 0, 0, 0.025);
+    15px 15px 10px rgba(0, 0, 0, 0.05),
+    15px 10px 15px rgba(0, 0, 0, 0.025);
     top: 100%;
 }
 
 .inputBox #btn-copy:hover,
-.inputBox #btn:hover
-{
+.inputBox #btn:hover {
     width: 120px;
 }
 
-.inputBox #btn-copy
-{
+.inputBox #btn-copy {
     position: absolute;
     cursor: pointer;
     color: var(--popup-color);
@@ -108,8 +102,8 @@
     transition: 0.5s;
     left: 0;
     box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.1),
-                15px 15px 10px rgba(0, 0, 0, 0.05),
-                15px 10px 15px rgba(0, 0, 0, 0.025);
+    15px 15px 10px rgba(0, 0, 0, 0.05),
+    15px 10px 15px rgba(0, 0, 0, 0.025);
     top: 100%;
     display: none;
 }

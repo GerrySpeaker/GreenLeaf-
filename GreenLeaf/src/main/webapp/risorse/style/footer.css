@@ -1,11 +1,11 @@
 
-*{
+* {
     padding: 0;
     margin: 0;
     font-family: "Montserrat";
 }
 
-:root{
+:root {
     --bg-color: whitesmoke;
     --text-color: #282828;
     --main-color: #007a00;
@@ -15,16 +15,16 @@
     --footer-color: #1f1f1f;
 }
 
-.all-footer-body{
+.all-footer-body {
     box-sizing: border-box;
-    display:flex;
+    display: flex;
     justify-content: flex-end;
-    align-items:center;
+    align-items: center;
     flex-direction: column;
     margin-top: 20px;
 }
 
-.foot{
+.foot {
     position: relative;
     height: auto;
     padding: 50px 100px;
@@ -34,8 +34,7 @@
     /* flex-wrap: wrap; */
 }
 
-.foot .cont
-{
+.foot .cont {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -43,14 +42,12 @@
     overflow: hidden;
 }
 
-.foot .cont .sec.aboutus
-{
+.foot .cont .sec.aboutus {
     overflow: hidden;
     width: 40%;
 }
 
-.foot .testo
-{
+.foot .testo {
     position: relative;
     color: var(--popup-color);
     font-weight: 500;
@@ -58,8 +55,7 @@
     margin-bottom: 15px;
 }
 
-.foot .testo::before
-{
+.foot .testo::before {
     content: "";
     position: absolute;
     bottom: -5px;
@@ -69,100 +65,90 @@
     background: var(--main-color);
 }
 
-.foot .about
-{
+.foot .about {
     color: var(--bg-color);
 }
-.quickLinks
-{
+
+.quickLinks {
     position: absolute;
     width: 25%;
     margin-top: 10px;
     top: 35px;
     right: 0;
 }
-.quickLinks ul li
-{
+
+.quickLinks ul li {
     list-style: none;
 }
-.quickLinks ul li a
-{
+
+.quickLinks ul li a {
     color: rgb(175, 175, 175);
     text-decoration: none;
     margin-bottom: 10px;
     display: inline-block;
 }
-.quickLinks ul li a:hover
-{
+
+.quickLinks ul li a:hover {
     color: var(--popup-color);
 }
 
-.contact
-{
+.contact {
     width: calc(35% - 60px);
     margin-right: 0 !important;
 }
 
-.contact .info
-{
+.contact .info {
     position: relative;
 }
 
-.contact .info li
-{
+.contact .info li {
     display: flex;
     margin-bottom: 16px;
 }
 
-.contact .info li span:nth-child(1)
-{
+.contact .info li span:nth-child(1) {
     color: var(--popup-color);
     font-size: 20px;
     margin-right: 10px;
 }
 
-.contact .i
-{
+.contact .i {
     color: rgb(175, 175, 175);
     text-decoration: none;
 }
 
-.contact .info li a:hover
-{
+.contact .info li a:hover {
     color: var(--popup-color);
 }
 
-.copyrightText
-{
+.copyrightText {
     background: #181818;
     padding: 8px 100px;
     text-align: center;
     color: rgb(175, 175, 175);
 }
 
-@media (max-width: 991px)
-{
-    footer
-    {
+@media (max-width: 991px) {
+    footer {
         padding: 40px;
     }
-    footer .cont
-    {
+
+    footer .cont {
         flex-direction: column;
     }
-    footer .cont .sec
-    {
+
+    footer .cont .sec {
         margin-right: 0;
         margin-bottom: 40px;
     }
+
     footer .cont .sec.aboutus
     .quickLinks
-    .contact
-    {
+    .contact {
         width: 100%;
     }
-    .copyrightText
-    {
+
+    .copyrightText {
         width: 100%;
         background: #181818;
         padding: 8px 40px;
@@ -171,8 +157,8 @@
     }
 }
 
-@media (max-width: 600px){
-    .contact{
-        display:none;
+@media (max-width: 600px) {
+    .contact {
+        display: none;
     }
 }

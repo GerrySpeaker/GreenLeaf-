@@ -1,13 +1,11 @@
 
-*
-{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.contiene
-{
+.contiene {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -19,8 +17,7 @@
     background-color: rgb(72, 255, 0);
 }
 
-.contiene span
-{
+.contiene span {
     position: relative;
     display: flex;
     justify-content: center;
@@ -29,8 +26,7 @@
     min-height: 20px;
 }
 
-.contiene span::before
-{
+.contiene span::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -44,8 +40,8 @@
     border-radius: 50%;
     pointer-events: none;
 }
-.contiene span:hover::before
-{
+
+.contiene span:hover::before {
     width: 2000%;
     height: 2000%;
     transition: 0s;

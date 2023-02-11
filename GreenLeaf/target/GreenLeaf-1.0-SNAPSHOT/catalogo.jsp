@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="risorse/style/catalogo.css">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <link rel="stylesheet" href="risorse/style/regione.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Catalogo</title>
 </head>
-<%@ page import="javax.servlet.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="javax.servlet.*" import="bean.*" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Iterator" %>
 <%@ page import="storage.*" %>
@@ -25,9 +27,9 @@
 
 
     CategoriaDao dao = new CategoriaDao();
-    ArrayList <CategoriaBean> article = (ArrayList<CategoriaBean>) dao.doRetrieveAll();
-    if(article == null){
-        response.sendRedirect(request.getContextPath()+"/home.jsp");
+    ArrayList<CategoriaBean> article = (ArrayList<CategoriaBean>) dao.doRetrieveAll();
+    if (article == null) {
+        response.sendRedirect(request.getContextPath() + "/home.jsp");
     }
 
 
@@ -39,27 +41,30 @@
     <div class="container-card">
         <% Iterator<CategoriaBean> prodotto = article.iterator();
             int i = 0;
-            while(prodotto.hasNext()){
+            while (prodotto.hasNext()) {
                 CategoriaBean prod = prodotto.next();
                 i++;
         %>
         <div class="card">      <!-- ripetere da -->
             <div class="card-header">
-                <img src="<%= prod.getUrl()%>" alt="<%= prod.getNomeCategoria()%>" />
+                <img src="<%= prod.getUrl()%>" alt="<%= prod.getNomeCategoria()%>"/>
             </div>
             <div class="card-body">
-                <h3><%= prod.getNomeCategoria()%></h3>
-                <p> <%= prod.getDescrizione()%></p>
+                <h3><%= prod.getNomeCategoria()%>
+                </h3>
+                <p><%= prod.getDescrizione()%>
+                </p>
                 <div class="card-status">
                     <p class="imp">CO2 Massima catturabile: <span><%= prod.getCo2Max()%></span></p>
                     <p class="imp">Prezzo: <span><%= prod.getPrezzo()%></span></p>
                 </div>
                 <div class="btn_area">
-                    <a href="visualizzaAlbero.jsp?nome=<%= prod.getNomeCategoria()%>" class="btn_primary">Visualizza prodotto</a><br><br>
-                    <% if(adminBean.getEmail() != null || operatoreBean.getEmail() != null){ %>
+                    <a href="visualizzaAlbero.jsp?nome=<%= prod.getNomeCategoria()%>" class="btn_primary">Visualizza
+                        prodotto</a><br><br>
+                    <% if (adminBean.getEmail() != null || operatoreBean.getEmail() != null) { %>
 
-                    <%}else{%>
-                    <a href="regione.jsp?nome=<%= prod.getNomeCategoria()%>" class="btn_secondary"  >Adotta un albero</a>
+                    <%} else {%>
+                    <a href="regione.jsp?nome=<%= prod.getNomeCategoria()%>" class="btn_secondary">Adotta un albero</a>
                     <%}%>
                 </div>
             </div>
@@ -68,19 +73,20 @@
 
         <div class="card">
             <div class="card-header">
-                <img src="risorse/img/buono.png" alt="buono" />
+                <img src="risorse/img/buono.png" alt="buono"/>
             </div>
             <div class="card-body">
                 <h3>Buono regalo</h3>
-                <p> Perche' non acquistare un buono regalo? Rendi il mondo piu' verde con un click e sorprendi una persona a te cara!</p>
+                <p> Perche' non acquistare un buono regalo? Rendi il mondo piu' verde con un click e sorprendi una
+                    persona a te cara!</p>
                 <div class="card-status">
                     <p class="imp">Prezzo: <span>50</span></p>
                 </div>
                 <div class="btn_area">
-                    <% if(adminBean.getEmail() != null || operatoreBean.getEmail() != null){ %>
+                    <% if (adminBean.getEmail() != null || operatoreBean.getEmail() != null) { %>
 
-                    <%}else{%>
-                    <a class="btn_secondary" href="AggiungiCarrello" >Aggiungi al carrello</a>
+                    <%} else {%>
+                    <a class="btn_secondary" href="AggiungiCarrello">Aggiungi al carrello</a>
                     <%}%>
 
                 </div>
@@ -92,8 +98,6 @@
     <br>
 
 </div>
-
-
 
 
 <script src="risorse/js/RiscattaBuono.js"></script>
