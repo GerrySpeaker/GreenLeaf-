@@ -127,19 +127,9 @@ public class GestioneAlberiDaAdottareApplication extends HttpServlet {
               "Inserimento ordine effettuato con successo, "
                   + "procedo ad inserire gli alberi e i buoni nel db....");
 
-          System.out.println(prodotti);
-          System.out.println(buoni);
-
-          int dimProdotto = prodotti.size();
-          int dimBuoni = buoni.size();
-
-          for (i = 0; i < dimProdotto; i++) {
-            IotBean iot = iotDao.doRetrieveByRegione(regione.get(i));
-            iotDao.cambioStatoIot(iot.getIdIot());
-            alberoDao.inserisciAlbero(prodotti.get(i), ordineBean, regione.get(i), iot);
-          }
-
           System.out.println("Numero di buoni inseriti " + buoni.size());
+
+          int dimBuoni = buoni.size();
 
           for (int k = 0; k < dimBuoni; k++) {
             String buono = generaBuono();
@@ -147,6 +137,16 @@ public class GestioneAlberiDaAdottareApplication extends HttpServlet {
             buonoregaloDao.inserisciBuono(ordineBean, buonoReaglo.get(k));
           }
 
+          System.out.println(prodotti);
+          System.out.println(buoni);
+
+          int dimProdotto = prodotti.size();
+
+          for (i = 0; i < dimProdotto; i++) {
+            IotBean iot = iotDao.doRetrieveByRegione(regione.get(i));
+            iotDao.cambioStatoIot(iot.getIdIot());
+            alberoDao.inserisciAlbero(prodotti.get(i), ordineBean, regione.get(i), iot);
+          }
 
           if (buoniDaRiscattare != null) {
             while (j < buoniDaRiscattare.size()) {

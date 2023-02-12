@@ -77,6 +77,7 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
         }
       }
     }
+    System.out.println(lista + " "+ id);
     return lista;
   }
 
@@ -114,6 +115,7 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
         }
       }
     }
+
     return bean;
   }
 

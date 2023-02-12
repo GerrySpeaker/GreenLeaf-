@@ -9,7 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69b6b016-128a-40c4-8d35-c443c2f20acd" name="Changes" comment="" />
+    <list default="true" id="69b6b016-128a-40c4-8d35-c443c2f20acd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentazione/Testing/Reports/C09_TER_v1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Documentazione/Testing/Reports/C09_TER_v1.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GreenLeaf/src/main/java/application/gestionealberidaadottare/GestioneAlberiDaAdottareApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/src/main/java/application/gestionealberidaadottare/GestioneAlberiDaAdottareApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GreenLeaf/src/main/java/storage/BuonoRegaloDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/src/main/java/storage/BuonoRegaloDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GreenLeaf/src/main/webapp/acquisto_completato.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/src/main/webapp/acquisto_completato.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GreenLeaf/src/main/webapp/risorse/style/catalogo.css" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/src/main/webapp/risorse/style/catalogo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,19 +48,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/mirko/Documents/GitHub/GreenLeaf-/GreenLeaf/librerieEsterne/mysql-connector-java-8.0.27.jar",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.sourceCode"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mirko/Documents/GitHub/GreenLeaf-/GreenLeaf/librerieEsterne/mysql-connector-java-8.0.27.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.70">
     <configuration name="Junittestsuite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="GreenLeaf" />
@@ -167,6 +175,8 @@
       <workItem from="1673344778991" duration="18000" />
       <workItem from="1676138479094" duration="243000" />
       <workItem from="1676138740753" duration="1223000" />
+      <workItem from="1676193207944" duration="1311000" />
+      <workItem from="1676194655023" duration="2082000" />
     </task>
     <servers />
   </component>

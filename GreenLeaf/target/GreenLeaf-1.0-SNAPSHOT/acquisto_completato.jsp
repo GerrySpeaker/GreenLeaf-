@@ -62,18 +62,22 @@
         } else {
             int i = 0;
             while (i < buoni.size()) {
+              int y=i;
         %>
 
         <div class="input-area"> <!-- ripetere da qui -->
-            <input type="text" readonly value="<%=buoni.get(i).getIdBuonoregalo()%>" id="<%=i+1%>">
+            <input type="text" readonly value="<%=buoni.get(i).getIdBuonoregalo()%>" id="<%=y+1%>">
             <!-- creare una variabile i da incrementare a ogni ciclo di while da mettere come id -->
-            <a class="copy" onclick="copy(<%=i+1%>)">Copia</a><!--e passarla anche a copy -->
+            <a class="copy" onclick="copy(<%=y+1%>)">Copia</a><!--e passarla anche a copy -->
         </div>
         <%
-                    System.out.println(i);
+                    System.out.println(buoni.get(i));
                     i++;
                 }
-                buoni.clear();
+                for(int j=0; j<= buoni.size(); j++){
+                    buoni.remove(j);
+                }
+
             } %>
 
     </div>
