@@ -11,12 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="69b6b016-128a-40c4-8d35-c443c2f20acd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Documentazione/Testing/Reports/C09_TER_v1.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/Documentazione/Testing/Reports/C09_TER_v1.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/src/main/java/application/gestionealberidaadottare/GestioneAlberiDaAdottareApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/src/main/java/application/gestionealberidaadottare/GestioneAlberiDaAdottareApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/src/main/java/storage/BuonoRegaloDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/src/main/java/storage/BuonoRegaloDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/src/main/webapp/acquisto_completato.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/src/main/webapp/acquisto_completato.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/src/main/webapp/risorse/style/catalogo.css" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/src/main/webapp/risorse/style/catalogo.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +170,7 @@
       <workItem from="1676138479094" duration="243000" />
       <workItem from="1676138740753" duration="1223000" />
       <workItem from="1676193207944" duration="1311000" />
-      <workItem from="1676194655023" duration="2082000" />
+      <workItem from="1676194655023" duration="3245000" />
     </task>
     <servers />
   </component>
