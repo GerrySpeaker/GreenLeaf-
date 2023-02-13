@@ -49,6 +49,8 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
         id = (rs1.getInt("maxordine"));
       }
 
+      System.out.println(id);
+
       String selectSql = "SELECT * FROM buonoregalo WHERE ordineRegalo = ? AND utenteRegalo=?";
       connection = DriverManagerConnectionPool.getConnection();
       preparedStatement = connection.prepareStatement(selectSql);
@@ -77,7 +79,8 @@ public class BuonoRegaloDao implements InterfacciaDao<BuonoregaloBean> {
         }
       }
     }
-    System.out.println(lista + " "+ id);
+
+    System.out.println(lista + " " + id);
     return lista;
   }
 

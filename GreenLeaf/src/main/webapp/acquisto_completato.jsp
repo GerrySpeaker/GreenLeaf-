@@ -62,7 +62,7 @@
         } else {
             int i = 0;
             while (i < buoni.size()) {
-              int y=i;
+                int y = i;
         %>
 
         <div class="input-area"> <!-- ripetere da qui -->
@@ -74,7 +74,7 @@
                     System.out.println(buoni.get(i));
                     i++;
                 }
-                for(int j=0; j<= buoni.size(); j++){
+                for (int j = 0; j < buoni.size(); j++) {
                     buoni.remove(j);
                 }
 

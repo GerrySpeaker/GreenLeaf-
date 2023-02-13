@@ -112,6 +112,7 @@ public class GestioneAlberiDaAdottareApplication extends HttpServlet {
           request.getSession().setAttribute("totale", total);
           request.getSession().setAttribute("sconto", 0);
         }
+
       } catch (SQLException e) {
         throw new RuntimeException(e);
       }
@@ -166,6 +167,7 @@ public class GestioneAlberiDaAdottareApplication extends HttpServlet {
           request.getSession().setAttribute("buonoregalo", buoni);
 
         }
+
       } catch (SQLException e) {
         throw new RuntimeException(e);
       }
@@ -210,8 +212,6 @@ public class GestioneAlberiDaAdottareApplication extends HttpServlet {
     if (total == 0) {
       response.sendRedirect(request.getContextPath() + "/acquisto_completato.jsp");
     }
-
-
   }
 
   /**
