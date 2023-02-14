@@ -6,12 +6,12 @@
    <elementGuidId>468883bd-2573-48bf-abcb-95a2e45bfc17</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value>#payment-submit-btn</value>
-      </entry>
-      <entry>
          <key>XPATH</key>
          <value>//button[@id='payment-submit-btn']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>#payment-submit-btn</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>button</value>
-      <webElementGuid>2d2b31ff-1c2f-4aa0-889c-e63b15459650</webElementGuid>
+      <webElementGuid>c54b919c-bf68-4645-bd83-86ea4d4faa73</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +30,7 @@
       <name>class</name>
       <type>Main</type>
       <value>ppvx_btn___5-11-4 CheckoutButton_noMargin_mv-3h</value>
-      <webElementGuid>bcff9398-7783-4a21-8bf0-766d58391df2</webElementGuid>
+      <webElementGuid>d202f33e-facf-4c71-b319-6095690492ad</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +38,7 @@
       <name>id</name>
       <type>Main</type>
       <value>payment-submit-btn</value>
-      <webElementGuid>ce6df48f-6d0f-4bb7-9be2-f05775660638</webElementGuid>
+      <webElementGuid>ed43bfb6-4745-41aa-bf89-fca2b4016791</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -46,7 +46,7 @@
       <name>data-testid</name>
       <type>Main</type>
       <value>submit-button-initial</value>
-      <webElementGuid>80fbc1b5-8a12-4d6e-b9bc-2269f5a41a38</webElementGuid>
+      <webElementGuid>13887475-5dd4-4c15-9351-ad52e1548372</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +54,7 @@
       <name>data-disabled</name>
       <type>Main</type>
       <value>false</value>
-      <webElementGuid>1a8a839c-d47f-4f8b-8250-bea6acf20dd9</webElementGuid>
+      <webElementGuid>3bbf0f46-c5be-4bc8-bf0d-4356fb35f784</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -62,7 +62,7 @@
       <name>text</name>
       <type>Main</type>
       <value>Completa l'acquisto</value>
-      <webElementGuid>f48d1428-7290-47b6-9823-7b2c9fb239fc</webElementGuid>
+      <webElementGuid>d6c5ae33-8e52-4f07-9f6d-0084ed66fe62</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -70,7 +70,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;payment-submit-btn&quot;)</value>
-      <webElementGuid>a25394f1-23aa-4992-9f50-22e98f3f2ad8</webElementGuid>
+      <webElementGuid>b8df6808-1232-4c6f-8862-349c1c97fef4</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -78,7 +78,7 @@
       <name>xpath:attributes</name>
       <type>Main</type>
       <value>//button[@id='payment-submit-btn']</value>
-      <webElementGuid>006199f2-d15c-4633-895c-908bddcc6ed7</webElementGuid>
+      <webElementGuid>c78bae7f-fe9e-4cae-bfaa-4aa9c214cd3b</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,7 +86,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='hermione-container']/div/main/div[4]/div[2]/button</value>
-      <webElementGuid>76582322-3418-49d8-9bbe-67a9f5254a34</webElementGuid>
+      <webElementGuid>87580242-b4ee-4318-9d29-bf8148d7c367</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -94,7 +94,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='O Paga in 3 rate'])[1]/following::button[1]</value>
-      <webElementGuid>5964ba98-8f15-482f-acaa-7f3596ef62e3</webElementGuid>
+      <webElementGuid>c31aaf23-0d4f-4936-8d28-9280fdd6e185</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,7 +102,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Aggiungi carta'])[1]/following::button[1]</value>
-      <webElementGuid>d4d2c606-af77-41f5-9163-85f6dc405fb9</webElementGuid>
+      <webElementGuid>c4dfd017-1f90-4004-81e3-75bda4627f86</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -110,7 +110,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)=concat('id(', '&quot;', 'payment-submit-btn', '&quot;', ')')])[1]/preceding::button[1]</value>
-      <webElementGuid>269ab350-f339-4b92-b670-60ffc4af3ab4</webElementGuid>
+      <webElementGuid>4fd0695b-7871-4c8d-a344-73f1773d4501</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -118,7 +118,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[2]/button</value>
-      <webElementGuid>88b7b66c-c91b-42b1-84a7-e089ef457591</webElementGuid>
+      <webElementGuid>41019047-efb1-416d-ad21-98ec92f32ef2</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -126,6 +126,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//button[@id = 'payment-submit-btn' and (text() = concat(&quot;Completa l&quot; , &quot;'&quot; , &quot;acquisto&quot;) or . = concat(&quot;Completa l&quot; , &quot;'&quot; , &quot;acquisto&quot;))]</value>
-      <webElementGuid>a9121565-79a3-4339-814c-6feafdd48437</webElementGuid>
+      <webElementGuid>564c7417-8608-4619-8667-ac0dd63ae8d0</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>i_Aggiungi al carrello_fa-solid fa-xmark</name>
+   <tag></tag>
+   <elementGuidId>885d3227-0230-473c-ac10-9853d2c8b3c9</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//i[@onclick='history.back()']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>i.fa-solid.fa-xmark</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>i</value>
+      <webElementGuid>8eb02cf0-f3ab-4d22-a2af-deaad2493e20</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>fa-solid fa-xmark</value>
+      <webElementGuid>41a9363b-0a09-4c6a-8abc-820dea8e75ff</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>onclick</name>
+      <type>Main</type>
+      <value>history.back()</value>
+      <webElementGuid>72f95925-9070-44df-bd04-ae6b3da05769</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;popup&quot;)/form[1]/button[@class=&quot;close&quot;]/i[@class=&quot;fa-solid fa-xmark&quot;]</value>
+      <webElementGuid>7959732b-920d-4455-8914-a004a49109d0</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//i[@onclick='history.back()']</value>
+      <webElementGuid>d9c64e53-f115-4dca-b1dc-b6992ecf8b03</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='popup']/form/button[2]/i</value>
+      <webElementGuid>daa8d391-3270-4c34-bf30-321f4eab6be8</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//button[2]/i</value>
+      <webElementGuid>15d93295-e545-4cd0-8068-49cbbd68aef8</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

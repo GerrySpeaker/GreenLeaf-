@@ -6,12 +6,12 @@
    <elementGuidId>d98998d5-5bab-40dd-a218-2b572ff6f796</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value>i.fa-solid.fa-cart-shopping</value>
-      </entry>
-      <entry>
          <key>XPATH</key>
          <value>//a[2]/i</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>i.fa-solid.fa-cart-shopping</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>i</value>
-      <webElementGuid>21f73942-5661-4392-9bc0-ce5cf5b60207</webElementGuid>
+      <webElementGuid>4d1bba75-a502-4d17-828a-84e8f75263c9</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +30,7 @@
       <name>class</name>
       <type>Main</type>
       <value>fa-solid fa-cart-shopping</value>
-      <webElementGuid>824afd50-2973-482a-af7d-3e084bce57a3</webElementGuid>
+      <webElementGuid>f6c41b35-e41b-4ff2-8e5f-d2554643c16e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +38,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>/html[1]/body[1]/header[@class=&quot;all-headerbody&quot;]/div[@class=&quot;user&quot;]/a[2]/i[@class=&quot;fa-solid fa-cart-shopping&quot;]</value>
-      <webElementGuid>17e49c3e-82a3-45e9-9ef8-55f0313c1b4d</webElementGuid>
+      <webElementGuid>8e52259b-ad0a-49b2-9480-ce0f3a2f50ca</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -46,6 +46,6 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//a[2]/i</value>
-      <webElementGuid>5293d59c-9d41-4d5e-bbfb-5b038c7c7e23</webElementGuid>
+      <webElementGuid>bb26daf6-a19d-47ee-9562-7a7181381616</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

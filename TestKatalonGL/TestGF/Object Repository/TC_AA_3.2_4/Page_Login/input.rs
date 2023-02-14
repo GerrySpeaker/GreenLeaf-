@@ -6,12 +6,12 @@
    <elementGuidId>2646aa8b-d326-41a6-9d0e-7a68d9a319a2</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value>input[type=&quot;submit&quot;]</value>
+         <key>XPATH</key>
+         <value>//input[@type='submit']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value></value>
+         <key>CSS</key>
+         <value>input[type=&quot;submit&quot;]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>input</value>
-      <webElementGuid>da3ee92f-3c89-4849-b352-05a2247ddce5</webElementGuid>
+      <webElementGuid>2ed67db3-fce4-4efa-af50-3d4956dae16a</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -30,7 +30,7 @@
       <name>type</name>
       <type>Main</type>
       <value>submit</value>
-      <webElementGuid>439eda88-3b4d-4057-9c15-c602e34304d1</webElementGuid>
+      <webElementGuid>30c051ff-02bc-4db7-a71b-6022fbfb3807</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +38,7 @@
       <name>placeholder</name>
       <type>Main</type>
       <value>Accedi</value>
-      <webElementGuid>571a7ce1-0b33-4ec2-b4a6-56721d9aa31f</webElementGuid>
+      <webElementGuid>7991805f-7f76-44d3-b34c-ae76a46d1b6c</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -46,7 +46,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;form&quot;)/div[@class=&quot;inputBox&quot;]/input[1]</value>
-      <webElementGuid>198b6f7b-d441-43d7-9b15-08cdaa18f5f7</webElementGuid>
+      <webElementGuid>0dd18822-ce6c-461a-aae7-2019a7c63fa8</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -54,7 +54,7 @@
       <name>xpath:attributes</name>
       <type>Main</type>
       <value>//input[@type='submit']</value>
-      <webElementGuid>3b677cae-ecd8-42ad-9e02-4e398df6cf83</webElementGuid>
+      <webElementGuid>3dc60d0f-b60e-403d-8270-02c2f0cd3986</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -62,7 +62,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//form[@id='form']/div[3]/input</value>
-      <webElementGuid>eb3b357f-68d6-4c2d-be7e-735be9fc2a1b</webElementGuid>
+      <webElementGuid>c6114785-527d-4822-82dc-2120c6737273</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +70,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[3]/input</value>
-      <webElementGuid>919a6cf3-76da-42bf-97f8-fb6af5db624c</webElementGuid>
+      <webElementGuid>4300fd1d-bfa8-4254-8b01-e29f0da0ca25</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,6 +78,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//input[@type = 'submit' and @placeholder = 'Accedi']</value>
-      <webElementGuid>380cdd45-3edc-494d-a144-73eda4bcaa79</webElementGuid>
+      <webElementGuid>cd7df186-f380-4f2b-a96d-b61cae3fcff3</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

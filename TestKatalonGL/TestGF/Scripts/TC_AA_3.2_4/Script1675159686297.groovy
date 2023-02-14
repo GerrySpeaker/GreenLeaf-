@@ -25,17 +25,15 @@ WebUI.navigateToUrl('http://localhost:8080/GreenLeaf_war_exploded/login.jsp')
 
 WebUI.setText(findTestObject('Object Repository/TC_AA_3.2_4/Page_Login/input_Login_email'), 'test@gmail.com')
 
+WebUI.click(findTestObject('Object Repository/TC_AA_3.2_4/Page_Login/div_Login_inputBox'))
+
 WebUI.setEncryptedText(findTestObject('Object Repository/TC_AA_3.2_4/Page_Login/input_Login_password'), 'HeCM15nHKBI=')
 
 WebUI.click(findTestObject('Object Repository/TC_AA_3.2_4/Page_Login/input'))
 
 WebUI.click(findTestObject('Object Repository/TC_AA_3.2_4/Page_Sezione utente/a_Adotta'))
 
-WebUI.click(findTestObject('Object Repository/TC_AA_3.2_4/Page_Catalogo/a_Adotta un albero'))
-
-WebUI.click(findTestObject('Object Repository/TC_AA_3.2_4/Page_Regione/span_Calcolo CO2_checkmark'))
-
-WebUI.click(findTestObject('Object Repository/TC_AA_3.2_4/Page_Regione/button_Aggiungi al carrello'))
+WebUI.click(findTestObject('Object Repository/TC_AA_3.2_4/Page_Catalogo/a_Aggiungi al carrello'))
 
 WebUI.click(findTestObject('Object Repository/TC_AA_3.2_4/Page_Catalogo/i_Calcolo CO2_fa-solid fa-cart-shopping'))
 

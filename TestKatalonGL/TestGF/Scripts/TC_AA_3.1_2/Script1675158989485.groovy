@@ -19,13 +19,15 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('http://localhost:8080/GreenLeaf_war_exploded/catalogo.jsp')
+WebUI.maximizeWindow()
 
-WebUI.click(findTestObject('Object Repository/TC_AA_3.1_2/Page_Catalogo/a_Adotta un albero'))
+WebUI.navigateToUrl('http://localhost:8080/GreenLeaf_war_exploded/')
 
-WebUI.verifyElementNotChecked(findTestObject('Object Repository/TC_AA_3.1_4/Page_Regione/span_Calcolo CO2_checkmark'), 0)
+WebUI.click(findTestObject('Object Repository/TC_AA_3.1_2/Page_Homepage/a_Adotta'))
 
-WebUI.click(findTestObject('Object Repository/TC_AA_3.1_2/Page_Regione/button_Aggiungi al carrello'))
+WebUI.click(findTestObject('Object Repository/TC_AA_3.1_2/Page_Catalogo/a_Adotta un albero_1'))
+
+WebUI.click(findTestObject('Object Repository/TC_AA_3.1_2/Page_Regione/i_Aggiungi al carrello_fa-solid fa-xmark'))
 
 WebUI.closeBrowser()
 

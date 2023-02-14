@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>a_Adotta un albero</name>
+   <name>a_Aggiungi al carrello</name>
    <tag></tag>
-   <elementGuidId>eb7cd335-ff38-4ec7-83dd-06fa87b8536a</elementGuidId>
+   <elementGuidId>36d07634-065d-4bd6-86da-ae81ac4a41e9</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='cat']/div/div[8]/div[2]/div[2]/a[2]</value>
+         <value>//div[@id='cat']/div/div[12]/div[2]/div[2]/a</value>
       </entry>
       <entry>
          <key>CSS</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -21,15 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>711deb5c-a31f-40dc-aa1d-b7b5aeacf850</webElementGuid>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>href</name>
-      <type>Main</type>
-      <value>regione.jsp?nome=melo</value>
-      <webElementGuid>142743a3-9265-4920-b1ac-2b43c345d09c</webElementGuid>
+      <webElementGuid>d5dbf115-7d5a-4040-a705-9a1e857204ab</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -37,15 +30,23 @@
       <name>class</name>
       <type>Main</type>
       <value>btn_secondary</value>
-      <webElementGuid>11046932-2733-4bb8-af23-34d6a70173a0</webElementGuid>
+      <webElementGuid>90ad4c28-f74c-443b-8bbb-1bbaee9d46f7</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>href</name>
+      <type>Main</type>
+      <value>AggiungiCarrello</value>
+      <webElementGuid>4394cca5-8acd-4a92-854f-551fcd535764</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>Adotta un albero</value>
-      <webElementGuid>e441ac4d-6d89-4186-813a-fb8970be9aeb</webElementGuid>
+      <value>Aggiungi al carrello</value>
+      <webElementGuid>abf5980e-d87c-4053-8aad-f10353b1c319</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -53,78 +54,86 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;cat&quot;)/div[@class=&quot;container-card&quot;]/div[@class=&quot;card&quot;]/div[@class=&quot;card-body&quot;]/div[@class=&quot;btn_area&quot;]/a[@class=&quot;btn_secondary&quot;]</value>
-      <webElementGuid>e2cfb2ba-48ae-454e-a6c5-e2db63b70363</webElementGuid>
+      <webElementGuid>6a3c3656-a1e5-46b6-b664-3327686b733e</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
       <type>Main</type>
-      <value>//div[@id='cat']/div/div[8]/div[2]/div[2]/a[2]</value>
-      <webElementGuid>e6a59efb-60a0-4bdc-9cc7-1b075225107c</webElementGuid>
+      <value>//div[@id='cat']/div/div[12]/div[2]/div[2]/a</value>
+      <webElementGuid>23d91e7d-09ff-456f-9724-e1675a78c476</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:link</name>
       <type>Main</type>
-      <value>(//a[contains(text(),'Adotta un albero')])[8]</value>
-      <webElementGuid>19e2cf4c-c9f1-4272-b22d-4add0cbaf765</webElementGuid>
+      <value>//a[contains(text(),'Aggiungi al carrello')]</value>
+      <webElementGuid>5491b3aa-4d97-4d47-b122-611c910f3038</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Visualizza prodotto'])[8]/following::a[1]</value>
-      <webElementGuid>04f297e6-05cc-4db7-b86b-043c72d8742a</webElementGuid>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Buono regalo'])[1]/following::a[1]</value>
+      <webElementGuid>29da1a6c-8d28-4e49-bec9-27606c61e098</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='melo'])[1]/following::a[2]</value>
-      <webElementGuid>1436d98c-21d5-4003-ae58-59e089da81fb</webElementGuid>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Adotta un albero'])[11]/following::a[1]</value>
+      <webElementGuid>a157e528-92c0-4cc6-9eec-132ab4f722c1</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='pero'])[1]/preceding::a[1]</value>
-      <webElementGuid>4bca555c-1cd6-4a0b-941a-4cd298d3c662</webElementGuid>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Chi siamo?'])[1]/preceding::a[1]</value>
+      <webElementGuid>9651a061-56c1-4641-ae1e-3e31ac980e90</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Visualizza prodotto'])[9]/preceding::a[1]</value>
-      <webElementGuid>545fc9ff-dc14-4bb4-b36e-f292a83d66a6</webElementGuid>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Info'])[1]/preceding::a[1]</value>
+      <webElementGuid>c4e928b2-72c7-4da3-88df-034f7f9a23ea</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Aggiungi al carrello']/parent::*</value>
+      <webElementGuid>302a1852-8be5-4547-8083-0907fb476480</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:href</name>
       <type>Main</type>
-      <value>//a[contains(@href, 'regione.jsp?nome=melo')]</value>
-      <webElementGuid>6de3dd84-437b-45f8-803b-1a65f4b9a8a5</webElementGuid>
+      <value>//a[contains(@href, 'AggiungiCarrello')]</value>
+      <webElementGuid>018d85e7-825d-4930-b9ff-d1adc00b7ad0</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
       <type>Main</type>
-      <value>//div[8]/div[2]/div[2]/a[2]</value>
-      <webElementGuid>d0327725-4a3f-451e-b2b7-70d47bcaca6d</webElementGuid>
+      <value>//div[12]/div[2]/div[2]/a</value>
+      <webElementGuid>b21d532f-70c2-4ec1-83e0-a08f211600f7</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:customAttributes</name>
       <type>Main</type>
-      <value>//a[@href = 'regione.jsp?nome=melo' and (text() = 'Adotta un albero' or . = 'Adotta un albero')]</value>
-      <webElementGuid>fb5e82d8-9837-4ec9-b74f-26d022a5fdd7</webElementGuid>
+      <value>//a[@href = 'AggiungiCarrello' and (text() = 'Aggiungi al carrello' or . = 'Aggiungi al carrello')]</value>
+      <webElementGuid>155bd51f-2fc6-41d7-a73e-ff0d2bc8c8b0</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

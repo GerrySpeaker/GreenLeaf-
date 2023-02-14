@@ -25,21 +25,15 @@ WebUI.navigateToUrl('http://localhost:8080/GreenLeaf_war_exploded/login.jsp')
 
 WebUI.setText(findTestObject('Object Repository/TC_AA_3.2_5/Page_Login/input_Login_email'), 'test@gmail.com')
 
-WebUI.click(findTestObject('Object Repository/TC_AA_3.2_5/Page_Login/div_Login_inputBox'))
-
 WebUI.setEncryptedText(findTestObject('Object Repository/TC_AA_3.2_5/Page_Login/input_Login_password'), 'HeCM15nHKBI=')
 
 WebUI.click(findTestObject('Object Repository/TC_AA_3.2_5/Page_Login/input'))
 
 WebUI.click(findTestObject('Object Repository/TC_AA_3.2_5/Page_Sezione utente/a_Adotta'))
 
-WebUI.click(findTestObject('Object Repository/TC_AA_3.2_5/Page_Catalogo/a_Adotta un albero'))
+WebUI.click(findTestObject('Object Repository/TC_AA_3.2_5/Page_Catalogo/a_Aggiungi al carrello'))
 
-WebUI.click(findTestObject('Object Repository/TC_AA_3.2_5/Page_Regione/div_Calcolo CO2_reg-card'))
-
-WebUI.click(findTestObject('Object Repository/TC_AA_3.2_5/Page_Regione/span_Calcolo CO2_checkmark'))
-
-WebUI.click(findTestObject('Object Repository/TC_AA_3.2_5/Page_Regione/button_Aggiungi al carrello'))
+WebUI.click(findTestObject('Object Repository/TC_AA_3.2_5/Page_Catalogo/header_Home        Adotta        Monitoragg_ffeb68'))
 
 WebUI.click(findTestObject('Object Repository/TC_AA_3.2_5/Page_Catalogo/i_Calcolo CO2_fa-solid fa-cart-shopping'))
 
@@ -59,6 +53,10 @@ WebUI.setEncryptedText(findTestObject('Object Repository/TC_AA_3.2_5/Page_Accedi
 WebUI.click(findTestObject('Object Repository/TC_AA_3.2_5/Page_Accedi al tuo conto PayPal/button_Accedi'))
 
 WebUI.click(findTestObject('Object Repository/TC_AA_3.2_5/Page_PayPal Checkout/button_Completa lacquisto'))
+
+WebUI.switchToWindowTitle('Homepage')
+
+WebUI.verifyElementPresent(findTestObject('Object Repository/TC_AA_3.2_5/Page_Homepage/input_Calcolo CO2_1'), 0)
 
 WebUI.closeBrowser()
 

@@ -6,12 +6,11 @@
    <elementGuidId>e09d9b0a-2064-483e-ad91-f14a3b69263e</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value></value>
-      </entry>
-      <entry>
          <key>XPATH</key>
          <value>//div[@id='cat']/div/div[7]/div[2]/div[2]/a[2]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +21,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>4bf58a86-9f4c-4c01-ae05-3076378147ef</webElementGuid>
+      <webElementGuid>181cdc95-6b94-4981-ac35-d5fb0e726fee</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -30,7 +29,7 @@
       <name>href</name>
       <type>Main</type>
       <value>regione.jsp?nome=melo</value>
-      <webElementGuid>29955086-db97-45b9-98d1-9327218ee5de</webElementGuid>
+      <webElementGuid>5ad81e83-9ee5-4a1d-b910-f701fcbfa53a</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -38,7 +37,7 @@
       <name>class</name>
       <type>Main</type>
       <value>btn_secondary</value>
-      <webElementGuid>b66ff4f0-5e6e-4c6d-a2a7-30e44c641072</webElementGuid>
+      <webElementGuid>974dcf8e-21ba-4374-9018-016f4f352f2e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -46,7 +45,7 @@
       <name>text</name>
       <type>Main</type>
       <value>Adotta un albero</value>
-      <webElementGuid>c9490ae8-0809-4740-b35a-b5426fb6c8c4</webElementGuid>
+      <webElementGuid>5978921c-e47b-4f64-b29a-73a301a8b0fd</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -54,7 +53,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;cat&quot;)/div[@class=&quot;container-card&quot;]/div[@class=&quot;card&quot;]/div[@class=&quot;card-body&quot;]/div[@class=&quot;btn_area&quot;]/a[@class=&quot;btn_secondary&quot;]</value>
-      <webElementGuid>2d9e3bef-4d53-4759-8acc-38f0be21186b</webElementGuid>
+      <webElementGuid>1cde5b6a-45dd-4bc5-9eac-beb036188e1c</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -62,7 +61,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='cat']/div/div[7]/div[2]/div[2]/a[2]</value>
-      <webElementGuid>3ff825a7-6f85-4a49-b1d9-7295ebb60000</webElementGuid>
+      <webElementGuid>66f5bc5b-ecc1-47fe-a194-0a8fea6d1f84</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +69,7 @@
       <name>xpath:link</name>
       <type>Main</type>
       <value>(//a[contains(text(),'Adotta un albero')])[7]</value>
-      <webElementGuid>3eecb01a-6185-493c-a191-a676531dadeb</webElementGuid>
+      <webElementGuid>05442f7e-23ef-49e1-a97e-9f714d369585</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +77,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Visualizza prodotto'])[7]/following::a[1]</value>
-      <webElementGuid>77083d48-cf2d-45ea-bbf4-cb3313f1db13</webElementGuid>
+      <webElementGuid>fdfe3dd5-2919-4772-bec8-5d50686d0bd4</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,7 +85,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='melo'])[1]/following::a[2]</value>
-      <webElementGuid>e094fcf4-dcbf-4b5f-b075-85455e4ba1d9</webElementGuid>
+      <webElementGuid>c635f375-29b8-4d7c-baa5-32bad178da1a</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -94,7 +93,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='pero'])[1]/preceding::a[1]</value>
-      <webElementGuid>ae618121-c855-41fc-b3d1-242b48af5951</webElementGuid>
+      <webElementGuid>d2e87174-c9a8-4c40-b433-46e1ee16222d</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,7 +101,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Visualizza prodotto'])[8]/preceding::a[1]</value>
-      <webElementGuid>970ea7c4-b44f-4478-84ec-3d23c929deea</webElementGuid>
+      <webElementGuid>8dd7af2b-7dc7-407f-845e-efabf5791e45</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -110,7 +109,7 @@
       <name>xpath:href</name>
       <type>Main</type>
       <value>//a[contains(@href, 'regione.jsp?nome=melo')]</value>
-      <webElementGuid>2c0404dd-07ea-4a3c-9bee-f9a566878085</webElementGuid>
+      <webElementGuid>e3900bec-4795-48b9-85a8-6adc7cf21714</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -118,7 +117,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[7]/div[2]/div[2]/a[2]</value>
-      <webElementGuid>dcec5997-19e2-4d68-a59f-e64eecf3ee90</webElementGuid>
+      <webElementGuid>4d7fbd60-db9e-4545-b3fc-f88ab4f285b7</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -126,6 +125,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//a[@href = 'regione.jsp?nome=melo' and (text() = 'Adotta un albero' or . = 'Adotta un albero')]</value>
-      <webElementGuid>801202b6-feba-45a1-8e79-41aa420e0e69</webElementGuid>
+      <webElementGuid>ee759a62-21e7-4d54-943b-e26c5902a59f</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

@@ -3,7 +3,7 @@
    <description></description>
    <name>a_Adotta</name>
    <tag></tag>
-   <elementGuidId>a9ad51b2-74ef-4882-b286-49270f540268</elementGuidId>
+   <elementGuidId>d7f7d038-550b-40b4-9963-2c890bbf76b4</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>CSS</key>
-         <value>li.list.active > a</value>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>a</value>
-      <webElementGuid>5431b1cc-7e9a-47b5-bf16-e26a0cf99d96</webElementGuid>
+      <webElementGuid>cf7ac159-5deb-4105-b5e4-45c8fe6e8387</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -30,7 +30,7 @@
       <name>href</name>
       <type>Main</type>
       <value>catalogo.jsp</value>
-      <webElementGuid>7bba3243-8dfc-4011-afd8-55f3d3f42d44</webElementGuid>
+      <webElementGuid>4e588074-8328-4a5d-8c49-27e77263e174</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,15 +38,15 @@
       <name>text</name>
       <type>Main</type>
       <value>Adotta</value>
-      <webElementGuid>bb086e41-e40b-452c-8774-a3db587e01ba</webElementGuid>
+      <webElementGuid>db527186-e833-4609-9cd8-2b53a47f6a97</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>/html[1]/body[1]/header[@class=&quot;all-headerbody&quot;]/ul[@class=&quot;nav-menu&quot;]/li[@class=&quot;list active&quot;]/a[1]</value>
-      <webElementGuid>3ef071d6-f354-4bdd-9c16-f49466dd58ba</webElementGuid>
+      <value>/html[1]/body[1]/header[@class=&quot;all-headerbody&quot;]/ul[@class=&quot;nav-menu&quot;]/li[2]/a[1]</value>
+      <webElementGuid>4d16894b-e389-4c10-9c80-be47793bd7ab</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -54,7 +54,7 @@
       <name>xpath:link</name>
       <type>Main</type>
       <value>//a[contains(text(),'Adotta')]</value>
-      <webElementGuid>13a0b691-b40d-472e-a7d3-cee7d2429b4a</webElementGuid>
+      <webElementGuid>bfdf8b8b-afaf-42fc-8fb8-94f1f5ba9ea0</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -62,7 +62,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Home'])[1]/following::a[1]</value>
-      <webElementGuid>af7f8e1d-a803-48ee-a9d4-fb338a667ffc</webElementGuid>
+      <webElementGuid>6d5a0925-e8e8-4951-94e1-92ae6f37d19f</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -70,7 +70,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Monitoraggio'])[1]/preceding::a[1]</value>
-      <webElementGuid>d839ac2a-a05b-4455-9f87-33ce75698107</webElementGuid>
+      <webElementGuid>5cb38fe3-4223-4adb-9e79-c912cb470899</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -78,7 +78,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Calcolo CO2'])[1]/preceding::a[2]</value>
-      <webElementGuid>05ca2d99-7a24-4cd6-959e-6599e5b54801</webElementGuid>
+      <webElementGuid>12d73181-f553-4ac2-af1e-6dd67fb8651a</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -86,7 +86,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='Adotta']/parent::*</value>
-      <webElementGuid>a370445b-424f-4c87-9463-9ef224c864c1</webElementGuid>
+      <webElementGuid>6eb44a44-46bf-48b3-8b87-139fab5f1860</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -94,7 +94,7 @@
       <name>xpath:href</name>
       <type>Main</type>
       <value>//a[contains(@href, 'catalogo.jsp')]</value>
-      <webElementGuid>5df6d276-7ec1-4cea-94b6-1a4cf07c6baa</webElementGuid>
+      <webElementGuid>761a9823-29ae-44c0-b0bf-9df7fb81078b</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,7 +102,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//li[2]/a</value>
-      <webElementGuid>7e4f8e9c-b73c-4b36-89df-10bbe9ec6dec</webElementGuid>
+      <webElementGuid>f44a3d64-5e9e-4c8b-8e18-a486adfe8e83</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -110,6 +110,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//a[@href = 'catalogo.jsp' and (text() = 'Adotta' or . = 'Adotta')]</value>
-      <webElementGuid>c13fd8c7-de2b-46e6-a4fa-26d23236b2a5</webElementGuid>
+      <webElementGuid>806ce4dd-36c8-422e-b53e-ea63e2311537</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

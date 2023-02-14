@@ -6,12 +6,12 @@
    <elementGuidId>a87298e9-ed65-40d8-a9a9-0ed97c6482a4</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value>#btnNext</value>
-      </entry>
-      <entry>
          <key>XPATH</key>
          <value>//button[@id='btnNext']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>#btnNext</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -22,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>button</value>
-      <webElementGuid>727de5e9-e6fb-408f-9f50-3bdf84fa0b96</webElementGuid>
+      <webElementGuid>f47da45d-d392-4a94-9a45-c019141ebe7f</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -30,7 +30,7 @@
       <name>class</name>
       <type>Main</type>
       <value>button actionContinue scTrack:unifiedlogin-login-click-next</value>
-      <webElementGuid>c3cc60a5-cd28-4d1b-9875-c1214f618c03</webElementGuid>
+      <webElementGuid>cd925092-16fe-454e-9bf7-4d571f3acc1d</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -38,7 +38,7 @@
       <name>type</name>
       <type>Main</type>
       <value>submit</value>
-      <webElementGuid>d0921116-3950-4259-ac7b-148c10b88ec0</webElementGuid>
+      <webElementGuid>694ec3fa-3cd5-4308-a307-1afd68b64f38</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -46,7 +46,7 @@
       <name>id</name>
       <type>Main</type>
       <value>btnNext</value>
-      <webElementGuid>3e361ca4-a7c5-481e-915c-c694fb324588</webElementGuid>
+      <webElementGuid>3dae8b18-1665-4b5d-8b34-1884437a9235</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -54,7 +54,7 @@
       <name>name</name>
       <type>Main</type>
       <value>btnNext</value>
-      <webElementGuid>2f8f8a5f-fbcf-483e-b6d5-b51bdd84730b</webElementGuid>
+      <webElementGuid>152f14c7-bd56-401a-bbd3-5755b057b46a</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -62,7 +62,7 @@
       <name>value</name>
       <type>Main</type>
       <value>Next</value>
-      <webElementGuid>8361a06a-1d62-48c1-ae1c-5d16558f671b</webElementGuid>
+      <webElementGuid>f9db4548-50e8-450e-a6d7-3003e807764f</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -70,7 +70,7 @@
       <name>pa-marked</name>
       <type>Main</type>
       <value>1</value>
-      <webElementGuid>4e0511f4-c950-4586-bb72-6e79c70b2575</webElementGuid>
+      <webElementGuid>033f156b-6583-4b12-8737-87bcf4a95b2a</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -78,7 +78,7 @@
       <name>text</name>
       <type>Main</type>
       <value>Avanti</value>
-      <webElementGuid>55c0cde8-0fb2-485a-ac11-4266a08d2804</webElementGuid>
+      <webElementGuid>c6ed0894-18ba-49e0-8954-4354df2074e2</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -86,7 +86,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;btnNext&quot;)</value>
-      <webElementGuid>e634bcce-dbcc-40e4-b3d2-fbccd8e27e30</webElementGuid>
+      <webElementGuid>ec08ff49-32b7-4921-b303-e6c3c4a631f6</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -94,7 +94,7 @@
       <name>xpath:attributes</name>
       <type>Main</type>
       <value>//button[@id='btnNext']</value>
-      <webElementGuid>b0b045e5-9472-4d6b-aaf9-baa27881ca12</webElementGuid>
+      <webElementGuid>4c4634fe-163a-4c28-892a-975abcca607c</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -102,7 +102,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//div[@id='splitEmail']/div[2]/button</value>
-      <webElementGuid>06355e52-5322-486a-a7a7-7471e2b8aa26</webElementGuid>
+      <webElementGuid>5f1b74ce-6543-4d51-a32b-456020a9b0bd</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -110,7 +110,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Pulsante audio'])[1]/following::button[1]</value>
-      <webElementGuid>cd850c04-6da0-4009-bd62-ccf2e453b015</webElementGuid>
+      <webElementGuid>e29b7539-f146-4115-9314-5af64f640161</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -118,7 +118,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Ricarica immagine'])[1]/following::button[1]</value>
-      <webElementGuid>d7431e0f-fc81-4f7c-8db9-b64a071eb2d2</webElementGuid>
+      <webElementGuid>9db40991-ced3-4755-b6e6-e62e7c2ab80d</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -126,7 +126,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Password'])[1]/preceding::button[1]</value>
-      <webElementGuid>f74fdcb7-da6a-43fa-99d1-d2f86001ed95</webElementGuid>
+      <webElementGuid>387b9456-3d95-4015-ae0a-a3f5465ea8ca</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -134,7 +134,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Mostra password'])[1]/preceding::button[1]</value>
-      <webElementGuid>c0fae68a-fca5-4e3e-aeb1-70012decc6b4</webElementGuid>
+      <webElementGuid>7565a7f8-64ae-48aa-b923-030ac914072e</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -142,7 +142,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='Avanti']/parent::*</value>
-      <webElementGuid>e0aba665-3c40-4abf-8d03-dc6290cb5815</webElementGuid>
+      <webElementGuid>473663ce-b96f-4099-ad78-5a8b1a885853</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -150,7 +150,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//button</value>
-      <webElementGuid>41dbfb57-75d6-47cb-8243-3e2398b35038</webElementGuid>
+      <webElementGuid>d5029d49-f033-479f-8a64-1293baa04939</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -158,6 +158,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//button[@type = 'submit' and @id = 'btnNext' and @name = 'btnNext' and (text() = 'Avanti' or . = 'Avanti')]</value>
-      <webElementGuid>38673f60-86a5-4119-a367-186453f6d0a0</webElementGuid>
+      <webElementGuid>1071399d-3818-48f9-a8d1-e8d16489ab8b</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

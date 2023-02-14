@@ -3,7 +3,7 @@
    <description></description>
    <name>div_Login_inputBox</name>
    <tag></tag>
-   <elementGuidId>ef83841b-16d8-4ec4-94dc-b4e6b8923f72</elementGuidId>
+   <elementGuidId>6805555d-4677-49bc-be49-dbf26364630f</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
@@ -11,6 +11,7 @@
       </entry>
       <entry>
          <key>CSS</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -21,7 +22,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>div</value>
-      <webElementGuid>375a8e87-7b6b-4243-b11a-a8223cbc8434</webElementGuid>
+      <webElementGuid>1a384653-f536-44a9-9ae8-5406d9419675</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -29,7 +30,7 @@
       <name>class</name>
       <type>Main</type>
       <value>inputBox</value>
-      <webElementGuid>a31c561b-f177-44dc-aec4-3728f4c8eaef</webElementGuid>
+      <webElementGuid>1eb7b133-1ad1-4184-904c-df85c1582942</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -37,7 +38,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;form&quot;)/div[@class=&quot;inputBox&quot;]</value>
-      <webElementGuid>0ce34fc4-7af0-49f4-86e0-dea866615311</webElementGuid>
+      <webElementGuid>d60a77ee-1d11-415a-8270-72ff747408dc</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -45,7 +46,7 @@
       <name>xpath:idRelative</name>
       <type>Main</type>
       <value>//form[@id='form']/div[2]</value>
-      <webElementGuid>196e70a4-a7a4-4d0a-a564-0cae4ea03c7d</webElementGuid>
+      <webElementGuid>0b000242-1dd2-4fe7-96e5-cea6c956825d</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -53,7 +54,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Login'])[2]/following::div[2]</value>
-      <webElementGuid>953d7ee2-3f9c-4d61-9da0-8a51ded3d09c</webElementGuid>
+      <webElementGuid>ebe954a5-ffcd-4637-9d9e-f02d50bc0337</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -61,7 +62,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Registrati'])[1]/preceding::div[3]</value>
-      <webElementGuid>2c5282c6-55bb-4726-b466-8550de1c8f96</webElementGuid>
+      <webElementGuid>3bda3aec-110b-4f58-bfdf-ed06a87aaea6</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -69,7 +70,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)=concat('id(', '&quot;', 'form', '&quot;', ')/div[@class=', '&quot;', 'inputBox', '&quot;', ']')])[1]/preceding::div[3]</value>
-      <webElementGuid>2388a79d-cde0-49a5-9c69-606bd18f97c6</webElementGuid>
+      <webElementGuid>ccda8983-1ad5-4edc-8093-5c5382166db9</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -77,6 +78,6 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//form/div[2]</value>
-      <webElementGuid>26933a29-d20c-4e3f-a42f-8172e93da1b7</webElementGuid>
+      <webElementGuid>3cbab7f6-210d-4fd9-aae1-590f990249e1</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>
