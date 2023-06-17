@@ -30,3 +30,5 @@ courses of Computer Science at University of Salerno.
 * Project's javadoc can be found in *javaDocs* directory and at the following
   link: [Javadoc Link](https://github.com/GerrySpeaker/GreenLeaf-/tree/main/javaDoc).
 * Process documentation can be found in *Documentazione*  directory.
+* DB's scripct can be found in *Script DB*  directory.
+* Project's presentation can be found in *presentazione*  directory.
