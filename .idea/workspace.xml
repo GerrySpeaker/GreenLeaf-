@@ -11,37 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="69b6b016-128a-40c4-8d35-c443c2f20acd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/gestionealberidaadottare/GestioneAlberiDaAdottareApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/application/gestionealberidaadottare/GestioneAlberiDaAdottareApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/BuonoRegaloDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/classes/storage/BuonoRegaloDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/acquisto_completato.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/GreenLeaf-1.0-SNAPSHOT/acquisto_completato.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/application/gestionealberidaadottare/GestioneAlberiDaAdottareApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/application/gestionealberidaadottare/GestioneAlberiDaAdottareApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/BuonoRegaloDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/GreenLeaf/target/classes/storage/BuonoRegaloDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.1_2/Page_Catalogo/a_Adotta un albero.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.1_2/Page_Catalogo/a_Adotta un albero.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_4/Page_Catalogo/a_Adotta un albero.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_4/Page_Catalogo/a_Adotta un albero.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_4/Page_Catalogo/i_Calcolo CO2_fa-solid fa-cart-shopping.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_4/Page_Catalogo/i_Calcolo CO2_fa-solid fa-cart-shopping.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_4/Page_Login/input.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_4/Page_Login/input.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_4/Page_Login/input_Login_email.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_4/Page_Login/input_Login_email.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_4/Page_Login/input_Login_password.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_4/Page_Login/input_Login_password.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_4/Page_Sezione utente/a_Adotta.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_4/Page_Sezione utente/a_Adotta.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Accedi al tuo conto PayPal/button_Accedi.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Accedi al tuo conto PayPal/button_Accedi.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Accedi al tuo conto PayPal/button_Avanti.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Accedi al tuo conto PayPal/button_Avanti.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Accedi al tuo conto PayPal/input_Avanti_login_password.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Accedi al tuo conto PayPal/input_Avanti_login_password.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Accedi al tuo conto PayPal/input_IT_login_email.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Accedi al tuo conto PayPal/input_IT_login_email.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Carrello/iframe_Totale___zoid__paypal_buttons__eyJzZ_dc5eb0.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Carrello/iframe_Totale___zoid__paypal_buttons__eyJzZ_dc5eb0.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Carrello/iframe_Totale___zoid__paypal_buttons__eyJzZ_dc5eb0_1.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Carrello/iframe_Totale___zoid__paypal_buttons__eyJzZ_dc5eb0_1.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Catalogo/a_Adotta un albero.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Catalogo/a_Adotta un albero.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Catalogo/i_Calcolo CO2_fa-solid fa-cart-shopping.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Catalogo/i_Calcolo CO2_fa-solid fa-cart-shopping.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Login/div_Login_inputBox.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Login/div_Login_inputBox.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Login/input.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Login/input.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Login/input_Login_email.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Login/input_Login_email.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Login/input_Login_password.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Login/input_Login_password.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_PayPal Checkout/button_Completa lacquisto.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_PayPal Checkout/button_Completa lacquisto.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Sezione utente/a_Adotta.rs" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Object Repository/TC_AA_3.2_5/Page_Sezione utente/a_Adotta.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Scripts/TC_AA_3.1_2/Script1675158989485.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Scripts/TC_AA_3.1_2/Script1675158989485.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Scripts/TC_AA_3.2_4/Script1675159686297.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Scripts/TC_AA_3.2_4/Script1675159686297.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TestKatalonGL/TestGF/Scripts/TC_AA_3.2_5/Script1675159869890.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/TestKatalonGL/TestGF/Scripts/TC_AA_3.2_5/Script1675159869890.groovy" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +48,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mirko/Documents/GitHub/GreenLeaf-/GreenLeaf/librerieEsterne/mysql-connector-java-8.0.27.jar&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Michela/Documents/GitHub/GreenLeaf-&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -208,6 +177,21 @@
       <workItem from="1676280107738" duration="89000" />
       <workItem from="1676365890311" duration="1357000" />
       <workItem from="1676386310595" duration="1664000" />
+      <workItem from="1677073990878" duration="3000" />
+      <workItem from="1677227676867" duration="22000" />
+      <workItem from="1677227777013" duration="2000" />
+      <workItem from="1677319647684" duration="129000" />
+      <workItem from="1677328334302" duration="12000" />
+      <workItem from="1678029627607" duration="38000" />
+      <workItem from="1678366576408" duration="9000" />
+      <workItem from="1678457511008" duration="18000" />
+      <workItem from="1678806346738" duration="9000" />
+      <workItem from="1680282167357" duration="202000" />
+      <workItem from="1681819313164" duration="7000" />
+      <workItem from="1684509001148" duration="441000" />
+      <workItem from="1684530889439" duration="2000" />
+      <workItem from="1684531590036" duration="91000" />
+      <workItem from="1684532636331" duration="335000" />
     </task>
     <servers />
   </component>
