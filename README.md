@@ -35,8 +35,8 @@ courses of Computer Science at University of Salerno.
 
 # Contributors
 
-<a href="https://github.com/GerrySpeaker/GreenLeaf/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=GerrySpeaker/GreenLeaf" />
+<a href="https://github.com/GerrySpeaker/GreenLeaf-/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=GerrySpeaker/GreenLeaf-" />
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks).
