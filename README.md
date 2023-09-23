@@ -32,3 +32,11 @@ courses of Computer Science at University of Salerno.
 * Process documentation can be found in *Documentazione*  directory.
 * DB's scripct can be found in *Script DB*  directory.
 * Project's presentation can be found in *presentazione*  directory.
+
+# Contributors
+
+<a href="https://github.com/GerrySpeaker/GreenLeaf/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=MichelaFaella/Darn" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
