@@ -3,7 +3,13 @@
   <img src = "logo.png" width="800" height="200">
 </p>
 
-<h4 align = "center">Java EE project</h4>
+<h4 align = "center">
+ A Java EE project for
+  <br>
+  Software Engineering and Software Project Management 
+  <br>
+  courses of Computer Science at University of Salerno.
+</h4>
 
 # Project description and introduction
 
